@@ -1,185 +1,187 @@
+@prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/0/0> a svg:Document .
+doc:1 a svg:Document ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/0/1> .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/0/1> a svg:Svg ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/0> ;
-    rdf:_10 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/9> ;
-    rdf:_11 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/10> ;
-    rdf:_12 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/11> ;
-    rdf:_13 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/12> ;
-    rdf:_14 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/13> ;
-    rdf:_15 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/14> ;
-    rdf:_16 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/15> ;
-    rdf:_17 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/16> ;
-    rdf:_18 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/17> ;
-    rdf:_19 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/18> ;
-    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/1> ;
-    rdf:_20 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/19> ;
-    rdf:_21 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/20> ;
-    rdf:_22 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/21> ;
-    rdf:_23 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/22> ;
-    rdf:_24 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/23> ;
-    rdf:_25 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/24> ;
-    rdf:_26 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/25> ;
-    rdf:_27 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/26> ;
-    rdf:_28 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/27> ;
-    rdf:_29 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/28> ;
-    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/2> ;
-    rdf:_30 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/29> ;
-    rdf:_31 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/30> ;
-    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/3> ;
-    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/4> ;
-    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/5> ;
-    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/6> ;
-    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/7> ;
-    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/8> ;
+<https://data.rijksfinancien.nl/svg/doc/id/0/1> a svg:Svg ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/10/0> ;
+    rdf:_10 <https://data.rijksfinancien.nl/svg/doc/id/10/9> ;
+    rdf:_11 <https://data.rijksfinancien.nl/svg/doc/id/10/10> ;
+    rdf:_12 <https://data.rijksfinancien.nl/svg/doc/id/10/11> ;
+    rdf:_13 <https://data.rijksfinancien.nl/svg/doc/id/10/12> ;
+    rdf:_14 <https://data.rijksfinancien.nl/svg/doc/id/10/13> ;
+    rdf:_15 <https://data.rijksfinancien.nl/svg/doc/id/10/14> ;
+    rdf:_16 <https://data.rijksfinancien.nl/svg/doc/id/10/15> ;
+    rdf:_17 <https://data.rijksfinancien.nl/svg/doc/id/10/16> ;
+    rdf:_18 <https://data.rijksfinancien.nl/svg/doc/id/10/17> ;
+    rdf:_19 <https://data.rijksfinancien.nl/svg/doc/id/10/18> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/10/1> ;
+    rdf:_20 <https://data.rijksfinancien.nl/svg/doc/id/10/19> ;
+    rdf:_21 <https://data.rijksfinancien.nl/svg/doc/id/10/20> ;
+    rdf:_22 <https://data.rijksfinancien.nl/svg/doc/id/10/21> ;
+    rdf:_23 <https://data.rijksfinancien.nl/svg/doc/id/10/22> ;
+    rdf:_24 <https://data.rijksfinancien.nl/svg/doc/id/10/23> ;
+    rdf:_25 <https://data.rijksfinancien.nl/svg/doc/id/10/24> ;
+    rdf:_26 <https://data.rijksfinancien.nl/svg/doc/id/10/25> ;
+    rdf:_27 <https://data.rijksfinancien.nl/svg/doc/id/10/26> ;
+    rdf:_28 <https://data.rijksfinancien.nl/svg/doc/id/10/27> ;
+    rdf:_29 <https://data.rijksfinancien.nl/svg/doc/id/10/28> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/10/2> ;
+    rdf:_30 <https://data.rijksfinancien.nl/svg/doc/id/10/29> ;
+    rdf:_31 <https://data.rijksfinancien.nl/svg/doc/id/10/30> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/10/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/10/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/10/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/10/6> ;
+    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/10/7> ;
+    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/10/8> ;
     svg:height "350" ;
     svg:version "1.1" ;
     svg:width "500" ;
     svg:xmlns "http://www.w3.org/2000/svg" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/0/1/0/0> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/010/0> a svg:TextElement ;
     svg:fragment "Amount (Euro)" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/0> a svg:Text ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/0/1/0/0> ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/0> a svg:Text ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/010/0> ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:transform "rotate(-90)" ;
     svg:x "-180" ;
     svg:y "20" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/1> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/1> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/10> a svg:Text ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/10/1/0/0> ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/10> a svg:Text ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1010/0> ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:text-anchor "middle" ;
     svg:x "90" ;
     svg:y "210" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/11> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/11> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/12> a svg:Text ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/12/1/0/0> ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/12> a svg:Text ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1210/0> ;
     svg:fill "black" ;
     svg:font-size "14" ;
     svg:text-anchor "middle" ;
     svg:x "105" ;
     svg:y "245" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/13> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/13> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/14> a svg:Rect ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/14> a svg:Rect ;
     svg:fill "red" ;
     svg:height "25" ;
     svg:width "50" ;
     svg:x "180" ;
     svg:y "275" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/15> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/15> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/16> a svg:Text ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/16/1/0/0> ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/16> a svg:Text ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1610/0> ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:text-anchor "middle" ;
     svg:x "190" ;
     svg:y "230" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/17> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/17> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/18> a svg:Text ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/18/1/0/0> ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/18> a svg:Text ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1810/0> ;
     svg:fill "black" ;
     svg:font-size "14" ;
     svg:text-anchor "middle" ;
     svg:x "205" ;
     svg:y "270" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/19> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/19> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/2> a svg:Text ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/2/1/0/0> ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/2> a svg:Text ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/210/0> ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:x "200" ;
     svg:y "330" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/20> a svg:Rect ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/20> a svg:Rect ;
     svg:fill "green" ;
     svg:height "35" ;
     svg:width "50" ;
     svg:x "280" ;
     svg:y "265" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/21> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/21> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/22> a svg:Text ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/22/1/0/0> ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/22> a svg:Text ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/2210/0> ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:text-anchor "middle" ;
     svg:x "290" ;
     svg:y "210" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/23> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/23> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/24> a svg:Text ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/24/1/0/0> ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/24> a svg:Text ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/2410/0> ;
     svg:fill "black" ;
     svg:font-size "14" ;
     svg:text-anchor "middle" ;
     svg:x "305" ;
     svg:y "260" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/25> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/25> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/26> a svg:Rect ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/26> a svg:Rect ;
     svg:fill "orange" ;
     svg:height "20" ;
     svg:width "50" ;
     svg:x "380" ;
     svg:y "280" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/27> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/27> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/28> a svg:Text ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/28/1/0/0> ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/28> a svg:Text ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/2810/0> ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:text-anchor "middle" ;
     svg:x "390" ;
     svg:y "230" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/29> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/29> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/3> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/3> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/30> a svg:Text ;
-    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/svg/30/1/0/0> ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/30> a svg:Text ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/3010/0> ;
     svg:fill "black" ;
     svg:font-size "14" ;
     svg:text-anchor "middle" ;
     svg:x "405" ;
     svg:y "275" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/4> a svg:Line ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/4> a svg:Line ;
     svg:stroke "black" ;
     svg:stroke-width "2" ;
     svg:x1 "50" ;
@@ -187,10 +189,10 @@
     svg:y1 "50" ;
     svg:y2 "300" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/5> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/5> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/6> a svg:Line ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/6> a svg:Line ;
     svg:stroke "black" ;
     svg:stroke-width "2" ;
     svg:x1 "50" ;
@@ -198,43 +200,43 @@
     svg:y1 "300" ;
     svg:y2 "300" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/7> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/7> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/8> a svg:Rect ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/8> a svg:Rect ;
     svg:fill "blue" ;
     svg:height "50" ;
     svg:width "50" ;
     svg:x "80" ;
     svg:y "250" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/1/0/9> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/10/9> a svg:TextElement ;
     svg:fragment "" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/10/1/0/0> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/1010/0> a svg:TextElement ;
     svg:fragment "Budgeted Expenditures" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/12/1/0/0> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/1210/0> a svg:TextElement ;
     svg:fragment "200" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/16/1/0/0> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/1610/0> a svg:TextElement ;
     svg:fragment "Realized Expenditures" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/18/1/0/0> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/1810/0> a svg:TextElement ;
     svg:fragment "100" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/2/1/0/0> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/210/0> a svg:TextElement ;
     svg:fragment "Transaction type" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/22/1/0/0> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/2210/0> a svg:TextElement ;
     svg:fragment "Budgeted Receipts" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/24/1/0/0> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/2410/0> a svg:TextElement ;
     svg:fragment "150" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/28/1/0/0> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/2810/0> a svg:TextElement ;
     svg:fragment "Realized Receipts" .
 
-<https://data.rijksfinancien.nl/svg/doc/id/svg/30/1/0/0> a svg:TextElement ;
+<https://data.rijksfinancien.nl/svg/doc/id/3010/0> a svg:TextElement ;
     svg:fragment "80" .
 

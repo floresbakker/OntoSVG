@@ -3049,7 +3049,7 @@ doc:smiley a svg:Svg ;
     svg:xmlns "http://www.w3.org/2000/svg" .
 
 doc:smileyDocument-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-17T15:25:54.167892+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-02-17T19:33:36.153060+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
 

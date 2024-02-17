@@ -3012,7 +3012,7 @@ doc:BarChart a svg:Svg ;
     svg:xmlns "http://www.w3.org/2000/svg" .
 
 doc:BarChartDocument-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-17T15:25:53.087727+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-02-17T19:33:34.963293+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
 

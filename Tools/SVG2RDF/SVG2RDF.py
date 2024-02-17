@@ -36,16 +36,16 @@ def readGraphFromFile(file_path):
 
 def generate_element_id(element):
     
-    parent_string = "svg"
+    parent_string = ""
     for parent in element.parents:
         parent_sibling_count = 0
         for parent_sibling in parent.previous_siblings:    
             parent_sibling_count = parent_sibling_count + 1
         horizontal_parental_index = parent_sibling_count
         if parent.name:
-            parent_string = parent_string + "/" + str(horizontal_parental_index)
+            parent_string = parent_string + str(horizontal_parental_index)
         else:
-            parent_string = parent_string + "/" + "0"
+            parent_string = parent_string + "0"
         
     
     count_sibling = 0
@@ -99,7 +99,7 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
         soup = BeautifulSoup(xml_doc, features="xml")
         root_element = soup.contents[0]
         root_id = generate_element_id(root_element)
-        g.add((doc[root_id], RDF.type, svg["Document"]))
+       
       
         # go through each element in the xml document
         for element in soup.descendants:
@@ -119,9 +119,9 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
                 g.add((doc[element_id], RDF.type, tag_IRI))
                 
                 # add a document node as a container of the XML-tree
-                if element.name == 'Svg':
+                if element.name == 'svg':
                     document_id = '1'
-                    g.add((doc[document_id], RDF.type, svg["Svg"]))
+                    g.add((doc[document_id], RDF.type, svg["Document"]))
                     g.add((doc[document_id], rdf["_" + str(document_id)], doc[element_id]))
 
                 # establish optional attributes of the element       
