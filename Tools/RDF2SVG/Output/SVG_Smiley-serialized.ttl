@@ -1,0 +1,3435 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
+@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix respec: <https://respec.org/model/> .
+@prefix rule: <https://data.rijksfinancien.nl/svg/model/rule/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shp: <https://data.rijksfinancien.nl/svg/model/shp/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix status: <http://purl.org/adms/status/> .
+@prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
+@prefix target: <https://data.rijksfinancien.nl/svg/model/target/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+doc:smileyDocument a svg:Document ;
+    rdf:_1 doc:smiley ;
+    prov:wasGeneratedBy doc:smileyDocument-svg-document-generation ;
+    dom:documentType documentType:svg ;
+    svg:fragment """<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="200" width="200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" fill="yellow" r="90" stroke="black" stroke-width="2"></circle> <circle cx="70" cy="70" fill="black" r="10"></circle> <circle cx="130" cy="70" fill="black" r="10"></circle> <path d="M 60 120 Q 100 150 140 120" fill="none" stroke="black" stroke-width="3"></path></svg>"""^^xsd:string .
+
+svg:A a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#AElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The <a> SVG element defines a hyperlink."@en ;
+    skos:prefLabel "the A element"@en ;
+    svg:tag "a" .
+
+svg:AltGlyph a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#AltGlyphElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'altGlyph' SVG element allows sophisticated text substitution, including non-linear substitution."@en ;
+    skos:prefLabel "the altGlyph element"@en ;
+    svg:tag "altGlyph" .
+
+svg:AltGlyphDef a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#AltGlyphDefElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'altGlyphDef' SVG element defines a substitution definition for glyphs."@en ;
+    skos:prefLabel "the AltGlyphDef element"@en ;
+    svg:tag "altGlyphDef" .
+
+svg:AltGlyphItem a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#AltGlyphItemElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'altGlyphItem' SVG element provides a way to designate a sequence of glyphs from a font."@en ;
+    skos:prefLabel "the AltGlyphItem element"@en ;
+    svg:tag "altGlyphItem" .
+
+svg:Animate a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/animate.html#AnimateElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'animate' SVG element allows for the animation of SVG attributes."@en ;
+    skos:prefLabel "the animate element"@en ;
+    svg:tag "animate" .
+
+svg:AnimateColor a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/animate.html#AnimateColorElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'animateColor' SVG element animates the color attribute of a target element."@en ;
+    skos:prefLabel "the animateColor element"@en ;
+    svg:tag "animateColor" .
+
+svg:AnimateMotion a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/animate.html#AnimateMotionElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'animateMotion' SVG element animates the transformation of a target element's coordinate system."@en ;
+    skos:prefLabel "the animateMotion element"@en ;
+    svg:tag "animateMotion" .
+
+svg:AnimateTransform a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/animate.html#AnimateTransformElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'animateTransform' SVG element animates a transformation attribute of a target element."@en ;
+    skos:prefLabel "the animateTransform element"@en ;
+    svg:tag "animateTransform" .
+
+svg:ClipPath a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/masking.html#ClipPathElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'clipPath' SVG element defines a clipping path."@en ;
+    skos:prefLabel "the clipPath element"@en ;
+    svg:tag "clipPath" .
+
+svg:ColorProfile a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/color.html#ColorProfileElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'color-profile' SVG element defines a color profile."@en ;
+    skos:prefLabel "the color-profile element"@en ;
+    svg:tag "color-profile" .
+
+svg:Cursor a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/linking.html#CursorElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'cursor' SVG element defines a cursor."@en ;
+    skos:prefLabel "the cursor element"@en ;
+    svg:tag "cursor" .
+
+svg:Defs a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#DefsElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'defs' SVG element defines a container for reusable definitions."@en ;
+    skos:prefLabel "the defs element"@en ;
+    svg:tag "defs" .
+
+svg:Desc a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#DescElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'desc' SVG element provides a description for SVG content."@en ;
+    skos:prefLabel "the desc element"@en ;
+    svg:tag "desc" .
+
+svg:Ellipse a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#EllipseElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'ellipse' SVG element defines an ellipse."@en ;
+    skos:prefLabel "the ellipse element"@en ;
+    svg:tag "ellipse" .
+
+svg:FeBlend a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feBlendElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feBlend' SVG element defines a blending mode for compositing two input images."@en ;
+    skos:prefLabel "the feBlend element"@en ;
+    svg:tag "feBlend" .
+
+svg:FeColorMatrix a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feColorMatrixElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feColorMatrix' SVG element applies a matrix transformation to the color values of its input."@en ;
+    skos:prefLabel "the feColorMatrix element"@en ;
+    svg:tag "feColorMatrix" .
+
+svg:FeComponentTransfer a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feComponentTransferElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feComponentTransfer' SVG element allows component-wise remapping of colors."@en ;
+    skos:prefLabel "the feComponentTransfer element"@en ;
+    svg:tag "feComponentTransfer" .
+
+svg:FeComposite a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feCompositeElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feComposite' SVG element defines a compositing operation."@en ;
+    skos:prefLabel "the feComposite element"@en ;
+    svg:tag "feComposite" .
+
+svg:FeConvolveMatrix a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feConvolveMatrixElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feConvolveMatrix' SVG element applies a convolution filter to its input."@en ;
+    skos:prefLabel "the feConvolveMatrix element"@en ;
+    svg:tag "feConvolveMatrix" .
+
+svg:FeDiffuseLighting a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feDiffuseLightingElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feDiffuseLighting' SVG element provides diffuse lighting effects."@en ;
+    skos:prefLabel "the feDiffuseLighting element"@en ;
+    svg:tag "feDiffuseLighting" .
+
+svg:FeDisplacementMap a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feDisplacementMapElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feDisplacementMap' SVG element performs a displacement mapping."@en ;
+    skos:prefLabel "the feDisplacementMap element"@en ;
+    svg:tag "feDisplacementMap" .
+
+svg:FeDistantLight a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feDistantLightElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feDistantLight' SVG element provides lighting effects for distant light sources."@en ;
+    skos:prefLabel "the feDistantLight element"@en ;
+    svg:tag "feDistantLight" .
+
+svg:FeFlood a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feFloodElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feFlood' SVG element fills the filter subregion with a given color."@en ;
+    skos:prefLabel "the feFlood element"@en ;
+    svg:tag "feFlood" .
+
+svg:FeFuncA a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feFuncAElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feFuncA' SVG element defines the alpha component of a transfer function."@en ;
+    skos:prefLabel "the feFuncA element"@en ;
+    svg:tag "feFuncA" .
+
+svg:FeFuncB a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feFuncBElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feFuncB' SVG element defines the blue component of a transfer function."@en ;
+    skos:prefLabel "the feFuncB element"@en ;
+    svg:tag "feFuncB" .
+
+svg:FeFuncG a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feFuncGElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feFuncG' SVG element defines the green component of a transfer function."@en ;
+    skos:prefLabel "the feFuncG element"@en ;
+    svg:tag "feFuncG" .
+
+svg:FeFuncR a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feFuncRElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feFuncR' SVG element defines the red component of a transfer function."@en ;
+    skos:prefLabel "the feFuncR element"@en ;
+    svg:tag "feFuncR" .
+
+svg:FeGaussianBlur a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feGaussianBlurElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feGaussianBlur' SVG element provides a Gaussian blur."@en ;
+    skos:prefLabel "the feGaussianBlur element"@en ;
+    svg:tag "feGaussianBlur" .
+
+svg:FeImage a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feImageElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feImage' SVG element allows an image to be included directly within SVG content."@en ;
+    skos:prefLabel "the feImage element"@en ;
+    svg:tag "feImage" .
+
+svg:FeMerge a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feMergeElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feMerge' SVG element creates a merge of multiple input images."@en ;
+    skos:prefLabel "the feMerge element"@en ;
+    svg:tag "feMerge" .
+
+svg:FeMergeNode a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feMergeNodeElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feMergeNode' SVG element provides a source graphic for the 'feMerge' element."@en ;
+    skos:prefLabel "the feMergeNode element"@en ;
+    svg:tag "feMergeNode" .
+
+svg:FeMorphology a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feMorphologyElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feMorphology' SVG element provides a filter effect that allows morphological operations."@en ;
+    skos:prefLabel "the feMorphology element"@en ;
+    svg:tag "feMorphology" .
+
+svg:FeOffset a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feOffsetElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feOffset' SVG element offsets the input image relative to its current position."@en ;
+    skos:prefLabel "the feOffset element"@en ;
+    svg:tag "feOffset" .
+
+svg:FePointLight a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#fePointLightElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'fePointLight' SVG element provides lighting effects for point light sources."@en ;
+    skos:prefLabel "the fePointLight element"@en ;
+    svg:tag "fePointLight" .
+
+svg:FeSpecularLighting a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feSpecularLightingElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feSpecularLighting' SVG element provides specular lighting effects."@en ;
+    skos:prefLabel "the feSpecularLighting element"@en ;
+    svg:tag "feSpecularLighting" .
+
+svg:FeSpotLight a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feSpotLightElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feSpotLight' SVG element provides lighting effects for spot light sources."@en ;
+    skos:prefLabel "the feSpotLight element"@en ;
+    svg:tag "feSpotLight" .
+
+svg:FeTile a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feTileElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feTile' SVG element replicates the input image at its original size."@en ;
+    skos:prefLabel "the feTile element"@en ;
+    svg:tag "feTile" .
+
+svg:FeTurbulence a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#feTurbulenceElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'feTurbulence' SVG element creates a turbulence effect."@en ;
+    skos:prefLabel "the feTurbulence element"@en ;
+    svg:tag "feTurbulence" .
+
+svg:Filter a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/filters.html#FilterElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'filter' SVG element defines a filter."@en ;
+    skos:prefLabel "the filter element"@en ;
+    svg:tag "filter" .
+
+svg:Font a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#FontElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'font' SVG element defines a font."@en ;
+    skos:prefLabel "the font element"@en ;
+    svg:tag "font" .
+
+svg:FontFace a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#FontFaceElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'font-face' SVG element defines the characteristics of a font."@en ;
+    skos:prefLabel "the font-face element"@en ;
+    svg:tag "font-face" .
+
+svg:FontFaceFormat a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#FontFaceFormatElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'font-face-format' SVG element specifies the font format for font resources referenced by 'font-face-src'."@en ;
+    skos:prefLabel "the font-face-format element"@en ;
+    svg:tag "font-face-format" .
+
+svg:FontFaceName a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#FontFaceNameElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'font-face-name' SVG element specifies the name of a font resource referenced by 'font-face-uri'."@en ;
+    skos:prefLabel "the font-face-name element"@en ;
+    svg:tag "font-face-name" .
+
+svg:FontFaceSrc a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#FontFaceSrcElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'font-face-src' SVG element specifies the source of font resources referenced by 'font-face-format'."@en ;
+    skos:prefLabel "the font-face-src element"@en ;
+    svg:tag "font-face-src" .
+
+svg:FontFaceUri a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#FontFaceUriElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'font-face-uri' SVG element defines the location of font resources referenced by 'font-face-name'."@en ;
+    skos:prefLabel "the font-face-uri element"@en ;
+    svg:tag "font-face-uri" .
+
+svg:ForeignObject a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/intro.html#ForeignObject> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'foreignObject' SVG element allows for inclusion of a foreign XML namespace within SVG content."@en ;
+    skos:prefLabel "the foreignObject element"@en ;
+    svg:tag "foreignObject" .
+
+svg:G a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#GElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'g' SVG element is a container used to group SVG shapes together."@en ;
+    skos:prefLabel "the g element"@en ;
+    svg:tag "g" .
+
+svg:Glyph a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#GlyphElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'glyph' SVG element defines a single glyph in an SVG font."@en ;
+    skos:prefLabel "the glyph element"@en ;
+    svg:tag "glyph" .
+
+svg:GlyphRef a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#GlyphRefElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'glyphRef' SVG element provides an accessible way to reference glyphs in an SVG font by using the glyph's Unicode code point."@en ;
+    skos:prefLabel "the glyphRef element"@en ;
+    svg:tag "glyphRef" .
+
+svg:Hkern a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#HKernElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'hkern' SVG element defines a set of horizontal kerning pairs for text characters in an SVG font."@en ;
+    skos:prefLabel "the hkern element"@en ;
+    svg:tag "hkern" .
+
+svg:Image a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#ImageElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'image' SVG element embeds raster images in an SVG document."@en ;
+    skos:prefLabel "the image element"@en ;
+    svg:tag "image" .
+
+svg:Line a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#LineElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'line' SVG element represents a straight line segment."@en ;
+    skos:prefLabel "the line element"@en ;
+    svg:tag "line" .
+
+svg:LinearGradient a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#LinearGradientElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'linearGradient' SVG element defines a linear gradient paint server."@en ;
+    skos:prefLabel "the linearGradient element"@en ;
+    svg:tag "linearGradient" .
+
+svg:Marker a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/painting.html#MarkerElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'marker' SVG element defines the graphics that are to be used for rendering arrowheads or polymarkers on the ends of lines and other path elements."@en ;
+    skos:prefLabel "the marker element"@en ;
+    svg:tag "marker" .
+
+svg:Mask a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/masking.html#MaskElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'mask' SVG element defines an alpha mask for compositing the current object into the background."@en ;
+    skos:prefLabel "the mask element"@en ;
+    svg:tag "mask" .
+
+svg:Metadata a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/metadata.html#MetadataElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'metadata' SVG element provides metadata about an SVG document."@en ;
+    skos:prefLabel "the metadata element"@en ;
+    svg:tag "metadata" .
+
+svg:MissingGlyph a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#MissingGlyphElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'missing-glyph' SVG element specifies the glyph to display when a referenced character is not supported by the font."@en ;
+    skos:prefLabel "the missing-glyph element"@en ;
+    svg:tag "missing-glyph" .
+
+svg:Mpath a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/animate.html#MPathElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'mpath' SVG element specifies a motion path for animation elements."@en ;
+    skos:prefLabel "the mpath element"@en ;
+    svg:tag "mpath" .
+
+svg:Pattern a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#PatternElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'pattern' SVG element defines a graphics object that can be used as a pattern."@en ;
+    skos:prefLabel "the pattern element"@en ;
+    svg:tag "pattern" .
+
+svg:Polygon a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#PolygonElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'polygon' SVG element defines a closed shape consisting of a set of connected straight line segments."@en ;
+    skos:prefLabel "the polygon element"@en ;
+    svg:tag "polygon" .
+
+svg:Polyline a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#PolylineElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'polyline' SVG element defines a set of connected straight line segments."@en ;
+    skos:prefLabel "the polyline element"@en ;
+    svg:tag "polyline" .
+
+svg:Rect a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#RectElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'rect' SVG element defines a rectangle."@en ;
+    skos:prefLabel "the rect element"@en ;
+    svg:tag "rect" .
+
+svg:Script a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/script.html#ScriptElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'script' SVG element includes scripts within an SVG document."@en ;
+    skos:prefLabel "the script element"@en ;
+    svg:tag "script" .
+
+svg:Set a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/animate.html#SetElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'set' SVG element provides a way to animate SVG elements."@en ;
+    skos:prefLabel "the set element"@en ;
+    svg:tag "set" .
+
+svg:Stop a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#StopElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'stop' SVG element defines a gradient stop."@en ;
+    skos:prefLabel "the stop element"@en ;
+    svg:tag "stop" .
+
+svg:Style a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/styling.html#StyleElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'style' SVG element allows for the inclusion of style information in an SVG document."@en ;
+    skos:prefLabel "the style element"@en ;
+    svg:tag "style" .
+
+svg:Switch a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#SwitchElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'switch' SVG element selects one child element from a set of conditional child elements."@en ;
+    skos:prefLabel "the switch element"@en ;
+    svg:tag "switch" .
+
+svg:Symbol a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#SymbolElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'symbol' SVG element defines a reusable graphics object."@en ;
+    skos:prefLabel "the symbol element"@en ;
+    svg:tag "symbol" .
+
+svg:Text a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'text' SVG element defines a block of text."@en ;
+    skos:prefLabel "the text element"@en ;
+    svg:tag "text" .
+
+svg:TextElement a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf dom:Element ;
+    skos:definition "A plain text element in a SVG document."@en ;
+    skos:prefLabel "The SVG DOM text element"@en .
+
+svg:TextPath a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextPathElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'textPath' SVG element defines a set of glyphs along a path."@en ;
+    skos:prefLabel "the textPath element"@en ;
+    svg:tag "textPath" .
+
+svg:Title a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#TitleElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'title' SVG element provides a title for an SVG document or a description for an SVG container element."@en ;
+    skos:prefLabel "the title element"@en ;
+    svg:tag "title" .
+
+svg:Tref a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TRefElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'tref' SVG element allows referencing text elements in other parts of an SVG document."@en ;
+    skos:prefLabel "the tref element"@en ;
+    svg:tag "tref" .
+
+svg:Tspan a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TSpanElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'tspan' SVG element allows for grouping multiple consecutive text elements into one logical entity."@en ;
+    skos:prefLabel "the tspan element"@en ;
+    svg:tag "tspan" .
+
+svg:Use a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#UseElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'use' SVG element provides a way to use a group of SVG elements defined elsewhere in the SVG document."@en ;
+    skos:prefLabel "the use element"@en ;
+    svg:tag "use" .
+
+svg:View a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#ViewElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'view' SVG element provides a viewport into the SVG content."@en ;
+    skos:prefLabel "the view element"@en ;
+    svg:tag "view" .
+
+svg:Vkern a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#VKernElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'vkern' SVG element defines a set of vertical kerning pairs for text characters in an SVG font."@en ;
+    skos:prefLabel "the vkern element"@en ;
+    svg:tag "vkern" .
+
+svg:accent-height a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:glyph svg:missing-glyph ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the distance from the baseline to the accent."@en ;
+    skos:prefLabel "the accent-height attribute"@en ;
+    svg:key "accent-height" .
+
+svg:accumulate a owl:DatatypeProperty ;
+    rdfs:domain svg:animation ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:boolean ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Controls whether or not to accumulate the animation effect for subsequent iterations."@en ;
+    skos:prefLabel "the accumulate attribute"@en ;
+    svg:key "accumulate" .
+
+svg:additive a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:boolean ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Controls whether or not to add the animation effect to the underlying value."@en ;
+    skos:prefLabel "the additive attribute"@en ;
+    svg:key "additive" .
+
+svg:alignment-baseline a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how an element is aligned with respect to its parent."@en ;
+    skos:prefLabel "the alignment-baseline attribute"@en ;
+    svg:key "alignment-baseline" .
+
+svg:alphabetic a owl:DatatypeProperty ;
+    rdfs:domain svg:glyph ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the distance from the top of the glyph to the alphabetic baseline."@en ;
+    skos:prefLabel "the alphabetic attribute"@en ;
+    svg:key "alphabetic" .
+
+svg:amplitude a owl:DatatypeProperty ;
+    rdfs:domain svg:feFuncA ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the amplitude of the waveform function."@en ;
+    skos:prefLabel "the amplitude attribute"@en ;
+    svg:key "amplitude" .
+
+svg:arabic-form a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the form of the Arabic characters within a text element."@en ;
+    skos:prefLabel "the arabic-form attribute"@en ;
+    svg:key "arabic-form" .
+
+svg:ascent a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the distance from the baseline to the highest ascender in a font face."@en ;
+    skos:prefLabel "the ascent attribute"@en ;
+    svg:key "ascent" .
+
+svg:attributeName a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the name of the attribute to animate."@en ;
+    skos:prefLabel "the attributeName attribute"@en ;
+    svg:key "attributeName" .
+
+svg:attributeType a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the type of attribute to animate."@en ;
+    skos:prefLabel "the attributeType attribute"@en ;
+    svg:key "attributeType" .
+
+svg:azimuth a owl:DatatypeProperty ;
+    rdfs:domain svg:audio ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the direction from which the audio content is perceived to be coming."@en ;
+    skos:prefLabel "the azimuth attribute"@en ;
+    svg:key "azimuth" .
+
+svg:baseFrequency a owl:DatatypeProperty ;
+    rdfs:domain svg:feTurbulence ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the base frequency for the noise function of the turbulence."@en ;
+    skos:prefLabel "the baseFrequency attribute"@en ;
+    svg:key "baseFrequency" .
+
+svg:baseProfile a owl:DatatypeProperty ;
+    rdfs:domain svg:svg ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the base profile of the SVG document."@en ;
+    skos:prefLabel "the baseProfile attribute"@en ;
+    svg:key "baseProfile" .
+
+svg:baseline-shift a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how an element is shifted relative to its baseline."@en ;
+    skos:prefLabel "the baseline-shift attribute"@en ;
+    svg:key "baseline-shift" .
+
+svg:bbox a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the bounding box of the text."@en ;
+    skos:prefLabel "the bbox attribute"@en ;
+    svg:key "bbox" .
+
+svg:begin a owl:DatatypeProperty ;
+    rdfs:domain svg:animation ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the begin time for the animation."@en ;
+    skos:prefLabel "the begin attribute"@en ;
+    svg:key "begin" .
+
+svg:bias a owl:DatatypeProperty ;
+    rdfs:domain svg:feConvolveMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the bias value for the convolution matrix."@en ;
+    skos:prefLabel "the bias attribute"@en ;
+    svg:key "bias" .
+
+svg:by a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the end value for the animation."@en ;
+    skos:prefLabel "the by attribute"@en ;
+    svg:key "by" .
+
+svg:calcMode a owl:DatatypeProperty ;
+    rdfs:domain svg:animateTransform ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the calculation mode for the animation."@en ;
+    skos:prefLabel "the calcMode attribute"@en ;
+    svg:key "calcMode" .
+
+svg:cap-height a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the distance from the baseline to the top of the capital letters."@en ;
+    skos:prefLabel "the cap-height attribute"@en ;
+    svg:key "cap-height" .
+
+svg:class a owl:DatatypeProperty ;
+    rdfs:domain svg:any ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the class of the element."@en ;
+    skos:prefLabel "the class attribute"@en ;
+    svg:key "class" .
+
+svg:clip a owl:DatatypeProperty ;
+    rdfs:domain svg:marker ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the clip path."@en ;
+    skos:prefLabel "the clip attribute"@en ;
+    svg:key "clip" .
+
+svg:clip-path a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the ID of the clipping path."@en ;
+    skos:prefLabel "the clip-path attribute"@en ;
+    svg:key "clip-path" .
+
+svg:clip-rule a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the algorithm for determining the clipping path."@en ;
+    skos:prefLabel "the clip-rule attribute"@en ;
+    svg:key "clip-rule" .
+
+svg:clipPathUnits a owl:DatatypeProperty ;
+    rdfs:domain svg:clipPath ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the coordinate system for the clip path."@en ;
+    skos:prefLabel "the clipPathUnits attribute"@en ;
+    svg:key "clipPathUnits" .
+
+svg:color a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the color of the element."@en ;
+    skos:prefLabel "the color attribute"@en ;
+    svg:key "color" .
+
+svg:color-interpolation a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the color interpolation method."@en ;
+    skos:prefLabel "the color-interpolation attribute"@en ;
+    svg:key "color-interpolation" .
+
+svg:color-interpolation-filters a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the color interpolation method for filters."@en ;
+    skos:prefLabel "the color-interpolation-filters attribute"@en ;
+    svg:key "color-interpolation-filters" .
+
+svg:color-rendering a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the color rendering method."@en ;
+    skos:prefLabel "the color-rendering attribute"@en ;
+    svg:key "color-rendering" .
+
+svg:contentScriptType a owl:DatatypeProperty ;
+    rdfs:domain svg:svg ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the scripting language for the content of the 'script' element."@en ;
+    skos:prefLabel "the contentScriptType attribute"@en ;
+    svg:key "contentScriptType" .
+
+svg:contentStyleType a owl:DatatypeProperty ;
+    rdfs:domain svg:svg ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the styling language for the content of the 'style' element."@en ;
+    skos:prefLabel "the contentStyleType attribute"@en ;
+    svg:key "contentStyleType" .
+
+svg:cx a owl:DatatypeProperty ;
+    rdfs:domain svg:Circle ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the x-coordinate of the center of the circle."@en ;
+    skos:prefLabel "the cx attribute"@en ;
+    svg:key "cx" .
+
+svg:cy a owl:DatatypeProperty ;
+    rdfs:domain svg:Circle ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the y-coordinate of the center of the circle."@en ;
+    skos:prefLabel "the cy attribute"@en ;
+    svg:key "cy" .
+
+svg:d a owl:DatatypeProperty ;
+    rdfs:domain svg:path ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the path data for the 'path' element."@en ;
+    skos:prefLabel "the d attribute"@en ;
+    svg:key "d" .
+
+svg:descent a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the distance from the baseline to the lowest descender in a font face."@en ;
+    skos:prefLabel "the descent attribute"@en ;
+    svg:key "descent" .
+
+svg:diffuseConstant a owl:DatatypeProperty ;
+    rdfs:domain svg:feDiffuseLighting ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the constant value for the diffuse lighting filter."@en ;
+    skos:prefLabel "the diffuseConstant attribute"@en ;
+    svg:key "diffuseConstant" .
+
+svg:direction a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the directionality of the element's text."@en ;
+    skos:prefLabel "the direction attribute"@en ;
+    svg:key "direction" .
+
+svg:display a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the rendering of the element."@en ;
+    skos:prefLabel "the display attribute"@en ;
+    svg:key "display" .
+
+svg:divisor a owl:DatatypeProperty ;
+    rdfs:domain svg:feConvolveMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the divisor value for the convolution matrix."@en ;
+    skos:prefLabel "the divisor attribute"@en ;
+    svg:key "divisor" .
+
+svg:dominant-baseline a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how an element is aligned with respect to its parent."@en ;
+    skos:prefLabel "the dominant-baseline attribute"@en ;
+    svg:key "dominant-baseline" .
+
+svg:dur a owl:DatatypeProperty ;
+    rdfs:domain svg:animation ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the duration for the animation."@en ;
+    skos:prefLabel "the dur attribute"@en ;
+    svg:key "dur" .
+
+svg:dx a owl:DatatypeProperty ;
+    rdfs:domain svg:tspan ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the offset along the x-axis for the text position."@en ;
+    skos:prefLabel "the dx attribute"@en ;
+    svg:key "dx" .
+
+svg:dy a owl:DatatypeProperty ;
+    rdfs:domain svg:tspan ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the offset along the y-axis for the text position."@en ;
+    skos:prefLabel "the dy attribute"@en ;
+    svg:key "dy" .
+
+svg:edgeMode a owl:DatatypeProperty ;
+    rdfs:domain svg:feConvolveMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the edge mode for the convolution matrix."@en ;
+    skos:prefLabel "the edgeMode attribute"@en ;
+    svg:key "edgeMode" .
+
+svg:elevation a owl:DatatypeProperty ;
+    rdfs:domain svg:feDistantLight ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the elevation angle for the distant light source."@en ;
+    skos:prefLabel "the elevation attribute"@en ;
+    svg:key "elevation" .
+
+svg:enable-background a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the background that will be applied to the element."@en ;
+    skos:prefLabel "the enable-background attribute"@en ;
+    svg:key "enable-background" .
+
+svg:end a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the end value for the animation."@en ;
+    skos:prefLabel "the end attribute"@en ;
+    svg:key "end" .
+
+svg:exponent a owl:DatatypeProperty ;
+    rdfs:domain svg:feFuncA ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the exponent value for the function."@en ;
+    skos:prefLabel "the exponent attribute"@en ;
+    svg:key "exponent" .
+
+svg:externalResourcesRequired a owl:DatatypeProperty ;
+    rdfs:domain svg:svg ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:boolean ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies whether the referenced resources are required for rendering."@en ;
+    skos:prefLabel "the externalResourcesRequired attribute"@en ;
+    svg:key "externalResourcesRequired" .
+
+svg:fill a owl:DatatypeProperty ;
+    rdfs:domain svg:any ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the fill color or pattern for an element."@en ;
+    skos:prefLabel "the fill attribute"@en ;
+    svg:key "fill" .
+
+svg:fill-opacity a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the opacity of the fill color."@en ;
+    skos:prefLabel "the fill-opacity attribute"@en ;
+    svg:key "fill-opacity" .
+
+svg:fill-rule a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the algorithm for determining the inside of the shape."@en ;
+    skos:prefLabel "the fill-rule attribute"@en ;
+    svg:key "fill-rule" .
+
+svg:filterRes a owl:DatatypeProperty ;
+    rdfs:domain svg:filter ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the resolution for the filter effects."@en ;
+    skos:prefLabel "the filterRes attribute"@en ;
+    svg:key "filterRes" .
+
+svg:filterUnits a owl:DatatypeProperty ;
+    rdfs:domain svg:filter ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the coordinate system for the filter effects."@en ;
+    skos:prefLabel "the filterUnits attribute"@en ;
+    svg:key "filterUnits" .
+
+svg:flood-color a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the color of the flood fill."@en ;
+    skos:prefLabel "the flood-color attribute"@en ;
+    svg:key "flood-color" .
+
+svg:flood-opacity a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the opacity of the flood fill."@en ;
+    skos:prefLabel "the flood-opacity attribute"@en ;
+    svg:key "flood-opacity" .
+
+svg:font-family a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the font family for the text."@en ;
+    skos:prefLabel "the font-family attribute"@en ;
+    svg:key "font-family" .
+
+svg:font-size a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the font size for the text."@en ;
+    skos:prefLabel "the font-size attribute"@en ;
+    svg:key "font-size" .
+
+svg:font-size-adjust a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the aspect value for font size."@en ;
+    skos:prefLabel "the font-size-adjust attribute"@en ;
+    svg:key "font-size-adjust" .
+
+svg:font-stretch a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the font stretch for the text."@en ;
+    skos:prefLabel "the font-stretch attribute"@en ;
+    svg:key "font-stretch" .
+
+svg:font-style a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the font style for the text."@en ;
+    skos:prefLabel "the font-style attribute"@en ;
+    svg:key "font-style" .
+
+svg:font-variant a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the font variant for the text."@en ;
+    skos:prefLabel "the font-variant attribute"@en ;
+    svg:key "font-variant" .
+
+svg:font-weight a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the font weight for the text."@en ;
+    skos:prefLabel "the font-weight attribute"@en ;
+    svg:key "font-weight" .
+
+svg:format a owl:DatatypeProperty ;
+    rdfs:domain svg:audio ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the format of the audio data."@en ;
+    skos:prefLabel "the format attribute"@en ;
+    svg:key "format" .
+
+svg:from a owl:DatatypeProperty ;
+    rdfs:domain svg:set ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the start value for the animation."@en ;
+    skos:prefLabel "the from attribute"@en ;
+    svg:key "from" .
+
+svg:fx a owl:DatatypeProperty ;
+    rdfs:domain svg:RadialGradient ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the x-coordinate of the center of the first circle in the radial gradient."@en ;
+    skos:prefLabel "the fx attribute"@en ;
+    svg:key "fx" .
+
+svg:fy a owl:DatatypeProperty ;
+    rdfs:domain svg:radialGradient ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the y-coordinate of the center of the first circle in the radial gradient."@en ;
+    skos:prefLabel "the fy attribute"@en ;
+    svg:key "fy" .
+
+svg:g1 a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the transformation matrix for the font."@en ;
+    skos:prefLabel "the g1 attribute"@en ;
+    svg:key "g1" .
+
+svg:g2 a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the transformation matrix for the font."@en ;
+    skos:prefLabel "the g2 attribute"@en ;
+    svg:key "g2" .
+
+svg:glyph-name a owl:DatatypeProperty ;
+    rdfs:domain svg:altGlyph ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the name of the glyph."@en ;
+    skos:prefLabel "the glyph-name attribute"@en ;
+    svg:key "glyph-name" .
+
+svg:glyph-orientation-horizontal a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the rotation angle for horizontal glyphs."@en ;
+    skos:prefLabel "the glyph-orientation-horizontal attribute"@en ;
+    svg:key "glyph-orientation-horizontal" .
+
+svg:glyph-orientation-vertical a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the rotation angle for vertical glyphs."@en ;
+    skos:prefLabel "the glyph-orientation-vertical attribute"@en ;
+    svg:key "glyph-orientation-vertical" .
+
+svg:glyphRef a owl:DatatypeProperty ;
+    rdfs:domain svg:altGlyph ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the reference to the glyph."@en ;
+    skos:prefLabel "the glyphRef attribute"@en ;
+    svg:key "glyphRef" .
+
+svg:gradientTransform a owl:DatatypeProperty ;
+    rdfs:domain svg:linearGradient ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the transformation applied to the gradient."@en ;
+    skos:prefLabel "the gradientTransform attribute"@en ;
+    svg:key "gradientTransform" .
+
+svg:gradientUnits a owl:DatatypeProperty ;
+    rdfs:domain svg:linearGradient ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the coordinate system for the gradient."@en ;
+    skos:prefLabel "the gradientUnits attribute"@en ;
+    svg:key "gradientUnits" .
+
+svg:hanging a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the hanging value for the font."@en ;
+    skos:prefLabel "the hanging attribute"@en ;
+    svg:key "hanging" .
+
+svg:height a owl:DatatypeProperty ;
+    rdfs:domain svg:any ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the height of an element."@en ;
+    skos:prefLabel "the height attribute"@en ;
+    svg:key "height" .
+
+svg:horiz-adv-x a owl:DatatypeProperty ;
+    rdfs:domain svg:glyph ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the horizontal advance for the glyph."@en ;
+    skos:prefLabel "the horiz-adv-x attribute"@en ;
+    svg:key "horiz-adv-x" .
+
+svg:horiz-origin-x a owl:DatatypeProperty ;
+    rdfs:domain svg:glyph ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the horizontal origin for the glyph."@en ;
+    skos:prefLabel "the horiz-origin-x attribute"@en ;
+    svg:key "horiz-origin-x" .
+
+svg:horiz-origin-y a owl:DatatypeProperty ;
+    rdfs:domain svg:glyph ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the vertical origin for the glyph."@en ;
+    skos:prefLabel "the horiz-origin-y attribute"@en ;
+    svg:key "horiz-origin-y" .
+
+svg:id a owl:DatatypeProperty ;
+    rdfs:domain svg:any ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the identifier for an element."@en ;
+    skos:prefLabel "the id attribute"@en ;
+    svg:key "id" .
+
+svg:ideographic a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the ideographic value for the font."@en ;
+    skos:prefLabel "the ideographic attribute"@en ;
+    svg:key "ideographic" .
+
+svg:image-rendering a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how the image should be scaled and smoothed."@en ;
+    skos:prefLabel "the image-rendering attribute"@en ;
+    svg:key "image-rendering" .
+
+svg:in a owl:DatatypeProperty ;
+    rdfs:domain svg:feMergeNode ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the input for the merge node."@en ;
+    skos:prefLabel "the in attribute"@en ;
+    svg:key "in" .
+
+svg:in2 a owl:DatatypeProperty ;
+    rdfs:domain svg:feMergeNode ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the second input for the merge node."@en ;
+    skos:prefLabel "the in2 attribute"@en ;
+    svg:key "in2" .
+
+svg:intercept a owl:DatatypeProperty ;
+    rdfs:domain svg:feFuncA ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the intercept value for the function."@en ;
+    skos:prefLabel "the intercept attribute"@en ;
+    svg:key "intercept" .
+
+svg:k a owl:DatatypeProperty ;
+    rdfs:domain svg:feComposite ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the k value for the feComposite element."@en ;
+    skos:prefLabel "the k attribute"@en ;
+    svg:key "k" .
+
+svg:k1 a owl:DatatypeProperty ;
+    rdfs:domain svg:feComposite ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the k1 value for the feComposite element."@en ;
+    skos:prefLabel "the k1 attribute"@en ;
+    svg:key "k1" .
+
+svg:k2 a owl:DatatypeProperty ;
+    rdfs:domain svg:feComposite ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the k2 value for the feComposite element."@en ;
+    skos:prefLabel "the k2 attribute"@en ;
+    svg:key "k2" .
+
+svg:k3 a owl:DatatypeProperty ;
+    rdfs:domain svg:feComposite ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the k3 value for the feComposite element."@en ;
+    skos:prefLabel "the k3 attribute"@en ;
+    svg:key "k3" .
+
+svg:k4 a owl:DatatypeProperty ;
+    rdfs:domain svg:feComposite ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the k4 value for the feComposite element."@en ;
+    skos:prefLabel "the k4 attribute"@en ;
+    svg:key "k4" .
+
+svg:kernelMatrix a owl:DatatypeProperty ;
+    rdfs:domain svg:feConvolveMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the kernel matrix for the convolution."@en ;
+    skos:prefLabel "the kernelMatrix attribute"@en ;
+    svg:key "kernelMatrix" .
+
+svg:kernelUnitLength a owl:DatatypeProperty ;
+    rdfs:domain svg:feConvolveMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the unit length for the kernel."@en ;
+    skos:prefLabel "the kernelUnitLength attribute"@en ;
+    svg:key "kernelUnitLength" .
+
+svg:kerning a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies whether kerning is applied."@en ;
+    skos:prefLabel "the kerning attribute"@en ;
+    svg:key "kerning" .
+
+svg:keyPoints a owl:DatatypeProperty ;
+    rdfs:domain svg:animateMotion ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the key points for the motion."@en ;
+    skos:prefLabel "the keyPoints attribute"@en ;
+    svg:key "keyPoints" .
+
+svg:keySplines a owl:DatatypeProperty ;
+    rdfs:domain svg:animateMotion ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the key splines for the motion."@en ;
+    skos:prefLabel "the keySplines attribute"@en ;
+    svg:key "keySplines" .
+
+svg:keyTimes a owl:DatatypeProperty ;
+    rdfs:domain svg:animateMotion ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the key times for the motion."@en ;
+    skos:prefLabel "the keyTimes attribute"@en ;
+    svg:key "keyTimes" .
+
+svg:lang a owl:DatatypeProperty ;
+    rdfs:domain svg:any ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the language of an element."@en ;
+    skos:prefLabel "the lang attribute"@en ;
+    svg:key "lang" .
+
+svg:lengthAdjust a owl:DatatypeProperty ;
+    rdfs:domain svg:textPath ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how text is adjusted for length."@en ;
+    skos:prefLabel "the lengthAdjust attribute"@en ;
+    svg:key "lengthAdjust" .
+
+svg:letter-spacing a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the spacing between characters."@en ;
+    skos:prefLabel "the letter-spacing attribute"@en ;
+    svg:key "letter-spacing" .
+
+svg:lighting-color a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the color for lighting effects."@en ;
+    skos:prefLabel "the lighting-color attribute"@en ;
+    svg:key "lighting-color" .
+
+svg:limitingConeAngle a owl:DatatypeProperty ;
+    rdfs:domain svg:feSpotLight ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the limiting cone angle for the spotlight."@en ;
+    skos:prefLabel "the limitingConeAngle attribute"@en ;
+    svg:key "limitingConeAngle" .
+
+svg:local a owl:DatatypeProperty ;
+    rdfs:domain svg:fePointLight ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the local value for the point light."@en ;
+    skos:prefLabel "the local attribute"@en ;
+    svg:key "local" .
+
+svg:marker-end a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the marker for the end of the element."@en ;
+    skos:prefLabel "the marker-end attribute"@en ;
+    svg:key "marker-end" .
+
+svg:marker-mid a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the marker for the middle of the element."@en ;
+    skos:prefLabel "the marker-mid attribute"@en ;
+    svg:key "marker-mid" .
+
+svg:marker-start a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the marker for the start of the element."@en ;
+    skos:prefLabel "the marker-start attribute"@en ;
+    svg:key "marker-start" .
+
+svg:markerHeight a owl:DatatypeProperty ;
+    rdfs:domain svg:marker ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the height of the marker."@en ;
+    skos:prefLabel "the markerHeight attribute"@en ;
+    svg:key "markerHeight" .
+
+svg:markerUnits a owl:DatatypeProperty ;
+    rdfs:domain svg:marker ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the coordinate system for the marker."@en ;
+    skos:prefLabel "the markerUnits attribute"@en ;
+    svg:key "markerUnits" .
+
+svg:markerWidth a owl:DatatypeProperty ;
+    rdfs:domain svg:marker ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the width of the marker."@en ;
+    skos:prefLabel "the markerWidth attribute"@en ;
+    svg:key "markerWidth" .
+
+svg:maskContentUnits a owl:DatatypeProperty ;
+    rdfs:domain svg:mask ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the coordinate system for the mask content."@en ;
+    skos:prefLabel "the maskContentUnits attribute"@en ;
+    svg:key "maskContentUnits" .
+
+svg:maskUnits a owl:DatatypeProperty ;
+    rdfs:domain svg:mask ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the coordinate system for the mask."@en ;
+    skos:prefLabel "the maskUnits attribute"@en ;
+    svg:key "maskUnits" .
+
+svg:mathematical a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the mathematical value for the font."@en ;
+    skos:prefLabel "the mathematical attribute"@en ;
+    svg:key "mathematical" .
+
+svg:max a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the maximum value for the animation."@en ;
+    skos:prefLabel "the max attribute"@en ;
+    svg:key "max" .
+
+svg:media a owl:DatatypeProperty ;
+    rdfs:domain svg:style ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the media for the style."@en ;
+    skos:prefLabel "the media attribute"@en ;
+    svg:key "media" .
+
+svg:method a owl:DatatypeProperty ;
+    rdfs:domain svg:feColorMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the method for the feColorMatrix."@en ;
+    skos:prefLabel "the method attribute"@en ;
+    svg:key "method" .
+
+svg:min a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the minimum value for the animation."@en ;
+    skos:prefLabel "the min attribute"@en ;
+    svg:key "min" .
+
+svg:mode a owl:DatatypeProperty ;
+    rdfs:domain svg:feBlend ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the mode for the feBlend."@en ;
+    skos:prefLabel "the mode attribute"@en ;
+    svg:key "mode" .
+
+svg:name a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the name of the animation."@en ;
+    skos:prefLabel "the name attribute"@en ;
+    svg:key "name" .
+
+svg:numOctaves a owl:DatatypeProperty ;
+    rdfs:domain svg:feTurbulence ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the number of octaves for the feTurbulence."@en ;
+    skos:prefLabel "the numOctaves attribute"@en ;
+    svg:key "numOctaves" .
+
+svg:offset a owl:DatatypeProperty ;
+    rdfs:domain svg:stop ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the offset for the stop."@en ;
+    skos:prefLabel "the offset attribute"@en ;
+    svg:key "offset" .
+
+svg:onabort a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onabort event handler."@en ;
+    skos:prefLabel "the onabort attribute"@en ;
+    svg:key "onabort" .
+
+svg:onactivate a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onactivate event handler."@en ;
+    skos:prefLabel "the onactivate attribute"@en ;
+    svg:key "onactivate" .
+
+svg:onbegin a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onbegin event handler."@en ;
+    skos:prefLabel "the onbegin attribute"@en ;
+    svg:key "onbegin" .
+
+svg:onclick a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onclick event handler."@en ;
+    skos:prefLabel "the onclick attribute"@en ;
+    svg:key "onclick" .
+
+svg:onend a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onend event handler."@en ;
+    skos:prefLabel "the onend attribute"@en ;
+    svg:key "onend" .
+
+svg:onerror a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onerror event handler."@en ;
+    skos:prefLabel "the onerror attribute"@en ;
+    svg:key "onerror" .
+
+svg:onfocusin a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onfocusin event handler."@en ;
+    skos:prefLabel "the onfocusin attribute"@en ;
+    svg:key "onfocusin" .
+
+svg:onfocusout a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onfocusout event handler."@en ;
+    skos:prefLabel "the onfocusout attribute"@en ;
+    svg:key "onfocusout" .
+
+svg:onload a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onload event handler."@en ;
+    skos:prefLabel "the onload attribute"@en ;
+    svg:key "onload" .
+
+svg:onmousedown a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onmousedown event handler."@en ;
+    skos:prefLabel "the onmousedown attribute"@en ;
+    svg:key "onmousedown" .
+
+svg:onmousemove a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onmousemove event handler."@en ;
+    skos:prefLabel "the onmousemove attribute"@en ;
+    svg:key "onmousemove" .
+
+svg:onmouseout a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onmouseout event handler."@en ;
+    skos:prefLabel "the onmouseout attribute"@en ;
+    svg:key "onmouseout" .
+
+svg:onmouseover a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onmouseover event handler."@en ;
+    skos:prefLabel "the onmouseover attribute"@en ;
+    svg:key "onmouseover" .
+
+svg:onmouseup a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onmouseup event handler."@en ;
+    skos:prefLabel "the onmouseup attribute"@en ;
+    svg:key "onmouseup" .
+
+svg:onrepeat a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onrepeat event handler."@en ;
+    skos:prefLabel "the onrepeat attribute"@en ;
+    svg:key "onrepeat" .
+
+svg:onresize a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onresize event handler."@en ;
+    skos:prefLabel "the onresize attribute"@en ;
+    svg:key "onresize" .
+
+svg:onscroll a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onscroll event handler."@en ;
+    skos:prefLabel "the onscroll attribute"@en ;
+    svg:key "onscroll" .
+
+svg:onunload a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onunload event handler."@en ;
+    skos:prefLabel "the onunload attribute"@en ;
+    svg:key "onunload" .
+
+svg:onzoom a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the onzoom event handler."@en ;
+    skos:prefLabel "the onzoom attribute"@en ;
+    svg:key "onzoom" .
+
+svg:opacity a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the opacity of the element."@en ;
+    skos:prefLabel "the opacity attribute"@en ;
+    svg:key "opacity" .
+
+svg:operator a owl:DatatypeProperty ;
+    rdfs:domain svg:feBlend ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the kind of operation to perform."@en ;
+    skos:prefLabel "the operator attribute"@en ;
+    svg:key "operator" .
+
+svg:order a owl:DatatypeProperty ;
+    rdfs:domain svg:feConvolveMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the type of convolution matrix."@en ;
+    skos:prefLabel "the order attribute"@en ;
+    svg:key "order" .
+
+svg:orient a owl:DatatypeProperty ;
+    rdfs:domain svg:marker ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how the marker is oriented."@en ;
+    skos:prefLabel "the orient attribute"@en ;
+    svg:key "orient" .
+
+svg:orientation a owl:DatatypeProperty ;
+    rdfs:domain svg:font ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the orientation of the glyphs in the font."@en ;
+    skos:prefLabel "the orientation attribute"@en ;
+    svg:key "orientation" .
+
+svg:origin a owl:DatatypeProperty ;
+    rdfs:domain svg:feDistantLight ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the location of the light source."@en ;
+    skos:prefLabel "the origin attribute"@en ;
+    svg:key "origin" .
+
+svg:overflow a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how to handle overflow in the element."@en ;
+    skos:prefLabel "the overflow attribute"@en ;
+    svg:key "overflow" .
+
+svg:overline-position a owl:DatatypeProperty ;
+    rdfs:domain svg:font ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the position of the overline."@en ;
+    skos:prefLabel "the overline-position attribute"@en ;
+    svg:key "overline-position" .
+
+svg:overline-thickness a owl:DatatypeProperty ;
+    rdfs:domain svg:font ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the thickness of the overline."@en ;
+    skos:prefLabel "the overline-thickness attribute"@en ;
+    svg:key "overline-thickness" .
+
+svg:panose-1 a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the PANOSE-1 number."@en ;
+    skos:prefLabel "the panose-1 attribute"@en ;
+    svg:key "panose-1" .
+
+svg:pathLength a owl:DatatypeProperty ;
+    rdfs:domain svg:animateMotion ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the total length of the path."@en ;
+    skos:prefLabel "the pathLength attribute"@en ;
+    svg:key "pathLength" .
+
+svg:patternContentUnits a owl:DatatypeProperty ;
+    rdfs:domain svg:pattern ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the coordinate system for the contents of the pattern."@en ;
+    skos:prefLabel "the patternContentUnits attribute"@en ;
+    svg:key "patternContentUnits" .
+
+svg:patternTransform a owl:DatatypeProperty ;
+    rdfs:domain svg:pattern ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies a transformation matrix for the pattern."@en ;
+    skos:prefLabel "the patternTransform attribute"@en ;
+    svg:key "patternTransform" .
+
+svg:patternUnits a owl:DatatypeProperty ;
+    rdfs:domain svg:pattern ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the coordinate system for the entire pattern."@en ;
+    skos:prefLabel "the patternUnits attribute"@en ;
+    svg:key "patternUnits" .
+
+svg:pointer-events a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how the element should react to pointer events."@en ;
+    skos:prefLabel "the pointer-events attribute"@en ;
+    svg:key "pointer-events" .
+
+svg:points a owl:DatatypeProperty ;
+    rdfs:domain svg:polyline ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the list of points defining the polyline."@en ;
+    skos:prefLabel "the points attribute"@en ;
+    svg:key "points" .
+
+svg:pointsAtX a owl:DatatypeProperty ;
+    rdfs:domain svg:feSpotLight ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the x-coordinate for the light position."@en ;
+    skos:prefLabel "the pointsAtX attribute"@en ;
+    svg:key "pointsAtX" .
+
+svg:pointsAtY a owl:DatatypeProperty ;
+    rdfs:domain svg:feSpotLight ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the y-coordinate for the light position."@en ;
+    skos:prefLabel "the pointsAtY attribute"@en ;
+    svg:key "pointsAtY" .
+
+svg:pointsAtZ a owl:DatatypeProperty ;
+    rdfs:domain svg:feSpotLight ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the z-coordinate for the light position."@en ;
+    skos:prefLabel "the pointsAtZ attribute"@en ;
+    svg:key "pointsAtZ" .
+
+svg:preserveAlpha a owl:DatatypeProperty ;
+    rdfs:domain svg:feConvolveMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies whether to preserve the alpha channel."@en ;
+    skos:prefLabel "the preserveAlpha attribute"@en ;
+    svg:key "preserveAlpha" .
+
+svg:preserveAspectRatio a owl:DatatypeProperty ;
+    rdfs:domain svg:marker ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how an element is fitted into a viewBox."@en ;
+    skos:prefLabel "the preserveAspectRatio attribute"@en ;
+    svg:key "preserveAspectRatio" .
+
+svg:primitiveUnits a owl:DatatypeProperty ;
+    rdfs:domain svg:filter ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the coordinate system for the attributes of the filter."@en ;
+    skos:prefLabel "the primitiveUnits attribute"@en ;
+    svg:key "primitiveUnits" .
+
+svg:r a owl:DatatypeProperty ;
+    rdfs:domain svg:circle ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the radius of a circle."@en ;
+    skos:prefLabel "the r attribute"@en ;
+    svg:key "r" .
+
+svg:radius a owl:DatatypeProperty ;
+    rdfs:domain svg:radialGradient ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the radius of the gradient."@en ;
+    skos:prefLabel "the radius attribute"@en ;
+    svg:key "radius" .
+
+svg:refX a owl:DatatypeProperty ;
+    rdfs:domain svg:marker ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the x-coordinate for the reference point of the marker."@en ;
+    skos:prefLabel "the refX attribute"@en ;
+    svg:key "refX" .
+
+svg:refY a owl:DatatypeProperty ;
+    rdfs:domain svg:marker ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the y-coordinate for the reference point of the marker."@en ;
+    skos:prefLabel "the refY attribute"@en ;
+    svg:key "refY" .
+
+svg:rendering-intent a owl:DatatypeProperty ;
+    rdfs:domain svg:color-profile ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the rendering intent of the color profile."@en ;
+    skos:prefLabel "the rendering-intent attribute"@en ;
+    svg:key "rendering-intent" .
+
+svg:repeatCount a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the number of times an animation repeats."@en ;
+    skos:prefLabel "the repeatCount attribute"@en ;
+    svg:key "repeatCount" .
+
+svg:repeatDur a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the total duration of an animation repeat."@en ;
+    skos:prefLabel "the repeatDur attribute"@en ;
+    svg:key "repeatDur" .
+
+svg:requiredExtensions a owl:DatatypeProperty ;
+    rdfs:domain svg:script ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the list of required extensions for the script."@en ;
+    skos:prefLabel "the requiredExtensions attribute"@en ;
+    svg:key "requiredExtensions" .
+
+svg:requiredFeatures a owl:DatatypeProperty ;
+    rdfs:domain svg:script ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the list of required features for the script."@en ;
+    skos:prefLabel "the requiredFeatures attribute"@en ;
+    svg:key "requiredFeatures" .
+
+svg:restart a owl:DatatypeProperty ;
+    rdfs:domain svg:animate ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the restart behavior of an animation."@en ;
+    skos:prefLabel "the restart attribute"@en ;
+    svg:key "restart" .
+
+svg:result a owl:DatatypeProperty ;
+    rdfs:domain svg:filter ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the result name for the filter."@en ;
+    skos:prefLabel "the result attribute"@en ;
+    svg:key "result" .
+
+svg:rotate a owl:DatatypeProperty ;
+    rdfs:domain svg:animateTransform ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the rotation value for an animation."@en ;
+    skos:prefLabel "the rotate attribute"@en ;
+    svg:key "rotate" .
+
+svg:rx a owl:DatatypeProperty ;
+    rdfs:domain svg:ellipse ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the radius along the x-axis of an ellipse."@en ;
+    skos:prefLabel "the rx attribute"@en ;
+    svg:key "rx" .
+
+svg:ry a owl:DatatypeProperty ;
+    rdfs:domain svg:ellipse ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the radius along the y-axis of an ellipse."@en ;
+    skos:prefLabel "the ry attribute"@en ;
+    svg:key "ry" .
+
+svg:scale a owl:DatatypeProperty ;
+    rdfs:domain svg:animateTransform ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the scaling value for an animation."@en ;
+    skos:prefLabel "the scale attribute"@en ;
+    svg:key "scale" .
+
+svg:seed a owl:DatatypeProperty ;
+    rdfs:domain svg:feTurbulence ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the random number generator seed for turbulence."@en ;
+    skos:prefLabel "the seed attribute"@en ;
+    svg:key "seed" .
+
+svg:shape-rendering a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the quality of rendering for shapes."@en ;
+    skos:prefLabel "the shape-rendering attribute"@en ;
+    svg:key "shape-rendering" .
+
+svg:slope a owl:DatatypeProperty ;
+    rdfs:domain svg:feFuncA ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the slope of a linear function."@en ;
+    skos:prefLabel "the slope attribute"@en ;
+    svg:key "slope" .
+
+svg:spacing a owl:DatatypeProperty ;
+    rdfs:domain svg:glyph ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the spacing between characters in a font."@en ;
+    skos:prefLabel "the spacing attribute"@en ;
+    svg:key "spacing" .
+
+svg:specularConstant a owl:DatatypeProperty ;
+    rdfs:domain svg:feSpecularLighting ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the specular constant for a light source."@en ;
+    skos:prefLabel "the specularConstant attribute"@en ;
+    svg:key "specularConstant" .
+
+svg:specularExponent a owl:DatatypeProperty ;
+    rdfs:domain svg:feSpecularLighting ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the specular exponent for a light source."@en ;
+    skos:prefLabel "the specularExponent attribute"@en ;
+    svg:key "specularExponent" .
+
+svg:spreadMethod a owl:DatatypeProperty ;
+    rdfs:domain svg:gradient ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how color interpolation should be performed for gradients."@en ;
+    skos:prefLabel "the spreadMethod attribute"@en ;
+    svg:key "spreadMethod" .
+
+svg:startOffset a owl:DatatypeProperty ;
+    rdfs:domain svg:textPath ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the starting offset of a text along a path."@en ;
+    skos:prefLabel "the startOffset attribute"@en ;
+    svg:key "startOffset" .
+
+svg:stdDeviation a owl:DatatypeProperty ;
+    rdfs:domain svg:feGaussianBlur ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the standard deviation for the blur operation."@en ;
+    skos:prefLabel "the stdDeviation attribute"@en ;
+    svg:key "stdDeviation" .
+
+svg:stemh a owl:DatatypeProperty ;
+    rdfs:domain svg:fontFace ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the height of the dominant vertical stems of glyphs in the font."@en ;
+    skos:prefLabel "the stemh attribute"@en ;
+    svg:key "stemh" .
+
+svg:stemv a owl:DatatypeProperty ;
+    rdfs:domain svg:fontFace ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the width of the dominant horizontal stems of glyphs in the font."@en ;
+    skos:prefLabel "the stemv attribute"@en ;
+    svg:key "stemv" .
+
+svg:stitchTiles a owl:DatatypeProperty ;
+    rdfs:domain svg:feTurbulence ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how turbulence values are treated at tile boundaries."@en ;
+    skos:prefLabel "the stitchTiles attribute"@en ;
+    svg:key "stitchTiles" .
+
+svg:stop-color a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the color of the stop."@en ;
+    skos:prefLabel "the stop-color attribute"@en ;
+    svg:key "stop-color" .
+
+svg:stop-opacity a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the opacity of the stop."@en ;
+    skos:prefLabel "the stop-opacity attribute"@en ;
+    svg:key "stop-opacity" .
+
+svg:strikethrough-position a owl:DatatypeProperty ;
+    rdfs:domain svg:fontFace ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the position of the strikethrough line relative to the baseline."@en ;
+    skos:prefLabel "the strikethrough-position attribute"@en ;
+    svg:key "strikethrough-position" .
+
+svg:strikethrough-thickness a owl:DatatypeProperty ;
+    rdfs:domain svg:fontFace ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the thickness of the strikethrough line."@en ;
+    skos:prefLabel "the strikethrough-thickness attribute"@en ;
+    svg:key "strikethrough-thickness" .
+
+svg:string a owl:DatatypeProperty ;
+    rdfs:domain svg:tref ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the string to be rendered by a 'tref' element."@en ;
+    skos:prefLabel "the string attribute"@en ;
+    svg:key "string" .
+
+svg:stroke a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the color of the stroke."@en ;
+    skos:prefLabel "the stroke attribute"@en ;
+    svg:key "stroke" .
+
+svg:stroke-dasharray a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the pattern of dashes and gaps used to stroke paths."@en ;
+    skos:prefLabel "the stroke-dasharray attribute"@en ;
+    svg:key "stroke-dasharray" .
+
+svg:stroke-dashoffset a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the distance into the dash pattern to start the dash."@en ;
+    skos:prefLabel "the stroke-dashoffset attribute"@en ;
+    svg:key "stroke-dashoffset" .
+
+svg:stroke-linecap a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the shape used to draw the endpoints of strokes."@en ;
+    skos:prefLabel "the stroke-linecap attribute"@en ;
+    svg:key "stroke-linecap" .
+
+svg:stroke-linejoin a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the shape used to join two line segments."@en ;
+    skos:prefLabel "the stroke-linejoin attribute"@en ;
+    svg:key "stroke-linejoin" .
+
+svg:stroke-miterlimit a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the limit for the ratio of the length of the miter to the stroke width."@en ;
+    skos:prefLabel "the stroke-miterlimit attribute"@en ;
+    svg:key "stroke-miterlimit" .
+
+svg:stroke-opacity a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the opacity of the stroke."@en ;
+    skos:prefLabel "the stroke-opacity attribute"@en ;
+    svg:key "stroke-opacity" .
+
+svg:stroke-width a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the width of the stroke."@en ;
+    skos:prefLabel "the stroke-width attribute"@en ;
+    svg:key "stroke-width" .
+
+svg:surfaceScale a owl:DatatypeProperty ;
+    rdfs:domain svg:feDiffuseLighting ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the amount of exaggeration of the light source."@en ;
+    skos:prefLabel "the surfaceScale attribute"@en ;
+    svg:key "surfaceScale" .
+
+svg:systemLanguage a owl:DatatypeProperty ;
+    rdfs:domain svg:svg ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the language codes that the SVG user agent supports."@en ;
+    skos:prefLabel "the systemLanguage attribute"@en ;
+    svg:key "systemLanguage" .
+
+svg:tableValues a owl:DatatypeProperty ;
+    rdfs:domain svg:feComponentTransfer ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the list of table values used by the function."@en ;
+    skos:prefLabel "the tableValues attribute"@en ;
+    svg:key "tableValues" .
+
+svg:target a owl:DatatypeProperty ;
+    rdfs:domain svg:a ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the target destination of a link."@en ;
+    skos:prefLabel "the target attribute"@en ;
+    svg:key "target" .
+
+svg:targetX a owl:DatatypeProperty ;
+    rdfs:domain svg:feConvolveMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the target x-axis displacement for the convolution filter."@en ;
+    skos:prefLabel "the targetX attribute"@en ;
+    svg:key "targetX" .
+
+svg:targetY a owl:DatatypeProperty ;
+    rdfs:domain svg:feConvolveMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the target y-axis displacement for the convolution filter."@en ;
+    skos:prefLabel "the targetY attribute"@en ;
+    svg:key "targetY" .
+
+svg:text-anchor a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how text is horizontally aligned."@en ;
+    skos:prefLabel "the text-anchor attribute"@en ;
+    svg:key "text-anchor" .
+
+svg:text-decoration a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies decorations added to text."@en ;
+    skos:prefLabel "the text-decoration attribute"@en ;
+    svg:key "text-decoration" .
+
+svg:text-rendering a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies how text is rendered."@en ;
+    skos:prefLabel "the text-rendering attribute"@en ;
+    svg:key "text-rendering" .
+
+svg:textLength a owl:DatatypeProperty ;
+    rdfs:domain svg:text ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the total length of the text within a text element."@en ;
+    skos:prefLabel "the textLength attribute"@en ;
+    svg:key "textLength" .
+
+svg:to a owl:DatatypeProperty ;
+    rdfs:domain svg:animateMotion ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the end position for the animation."@en ;
+    skos:prefLabel "the to attribute"@en ;
+    svg:key "to" .
+
+svg:transform a owl:DatatypeProperty ;
+    rdfs:domain svg:g ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies a transformation for an element."@en ;
+    skos:prefLabel "the transform attribute"@en ;
+    svg:key "transform" .
+
+svg:type a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the type of data format."@en ;
+    skos:prefLabel "the type attribute"@en ;
+    svg:key "type" .
+
+svg:u1 a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face-uri ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the first URI for the font."@en ;
+    skos:prefLabel "the u1 attribute"@en ;
+    svg:key "u1" .
+
+svg:u2 a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face-uri ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the second URI for the font."@en ;
+    skos:prefLabel "the u2 attribute"@en ;
+    svg:key "u2" .
+
+svg:underline-position a owl:DatatypeProperty ;
+    rdfs:domain svg:font ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the position of the underline relative to the baseline."@en ;
+    skos:prefLabel "the underline-position attribute"@en ;
+    svg:key "underline-position" .
+
+svg:underline-thickness a owl:DatatypeProperty ;
+    rdfs:domain svg:font ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the thickness of the underline."@en ;
+    skos:prefLabel "the underline-thickness attribute"@en ;
+    svg:key "underline-thickness" .
+
+svg:unicode a owl:DatatypeProperty ;
+    rdfs:domain svg:glyph ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the Unicode value for the glyph."@en ;
+    skos:prefLabel "the unicode attribute"@en ;
+    svg:key "unicode" .
+
+svg:unicode-bidi a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the direction of text."@en ;
+    skos:prefLabel "the unicode-bidi attribute"@en ;
+    svg:key "unicode-bidi" .
+
+svg:unicode-range a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the range of Unicode characters supported by the font."@en ;
+    skos:prefLabel "the unicode-range attribute"@en ;
+    svg:key "unicode-range" .
+
+svg:units-per-em a owl:DatatypeProperty ;
+    rdfs:domain svg:font ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the number of units per em."@en ;
+    skos:prefLabel "the units-per-em attribute"@en ;
+    svg:key "units-per-em" .
+
+svg:v-alphabetic a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the alphabetic vertical position of the font."@en ;
+    skos:prefLabel "the v-alphabetic attribute"@en ;
+    svg:key "v-alphabetic" .
+
+svg:v-hanging a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the hanging vertical position of the font."@en ;
+    skos:prefLabel "the v-hanging attribute"@en ;
+    svg:key "v-hanging" .
+
+svg:v-ideographic a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the ideographic vertical position of the font."@en ;
+    skos:prefLabel "the v-ideographic attribute"@en ;
+    svg:key "v-ideographic" .
+
+svg:v-mathematical a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the mathematical vertical position of the font."@en ;
+    skos:prefLabel "the v-mathematical attribute"@en ;
+    svg:key "v-mathematical" .
+
+svg:values a owl:DatatypeProperty ;
+    rdfs:domain svg:gradient ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the values to be interpolated by the gradient."@en ;
+    skos:prefLabel "the values attribute"@en ;
+    svg:key "values" .
+
+svg:version a owl:DatatypeProperty ;
+    rdfs:domain svg:Svg,
+        svg:svg ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the version of SVG."@en ;
+    skos:prefLabel "the version attribute"@en ;
+    svg:key "version" .
+
+svg:vert-adv-y a owl:DatatypeProperty ;
+    rdfs:domain svg:font ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the vertical advance of the font."@en ;
+    skos:prefLabel "the vert-adv-y attribute"@en ;
+    svg:key "vert-adv-y" .
+
+svg:vert-origin-x a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the horizontal origin of the font."@en ;
+    skos:prefLabel "the vert-origin-x attribute"@en ;
+    svg:key "vert-origin-x" .
+
+svg:vert-origin-y a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the vertical origin of the font."@en ;
+    skos:prefLabel "the vert-origin-y attribute"@en ;
+    svg:key "vert-origin-y" .
+
+svg:viewBox a owl:DatatypeProperty ;
+    rdfs:domain svg:svg ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the position and size of the viewBox."@en ;
+    skos:prefLabel "the viewBox attribute"@en ;
+    svg:key "viewBox" .
+
+svg:viewTarget a owl:DatatypeProperty ;
+    rdfs:domain svg:view ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the target of a view element."@en ;
+    skos:prefLabel "the viewTarget attribute"@en ;
+    svg:key "viewTarget" .
+
+svg:visibility a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the visibility of an element."@en ;
+    skos:prefLabel "the visibility attribute"@en ;
+    svg:key "visibility" .
+
+svg:width a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:canvas svg:foreignObject svg:image svg:svg svg:symbol ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the width of the element."@en ;
+    skos:prefLabel "the width attribute"@en ;
+    svg:key "width" .
+
+svg:widths a owl:DatatypeProperty ;
+    rdfs:domain svg:feConvolveMatrix ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the list of weights to use when applying the convolution matrix."@en ;
+    skos:prefLabel "the widths attribute"@en ;
+    svg:key "widths" .
+
+svg:word-spacing a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the spacing between words."@en ;
+    skos:prefLabel "the word-spacing attribute"@en ;
+    svg:key "word-spacing" .
+
+svg:writing-mode a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the direction of text."@en ;
+    skos:prefLabel "the writing-mode attribute"@en ;
+    svg:key "writing-mode" .
+
+svg:x a owl:DatatypeProperty ;
+    rdfs:domain svg:circle ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the x-coordinate of the center of the element."@en ;
+    skos:prefLabel "the x attribute"@en ;
+    svg:key "x" .
+
+svg:x-height a owl:DatatypeProperty ;
+    rdfs:domain svg:font-face ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the x-height of the font."@en ;
+    skos:prefLabel "the x-height attribute"@en ;
+    svg:key "x-height" .
+
+svg:x1 a owl:DatatypeProperty ;
+    rdfs:domain svg:line ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the x-coordinate of the start point of the line."@en ;
+    skos:prefLabel "the x1 attribute"@en ;
+    svg:key "x1" .
+
+svg:x2 a owl:DatatypeProperty ;
+    rdfs:domain svg:line ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the x-coordinate of the end point of the line."@en ;
+    skos:prefLabel "the x2 attribute"@en ;
+    svg:key "x2" .
+
+svg:xChannelSelector a owl:DatatypeProperty ;
+    rdfs:domain svg:feDisplacementMap ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the x channel for displacement."@en ;
+    skos:prefLabel "the xChannelSelector attribute"@en ;
+    svg:key "xChannelSelector" .
+
+<https://data.rijksfinancien.nl/svg/model/def/xlink:actuate> a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:a svg:altGlyph svg:clipPath svg:cursor svg:filter svg:font svg:foreignObject svg:g svg:image svg:line svg:marker svg:mask svg:path svg:pattern svg:script svg:svg svg:switch svg:symbol svg:text svg:textPath svg:tref svg:tspan svg:view svg:use ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the mechanism for processing XLink."@en ;
+    skos:prefLabel "the xlink:actuate attribute"@en ;
+    svg:key "xlink:actuate" .
+
+<https://data.rijksfinancien.nl/svg/model/def/xlink:arcrole> a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:a svg:altGlyph svg:clipPath svg:cursor svg:filter svg:font svg:foreignObject svg:g svg:image svg:line svg:marker svg:mask svg:path svg:pattern svg:script svg:svg svg:switch svg:symbol svg:text svg:textPath svg:tref svg:tspan svg:view svg:use ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the arc role for XLink."@en ;
+    skos:prefLabel "the xlink:arcrole attribute"@en ;
+    svg:key "xlink:arcrole" .
+
+<https://data.rijksfinancien.nl/svg/model/def/xlink:href> a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:a svg:altGlyph svg:clipPath svg:cursor svg:filter svg:font svg:foreignObject svg:g svg:image svg:line svg:marker svg:mask svg:path svg:pattern svg:script svg:svg svg:switch svg:symbol svg:text svg:textPath svg:tref svg:tspan svg:view svg:use ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the reference for XLink."@en ;
+    skos:prefLabel "the xlink:href attribute"@en ;
+    svg:key "xlink:href" .
+
+<https://data.rijksfinancien.nl/svg/model/def/xlink:role> a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:a svg:altGlyph svg:clipPath svg:cursor svg:filter svg:font svg:foreignObject svg:g svg:image svg:line svg:marker svg:mask svg:path svg:pattern svg:script svg:svg svg:switch svg:symbol svg:text svg:textPath svg:tref svg:tspan svg:view svg:use ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the role for XLink."@en ;
+    skos:prefLabel "the xlink:role attribute"@en ;
+    svg:key "xlink:role" .
+
+<https://data.rijksfinancien.nl/svg/model/def/xlink:show> a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:a svg:altGlyph svg:clipPath svg:cursor svg:filter svg:font svg:foreignObject svg:g svg:image svg:line svg:marker svg:mask svg:path svg:pattern svg:script svg:svg svg:switch svg:symbol svg:text svg:textPath svg:tref svg:tspan svg:view svg:use ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the display behavior for XLink."@en ;
+    skos:prefLabel "the xlink:show attribute"@en ;
+    svg:key "xlink:show" .
+
+<https://data.rijksfinancien.nl/svg/model/def/xlink:title> a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:a svg:altGlyph svg:clipPath svg:cursor svg:filter svg:font svg:foreignObject svg:g svg:image svg:line svg:marker svg:mask svg:path svg:pattern svg:script svg:svg svg:switch svg:symbol svg:text svg:textPath svg:tref svg:tspan svg:view svg:use ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the title for XLink."@en ;
+    skos:prefLabel "the xlink:title attribute"@en ;
+    svg:key "xlink:title" .
+
+<https://data.rijksfinancien.nl/svg/model/def/xlink:type> a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:a svg:altGlyph svg:clipPath svg:cursor svg:filter svg:font svg:foreignObject svg:g svg:image svg:line svg:marker svg:mask svg:path svg:pattern svg:script svg:svg svg:switch svg:symbol svg:text svg:textPath svg:tref svg:tspan svg:view svg:use ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the type for XLink."@en ;
+    skos:prefLabel "the xlink:type attribute"@en ;
+    svg:key "xlink:type" .
+
+<https://data.rijksfinancien.nl/svg/model/def/xml:base> a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:a svg:altGlyph svg:clipPath svg:cursor svg:filter svg:font svg:foreignObject svg:g svg:image svg:line svg:marker svg:mask svg:path svg:pattern svg:script svg:svg svg:switch svg:symbol svg:text svg:textPath svg:tref svg:tspan svg:view svg:use ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the base for XML."@en ;
+    skos:prefLabel "the xml:base attribute"@en ;
+    svg:key "xml:base" .
+
+<https://data.rijksfinancien.nl/svg/model/def/xml:lang> a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:a svg:altGlyph svg:clipPath svg:cursor svg:filter svg:font svg:foreignObject svg:g svg:image svg:line svg:marker svg:mask svg:path svg:pattern svg:script svg:svg svg:switch svg:symbol svg:text svg:textPath svg:tref svg:tspan svg:view svg:use ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the language for XML."@en ;
+    skos:prefLabel "the xml:lang attribute"@en ;
+    svg:key "xml:lang" .
+
+<https://data.rijksfinancien.nl/svg/model/def/xml:space> a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( svg:a svg:altGlyph svg:clipPath svg:cursor svg:filter svg:font svg:foreignObject svg:g svg:image svg:line svg:marker svg:mask svg:path svg:pattern svg:script svg:svg svg:switch svg:symbol svg:text svg:textPath svg:tref svg:tspan svg:view svg:use ) ] ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the space for XML."@en ;
+    skos:prefLabel "the xml:space attribute"@en ;
+    svg:key "xml:space" .
+
+svg:xmlns a owl:DatatypeProperty ;
+    rdfs:domain svg:Svg ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:prefLabel "the xmlns attribute"@en ;
+    svg:key "xmlns" .
+
+svg:y a owl:DatatypeProperty ;
+    rdfs:domain svg:circle ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the y-coordinate of the center of the element."@en ;
+    skos:prefLabel "the y attribute"@en ;
+    svg:key "y" .
+
+svg:y1 a owl:DatatypeProperty ;
+    rdfs:domain svg:line ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the y-coordinate of the start point of the line."@en ;
+    skos:prefLabel "the y1 attribute"@en ;
+    svg:key "y1" .
+
+svg:y2 a owl:DatatypeProperty ;
+    rdfs:domain svg:line ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the y-coordinate of the end point of the line."@en ;
+    skos:prefLabel "the y2 attribute"@en ;
+    svg:key "y2" .
+
+svg:yChannelSelector a owl:DatatypeProperty ;
+    rdfs:domain svg:feDisplacementMap ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies which color channel to use."@en ;
+    skos:prefLabel "the yChannelSelector attribute"@en ;
+    svg:key "yChannelSelector" .
+
+svg:z a owl:DatatypeProperty ;
+    rdfs:domain svg:fePointLight ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the z-coordinate of the light source."@en ;
+    skos:prefLabel "the z attribute"@en ;
+    svg:key "z" .
+
+svg:zoomAndPan a owl:DatatypeProperty ;
+    rdfs:domain svg:svg ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies whether zooming and panning are enabled."@en ;
+    skos:prefLabel "the zoomAndPan attribute"@en ;
+    svg:key "zoomAndPan" .
+
+shp:Document a sh:NodeShape ;
+    rdfs:isDefinedBy svg: ;
+    sh:description "A SVG document contains a required documenttype SVG and a root SVG element."@en ;
+    sh:name "SVG Document"@en ;
+    sh:property shp:Document_documentType,
+        shp:Document_root ;
+    sh:rule rule:Document ;
+    sh:target target:Document .
+
+shp:SerializableElement a sh:NodeShape ;
+    rdfs:isDefinedBy svg: ;
+    skos:prefLabel "serializable element shape"@en ;
+    sh:rule rule:Serialize_SVG_fragment_SVG_Element ;
+    sh:target target:SerializableElement .
+
+doc:head a svg:Circle ;
+    svg:cx "100" ;
+    svg:cy "100" ;
+    svg:fill "yellow" ;
+    svg:fragment "<circle cx=\"100\" cy=\"100\" fill=\"yellow\" r=\"90\" stroke=\"black\" stroke-width=\"2\"></circle>"^^xsd:string ;
+    svg:r "90" ;
+    svg:stroke "black" ;
+    svg:stroke-width "2" .
+
+doc:leftEye a svg:Circle ;
+    svg:cx "70" ;
+    svg:cy "70" ;
+    svg:fill "black" ;
+    svg:fragment "<circle cx=\"70\" cy=\"70\" fill=\"black\" r=\"10\"></circle>"^^xsd:string ;
+    svg:r "10" .
+
+doc:mouth a svg:Path ;
+    svg:d "M 60 120 Q 100 150 140 120" ;
+    svg:fill "none" ;
+    svg:fragment "<path d=\"M 60 120 Q 100 150 140 120\" fill=\"none\" stroke=\"black\" stroke-width=\"3\"></path>"^^xsd:string ;
+    svg:stroke "black" ;
+    svg:stroke-width "3" .
+
+doc:rightEye a svg:Circle ;
+    svg:cx "130" ;
+    svg:cy "70" ;
+    svg:fill "black" ;
+    svg:fragment "<circle cx=\"130\" cy=\"70\" fill=\"black\" r=\"10\"></circle>"^^xsd:string ;
+    svg:r "10" .
+
+doc:smiley a svg:Svg ;
+    rdf:_1 doc:head ;
+    rdf:_2 doc:leftEye ;
+    rdf:_3 doc:rightEye ;
+    rdf:_4 doc:mouth ;
+    svg:fragment "<svg height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"100\" cy=\"100\" fill=\"yellow\" r=\"90\" stroke=\"black\" stroke-width=\"2\"></circle> <circle cx=\"70\" cy=\"70\" fill=\"black\" r=\"10\"></circle> <circle cx=\"130\" cy=\"70\" fill=\"black\" r=\"10\"></circle> <path d=\"M 60 120 Q 100 150 140 120\" fill=\"none\" stroke=\"black\" stroke-width=\"3\"></path></svg>"^^xsd:string ;
+    svg:height "200" ;
+    svg:width "200" ;
+    svg:xmlns "http://www.w3.org/2000/svg" .
+
+doc:smileyDocument-svg-document-generation a prov:Activity ;
+    prov:atTime "2024-02-17T15:25:54.167892+00:00"^^xsd:dateTime ;
+    prov:used svg:,
+        rule:Document .
+
+svg:Document a owl:Class ;
+    dct:conformsTo svg: ;
+    rdfs:isDefinedBy svg: ;
+    owl:equivalentClass svg:documentRestriction ;
+    skos:definition "An SVG document consists of a tree of elements and text. Each element is denoted in the source by a start tag, such as ‘<circle>’, and an end tag, such as ‘</circle>’. Tags have to be nested such that elements are all completely within each other, without overlapping. Elements can have attributes, which control how the elements work. The SVG Core Vocabulary defines a set of elements that can be used in a SVG document, along with rules about the ways in which the elements can be nested. SVG user agents (e.g., web browsers) parse a SVG document, turning it into a DOM (Document Object Model) tree. A DOM tree is an in-memory representation of a document. A SVG document represents a media-independent description of interactive graphical content. A SVG document can be rendered to a screen. To influence exactly how such rendering takes place, authors can use a styling language such as CSS."@en ;
+    skos:prefLabel "svg document"@en .
+
+svg:Path a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/paths.html#PathElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'path' SVG element defines a set of path data."@en ;
+    skos:prefLabel "the path element"@en ;
+    svg:tag "path" .
+
+svg:RadialGradient a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#RadialGradientElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'radialGradient' SVG element defines a radial gradient paint server."@en ;
+    skos:prefLabel "the radialGradient element"@en ;
+    svg:tag "radialGradient" .
+
+svg:color-profile a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the color profile."@en ;
+    skos:prefLabel "the color-profile attribute"@en ;
+    svg:key "color-profile" .
+
+svg:documentRestriction a owl:Restriction ;
+    rdfs:isDefinedBy svg: ;
+    owl:hasValue documentType:svg ;
+    owl:onProperty dom:documentType ;
+    skos:prefLabel "svg document type restriction"@en .
+
+svg:title a owl:DatatypeProperty ;
+    rdfs:domain svg:title ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the title of an element."@en ;
+    skos:prefLabel "the title attribute"@en ;
+    svg:key "title" .
+
+rule:Serialize_SVG_fragment_SVG_Element a sh:SPARQLRule ;
+    rdfs:comment "A rule that creates an SVG fragment for an SVG element."@en ;
+    rdfs:isDefinedBy svg: ;
+    skos:prefLabel "SVG element fragment serialisation rule"@en ;
+    sh:construct """
+prefix svg: <https://data.rijksfinancien.nl/svg/model/def/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+construct {
+
+  # create the SVG-fragment for the SVG-element to be serialized.
+  $this svg:fragment ?fragment.
+} where {
+
+  # Get the SVG tag of the SVG-element to be serialized.
+  $this a/svg:tag ?tag.
+
+  # Get the (possibly empty) sequence of SVG attributes, if there are any.
+  {
+    select (group_concat(distinct ?attribute;separator=' ') as ?attributes) {
+      $this ?attribute0 ?value.
+      ?attribute0 svg:key ?key.
+      bind(concat(?key,'="',str(?value),'"') as ?attribute)
+    }
+  }
+
+  # Get the (possibly empty) sequence of child element fragments, if there are any.
+  {
+    select (group_concat(str(?fragment);separator='') as ?fragments) {
+      {
+        select ?member ?fragment {
+          $this ?member ?element.
+          ?element svg:fragment ?fragment.
+          filter(strstarts(str(?member),concat(str(rdf:),'_')))
+        }
+        order by xsd:integer(strafter(str(?member),concat(str(rdf:),'_')))
+      }
+    }
+  }
+
+  # Create the SVG fragment of this SVG element by combining everything retrieved above.
+  bind(strdt(
+    concat(
+      # open tag and include any attributes if there are any
+      '<',?tag,if(?attributes='','',concat(' ',?attributes)),'>',
+      # retrieved svg content of children svg elements
+      ?fragments,
+      # close tag and cast as SVG snippet
+      '</',?tag,'>'),xsd:string) as ?fragment)
+}""" .
+
+shp:Document_documentType a sh:PropertyShape ;
+    rdfs:label "has document type SVG"@en ;
+    rdfs:comment "An SVG document contains excactly one document type with value ‘SVG’."@en ;
+    rdfs:isDefinedBy svg: ;
+    sh:hasValue documentType:svg ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path dom:documentType .
+
+shp:Document_root a sh:PropertyShape ;
+    rdfs:label "has root element svg"@en ;
+    rdfs:comment "The <svg> tag is the root of the SVG document and a container for all other SVG elements (except for the <!DOCTYPE> tag). A SVG document contains no less and no more than one svg tag."@en ;
+    rdfs:isDefinedBy svg: ;
+    sh:class svg:Svg ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path rdfs:member .
+
+target:Document a sh:SPARQLTarget ;
+    rdfs:isDefinedBy svg: ;
+    sh:select """
+prefix svg: <https://data.rijksfinancien.nl/svg/model/def/>
+
+select $this {
+  $this a svg:Document.
+  filter not exists {
+    $this svg:fragment [].
+  }
+}""" .
+
+target:SerializableElement a sh:SPARQLTarget ;
+    rdfs:isDefinedBy svg: ;
+    sh:select """prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
+prefix svg: <https://data.rijksfinancien.nl/svg/model/def/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Select the SVG element for which there does not yet exist an SVG
+# fragment, with the additional requirement that each and any
+# underlying child element contains an SVG fragment.
+select $this {
+  # Any DOM element (`dom:Element`)
+  $this a/rdfs:subClassOf* dom:Element.
+  
+  # The SVG element must not have an SVG fragment yet.
+  filter not exists {
+    $this svg:fragment [].
+  }
+  # The SVG element may not contain one or more child elements that lack an SVG fragment.
+  minus {
+    $this ?member ?childElement.
+    ?childElement a/rdfs:subClassOf* dom:Element.
+    filter not exists {
+      ?childElement svg:fragment [].
+    }
+  }
+}""" .
+
+svg:style a owl:DatatypeProperty ;
+    rdfs:domain svg:style ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the style rules for an element."@en ;
+    skos:prefLabel "the style attribute"@en ;
+    svg:key "style" .
+
+rule:Document a sh:SPARQLRule ;
+    rdfs:label "SVG document generation rule"@en ;
+    rdfs:comment "A rule that creates the upper SVG fragment for an SVG document and connects it with the previously generated tree of serialized SVG elements and their SVG fragments."@en ;
+    rdfs:isDefinedBy svg: ;
+    sh:construct """
+prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/>
+prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
+prefix svg: <https://data.rijksfinancien.nl/svg/model/def/>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rule: <https://data.rijksfinancien.nl/svg/model/rule/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+construct {
+  $this
+    dom:documentType documentType:svg;
+    svg:fragment ?fragmentDocument;
+    prov:wasGeneratedBy ?activity.
+  ?activity
+    a prov:Activity;
+    prov:atTime ?activityDateTime;
+    prov:used
+      svg: , # SVG Ontology
+      rule:Document.
+} where {
+  $this ?member ?root.
+  ?root rdf:type svg:Svg;
+        svg:fragment ?fragmentRoot.
+  bind(strdt(concat(\"\"\"<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\"\"\",str(?fragmentRoot)),xsd:string) as ?fragmentDocument)
+  bind(iri(concat(str($this),'-svg-document-generation')) as ?activity)
+  bind(now() as ?activityDateTime)
+}""" .
+
+svg:Svg a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#SvgElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'svg' SVG element is the root element of an SVG document."@en ;
+    skos:prefLabel "the svg element"@en ;
+    svg:tag "svg" .
+
+svg:Circle a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#CircleElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'circle' SVG element defines a circle."@en ;
+    skos:prefLabel "the circle element"@en ;
+    svg:tag "circle" .
+
+svg:cursor a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the cursor to be displayed when the mouse pointer is over the element."@en ;
+    skos:prefLabel "the cursor attribute"@en ;
+    svg:key "cursor" .
+
+svg:path a owl:DatatypeProperty ;
+    rdfs:domain svg:marker ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the path data for the element."@en ;
+    skos:prefLabel "the path attribute"@en ;
+    svg:key "path" .
+
+svg:mask a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the mask for the element."@en ;
+    skos:prefLabel "the mask attribute"@en ;
+    svg:key "mask" .
+
+svg:filter a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the ID of the filter."@en ;
+    skos:prefLabel "the filter attribute"@en ;
+    svg:key "filter" .
+
+svg:font a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the font properties for text elements."@en ;
+    skos:prefLabel "the font attribute"@en ;
+    svg:key "font" .
+
+svg:marker a owl:DatatypeProperty ;
+    rdfs:domain svg:element ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:definition "Specifies the marker for the element."@en ;
+    skos:prefLabel "the marker attribute"@en ;
+    svg:key "marker" .
+
+svg:Element a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf dom:Element ;
+    skos:definition "An element with namespace URI \"http://www.w3.org/2000/svg\" as defined in the SVG specification, that is used to create and manipulate SVG content."@en ;
+    skos:prefLabel "The SVG DOM element"@en .
+
+svg:attribute a owl:DatatypeProperty ;
+    rdfs:domain svg:Element ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Property that is the parent property of all existing SVG attributes. An attribute is a name-value pair that is associated with a SVG element. Attributes provide additional information about an element and are specified within the start tag of an element. Attributes can modify the behavior or appearance of an element, define relationships between elements, or provide other metadata. The name of the attribute is followed by an equal sign (=) and the attribute's value, which is enclosed in double or single quotes. Some attributes affect the element simply by their presence in the start tag of the element, with the value implicitly being an empty string."@en ;
+    skos:prefLabel "has attribute property"@en .
+
+svg: a void:Dataset,
+        owl:Ontology,
+        respec:Ontology ;
+    dct:abstract "This RDF-based vocabulary defines the elements and attributes of Scalable Vector Graphics (SVG), providing a structured representation for SVG content. It aims to facilitate the generation of graphics using semantic web technology, interoperability, documentation, and tooling support for SVG-based applications."@en ;
+    dct:conformsTo "https://www.w3.org/TR/SVG11/"^^xsd:anyURI ;
+    dct:created "2024-02-14"^^xsd:date ;
+    dct:creator "Flores Bakker" ;
+    dct:description "The SVG Vocabulary establishes a standard representation of SVG elements and attributes, enabling automatic generation of graphics using semantic web technology, leveraging interoperability and tooling support for SVG-based applications. It provides definitions for SVG elements such as <svg>, <rect>, <circle>, <path>, etc., along with their respective attributes such as 'fill', 'stroke', 'width', 'height', etc. This vocabulary adheres to the SVG 1.1 specification and can serve as a reference guide for implementing SVG features in web applications."@en ;
+    dct:language "iso639-1:en" ;
+    dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    dct:publisher <https://www.example.com> ;
+    dct:source <https://www.example.com/svg-vocabulary> ;
+    dct:status status:UnderDevelopment ;
+    dct:title "SVG Core Vocabulary"@en ;
+    vann:preferredNamespacePrefix "svg" ;
+    vann:preferredNamespaceUri "http://www.w3.org/2000/svg/" ;
+    void:uriSpace "http://www.w3.org/2000/svg/"^^xsd:anyURI ;
+    owl:versionInfo "1.0" ;
+    skos:example """
+
+An example SVG document:
+
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+  <svg height="200" width="200" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- Circle for the face -->
+  <circle cx="100" cy="100" fill="yellow" r="90" stroke="black" stroke-width="2"></circle>
+  
+   <!-- Eyes -->
+  <circle cx="70" cy="70" fill="black" r="10"></circle>
+  <circle cx="130" cy="70" fill="black" r="10"></circle>
+  
+   <!-- Mouth (smile) -->
+  <path d="M 60 120 Q 100 150 140 120" fill="none" stroke="black" stroke-width="3"></path></svg>
+	
+This can be represented in RDF using the SVG Vocabulary as follows:
+	
+@prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
+
+doc:smileyDocument a svg:Document ;
+    rdf:_1 doc:smiley ;
+    dom:documentType documentType:svg .
+
+doc:smiley a svg:Svg ;
+    rdf:_1 doc:head ;
+    rdf:_2 doc:leftEye ;
+	rdf:_3 doc:rightEye ;
+    rdf:_4 doc:mouth ;
+    svg:height "200" ;
+    svg:width "200" ;
+    svg:xmlns "http://www.w3.org/2000/svg" .
+
+doc:mouth a svg:Path ;
+    svg:d "M 60 120 Q 100 150 140 120" ;
+    svg:fill "none" ;
+    svg:stroke "black" ;
+    svg:stroke-width "3" .
+
+doc:head a svg:Circle ;
+    svg:cx "100" ;
+    svg:cy "100" ;
+    svg:fill "yellow" ;
+    svg:r "90" ;
+    svg:stroke "black" ;
+    svg:stroke-width "2" .
+
+doc:leftEye a svg:Circle ;
+    svg:cx "70" ;
+    svg:cy "70" ;
+    svg:fill "black" ;
+    svg:r "10" .
+
+doc:rightEye a svg:Circle ;
+    svg:cx "130" ;
+    svg:cy "70" ;
+    svg:fill "black" ;
+    svg:r "10" .
+
+""" ;
+    foaf:homepage "https://www.example.com/"^^xsd:anyURI ;
+    respec:audience "This document is intended for web developers, graphic designers, and anyone involved in creating or working with SVG content and semantic web technology."@en ;
+    respec:introduction """
+In today's digital era, Scalable Vector Graphics (SVG) play a vital role in creating interactive and visually appealing web content. SVG provides a powerful framework for defining vector-based graphics using XML syntax, enabling high-quality rendering across various devices and resolutions. Whether it's creating intricate illustrations, interactive data visualizations, or animated icons, SVG empowers designers and developers to unleash their creativity while ensuring optimal performance and accessibility.
+
+At the same time, it becomes more and more important with regard to such graphics to be able to generate, annotate, reuse, validate and understand them.
+
+To harness the full potential of SVG, it's crucial to have a comprehensive description of its vocabulary - the elements and attributes that constitute SVG documents, with which SVG documents can be generated using semantic web technology. This RDF-based SVG Vocabulary aims to provide a structured representation of SVG elements and attributes, facilitating interoperability, generation, documentation, and tooling support for SVG-based applications.
+"""@en ;
+    respec:objective "The objective of this SVG Vocabulary is to define the elements and attributes of the SVG standard (currently conforming to SVG 1.1), providing clear definitions, usage guidelines, and examples to aid developers and designers in automatically creating SVG content using semantic web technology."@en .
+
