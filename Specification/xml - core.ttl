@@ -1,0 +1,202 @@
+prefix dcm: <http://purl.org/dc/dcmitype/>
+prefix dct: <http://purl.org/dc/terms/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfa: <http://www.w3.org/ns/rdfa#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix sh: <http://www.w3.org/ns/shacl#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix status: <http://purl.org/adms/status/>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix void: <http://rdfs.org/ns/void#>
+prefix xml: <http://www.w3.org/XML/1998/namespace> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/>
+prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
+prefix graph: <https://data.rijksfinancien.nl/xml/graph/>
+prefix rule: <https://data.rijksfinancien.nl/xml/model/rule/>
+prefix shp: <https://data.rijksfinancien.nl/xml/model/shp/>
+prefix standard: <https://data.rijksfinancien.nl/xml/id/standard/>
+prefix target: <https://data.rijksfinancien.nl/xml/model/target/>
+
+  xml:
+    a
+      owl:Ontology,
+      void:Dataset;
+    dct:created '2023-10-29'^^xsd:date;
+    dct:creator
+      'Flores Bakker';
+    dct:language 'iso639-1:en';
+    dct:license 'http://creativecommons.org/licenses/by/4.0'^^xsd:anyURI;
+    dct:publisher <https://rijksfinancien.nl>;
+    dct:status status:UnderDevelopment;
+    dct:subject 'xml'@en;
+    dct:title 'XML Ontology'@en;
+    dct:source <https://github.com/floresbakker/xmlvoc>;
+    foaf:depiction 'https://www.rijksfinancien.nl/themes/custom/indicia_theme/files/logo-rijksoverheid.svg'^^xsd:anyURI;
+    foaf:homepage 'https://www.rijksfinancien.nl/'^^xsd:anyURI;
+    owl:imports
+      dct:,
+      owl:,
+      prov:,
+      rdf:,
+      rdfs:,
+      sh:,
+      skos:;
+    owl:versionInfo '0.1.0';
+    vann:preferredNamespacePrefix 'xml';
+    vann:preferredNamespaceUri 'http://www.w3.org/XML/1998/namespace';
+    void:subSet graph:model;
+    void:uriRegexPattern '^http://www.w3.org/XML/1998/namespace';
+    void:uriSpace 'http://www.w3.org/XML/1998/namespace'^^xsd:anyURI.
+
+  standard:xml
+    a dct:Standard;
+    dct:created '2021-11-09'^^xsd:date;
+    dct:source 'https://www.w3.org/TR/xml/'^^xsd:anyURI;
+    skos:prefLabel 'Extensible Markup Language (XML) 1.0 (Fifth Edition)'@en;
+	rdfs:isDefinedBy xml:.
+
+### XML Document
+
+  xml:Document
+    a owl:Class;
+    owl:equivalentClass xml:documentRestriction;
+    skos:definition ''@en;
+    skos:prefLabel 'xml document'@en;
+	rdfs:isDefinedBy xml:.
+
+  xml:documentRestriction
+    a owl:Restriction;
+    owl:hasValue documentType:xml;
+    owl:onProperty dom:documentType;
+	skos:prefLabel 'xml document type restriction'@en;
+	rdfs:isDefinedBy xml:.
+
+### XML components
+
+  xml:Element
+    a owl:Class;
+    dct:conformsTo section:XML-Spec;
+    xml:tag 'element';
+    rdfs:subClassOf dom:Element;
+    skos:definition 'An XML element in the Document Object Model (DOM) represents a unit of data in an XML document.'@en;
+    skos:prefLabel 'XML DOM element'@en;
+	rdfs:isDefinedBy xml:.
+
+  xml:Attribute
+    a owl:Class;
+    dct:conformsTo section:XML-Spec;
+    xml:tag 'attribute';
+    skos:definition 'An XML attribute is a name-value pair associated with an XML element.'@en;
+    skos:prefLabel 'XML Attribute'@en;
+	rdfs:isDefinedBy xml:.
+
+  xml:Comment
+    a owl:Class;
+    dct:conformsTo section:XML-Spec;
+    xml:tag 'comment';
+    skos:definition 'An XML comment is a piece of text within an XML document that is not interpreted as markup by the XML processor.'@en;
+    skos:prefLabel 'XML Comment'@en;
+	rdfs:isDefinedBy xml:.
+
+  xml:ProcessingInstruction
+    a owl:Class;
+    dct:conformsTo section:XML-Spec;
+    xml:tag 'processing-instruction';
+    skos:definition 'An XML processing instruction provides instructions to the XML processor.'@en;
+    skos:prefLabel 'XML Processing Instruction'@en;
+	rdfs:isDefinedBy xml:.
+
+  xml:CDATA
+    a owl:Class;
+    dct:conformsTo section:XML-Spec;
+    xml:tag 'cdata';
+    skos:definition 'A CDATA section in an XML document is used to include blocks of text that should not be interpreted as markup by the XML processor.'@en;
+    skos:prefLabel 'XML CDATA Section'@en;
+	rdfs:isDefinedBy xml:.
+
+  xml:TextElement
+    a owl:Class;
+    rdfs:subClassOf dom:Element;
+    skos:definition 'A DOM element in a XML document that has textual content and that does not contain any XML vocabulary.'@en;
+    skos:prefLabel 'text element'@en;
+	rdfs:isDefinedBy xml:.
+    
+### XML attributes
+ 
+  xml:attribute
+    a owl:DatatypeProperty;
+    rdfs:domain xml:Element;
+    rdfs:range rdfs:Literal;
+    skos:definition "Property that is the parent property of all existing XML attributes. An attribute is a name-value pair that is associated with an XML element. Attributes provide additional information about an element and are specified within the start tag of an element. Attributes can modify the behavior or appearance of an element, define relationships between elements, or provide other metadata. The name of the attribute is followed by an equal sign (=) and the attribute's value, which is enclosed in double or single quotes. Some attributes affect the element simply by their presence in the start tag of the element, with the value implicitly being an empty string."@en;
+    skos:prefLabel 'has attribute property'@en;
+	rdfs:isDefinedBy xml:.
+	
+  xml:xmlns
+    a owl:DatatypeProperty;
+    xml:key 'xmlns';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:prefLabel 'the xmlns attribute'@en;
+	rdfs:isDefinedBy xml:.
+	
+  xml:fragment
+    a owl:DatatypeProperty;
+    rdfs:domain xml:Element;
+    rdfs:range rdf:HTML;
+    skos:definition 'Property that links the xml fragment that is represented by an element within a XML-document to that element.'@en;
+    skos:prefLabel 'fragment property'@en;
+	rdfs:isDefinedBy xml:.
+
+  xml:id
+    a owl:DatatypeProperty;
+    xml:key 'id';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:prefLabel 'the id attribute'@en;
+	rdfs:isDefinedBy xml:.
+	
+  xml:name
+    a owl:DatatypeProperty;
+    xml:key 'name';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:prefLabel 'the name attribute'@en;
+	rdfs:isDefinedBy xml:.
+
+  xml:base
+    a owl:DatatypeProperty;
+    svg:key 'base';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the base for XML."@en;
+    skos:prefLabel 'the base attribute'@en;
+    rdfs:isDefinedBy xml:.
+
+  xml:lang
+    a owl:DatatypeProperty;
+    svg:key 'lang';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the language for XML."@en;
+    skos:prefLabel 'the lang attribute'@en;
+    rdfs:isDefinedBy xml:.
+
+  xml:space
+    a owl:DatatypeProperty;
+    svg:key 'space';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the space for XML."@en;
+    skos:prefLabel 'the space attribute'@en;
+    rdfs:isDefinedBy xml:.

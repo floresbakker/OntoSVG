@@ -1,13 +1,17 @@
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
-@prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 
 doc:BarChartDocument a svg:Document ;
     rdf:_1 doc:BarChart .
 
 doc:BarChart a svg:Svg ;
-    svg:xmlns "http://www.w3.org/2000/svg";
-	svg:version "1.1";
+    xml:xmlns "http://www.w3.org/2000/svg";
+	xml:version "1.1";
+	svg:height "350" ;
+    svg:version "1.1" ;
+    svg:width "500";
     rdf:_1 doc:Y-axis-Text ;
 	rdf:_2 doc:X-axis-Text ;
 	rdf:_3 doc:Y-axis-Line ;
@@ -23,11 +27,7 @@ doc:BarChart a svg:Svg ;
     rdf:_13 doc:BudgetedReceiptsAmount ;
     rdf:_14 doc:RealizedReceiptsRectangle ;
     rdf:_15 doc:RealizedReceiptsText ;
-    rdf:_16 doc:RealizedReceiptsAmount ;
-    svg:height "350" ;
-    svg:version "1.1" ;
-    svg:width "500" ;
-    svg:xmlns "http://www.w3.org/2000/svg" .
+    rdf:_16 doc:RealizedReceiptsAmount .
 
 doc:Y-axis-Text a svg:Text ;
     rdf:_1 doc:AmountText ;

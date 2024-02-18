@@ -1,0 +1,84 @@
+prefix dcm: <http://purl.org/dc/dcmitype/>
+prefix dct: <http://purl.org/dc/terms/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfa: <http://www.w3.org/ns/rdfa#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix sh: <http://www.w3.org/ns/shacl#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix status: <http://purl.org/adms/status/>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix void: <http://rdfs.org/ns/void#>
+prefix xml: <http://www.w3.org/XML/1998/namespace> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/>
+prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
+prefix graph: <https://data.rijksfinancien.nl/xml/graph/>
+prefix rule: <https://data.rijksfinancien.nl/xml/model/rule/>
+prefix shp: <https://data.rijksfinancien.nl/xml/model/shp/>
+prefix standard: <https://data.rijksfinancien.nl/xml/id/standard/>
+prefix target: <https://data.rijksfinancien.nl/xml/model/target/>
+
+  xsi:
+    a
+      owl:Ontology,
+      void:Dataset;
+    dct:created '2023-10-29'^^xsd:date;
+    dct:creator
+      'Flores Bakker';
+    dct:language 'iso639-1:en';
+    dct:license 'http://creativecommons.org/licenses/by/4.0'^^xsd:anyURI;
+    dct:publisher <https://rijksfinancien.nl>;
+    dct:status status:UnderDevelopment;
+    dct:subject 'xsi'@en;
+    dct:title 'XSI Ontology'@en;
+    dct:source <https://github.com/floresbakker/xsivoc>;
+    foaf:depiction 'https://www.rijksfinancien.nl/themes/custom/indicia_theme/files/logo-rijksoverheid.svg'^^xsd:anyURI;
+    foaf:homepage 'https://www.rijksfinancien.nl/'^^xsd:anyURI;
+    owl:imports
+      dct:,
+      owl:,
+      prov:,
+      rdf:,
+      rdfs:,
+      sh:,
+      skos:;
+    owl:versionInfo '0.1.0';
+    vann:preferredNamespacePrefix 'xsi';
+    vann:preferredNamespaceUri 'http://www.w3.org/XML/1998/namespace';
+    void:subSet graph:model;
+    void:uriRegexPattern '^http://www.w3.org/XML/1998/namespace';
+    void:uriSpace 'http://www.w3.org/XML/1998/namespace'^^xsd:anyURI.
+
+  standard:xsi
+    a dct:Standard;
+    dct:created '2021-11-09'^^xsd:date;
+    dct:source 'https://www.w3.org/TR/xml/'^^xsd:anyURI;
+    skos:prefLabel 'Extensible Markup Language (XML) 1.0 (Fifth Edition)'@en.
+
+### Element
+
+
+    
+### Attribute
+ 
+  xsi:schemaLocation
+    a owl:DatatypeProperty;
+    xml:key 'schemaLocation';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:prefLabel 'the schemaLocation attribute'@en.
+
+  xsi:type
+    a owl:DatatypeProperty;
+    xml:key 'type';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:prefLabel 'the type attribute'@en.
+	
+  

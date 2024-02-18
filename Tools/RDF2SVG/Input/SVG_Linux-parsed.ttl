@@ -1,24 +1,27 @@
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xmlns: <http://www.w3.org/2000/xmlns/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 
 doc:1 a svg:Document ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/0/2> .
 
 <https://data.rijksfinancien.nl/svg/doc/id/0/2> a svg:Svg ;
+    xml:xmlns "http://www.w3.org/2000/svg" ;
+    xmlns:cc "http://web.resource.org/cc/" ;
+    xmlns:dc "http://purl.org/dc/elements/1.1/" ;
+    xmlns:rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
+    xmlns:xlink "http://www.w3.org/1999/xlink" ;
+	svg:height "600pt" ;
+    svg:width "500pt" ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/20/0> ;
     rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/20/1> ;
     rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/20/2> ;
     rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/20/3> ;
-    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/20/4> ;
-    svg:height "600pt" ;
-    svg:width "500pt" ;
-    svg:xmlns "http://www.w3.org/2000/svg" ;
-    svg:xmlns:cc "http://web.resource.org/cc/" ;
-    svg:xmlns:dc "http://purl.org/dc/elements/1.1/" ;
-    svg:xmlns:rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
-    svg:xmlns:xlink "http://www.w3.org/1999/xlink" .
-
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/20/4> .
+	
 <https://data.rijksfinancien.nl/svg/doc/id/1120/0> a svg:TextElement ;
     svg:fragment "" .
 
@@ -57,7 +60,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient141" ;
     svg:x1 "0.47424799" ;
     svg:x2 "0.417539" ;
-    svg:xlink:href "#linearGradient138" ;
+    xlink:href "#linearGradient138" ;
     svg:y1 "0.020191999" ;
     svg:y2 "0.90125799" .
 
@@ -69,7 +72,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient142" ;
     svg:x1 "0.55880702" ;
     svg:x2 "0.553922" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "0.031192999" ;
     svg:y2 "0.94531101" .
 
@@ -81,7 +84,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient143" ;
     svg:x1 "0.46557701" ;
     svg:x2 "0.41365999" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "0.028819799" ;
     svg:y2 "0.93366498" .
 
@@ -93,7 +96,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient144" ;
     svg:x1 "0.70346397" ;
     svg:x2 "0.64553201" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "0.059404202" ;
     svg:y2 "0.94063401" .
 
@@ -105,7 +108,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient145" ;
     svg:x1 "0.46741399" ;
     svg:x2 "0.86741799" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "-0.036155298" ;
     svg:y2 "0.75857902" .
 
@@ -120,7 +123,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient146" ;
     svg:x1 "0.57152498" ;
     svg:x2 "0.57143003" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "0.023441499" ;
     svg:y2 "0.71875" .
 
@@ -132,7 +135,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient147" ;
     svg:x1 "0.5" ;
     svg:x2 "0.5" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "0.0234362" ;
     svg:y2 "0.8125" .
 
@@ -144,7 +147,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient148" ;
     svg:x1 "0.50799799" ;
     svg:x2 "0.51599997" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "0.37435901" ;
     svg:y2 "0.92820501" .
 
@@ -156,7 +159,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient149" ;
     svg:x1 "0.5" ;
     svg:x2 "0.50400001" ;
-    svg:xlink:href "#linearGradient138" ;
+    xlink:href "#linearGradient138" ;
     svg:y1 "0.131707" ;
     svg:y2 "0.94634098" .
 
@@ -169,7 +172,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient150" ;
     svg:x1 "-0.30509499" ;
     svg:x2 "0.156323" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "0.099496603" ;
     svg:y2 "0.94191301" .
 
@@ -189,7 +192,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient151" ;
     svg:x1 "0.433979" ;
     svg:x2 "0.487055" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "0.022184599" ;
     svg:y2 "1.02569" .
 
@@ -202,7 +205,7 @@ doc:1 a svg:Document ;
     svg:spreadMethod "reflect" ;
     svg:x1 "0.5" ;
     svg:x2 "0.5" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "0.89842999" ;
     svg:y2 "0.40625" .
 
@@ -214,7 +217,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient156" ;
     svg:x1 "0.43568701" ;
     svg:x2 "0.453989" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "0.98882002" ;
     svg:y2 "0.23093501" .
 
@@ -226,7 +229,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient157" ;
     svg:x1 "0.49180499" ;
     svg:x2 "0.49482101" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "1.15284" ;
     svg:y2 "0.41252401" .
 
@@ -238,7 +241,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient158" ;
     svg:x1 "0.51730198" ;
     svg:x2 "0.49843901" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "0.85418499" ;
     svg:y2 "0.136172" .
 
@@ -253,7 +256,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient159" ;
     svg:x1 "0.46201" ;
     svg:x2 "0.49215299" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "0.87917101" ;
     svg:y2 "0.096282303" .
 
@@ -265,7 +268,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient161" ;
     svg:x1 "0.50086302" ;
     svg:x2 "0.41209599" ;
-    svg:xlink:href "#linearGradient162" ;
+    xlink:href "#linearGradient162" ;
     svg:y1 "0.34872901" ;
     svg:y2 "0.98558098" .
 
@@ -277,7 +280,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient165" ;
     svg:x1 "0.60399801" ;
     svg:x2 "0.46399999" ;
-    svg:xlink:href "#linearGradient162" ;
+    xlink:href "#linearGradient162" ;
     svg:y1 "0.51020199" ;
     svg:y2 "0.98367399" .
 
@@ -289,7 +292,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient166" ;
     svg:x1 "0.50000501" ;
     svg:x2 "0.50800002" ;
-    svg:xlink:href "#linearGradient162" ;
+    xlink:href "#linearGradient162" ;
     svg:y1 "0.191616" ;
     svg:y2 "0.97005898" .
 
@@ -304,7 +307,7 @@ doc:1 a svg:Document ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "radialGradient171" ;
     svg:r "0.5" ;
-    svg:xlink:href "#linearGradient172" .
+    xlink:href "#linearGradient172" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/5> a svg:LinearGradient ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/5120/0> ;
@@ -319,7 +322,7 @@ doc:1 a svg:Document ;
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/51> a svg:RadialGradient ;
     svg:id "radialGradient176" ;
-    svg:xlink:href "#linearGradient172" .
+    xlink:href "#linearGradient172" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/52> a svg:TextElement ;
     svg:fragment "" .
@@ -329,7 +332,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient178" ;
     svg:x1 "0.94027299" ;
     svg:x2 "0.19452" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "1.2934099" ;
     svg:y2 "-0.675295" .
 
@@ -345,7 +348,7 @@ doc:1 a svg:Document ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "radialGradient1399" ;
     svg:r "195.07191" ;
-    svg:xlink:href "#linearGradient172" .
+    xlink:href "#linearGradient172" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/56> a svg:TextElement ;
     svg:fragment "" .
@@ -356,7 +359,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1401" ;
     svg:x1 "400.57785" ;
     svg:x2 "400.84448" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "369.53015" ;
     svg:y2 "304.07886" .
 
@@ -369,7 +372,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1403" ;
     svg:x1 "303.01761" ;
     svg:x2 "297.0856" ;
-    svg:xlink:href "#linearGradient138" ;
+    xlink:href "#linearGradient138" ;
     svg:y1 "237.93179" ;
     svg:y2 "330.09561" .
 
@@ -385,7 +388,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1405" ;
     svg:x1 "378.93771" ;
     svg:x2 "380.27319" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "278.60202" ;
     svg:y2 "243.91606" .
 
@@ -398,7 +401,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1407" ;
     svg:x1 "381.38742" ;
     svg:x2 "380.5517" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "277.495" ;
     svg:y2 "245.68338" .
 
@@ -411,7 +414,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1409" ;
     svg:x1 "379.09573" ;
     svg:x2 "376.79556" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "240.92712" ;
     svg:y2 "281.01636" .
 
@@ -424,7 +427,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1411" ;
     svg:x1 "389.63535" ;
     svg:x2 "387.06866" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "242.28218" ;
     svg:y2 "281.32513" .
 
@@ -438,7 +441,7 @@ doc:1 a svg:Document ;
     svg:spreadMethod "reflect" ;
     svg:x1 "437.57941" ;
     svg:x2 "437.57941" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "528.87177" ;
     svg:y2 "394.10361" .
 
@@ -458,7 +461,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1415" ;
     svg:x1 "375.17325" ;
     svg:x2 "377.48541" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "419.78485" ;
     svg:y2 "324.03815" .
 
@@ -471,7 +474,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1417" ;
     svg:x1 "320.75104" ;
     svg:x2 "321.32224" ;
-    svg:xlink:href "#linearGradient138" ;
+    xlink:href "#linearGradient138" ;
     svg:y1 "498.17776" ;
     svg:y2 "614.50439" .
 
@@ -484,7 +487,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1419" ;
     svg:x1 "322.48257" ;
     svg:x2 "323.2514" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "435.26761" ;
     svg:y2 "488.48251" .
 
@@ -497,7 +500,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1421" ;
     svg:x1 "411.2215" ;
     svg:x2 "411.2215" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "242.94365" ;
     svg:y2 "331.44858" .
 
@@ -510,7 +513,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1423" ;
     svg:x1 "867.34546" ;
     svg:x2 "867.33453" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "234.73897" ;
     svg:y2 "314.83911" .
 
@@ -526,7 +529,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1425" ;
     svg:x1 "236.25362" ;
     svg:x2 "212.5099" ;
-    svg:xlink:href "#linearGradient162" ;
+    xlink:href "#linearGradient162" ;
     svg:y1 "657.11133" ;
     svg:y2 "737.41229" .
 
@@ -539,7 +542,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1427" ;
     svg:x1 "381.56607" ;
     svg:x2 "279.64313" ;
-    svg:xlink:href "#linearGradient153" ;
+    xlink:href "#linearGradient153" ;
     svg:y1 "655.73102" ;
     svg:y2 "386.66583" .
 
@@ -552,7 +555,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1429" ;
     svg:x1 "218.11714" ;
     svg:x2 "203.12654" ;
-    svg:xlink:href "#linearGradient162" ;
+    xlink:href "#linearGradient162" ;
     svg:y1 "630.30475" ;
     svg:y2 "737.8537" .
 
@@ -565,7 +568,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1431" ;
     svg:x1 "117.88966" ;
     svg:x2 "182.24524" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "587.23602" ;
     svg:y2 "704.73077" .
 
@@ -578,7 +581,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1433" ;
     svg:x1 "223.10072" ;
     svg:x2 "230.53499" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "570.41809" ;
     svg:y2 "710.97723" .
 
@@ -599,7 +602,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1435" ;
     svg:x1 "316.93988" ;
     svg:x2 "371.60889" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "474.01779" ;
     svg:y2 "582.63507" .
 
@@ -612,7 +615,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1437" ;
     svg:x1 "284.68652" ;
     svg:x2 "285.45923" ;
-    svg:xlink:href "#linearGradient162" ;
+    xlink:href "#linearGradient162" ;
     svg:y1 "410.46326" ;
     svg:y2 "485.69934" .
 
@@ -625,7 +628,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient1439" ;
     svg:x1 "288.82358" ;
     svg:x2 "288.37628" ;
-    svg:xlink:href "#linearGradient167" ;
+    xlink:href "#linearGradient167" ;
     svg:y1 "398.85422" ;
     svg:y2 "482.55939" .
 

@@ -27,12 +27,12 @@ def writeGraph(graph):
     graph.serialize(destination=directory_path+"/OntoSVG/Tools/RDF2SVG/Output/"+filename_stem+"-serialized.ttl", format="turtle")
 
 # Function to call the PyShacl engine so that a RDF model of a SVG document can be serialized to SVG-code.
-def iteratePyShacl(svg_vocabulary, serializable_graph):
+def iteratePyShacl(vocabulary, serializable_graph):
         
         # call PyShacl engine and apply the SVG vocabulary to the serializable SVG document
         pyshacl.validate(
         data_graph=serializable_graph,
-        shacl_graph=svg_vocabulary,
+        shacl_graph=vocabulary,
         data_graph_format="turtle",
         shacl_graph_format="turtle",
         advanced=True,
@@ -46,8 +46,8 @@ def iteratePyShacl(svg_vocabulary, serializable_graph):
         resultquery = serializable_graph.query('''
             
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX svg: <https://data.rijksfinancien.nl/svg/model/def/>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX svg: <https://data.rijksfinancien.nl/svg/model/def/>
 
         ASK 
         WHERE {
@@ -61,7 +61,7 @@ def iteratePyShacl(svg_vocabulary, serializable_graph):
         for result in resultquery:
             if result == False:
                 writeGraph(serializable_graph)
-                iteratePyShacl(svg_vocabulary, serializable_graph)
+                iteratePyShacl(vocabulary, serializable_graph)
             else: 
                 print ("Document is serialised.")
                 writeGraph(serializable_graph)
@@ -69,6 +69,12 @@ def iteratePyShacl(svg_vocabulary, serializable_graph):
 
 # Get the SVG vocabulary and place it in a string
 svg_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/svg - core.ttl")
+svg_serialisation = readGraphFromFile(directory_path + "OntoSVG/Specification/svg - serialisation.ttl")
+xml_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/xml - core.ttl")
+xmlns_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/xmlns - core.ttl")
+xlink_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/xlink - core.ttl")
+
+vocabulary = svg_vocabulary + svg_serialisation + xml_vocabulary + xmlns_vocabulary + xlink_vocabulary
 
 # loop through any turtle files in the input directory
 for filename in os.listdir(directory_path+"OntoSVG/Tools/RDF2SVG/Input"):
@@ -82,7 +88,7 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/RDF2SVG/Input"):
         document_graph = readGraphFromFile(file_path)                  
 
         # Join the SVG vocabulary and the RDF-model of some SVG document into a string
-        serializable_graph_string = svg_vocabulary + document_graph
+        serializable_graph_string = vocabulary + document_graph
 
         # Create a graph of the string containing the SVG vocabulary and the RDF-model of some SVG document
         serializable_graph = rdflib.Graph().parse(data=serializable_graph_string , format="ttl")
@@ -91,7 +97,7 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/RDF2SVG/Input"):
         print ("Serialising the SVG as contained in document '" + filename + "'...")
 
         # Call the shacl engine with the SVG vocabulary and the document to be serialized
-        iteratePyShacl(svg_vocabulary, serializable_graph)
+        iteratePyShacl(svg_serialisation, serializable_graph)
 
         # Prepare a graph to query the serialized document
         serialized_graph = rdflib.Graph().parse(directory_path+"/OntoSVG/Tools/RDF2SVG/Output/"+filename_stem+"-serialized.ttl" , format="ttl")
@@ -100,8 +106,8 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/RDF2SVG/Input"):
         documentQuery = serialized_graph.query('''
             
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX svg: <https://data.rijksfinancien.nl/svg/model/def/>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX svg: <https://data.rijksfinancien.nl/svg/model/def/>
 
         select ?fragment
         WHERE {
