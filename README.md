@@ -4,6 +4,7 @@
 This is the repository for svgvoc, the semantic SVG-vocabulary. You're welcome to contribute! 
 
 ![An example of a SVG-document, modeled and generated using OntoSVG](/Examples/SVG_Gallardo.svg)
+*An example of a SVG-document, modeled and generated using OntoSVG*
 
 # Status
 
