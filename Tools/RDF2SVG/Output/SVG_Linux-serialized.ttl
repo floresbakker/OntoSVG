@@ -3168,7 +3168,7 @@ xml:documentRestriction a owl:Restriction ;
     svg:width "500pt" .
 
 doc:1-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-18T19:22:07.522265+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-02-18T20:41:52.703510+00:00"^^xsd:dateTime ;
     prov:used svg:,
         <https://data.rijksfinancien.nl/svg/model/rule/Document> .
 

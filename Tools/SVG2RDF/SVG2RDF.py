@@ -24,7 +24,9 @@ rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
 rdfs  = Namespace("http://www.w3.org/2000/01/rdf-schema#")
 doc   = Namespace("https://data.rijksfinancien.nl/svg/doc/id/")
 svg   = Namespace("https://data.rijksfinancien.nl/svg/model/def/")
-
+xml   = Namespace("http://www.w3.org/XML/1998/namespace")
+xmlns = Namespace("http://www.w3.org/2000/xmlns/")
+xlink = Namespace ("http://www.w3.org/1999/xlink")
 
 # function to read a graph (as a string) from a file 
 def readGraphFromFile(file_path):
@@ -79,6 +81,9 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
         g.bind("rdfs", rdfs)
         g.bind("doc", doc)
         g.bind("svg", svg)
+        g.bind("xml", xml)
+        g.bind("xmlns", xmlns)
+        g.bind("xlink", xlink)
 
         # fill graph with html vocabulary
         xml_graph = Graph().parse(directory_path+"OntoSVG/Specification/svg - core.ttl" , format="ttl")
@@ -87,11 +92,11 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
         tagquerystring = '''
             
         prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        prefix svg: <https://data.rijksfinancien.nl/svg/model/def/>
         prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        prefix svg: <https://data.rijksfinancien.nl/svg/model/def/>
 
         select ?element_IRI where {
-          ?element_IRI svg:tag ?tag
+          ?element_IRI xml:tag ?tag
         }
         '''
 
@@ -100,14 +105,14 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
         root_element = soup.contents[0]
         root_id = generate_element_id(root_element)
        
+        
+       
       
-        # go through each element in the xml document
+        # loop through each element in the XML document
         for element in soup.descendants:
-            
-            # check if the element is an xml tag element
+            # check if the element is an XML tag element
             if isinstance(element, Tag):
-                
-                # establish unique id for the xml tag element
+                # establish unique id for the XML tag element
                 element_id = generate_element_id(element)
                 
                 # establish IRI for the tag class based on the HTML vocabulary
@@ -123,17 +128,41 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
                     document_id = '1'
                     g.add((doc[document_id], RDF.type, svg["Document"]))
                     g.add((doc[document_id], rdf["_" + str(document_id)], doc[element_id]))
-
-                # establish optional attributes of the element       
+        
+                # establish optional attributes of the element
                 for attribute, values in element.attrs.items():
-                    # check whether the attribute consists of multiple values (as list)
-                    if isinstance(values, list):
-                      attribute_value = ' '.join(values)
-                    else: # then it must be one value only (a string)
-                      attribute_value = values
-                
-                    # add optional attributes of the element to the graph
-                    g.add((doc[element_id], svg[attribute], Literal(attribute_value)))
+                    # Check if it's the default namespace declaration
+                    if attribute == 'xmlns':
+                        namespace_uri = xml
+                        local_name = 'xmlns'
+                    # Split attribute name into namespace and local name
+                    elif ':' in attribute:
+                        namespace, local_name = attribute.split(':')
+                        # Check the namespace of the attribute and add appropriate RDF triple
+                        if namespace == 'xml':
+                            namespace_uri = xml
+                        elif namespace == 'xlink':
+                            namespace_uri = xlink
+                        elif namespace == 'svg':
+                            namespace_uri = svg
+                        else:
+                            namespace_uri = None  # Unknown namespace prefix
+                    else:
+                        namespace_uri = svg
+                        local_name = attribute 
+        
+                    # If namespace is found, add RDF triple
+                    if namespace_uri:
+                        # If the attribute consists of multiple values (as list), join them
+                        if isinstance(values, list):
+                            attribute_value = ' '.join(values)
+                        else:  # If it's a single value, keep it as is
+                            attribute_value = values
+                        # Add optional attributes of the element to the graph
+                        g.add((doc[element_id], namespace_uri[local_name], Literal(attribute_value)))
+                    
+                    
+                    
 
                 # go through the direct children of the element
                 member_count = 0 # initialize count
