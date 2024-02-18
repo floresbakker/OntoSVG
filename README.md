@@ -1,7 +1,7 @@
 
 # Specification 'OntoSVG'
 
-This is the repository for OntoSVG, the semantic SVG vocabulary. You're welcome to contribute! 
+This is the repository for OntoSVG, the vocabulary for Scalable Vector Graphics (SVG). You're welcome to contribute! 
 
 OntoSVG offers a toolset comprising of a comprehensive description of the SVG vocabulary - the elements and attributes that constitute SVG documents - and the algorithms with which SVG documents can be generated, as well as tools that make use of this vocabulary to actually parse and generate SVG graphics.
 
