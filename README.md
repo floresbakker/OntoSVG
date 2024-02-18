@@ -48,8 +48,10 @@ Now we can represent the very same document in <i>RDF</i> using the SVG-vocabula
 
 ```
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 
 doc:smileyDocument a svg:Document ;
     rdf:_1 doc:smiley ;
@@ -62,7 +64,7 @@ doc:smiley a svg:Svg ;
     rdf:_4 doc:mouth ;
     svg:height "200" ;
     svg:width "200" ;
-    svg:xmlns "http://www.w3.org/2000/svg" .
+    xml:xmlns "http://www.w3.org/2000/svg" .
 
 doc:mouth a svg:Path ;
     svg:d "M 60 120 Q 100 150 140 120" ;
@@ -110,15 +112,20 @@ This bar chart is rendered in a browser as follows:
 
 ```
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 
 doc:BarChartDocument a svg:Document ;
-    rdf:_1 doc:BarChart .
+    rdf:_1 doc:BarChart ;
+    dom:documentType documentType:svg .
 
 doc:BarChart a svg:Svg ;
-    svg:xmlns "http://www.w3.org/2000/svg";
-	svg:version "1.1";
+    xml:xmlns "http://www.w3.org/2000/svg";
+	xml:version "1.1";
+	svg:height "350" ;
+    svg:width "500" ;
     rdf:_1 doc:Y-axis-Text ;
 	rdf:_2 doc:X-axis-Text ;
 	rdf:_3 doc:Y-axis-Line ;
@@ -134,11 +141,7 @@ doc:BarChart a svg:Svg ;
     rdf:_13 doc:BudgetedReceiptsAmount ;
     rdf:_14 doc:RealizedReceiptsRectangle ;
     rdf:_15 doc:RealizedReceiptsText ;
-    rdf:_16 doc:RealizedReceiptsAmount ;
-    svg:height "350" ;
-    svg:version "1.1" ;
-    svg:width "500" ;
-    svg:xmlns "http://www.w3.org/2000/svg" .
+    rdf:_16 doc:RealizedReceiptsAmount .
 
 doc:Y-axis-Text a svg:Text ;
     rdf:_1 doc:AmountText ;
