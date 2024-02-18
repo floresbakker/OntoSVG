@@ -1,7 +1,9 @@
 
-# Specification 'svgvoc'
+# Specification 'OntoSVG'
 
-This is the repository for svgvoc, the semantic SVG-vocabulary. You're welcome to contribute! 
+This is the repository for OntoSVG, the semantic SVG vocabulary. You're welcome to contribute! 
+
+OntoSVG offers a toolset comprising of a comprehensive description of the SVG vocabulary - the elements and attributes that constitute SVG documents - and the algorithms with which SVG documents can be generated, as well as tools that make use of this vocabulary to actually parse and generate SVG graphics.
 
 ![An example of a SVG-document, modeled and generated using OntoSVG](/Examples/SVG_Gallardo.svg)
 *An example of a SVG-document, modeled and generated using OntoSVG*
@@ -14,9 +16,9 @@ Unstable, work in progress.
 
 In today's digital era, Scalable Vector Graphics (SVG) play a vital role in creating interactive and visually appealing web content. SVG provides a powerful framework for defining vector-based graphics using XML syntax, enabling high-quality rendering across various devices and resolutions. Whether it's creating intricate illustrations, interactive data visualizations, or animated icons, SVG empowers designers and developers to unleash their creativity while ensuring optimal performance and accessibility.
 
-At the same time, it becomes more and more important with regard to such graphics to be able to generate, annotate, reuse, validate and understand them.
+At the same time, graphics are not objects without context. It becomes more and more important to be able to model this context of graphics, both the metadata as well as the actual content of such graphics. With this we can generate, annotate, reuse, validate and understand these graphics better, and place them within a wider context of other information. OntoSVG uses semantic web compliant technology to parse, model and generate SVG images in an interoperable and meaningful way, preventing any vendor lock-in. Examples of graphics that can be modeled can be anything, from financial dashboards, architectonic designs up and till car images and the like.
 
-To harness the full potential of SVG, it's crucial to have a comprehensive description of its vocabulary - the elements and attributes that constitute SVG documents, with which SVG documents can be generated using semantic web technology. This RDF-based SVG Vocabulary aims to provide a structured representation of SVG elements and attributes, facilitating interoperability, generation, documentation, and tooling support for SVG-based applications.
+
 
 # Introduction
 
@@ -322,7 +324,7 @@ A. Install all necessary libraries:
 	2. pip install bs4
 	3. pip install rdflib
 
-B. Place one or more SVG-files in the input folder in svgvoc\Tools\SVG2RDF\Input. Only ordinary SVG-files can be processed. 
+B. Place one or more SVG-files in the input folder in OntoSVG\Tools\SVG2RDF\Input. Only ordinary SVG-files can be processed. 
 
 C. Run the script in the command prompt by typing: 
 
@@ -330,7 +332,7 @@ C. Run the script in the command prompt by typing:
 python SVG2RDF.py
 ```
 
-D. Go to the output folder in svgvoc\Tools\SVG2RDF\Output and grab your Turtle-file(s) (*.ttl). 
+D. Go to the output folder in OntoSVG\Tools\SVG2RDF\Output and grab your Turtle-file(s) (*.ttl). 
 
 
 ## RDF2SVG
@@ -347,7 +349,7 @@ A. Install all necessary libraries (in this order):
 
 NOTE: pyshacl has a dependency with an older RDFlib version. However, for an optimal functioning of the semantic SVG-vocabulary, the most recent release of RDFlib should be used. Hence, it is advised to first install pyshacl and then RDFlib, so that RDFlib is installed having the latest version. This is currently the least instrusive way of handling the dependency, offering accessibility for those not well versed in Python. 
 
-B. Place one or more Turtle-files (*.ttl) in the input folder in svgvoc\Tools\RDF2SVG\Input. A Turtle-file should represent a SVG-document using the SVG-vocabulary from this repository.
+B. Place one or more Turtle-files (*.ttl) in the input folder in OntoSVG\Tools\RDF2SVG\Input. A Turtle-file should represent a SVG-document using the SVG-vocabulary from this repository.
 
 C. Run the script in the command prompt by typing: 
 
@@ -355,7 +357,7 @@ C. Run the script in the command prompt by typing:
 python RDF2SVG.py
 ```
 
-D. Go to the output folder in svgvoc\Tools\RDF2SVG\Output and grab your SVG-file(s). Additionally included are Turtle-file(s) (*.ttl) that contain the serialized 'svg:fragment' properties for the very same SVG-document and the SVG-elements it contains. 
+D. Go to the output folder in OntoSVG\Tools\RDF2SVG\Output and grab your SVG-file(s). Additionally included are Turtle-file(s) (*.ttl) that contain the serialized 'svg:fragment' properties for the very same SVG-document and the SVG-elements it contains. 
 
 
 ## Dependencies 
