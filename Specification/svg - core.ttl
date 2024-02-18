@@ -3604,6 +3604,14 @@ svg:xmlns
     rdfs:subPropertyOf svg:attribute;
     skos:prefLabel 'the xmlns attribute'@en.
 
+svg:xmlns:xlink
+    a owl:DatatypeProperty;
+    svg:key 'xmlns:xlink';
+    rdfs:domain svg:Svg;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf svg:attribute;
+    skos:prefLabel 'the xmlns:xlink attribute'@en.	
+
 svg:version
     a owl:DatatypeProperty;
     svg:key 'version';

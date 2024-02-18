@@ -2916,6 +2916,13 @@ svg:xmlns a owl:DatatypeProperty ;
     skos:prefLabel "the xmlns attribute"@en ;
     svg:key "xmlns" .
 
+<https://data.rijksfinancien.nl/svg/model/def/xmlns:xlink> a owl:DatatypeProperty ;
+    rdfs:domain svg:Svg ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf svg:attribute ;
+    skos:prefLabel "the xmlns:xlink attribute"@en ;
+    svg:key "xmlns:xlink" .
+
 svg:y a owl:DatatypeProperty ;
     rdfs:domain svg:circle ;
     rdfs:isDefinedBy svg: ;
@@ -3012,7 +3019,7 @@ doc:BarChart a svg:Svg ;
     svg:xmlns "http://www.w3.org/2000/svg" .
 
 doc:BarChartDocument-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-17T19:33:34.963293+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-02-17T21:51:41.021262+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
 
