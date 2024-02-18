@@ -3232,7 +3232,7 @@ doc:smiley a svg:Svg ;
     svg:width "200" .
 
 doc:smileyDocument-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-18T20:41:53.689569+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-02-18T21:18:06.387500+00:00"^^xsd:dateTime ;
     prov:used svg:,
         <https://data.rijksfinancien.nl/svg/model/rule/Document> .
 

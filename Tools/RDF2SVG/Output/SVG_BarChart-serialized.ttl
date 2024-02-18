@@ -3196,7 +3196,7 @@ doc:BarChart a svg:Svg ;
     svg:width "500" .
 
 doc:BarChartDocument-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-18T20:41:45.078710+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-02-18T21:16:27.697600+00:00"^^xsd:dateTime ;
     prov:used svg:,
         <https://data.rijksfinancien.nl/svg/model/rule/Document> .
 
