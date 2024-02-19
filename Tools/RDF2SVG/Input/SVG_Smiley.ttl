@@ -1,7 +1,9 @@
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
+@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
 
 doc:smileyDocument a svg:Document ;
     rdf:_1 doc:smiley ;
@@ -10,7 +12,7 @@ doc:smileyDocument a svg:Document ;
 doc:smiley a svg:Svg ;
     rdf:_1 doc:head ;
     rdf:_2 doc:leftEye ;
-	rdf:_3 doc:rightEye ;
+    rdf:_3 doc:rightEye ;
     rdf:_4 doc:mouth ;
     svg:height "200" ;
     svg:width "200" ;

@@ -1,9 +1,11 @@
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
+@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
 @prefix xmlns: <http://www.w3.org/2000/xmlns/> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix xlink: <http://www.w3.org/1999/xlink#> .
 
 doc:1 a svg:Document ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/0/2> .
@@ -14,14 +16,14 @@ doc:1 a svg:Document ;
     xmlns:dc "http://purl.org/dc/elements/1.1/" ;
     xmlns:rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
     xmlns:xlink "http://www.w3.org/1999/xlink" ;
-	svg:height "600pt" ;
+    svg:height "600pt" ;
     svg:width "500pt" ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/20/0> ;
     rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/20/1> ;
     rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/20/2> ;
     rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/20/3> ;
     rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/20/4> .
-	
+
 <https://data.rijksfinancien.nl/svg/doc/id/1120/0> a svg:TextElement ;
     svg:fragment "" .
 

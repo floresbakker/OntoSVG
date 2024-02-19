@@ -11,7 +11,7 @@ prefix status: <http://purl.org/adms/status/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-prefix xml: <http://www.w3.org/XML/1998/namespace>
+prefix xml: <http://www.w3.org/XML/1998/namespace#>
 
 prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/>
 prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
@@ -28,7 +28,7 @@ prefix target: <https://data.rijksfinancien.nl/svg/model/target/>
 svg:
     a
       owl:Ontology,
-	  respec:Ontology,
+      respec:Ontology,
       void:Dataset;
     dct:conformsTo 'https://www.w3.org/TR/SVG11/'^^xsd:anyURI;
     dct:created '2024-02-14'^^xsd:date;
@@ -41,9 +41,9 @@ At the same time, it becomes more and more important with regard to such graphic
 
 To harness the full potential of SVG, it's crucial to have a comprehensive description of its vocabulary - the elements and attributes that constitute SVG documents, with which SVG documents can be generated using semantic web technology. This RDF-based SVG Vocabulary aims to provide a structured representation of SVG elements and attributes, facilitating interoperability, generation, documentation, and tooling support for SVG-based applications.
 '''@en;
-   respec:objective '''The objective of this SVG Vocabulary is to define the elements and attributes of the SVG standard (currently conforming to SVG 1.1), providing clear definitions, usage guidelines, and examples to aid developers and designers in automatically creating SVG content using semantic web technology.'''@en;
+   respec:objective '''The objective of the OntoSVG vocabulary is to define the elements and attributes of the SVG standard (currently conforming to SVG 1.1), providing clear definitions, usage guidelines, and examples to aid developers and designers in automatically creating SVG content using semantic web technology.'''@en;
     respec:audience '''This document is intended for web developers, graphic designers, and anyone involved in creating or working with SVG content and semantic web technology.'''@en;
-    dct:description '''The SVG Vocabulary establishes a standard representation of SVG elements and attributes, enabling automatic generation of graphics using semantic web technology, leveraging interoperability and tooling support for SVG-based applications. It provides definitions for SVG elements such as <svg>, <rect>, <circle>, <path>, etc., along with their respective attributes such as 'fill', 'stroke', 'width', 'height', etc. This vocabulary adheres to the SVG 1.1 specification and can serve as a reference guide for implementing SVG features in web applications.'''@en;
+    dct:description '''The OntoSVG vocabulary establishes a standard representation of SVG elements and attributes, enabling automatic generation of graphics using semantic web technology, leveraging interoperability and tooling support for SVG-based applications. It provides definitions for SVG elements such as <svg>, <rect>, <circle>, <path>, etc., along with their respective attributes such as 'fill', 'stroke', 'width', 'height', etc. This vocabulary adheres to the SVG 1.1 specification and can serve as a reference guide for implementing SVG features in web applications.'''@en;
     dct:abstract '''This RDF-based vocabulary defines the elements and attributes of Scalable Vector Graphics (SVG), providing a structured representation for SVG content. It aims to facilitate the generation of graphics using semantic web technology, interoperability, documentation, and tooling support for SVG-based applications.'''@en; 
     skos:example """
 

@@ -1,34 +1,26 @@
 prefix dcm: <http://purl.org/dc/dcmitype/>
 prefix dct: <http://purl.org/dc/terms/>
+prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
+prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
-prefix prov: <http://www.w3.org/ns/prov#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix rdfa: <http://www.w3.org/ns/rdfa#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix sh: <http://www.w3.org/ns/shacl#>
+prefix section: <https://data.rijksfinancien.nl/xlink/id/section/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix standard: <https://data.rijksfinancien.nl/xlink/id/standard/>
 prefix status: <http://purl.org/adms/status/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
-prefix xlink: <http://www.w3.org/1999/xlink> 
-prefix xml: <http://www.w3.org/XML/1998/namespace> 
+prefix xlink: <http://www.w3.org/1999/xlink#> 
+prefix xml: <http://www.w3.org/XML/1998/namespace#> 
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-
-
-prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/>
-prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
-prefix graph: <https://data.rijksfinancien.nl/xml/graph/>
-prefix rule: <https://data.rijksfinancien.nl/xml/model/rule/>
-prefix shp: <https://data.rijksfinancien.nl/xml/model/shp/>
-prefix standard: <https://data.rijksfinancien.nl/xml/id/standard/>
-prefix target: <https://data.rijksfinancien.nl/xml/model/target/>
 
   xlink:
     a
       owl:Ontology,
       void:Dataset;
-    dct:created '2023-10-29'^^xsd:date;
+    dct:created '2024-02-19'^^xsd:date;
     dct:creator
       'Flores Bakker';
     dct:language 'iso639-1:en';
@@ -38,104 +30,200 @@ prefix target: <https://data.rijksfinancien.nl/xml/model/target/>
     dct:subject 'xlink'@en;
     dct:title 'XLINK Ontology'@en;
     dct:source <https://github.com/floresbakker/xlinkvoc>;
+    dct:abstract "The XLINK Core Ontology provides a formal representation of the XML Linking Language (XLink) Version 1.1. It defines classes and properties to describe the structure and semantics of XLink elements and attributes."@en;
+    dct:description "The XLINK Ontology formalizes the XML Linking Language (XLink) Version 1.1, offering a structured representation of its elements and attributes. It includes definitions for essential concepts such as XLink element types, link locators, semantic attributes, and behavior attributes. The ontology serves as a reference for understanding and working with XLink within the context of RDF-based applications."@en;
     foaf:depiction 'https://www.rijksfinancien.nl/themes/custom/indicia_theme/files/logo-rijksoverheid.svg'^^xsd:anyURI;
     foaf:homepage 'https://www.rijksfinancien.nl/'^^xsd:anyURI;
     owl:imports
       dct:,
       owl:,
-      prov:,
       rdf:,
       rdfs:,
-      sh:,
       skos:;
     owl:versionInfo '0.1.0';
     vann:preferredNamespacePrefix 'xlink';
-    vann:preferredNamespaceUri 'http://www.w3.org/XML/1998/namespace';
-    void:subSet graph:model;
-    void:uriRegexPattern '^http://www.w3.org/XML/1998/namespace';
-    void:uriSpace 'http://www.w3.org/XML/1998/namespace'^^xsd:anyURI.
+    vann:preferredNamespaceUri 'http://www.w3.org/1999/xlink#';
+    void:uriRegexPattern '^http://www.w3.org/1999/xlink#';
+    void:uriSpace 'http://www.w3.org/1999/xlink#'^^xsd:anyURI;
+    skos:example """
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
+
+<https://data.rijksfinancien.nl/svg/doc/id/110/193> a svg:LinearGradient ;
+xlink:href "#linearGradient3931" ;
+svg:gradientTransform "translate(0,50)" ;
+svg:gradientUnits "userSpaceOnUse" ;
+svg:id "linearGradient3288" ;
+svg:x1 "321.67255" ;
+svg:x2 "325.79459" ;
+svg:y1 "442.76962" ;
+svg:y2 "409.21478" .""".
 
   standard:xlink
     a dct:Standard;
-    dct:created '2021-11-09'^^xsd:date;
-    dct:source 'https://www.w3.org/TR/xml/'^^xsd:anyURI;
-    skos:prefLabel 'Extensible Markup Language (XML) 1.0 (Fifth Edition)'@en.
+    dct:created '2024-02-19'^^xsd:date;
+    dct:source 'https://www.w3.org/TR/xlink/'^^xsd:anyURI;
+    skos:prefLabel 'XML Linking Language (XLink) Version 1.1'@en.
 
+  section:5.3
+    a dcm:Text;
+    dct:isPartOf standard:xlink;
+    dct:source 'https://www.w3.org/TR/xlink/#link-types'^^xsd:anyURI;
+    skos:prefLabel '§ 5.3 XLink Element Type Attribute (type)'@en;
+    rdfs:isDefinedBy xlink:.
 
-### Element
+  section:5.4
+    a dcm:Text;
+    dct:isPartOf standard:xlink;
+    dct:source 'https://www.w3.org/TR/xlink/#link-locators'^^xsd:anyURI;
+    skos:prefLabel '§ 5.4 Locator Attribute (href)'@en;
+    rdfs:isDefinedBy xlink:.
 
+  section:5.5
+    a dcm:Text;
+    dct:isPartOf standard:xlink;
+    dct:source 'https://www.w3.org/TR/xlink/#link-semantics'^^xsd:anyURI;
+    skos:prefLabel '§ 5.5 Semantic Attributes (role, arcrole, and title)'@en;
+    rdfs:isDefinedBy xlink:.
 
-    
+  section:5.6
+    a dcm:Text;
+    dct:isPartOf standard:xlink;
+    dct:source 'https://www.w3.org/TR/xlink/#link-behaviors'^^xsd:anyURI;
+    skos:prefLabel '§ 5.6 Behavior Attributes (show and actuate)'@en;
+    rdfs:isDefinedBy xlink:.
+
+  section:5.6.1
+    a dcm:Text;
+    dct:isPartOf standard:xlink;
+    dct:source 'https://www.w3.org/TR/xlink/#show-att'^^xsd:anyURI;
+    skos:prefLabel '§ 5.6.1 show Attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  section:5.6.2
+    a dcm:Text;
+    dct:isPartOf standard:xlink;
+    dct:source 'https://www.w3.org/TR/xlink/#actuate-att'^^xsd:anyURI;
+    skos:prefLabel '§ 5.6.2 actuate Attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  section:5.7
+    a dcm:Text;
+    dct:isPartOf standard:xlink;
+    dct:source 'https://www.w3.org/TR/xlink/#traversal-atts'^^xsd:anyURI;
+    skos:prefLabel '§ 5.7 Traversal Attributes (label, from, and to)'@en;
+    rdfs:isDefinedBy xlink:.
+
 ### Attribute
  
   xlink:actuate
     a owl:DatatypeProperty;
+    dct:conformsTo section:5.6.2;
     xml:key 'actuate';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the mechanism for processing XLink."@en;
     skos:prefLabel 'the actuate attribute'@en;
-    rdfs:isDefinedBy svg:.
+    rdfs:isDefinedBy xlink:.
 
   xlink:arcrole
     a owl:DatatypeProperty;
+    dct:conformsTo section:5.5;
     xml:key 'arcrole';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the arc role for XLink."@en;
     skos:prefLabel 'the arcrole attribute'@en;
-    rdfs:isDefinedBy svg:.
+    rdfs:isDefinedBy xlink:.
+
+  xlink:from
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.7;
+    xml:key 'from';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the from for XLink."@en;
+    skos:prefLabel 'the from attribute'@en;
+    rdfs:isDefinedBy xlink:.
 
   xlink:href
     a owl:DatatypeProperty;
+    dct:conformsTo section:5.4;
     xml:key 'href';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the reference for XLink."@en;
     skos:prefLabel 'the href attribute'@en;
-    rdfs:isDefinedBy svg:.
+    rdfs:isDefinedBy xlink:.
+
+  xlink:label
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.7;
+    xml:key 'label';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the label for XLink."@en;
+    skos:prefLabel 'the label attribute'@en;
+    rdfs:isDefinedBy xlink:.
 
   xlink:role
     a owl:DatatypeProperty;
+    dct:conformsTo section:5.5;
     xml:key 'role';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the role for XLink."@en;
     skos:prefLabel 'the role attribute'@en;
-    rdfs:isDefinedBy svg:.
+    rdfs:isDefinedBy xlink:.
 
   xlink:show
     a owl:DatatypeProperty;
+    dct:conformsTo section:5.6.1;
     xml:key 'show';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the display behavior for XLink."@en;
     skos:prefLabel 'the show attribute'@en;
-    rdfs:isDefinedBy svg:.
+    rdfs:isDefinedBy xlink:.
 
   xlink:title
     a owl:DatatypeProperty;
+    dct:conformsTo section:5.5;
     xml:key 'title';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the title for XLink."@en;
     skos:prefLabel 'the title attribute'@en;
-    rdfs:isDefinedBy svg:.
+    rdfs:isDefinedBy xlink:.
+
+  xlink:to
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.7;
+    xml:key 'to';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the to for XLink."@en;
+    skos:prefLabel 'the to attribute'@en;
+    rdfs:isDefinedBy xlink:.
 
   xlink:type
     a owl:DatatypeProperty;
+    dct:conformsTo section:5.3;
     xml:key 'type';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the type for XLink."@en;
     skos:prefLabel 'the type attribute'@en;
-    rdfs:isDefinedBy svg:.
-	
-  
+    rdfs:isDefinedBy xlink:.
+

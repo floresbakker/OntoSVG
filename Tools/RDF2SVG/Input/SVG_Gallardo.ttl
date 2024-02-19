@@ -1,8 +1,10 @@
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
+@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xlink: <http://www.w3.org/1999/xlink#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
 
 doc:1 a svg:Document ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/0/1> .

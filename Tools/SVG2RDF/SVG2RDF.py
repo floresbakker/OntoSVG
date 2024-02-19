@@ -24,9 +24,9 @@ rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
 rdfs  = Namespace("http://www.w3.org/2000/01/rdf-schema#")
 doc   = Namespace("https://data.rijksfinancien.nl/svg/doc/id/")
 svg   = Namespace("https://data.rijksfinancien.nl/svg/model/def/")
-xml   = Namespace("http://www.w3.org/XML/1998/namespace")
+xml   = Namespace("http://www.w3.org/XML/1998/namespace#")
 xmlns = Namespace("http://www.w3.org/2000/xmlns/")
-xlink = Namespace ("http://www.w3.org/1999/xlink")
+xlink = Namespace ("http://www.w3.org/1999/xlink#")
 
 # function to read a graph (as a string) from a file 
 def readGraphFromFile(file_path):
@@ -93,7 +93,7 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
             
         prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        prefix svg: <https://data.rijksfinancien.nl/svg/model/def/>
+        prefix xml: <http://www.w3.org/XML/1998/namespace#>
 
         select ?element_IRI where {
           ?element_IRI xml:tag ?tag

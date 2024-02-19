@@ -1,20 +1,22 @@
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
+@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
 
 doc:BarChartDocument a svg:Document ;
     rdf:_1 doc:BarChart .
 
 doc:BarChart a svg:Svg ;
     xml:xmlns "http://www.w3.org/2000/svg";
-	xml:version "1.1";
-	svg:height "350" ;
+    xml:version "1.1";
+    svg:height "350" ;
     svg:version "1.1" ;
     svg:width "500";
     rdf:_1 doc:Y-axis-Text ;
-	rdf:_2 doc:X-axis-Text ;
-	rdf:_3 doc:Y-axis-Line ;
+    rdf:_2 doc:X-axis-Text ;
+    rdf:_3 doc:Y-axis-Line ;
     rdf:_4 doc:X-axis-Line ;
     rdf:_5 doc:BudgetedExpendituresRectangle ;
     rdf:_6 doc:BudgetedExpendituresText ;
@@ -36,7 +38,7 @@ doc:Y-axis-Text a svg:Text ;
     svg:transform "rotate(-90)" ;
     svg:x "-180" ;
     svg:y "20" .
-	
+
 doc:Y-axis-Line a svg:Line ;
     svg:stroke "black" ;
     svg:stroke-width "2" ;
@@ -154,7 +156,7 @@ doc:RealizedReceiptsAmount a svg:Text ;
 
 doc:AmountText a svg:TextElement ;
     svg:fragment "Amount (Euro)" .
-	
+
 doc:TransactionTypeText a svg:TextElement ;
     svg:fragment "Transaction type" .
 
@@ -181,6 +183,3 @@ doc:RealizedReceiptsTextString a svg:TextElement ;
 
 doc:RealizedReceiptsAmountValue a svg:TextElement ;
     svg:fragment "80" .
-
-
-
