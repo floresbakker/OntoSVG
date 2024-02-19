@@ -37,13 +37,11 @@ svg:
     respec:introduction '''
 In today's digital era, Scalable Vector Graphics (SVG) play a vital role in creating interactive and visually appealing web content. SVG provides a powerful framework for defining vector-based graphics using XML syntax, enabling high-quality rendering across various devices and resolutions. Whether it's creating intricate illustrations, interactive data visualizations, or animated icons, SVG empowers designers and developers to unleash their creativity while ensuring optimal performance and accessibility.
 
-At the same time, it becomes more and more important with regard to such graphics to be able to generate, annotate, reuse, validate and understand them.
-
-To harness the full potential of SVG, it's crucial to have a comprehensive description of its vocabulary - the elements and attributes that constitute SVG documents, with which SVG documents can be generated using semantic web technology. This RDF-based SVG Vocabulary aims to provide a structured representation of SVG elements and attributes, facilitating interoperability, generation, documentation, and tooling support for SVG-based applications.
+At the same time, graphics are not objects without context. It becomes more and more important to be able to model this context of graphics, both the metadata as well as the actual content of such graphics. With this we can generate, annotate, reuse, validate and understand these graphics better, and place them within a wider context of other information. OntoSVG uses semantic web compliant technology to parse, model and generate SVG images in an interoperable and meaningful way, preventing any vendor lock-in. Examples of graphics that can be modeled can be anything, from financial dashboards, architectonic designs up and till car images and the like.
 '''@en;
    respec:objective '''The objective of the OntoSVG vocabulary is to define the elements and attributes of the SVG standard (currently conforming to SVG 1.1), providing clear definitions, usage guidelines, and examples to aid developers and designers in automatically creating SVG content using semantic web technology.'''@en;
     respec:audience '''This document is intended for web developers, graphic designers, and anyone involved in creating or working with SVG content and semantic web technology.'''@en;
-    dct:description '''The OntoSVG vocabulary establishes a standard representation of SVG elements and attributes, enabling automatic generation of graphics using semantic web technology, leveraging interoperability and tooling support for SVG-based applications. It provides definitions for SVG elements such as <svg>, <rect>, <circle>, <path>, etc., along with their respective attributes such as 'fill', 'stroke', 'width', 'height', etc. This vocabulary adheres to the SVG 1.1 specification and can serve as a reference guide for implementing SVG features in web applications.'''@en;
+    dct:description '''The OntoSVG vocabulary establishes a standard representation of SVG elements and attributes, enabling automatic generation of graphics using semantic web technology, leveraging interoperability and tooling support for SVG-based applications. It provides definitions for SVG elements such as <svg>, <rect>, <circle>, <path>, etc., along with their respective attributes such as 'fill', 'stroke', 'width', 'height', etc. This vocabulary adheres to the SVG 1.1 specification and can serve as a reference guide for implementing SVG features in semantic web applications.'''@en;
     dct:abstract '''This RDF-based vocabulary defines the elements and attributes of Scalable Vector Graphics (SVG), providing a structured representation for SVG content. It aims to facilitate the generation of graphics using semantic web technology, interoperability, documentation, and tooling support for SVG-based applications.'''@en; 
     skos:example """
 
@@ -63,12 +61,15 @@ An example SVG document:
   
    <!-- Mouth (smile) -->
   <path d="M 60 120 Q 100 150 140 120" fill="none" stroke="black" stroke-width="3"></path></svg>
-	
+
 This can be represented in RDF using the SVG Vocabulary as follows:
-	
+
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
+@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
 
 doc:smileyDocument a svg:Document ;
     rdf:_1 doc:smiley ;
@@ -77,11 +78,11 @@ doc:smileyDocument a svg:Document ;
 doc:smiley a svg:Svg ;
     rdf:_1 doc:head ;
     rdf:_2 doc:leftEye ;
-	rdf:_3 doc:rightEye ;
+    rdf:_3 doc:rightEye ;
     rdf:_4 doc:mouth ;
     svg:height "200" ;
     svg:width "200" ;
-    svg:xmlns "http://www.w3.org/2000/svg" .
+    xml:xmlns "http://www.w3.org/2000/svg" .
 
 doc:mouth a svg:Path ;
     svg:d "M 60 120 Q 100 150 140 120" ;
@@ -128,7 +129,7 @@ doc:rightEye a svg:Circle ;
 
 svg:Element
     a owl:Class;
-	rdfs:subClassOf dom:Element;
+    rdfs:subClassOf dom:Element;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement>;
     skos:definition 'An element with namespace URI "http://www.w3.org/2000/svg" as defined in the SVG specification, that is used to create and manipulate SVG content.'@en;
     skos:prefLabel "The SVG DOM element"@en;
@@ -136,7 +137,7 @@ svg:Element
 
 svg:TextElement
     a owl:Class;
-	rdfs:subClassOf dom:Element;
+    rdfs:subClassOf dom:Element;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement>;
     skos:definition "A plain text element in a SVG document."@en;
     skos:prefLabel "The SVG DOM text element"@en;
@@ -215,7 +216,7 @@ svg:AnimateTransform
     skos:definition "The 'animateTransform' SVG element animates a transformation attribute of a target element."@en;
     skos:prefLabel "the animateTransform element"@en;
     rdfs:isDefinedBy svg:.
-	
+
 svg:Circle
     a owl:Class;
     xml:tag 'circle';
@@ -3472,11 +3473,11 @@ svg:stroke-dashoffset
     dct:conformsTo svg:;
     skos:definition 'An SVG document consists of a tree of elements and text. Each element is denoted in the source by a start tag, such as ‘<circle>’, and an end tag, such as ‘</circle>’. Tags have to be nested such that elements are all completely within each other, without overlapping. Elements can have attributes, which control how the elements work. The SVG Core Vocabulary defines a set of elements that can be used in a SVG document, along with rules about the ways in which the elements can be nested. SVG user agents (e.g., web browsers) parse a SVG document, turning it into a DOM (Document Object Model) tree. A DOM tree is an in-memory representation of a document. A SVG document represents a media-independent description of interactive graphical content. A SVG document can be rendered to a screen. To influence exactly how such rendering takes place, authors can use a styling language such as CSS.'@en;
     skos:prefLabel 'svg document'@en;
-	rdfs:isDefinedBy svg:.
+    rdfs:isDefinedBy svg:.
 
   svg:documentRestriction
     a owl:Restriction;
     owl:hasValue documentType:svg;
     owl:onProperty dom:documentType;
-	skos:prefLabel 'svg document type restriction'@en;
-	rdfs:isDefinedBy svg:.
+    skos:prefLabel 'svg document type restriction'@en;
+    rdfs:isDefinedBy svg:.

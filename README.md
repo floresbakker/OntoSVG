@@ -49,7 +49,7 @@ This graphic is rendered in a browser as follows:
 
 ## Expressing the SVG-document in RDF
 
-Now we can represent the very same document in <i>RDF</i> using the SVG-vocabulary. As it is very cumbersome to do so by hand, a <i>SVG2RDF</i> tool will be available shortly in this repository that will do exactly that for you. For further information on this tool and other neat tools, scroll down this Readme file.
+Now we can represent the very same document in <i>RDF</i> using the SVG-vocabulary. As it is very cumbersome to do so by hand, a <i>SVG2RDF</i> tool is available in this repository that will do exactly that for you. For further information on this tool and other neat tools, scroll down this Readme file.
 
 ```
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
@@ -65,7 +65,7 @@ doc:smileyDocument a svg:Document ;
 doc:smiley a svg:Svg ;
     rdf:_1 doc:head ;
     rdf:_2 doc:leftEye ;
-	rdf:_3 doc:rightEye ;
+    rdf:_3 doc:rightEye ;
     rdf:_4 doc:mouth ;
     svg:height "200" ;
     svg:width "200" ;
@@ -128,12 +128,12 @@ doc:BarChartDocument a svg:Document ;
 
 doc:BarChart a svg:Svg ;
     xml:xmlns "http://www.w3.org/2000/svg";
-	xml:version "1.1";
-	svg:height "350" ;
+    xml:version "1.1";
+    svg:height "350" ;
     svg:width "500" ;
     rdf:_1 doc:Y-axis-Text ;
-	rdf:_2 doc:X-axis-Text ;
-	rdf:_3 doc:Y-axis-Line ;
+    rdf:_2 doc:X-axis-Text ;
+    rdf:_3 doc:Y-axis-Line ;
     rdf:_4 doc:X-axis-Line ;
     rdf:_5 doc:BudgetedExpendituresRectangle ;
     rdf:_6 doc:BudgetedExpendituresText ;
@@ -155,7 +155,7 @@ doc:Y-axis-Text a svg:Text ;
     svg:transform "rotate(-90)" ;
     svg:x "-180" ;
     svg:y "20" .
-	
+
 doc:Y-axis-Line a svg:Line ;
     svg:stroke "black" ;
     svg:stroke-width "2" ;
@@ -273,7 +273,7 @@ doc:RealizedReceiptsAmount a svg:Text ;
 
 doc:AmountText a svg:TextElement ;
     svg:fragment "Amount (Euro)" .
-	
+
 doc:TransactionTypeText a svg:TextElement ;
     svg:fragment "Transaction type" .
 
