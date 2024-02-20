@@ -55,7 +55,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
   xmlns:xsi 
     a owl:DatatypeProperty;
-    xml:key 'xmlns:xsi';
+    xml:key 'xsi';
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
@@ -65,7 +65,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
   xmlns:rdf
     a owl:DatatypeProperty;
-    xml:key 'xmlns:rdf';
+    xml:key 'rdf';
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
@@ -75,7 +75,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
   xmlns:xlink 
     a owl:DatatypeProperty;
-    xml:key 'xmlns:xlink';
+    xml:key 'xlink';
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
@@ -85,7 +85,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
   xmlns:dc 
     a owl:DatatypeProperty;
-    xml:key 'xmlns:dc';
+    xml:key 'dc';
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
@@ -95,7 +95,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
   xmlns:cc
     a owl:DatatypeProperty;
-    xml:key 'xmlns:cc';
+    xml:key 'cc';
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;

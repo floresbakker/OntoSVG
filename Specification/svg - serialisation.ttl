@@ -1,6 +1,7 @@
 prefix dcm: <http://purl.org/dc/dcmitype/>
 prefix dct: <http://purl.org/dc/terms/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix function: <https://data.rijksfinancien.nl/svg/model/function/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfa: <http://www.w3.org/ns/rdfa#>
@@ -167,6 +168,7 @@ select $this {
     skos:prefLabel 'SVG element fragment serialisation rule'@en;
     sh:construct '''
 
+prefix function: <https://data.rijksfinancien.nl/svg/model/function/>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix svg: <https://data.rijksfinancien.nl/svg/model/def/>
@@ -187,7 +189,8 @@ construct {
   {
     select (group_concat(distinct ?attribute;separator=' ') as ?attributes) {
       $this ?attribute0 ?value.
-      ?attribute0 xml:key ?key.
+      ?attribute0 rdfs:subPropertyOf xml:attribute.
+      bind(function:getXMLKey(?attribute0) as ?key)
       bind(concat(?key,'="',str(?value),'"') as ?attribute)
     }
   }
@@ -302,3 +305,28 @@ construct {
     sh:maxCount 1;
     sh:path rdfs:member;
     rdfs:isDefinedBy svg:.
+
+function:getXMLKey
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns the key of an XML attribute, either with or without prefix." ;
+    sh:parameter [
+        sh:path function:attribute ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An xml attribute as defined in an ontology." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace#>
+
+SELECT ?result WHERE {
+         $attribute xml:key ?key;
+         rdfs:isDefinedBy ?ontology.   
+         ?ontology vann:preferredNamespacePrefix ?prefix.
+         BIND(IF(?prefix = "svg" || $attribute = xml:xmlns,?key, CONCAT(?prefix,":",?key)) as ?result).
+  }
+
+       """ .

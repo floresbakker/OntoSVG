@@ -1,0 +1,66 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="330" onload="switch_lights();" style="cursor:pointer;" version="1.1" width="130" xmlns="http://www.w3.org/2000/svg"><metadata><metadata><metadata><metadata>image/svg+xml</metadata><metadata></metadata><title>Animierte Ampel</title><title>2005-31-12</title><title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        <title>Manuel Strehl</title></title></title><title><title><title>http://www.manuel-strehl.de</title></title></title><title>de-DE</title><title><title><title>Ampel</title><title>animiert</title><title>Verkehr</title><title>Stop</title><title>Fußgänger</title><title>Stadt</title><title>Straße</title><title>Kreuzung</title><title>traffic light</title><title>animated</title><title>roadtravel</title><title>traffic signal</title><title>transport</title><title>stop</title><title>roadsign</title><title>go</title><title>pedestrian</title><title>city</title><title>street</title><title>crossroads</title></title></title><title></title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        </title></metadata><title><title></title><title></title><title></title><title></title><title></title><title></title></title></metadata></metadata><defs><script type="text/javascript">
+    /**/
+var run = 2; //start with green light
+var test = 0;
+document.onclick = on_off;
+      
+function on_off() {
+  if( test == 0 ) {
+    test = 1;
+    window.clearTimeout( tout );
+  }
+  else {
+    test = 0;
+    switch_lights();
+  }
+}
+      
+function switch_lights() {
+  switch (run) {
+    case 0:
+      set_col( 1,0,0 );
+      run = 1;
+      break;
+    case 1:
+      set_col( 1,1,0 );
+      run = 2;
+      break;
+    case 2:
+      set_col( 0,0,1 );
+      run = 3;
+      break;
+    case 3:
+      set_col( 0,1,0 );
+      run = 0;
+      break;
+    default:
+      set_col( 1,0,0 );
+      run = 2;
+  }
+  tout = window.setTimeout( "switch_lights()", 1000 );
+}
+      
+function set_col( c1, c2, c3 ) {
+  if( c1 == 1 )
+    document.getElementById("redlight").setAttribute( "fill", "url(#r)" );
+  else
+    document.getElementById("redlight").setAttribute( "fill", "url(#b)" );
+  if( c2 == 1 )
+    document.getElementById("yellight").setAttribute( "fill", "url(#y)" );
+  else
+    document.getElementById("yellight").setAttribute( "fill", "url(#b)" );
+  if( c3 == 1 )
+    document.getElementById("grelight").setAttribute( "fill", "url(#g)" );
+  else
+    document.getElementById("grelight").setAttribute( "fill", "url(#b)" );
+}
+    /**/
+    </script><linearGradient id="back" x1="0" x2="0.4" y1="0" y2="0.9"><stop offset="0" stop-color="#5c656c"></stop><stop offset="1" stop-color="#aab2b7"></stop></linearGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="r" r="0.5"><stop offset="0" stop-color="#fc7474"></stop><stop offset="0.7" stop-color="#d53a3a"></stop><stop offset="1" stop-color="#af0000"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="y" r="0.5"><stop offset="0" stop-color="#fcfc74"></stop><stop offset="0.7" stop-color="#d4d53a"></stop><stop offset="1" stop-color="#afa500"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="g" r="0.5"><stop offset="0" stop-color="#74fc94"></stop><stop offset="0.7" stop-color="#3ad55e"></stop><stop offset="1" stop-color="#00af29"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="b" r="0.5"><stop offset="0" stop-color="#4d4d4d"></stop><stop offset="0.7" stop-color="#1a1a1a"></stop><stop offset="1" stop-color="#000000"></stop></radialGradient><linearGradient id="rg" x1="0" x2="0" y1="0" y2="1.05"><stop offset="0" stop-color="#fff" stop-opacity="0.9"></stop><stop offset="0.7" stop-color="#fff" stop-opacity="0.2"></stop><stop offset="1" stop-color="#fff" stop-opacity="0.3"></stop></linearGradient><path d="M 35,50 A 34,34 0 0,1 95,50 Q 98,55 95,60 Q 65,78 35,60 Q 32,55 35,50 z" fill="url(#rg)" id="reflex"></path></defs><rect fill="url(#back)" height="320" width="120" x="5" y="5" stroke="#000" stroke-width="10"></rect><circle cx="65" cy="65" fill="url(#r)" id="redlight" r="40" stroke="#000" stroke-width="8"></circle><circle cx="65" cy="165" fill="url(#y)" id="yellight" r="40" stroke="#000" stroke-width="8"></circle><circle cx="65" cy="265" fill="url(#g)" id="grelight" r="40" stroke="#000" stroke-width="8"></circle><use xlink:href="#reflex"></use><use transform="translate(0,100)" xlink:href="#reflex"></use><use transform="translate(0,200)" xlink:href="#reflex"></use></svg>

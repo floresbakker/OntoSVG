@@ -296,13 +296,76 @@ xml1:xmlns a owl:DatatypeProperty ;
     skos:prefLabel "the xmlns attribute"@en ;
     xml1:key "xmlns" .
 
-doc:smileyDocument a svg:Document ;
-    rdf:_1 doc:smiley ;
-    prov:wasGeneratedBy doc:smileyDocument-svg-document-generation ;
+doc:1 a svg:Document ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/0/0> ;
+    prov:wasGeneratedBy doc:1-svg-document-generation ;
     dom:documentType documentType:svg ;
     svg:fragment """<?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="200" width="200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" fill="yellow" r="90" stroke="black" stroke-width="2"></circle><circle cx="70" cy="70" fill="black" r="10"></circle><circle cx="130" cy="70" fill="black" r="10"></circle><path d="M 60 120 Q 100 150 140 120" fill="none" stroke="black" stroke-width="3"></path></svg>"""^^xsd:string .
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="330" onload="switch_lights();" style="cursor:pointer;" version="1.1" width="130" xmlns="http://www.w3.org/2000/svg"><metadata><metadata><metadata><metadata>image/svg+xml</metadata><metadata></metadata><title>Animierte Ampel</title><title>2005-31-12</title><title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        <title>Manuel Strehl</title></title></title><title><title><title>http://www.manuel-strehl.de</title></title></title><title>de-DE</title><title><title><title>Ampel</title><title>animiert</title><title>Verkehr</title><title>Stop</title><title>Fußgänger</title><title>Stadt</title><title>Straße</title><title>Kreuzung</title><title>traffic light</title><title>animated</title><title>roadtravel</title><title>traffic signal</title><title>transport</title><title>stop</title><title>roadsign</title><title>go</title><title>pedestrian</title><title>city</title><title>street</title><title>crossroads</title></title></title><title></title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        </title></metadata><title><title></title><title></title><title></title><title></title><title></title><title></title></title></metadata></metadata><defs><script type="text/javascript">
+    /**/
+var run = 2; //start with green light
+var test = 0;
+document.onclick = on_off;
+      
+function on_off() {
+  if( test == 0 ) {
+    test = 1;
+    window.clearTimeout( tout );
+  }
+  else {
+    test = 0;
+    switch_lights();
+  }
+}
+      
+function switch_lights() {
+  switch (run) {
+    case 0:
+      set_col( 1,0,0 );
+      run = 1;
+      break;
+    case 1:
+      set_col( 1,1,0 );
+      run = 2;
+      break;
+    case 2:
+      set_col( 0,0,1 );
+      run = 3;
+      break;
+    case 3:
+      set_col( 0,1,0 );
+      run = 0;
+      break;
+    default:
+      set_col( 1,0,0 );
+      run = 2;
+  }
+  tout = window.setTimeout( "switch_lights()", 1000 );
+}
+      
+function set_col( c1, c2, c3 ) {
+  if( c1 == 1 )
+    document.getElementById("redlight").setAttribute( "fill", "url(#r)" );
+  else
+    document.getElementById("redlight").setAttribute( "fill", "url(#b)" );
+  if( c2 == 1 )
+    document.getElementById("yellight").setAttribute( "fill", "url(#y)" );
+  else
+    document.getElementById("yellight").setAttribute( "fill", "url(#b)" );
+  if( c3 == 1 )
+    document.getElementById("grelight").setAttribute( "fill", "url(#g)" );
+  else
+    document.getElementById("grelight").setAttribute( "fill", "url(#b)" );
+}
+    /**/
+    </script><linearGradient id="back" x1="0" x2="0.4" y1="0" y2="0.9"><stop offset="0" stop-color="#5c656c"></stop><stop offset="1" stop-color="#aab2b7"></stop></linearGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="r" r="0.5"><stop offset="0" stop-color="#fc7474"></stop><stop offset="0.7" stop-color="#d53a3a"></stop><stop offset="1" stop-color="#af0000"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="y" r="0.5"><stop offset="0" stop-color="#fcfc74"></stop><stop offset="0.7" stop-color="#d4d53a"></stop><stop offset="1" stop-color="#afa500"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="g" r="0.5"><stop offset="0" stop-color="#74fc94"></stop><stop offset="0.7" stop-color="#3ad55e"></stop><stop offset="1" stop-color="#00af29"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="b" r="0.5"><stop offset="0" stop-color="#4d4d4d"></stop><stop offset="0.7" stop-color="#1a1a1a"></stop><stop offset="1" stop-color="#000000"></stop></radialGradient><linearGradient id="rg" x1="0" x2="0" y1="0" y2="1.05"><stop offset="0" stop-color="#fff" stop-opacity="0.9"></stop><stop offset="0.7" stop-color="#fff" stop-opacity="0.2"></stop><stop offset="1" stop-color="#fff" stop-opacity="0.3"></stop></linearGradient><path d="M 35,50 A 34,34 0 0,1 95,50 Q 98,55 95,60 Q 65,78 35,60 Q 32,55 35,50 z" fill="url(#rg)" id="reflex"></path></defs><rect fill="url(#back)" height="320" width="120" x="5" y="5" stroke="#000" stroke-width="10"></rect><circle cx="65" cy="65" fill="url(#r)" id="redlight" r="40" stroke="#000" stroke-width="8"></circle><circle cx="65" cy="165" fill="url(#y)" id="yellight" r="40" stroke="#000" stroke-width="8"></circle><circle cx="65" cy="265" fill="url(#g)" id="grelight" r="40" stroke="#000" stroke-width="8"></circle><use xlink:href="#reflex"></use><use transform="translate(0,100)" xlink:href="#reflex"></use><use transform="translate(0,200)" xlink:href="#reflex"></use></svg>"""^^xsd:string .
 
 svg:A a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#AElement> ;
@@ -391,14 +454,6 @@ svg:Cursor a owl:Class ;
     skos:definition "The 'cursor' SVG element defines a cursor."@en ;
     skos:prefLabel "the cursor element"@en ;
     xml1:tag "cursor" .
-
-svg:Defs a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#DefsElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'defs' SVG element defines a container for reusable definitions."@en ;
-    skos:prefLabel "the defs element"@en ;
-    xml1:tag "defs" .
 
 svg:Desc a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#DescElement> ;
@@ -720,14 +775,6 @@ svg:Line a owl:Class ;
     skos:prefLabel "the line element"@en ;
     xml1:tag "line" .
 
-svg:LinearGradient a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#LinearGradientElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'linearGradient' SVG element defines a linear gradient paint server."@en ;
-    skos:prefLabel "the linearGradient element"@en ;
-    xml1:tag "linearGradient" .
-
 svg:Marker a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/painting.html#MarkerElement> ;
     rdfs:isDefinedBy svg: ;
@@ -743,14 +790,6 @@ svg:Mask a owl:Class ;
     skos:definition "The 'mask' SVG element defines an alpha mask for compositing the current object into the background."@en ;
     skos:prefLabel "the mask element"@en ;
     xml1:tag "mask" .
-
-svg:Metadata a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/metadata.html#MetadataElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'metadata' SVG element provides metadata about an SVG document."@en ;
-    skos:prefLabel "the metadata element"@en ;
-    xml1:tag "metadata" .
 
 svg:MissingGlyph a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#MissingGlyphElement> ;
@@ -792,22 +831,6 @@ svg:Polyline a owl:Class ;
     skos:prefLabel "the polyline element"@en ;
     xml1:tag "polyline" .
 
-svg:Rect a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#RectElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'rect' SVG element defines a rectangle."@en ;
-    skos:prefLabel "the rect element"@en ;
-    xml1:tag "rect" .
-
-svg:Script a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/script.html#ScriptElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'script' SVG element includes scripts within an SVG document."@en ;
-    skos:prefLabel "the script element"@en ;
-    xml1:tag "script" .
-
 svg:Set a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/animate.html#SetElement> ;
     rdfs:isDefinedBy svg: ;
@@ -815,14 +838,6 @@ svg:Set a owl:Class ;
     skos:definition "The 'set' SVG element provides a way to animate SVG elements."@en ;
     skos:prefLabel "the set element"@en ;
     xml1:tag "set" .
-
-svg:Stop a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#StopElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'stop' SVG element defines a gradient stop."@en ;
-    skos:prefLabel "the stop element"@en ;
-    xml1:tag "stop" .
 
 svg:Style a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/styling.html#StyleElement> ;
@@ -856,13 +871,6 @@ svg:Text a owl:Class ;
     skos:prefLabel "the text element"@en ;
     xml1:tag "text" .
 
-svg:TextElement a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf dom:Element ;
-    skos:definition "A plain text element in a SVG document."@en ;
-    skos:prefLabel "The SVG DOM text element"@en .
-
 svg:TextPath a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextPathElement> ;
     rdfs:isDefinedBy svg: ;
@@ -870,14 +878,6 @@ svg:TextPath a owl:Class ;
     skos:definition "The 'textPath' SVG element defines a set of glyphs along a path."@en ;
     skos:prefLabel "the textPath element"@en ;
     xml1:tag "textPath" .
-
-svg:Title a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#TitleElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'title' SVG element provides a title for an SVG document or a description for an SVG container element."@en ;
-    skos:prefLabel "the title element"@en ;
-    xml1:tag "title" .
 
 svg:Tref a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TRefElement> ;
@@ -894,14 +894,6 @@ svg:Tspan a owl:Class ;
     skos:definition "The 'tspan' SVG element allows for grouping multiple consecutive text elements into one logical entity."@en ;
     skos:prefLabel "the tspan element"@en ;
     xml1:tag "tspan" .
-
-svg:Use a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#UseElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'use' SVG element provides a way to use a group of SVG elements defined elsewhere in the SVG document."@en ;
-    skos:prefLabel "the use element"@en ;
-    xml1:tag "use" .
 
 svg:View a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#ViewElement> ;
@@ -3247,50 +3239,1199 @@ xml1:documentRestriction a owl:Restriction ;
     owl:onProperty dom:documentType ;
     skos:prefLabel "xml document type restriction"@en .
 
-doc:head a svg:Circle ;
-    svg:cx "100" ;
-    svg:cy "100" ;
-    svg:fill "yellow" ;
-    svg:fragment "<circle cx=\"100\" cy=\"100\" fill=\"yellow\" r=\"90\" stroke=\"black\" stroke-width=\"2\"></circle>"^^xsd:string ;
-    svg:r "90" ;
-    svg:stroke "black" ;
-    svg:stroke-width "2" .
-
-doc:leftEye a svg:Circle ;
-    svg:cx "70" ;
-    svg:cy "70" ;
-    svg:fill "black" ;
-    svg:fragment "<circle cx=\"70\" cy=\"70\" fill=\"black\" r=\"10\"></circle>"^^xsd:string ;
-    svg:r "10" .
-
-doc:mouth a svg:Path ;
-    svg:d "M 60 120 Q 100 150 140 120" ;
-    svg:fill "none" ;
-    svg:fragment "<path d=\"M 60 120 Q 100 150 140 120\" fill=\"none\" stroke=\"black\" stroke-width=\"3\"></path>"^^xsd:string ;
-    svg:stroke "black" ;
-    svg:stroke-width "3" .
-
-doc:rightEye a svg:Circle ;
-    svg:cx "130" ;
-    svg:cy "70" ;
-    svg:fill "black" ;
-    svg:fragment "<circle cx=\"130\" cy=\"70\" fill=\"black\" r=\"10\"></circle>"^^xsd:string ;
-    svg:r "10" .
-
-doc:smiley a svg:Svg ;
-    rdf:_1 doc:head ;
-    rdf:_2 doc:leftEye ;
-    rdf:_3 doc:rightEye ;
-    rdf:_4 doc:mouth ;
+<https://data.rijksfinancien.nl/svg/doc/id/0/0> a svg:Svg ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/00/0> ;
+    rdf:_10 <https://data.rijksfinancien.nl/svg/doc/id/00/9> ;
+    rdf:_11 <https://data.rijksfinancien.nl/svg/doc/id/00/10> ;
+    rdf:_12 <https://data.rijksfinancien.nl/svg/doc/id/00/11> ;
+    rdf:_13 <https://data.rijksfinancien.nl/svg/doc/id/00/12> ;
+    rdf:_14 <https://data.rijksfinancien.nl/svg/doc/id/00/13> ;
+    rdf:_15 <https://data.rijksfinancien.nl/svg/doc/id/00/14> ;
+    rdf:_16 <https://data.rijksfinancien.nl/svg/doc/id/00/15> ;
+    rdf:_17 <https://data.rijksfinancien.nl/svg/doc/id/00/16> ;
+    rdf:_18 <https://data.rijksfinancien.nl/svg/doc/id/00/17> ;
+    rdf:_19 <https://data.rijksfinancien.nl/svg/doc/id/00/18> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/00/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/00/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/00/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/00/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/00/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/00/6> ;
+    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/00/7> ;
+    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/00/8> ;
     xml1:xmlns "http://www.w3.org/2000/svg" ;
-    svg:fragment "<svg height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"100\" cy=\"100\" fill=\"yellow\" r=\"90\" stroke=\"black\" stroke-width=\"2\"></circle><circle cx=\"70\" cy=\"70\" fill=\"black\" r=\"10\"></circle><circle cx=\"130\" cy=\"70\" fill=\"black\" r=\"10\"></circle><path d=\"M 60 120 Q 100 150 140 120\" fill=\"none\" stroke=\"black\" stroke-width=\"3\"></path></svg>"^^xsd:string ;
-    svg:height "200" ;
-    svg:width "200" .
+    svg:baseprofile "full" ;
+    svg:fragment """<svg height="330" onload="switch_lights();" style="cursor:pointer;" version="1.1" width="130" xmlns="http://www.w3.org/2000/svg"><metadata><metadata><metadata><metadata>image/svg+xml</metadata><metadata></metadata><title>Animierte Ampel</title><title>2005-31-12</title><title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        <title>Manuel Strehl</title></title></title><title><title><title>http://www.manuel-strehl.de</title></title></title><title>de-DE</title><title><title><title>Ampel</title><title>animiert</title><title>Verkehr</title><title>Stop</title><title>Fußgänger</title><title>Stadt</title><title>Straße</title><title>Kreuzung</title><title>traffic light</title><title>animated</title><title>roadtravel</title><title>traffic signal</title><title>transport</title><title>stop</title><title>roadsign</title><title>go</title><title>pedestrian</title><title>city</title><title>street</title><title>crossroads</title></title></title><title></title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        </title></metadata><title><title></title><title></title><title></title><title></title><title></title><title></title></title></metadata></metadata><defs><script type="text/javascript">
+    /**/
+var run = 2; //start with green light
+var test = 0;
+document.onclick = on_off;
+      
+function on_off() {
+  if( test == 0 ) {
+    test = 1;
+    window.clearTimeout( tout );
+  }
+  else {
+    test = 0;
+    switch_lights();
+  }
+}
+      
+function switch_lights() {
+  switch (run) {
+    case 0:
+      set_col( 1,0,0 );
+      run = 1;
+      break;
+    case 1:
+      set_col( 1,1,0 );
+      run = 2;
+      break;
+    case 2:
+      set_col( 0,0,1 );
+      run = 3;
+      break;
+    case 3:
+      set_col( 0,1,0 );
+      run = 0;
+      break;
+    default:
+      set_col( 1,0,0 );
+      run = 2;
+  }
+  tout = window.setTimeout( "switch_lights()", 1000 );
+}
+      
+function set_col( c1, c2, c3 ) {
+  if( c1 == 1 )
+    document.getElementById("redlight").setAttribute( "fill", "url(#r)" );
+  else
+    document.getElementById("redlight").setAttribute( "fill", "url(#b)" );
+  if( c2 == 1 )
+    document.getElementById("yellight").setAttribute( "fill", "url(#y)" );
+  else
+    document.getElementById("yellight").setAttribute( "fill", "url(#b)" );
+  if( c3 == 1 )
+    document.getElementById("grelight").setAttribute( "fill", "url(#g)" );
+  else
+    document.getElementById("grelight").setAttribute( "fill", "url(#b)" );
+}
+    /**/
+    </script><linearGradient id="back" x1="0" x2="0.4" y1="0" y2="0.9"><stop offset="0" stop-color="#5c656c"></stop><stop offset="1" stop-color="#aab2b7"></stop></linearGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="r" r="0.5"><stop offset="0" stop-color="#fc7474"></stop><stop offset="0.7" stop-color="#d53a3a"></stop><stop offset="1" stop-color="#af0000"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="y" r="0.5"><stop offset="0" stop-color="#fcfc74"></stop><stop offset="0.7" stop-color="#d4d53a"></stop><stop offset="1" stop-color="#afa500"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="g" r="0.5"><stop offset="0" stop-color="#74fc94"></stop><stop offset="0.7" stop-color="#3ad55e"></stop><stop offset="1" stop-color="#00af29"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="b" r="0.5"><stop offset="0" stop-color="#4d4d4d"></stop><stop offset="0.7" stop-color="#1a1a1a"></stop><stop offset="1" stop-color="#000000"></stop></radialGradient><linearGradient id="rg" x1="0" x2="0" y1="0" y2="1.05"><stop offset="0" stop-color="#fff" stop-opacity="0.9"></stop><stop offset="0.7" stop-color="#fff" stop-opacity="0.2"></stop><stop offset="1" stop-color="#fff" stop-opacity="0.3"></stop></linearGradient><path d="M 35,50 A 34,34 0 0,1 95,50 Q 98,55 95,60 Q 65,78 35,60 Q 32,55 35,50 z" fill="url(#rg)" id="reflex"></path></defs><rect fill="url(#back)" height="320" width="120" x="5" y="5" stroke="#000" stroke-width="10"></rect><circle cx="65" cy="65" fill="url(#r)" id="redlight" r="40" stroke="#000" stroke-width="8"></circle><circle cx="65" cy="165" fill="url(#y)" id="yellight" r="40" stroke="#000" stroke-width="8"></circle><circle cx="65" cy="265" fill="url(#g)" id="grelight" r="40" stroke="#000" stroke-width="8"></circle><use xlink:href="#reflex"></use><use transform="translate(0,100)" xlink:href="#reflex"></use><use transform="translate(0,200)" xlink:href="#reflex"></use></svg>"""^^xsd:string ;
+    svg:height "330" ;
+    svg:onload "switch_lights();" ;
+    svg:style "cursor:pointer;" ;
+    svg:version "1.1" ;
+    svg:width "130" .
 
-doc:smileyDocument-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-20T22:38:53.002923+00:00"^^xsd:dateTime ;
+<https://data.rijksfinancien.nl/svg/doc/id/00/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/1> a svg:Metadata ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/100/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/100/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/100/2> ;
+    svg:fragment """<metadata><metadata><metadata><metadata>image/svg+xml</metadata><metadata></metadata><title>Animierte Ampel</title><title>2005-31-12</title><title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        <title>Manuel Strehl</title></title></title><title><title><title>http://www.manuel-strehl.de</title></title></title><title>de-DE</title><title><title><title>Ampel</title><title>animiert</title><title>Verkehr</title><title>Stop</title><title>Fußgänger</title><title>Stadt</title><title>Straße</title><title>Kreuzung</title><title>traffic light</title><title>animated</title><title>roadtravel</title><title>traffic signal</title><title>transport</title><title>stop</title><title>roadsign</title><title>go</title><title>pedestrian</title><title>city</title><title>street</title><title>crossroads</title></title></title><title></title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        </title></metadata><title><title></title><title></title><title></title><title></title><title></title><title></title></title></metadata></metadata>"""^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/10> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/11> a svg:Circle ;
+    svg:cx "65" ;
+    svg:cy "265" ;
+    svg:fill "url(#g)" ;
+    svg:fragment "<circle cx=\"65\" cy=\"265\" fill=\"url(#g)\" id=\"grelight\" r=\"40\" stroke=\"#000\" stroke-width=\"8\"></circle>"^^xsd:string ;
+    svg:id "grelight" ;
+    svg:r "40" ;
+    svg:stroke "#000" ;
+    svg:stroke-width "8" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/12> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/13> a svg:Use ;
+    xlink:href "#reflex" ;
+    svg:fragment "<use xlink:href=\"#reflex\"></use>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/14> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/15> a svg:Use ;
+    xlink:href "#reflex" ;
+    svg:fragment "<use transform=\"translate(0,100)\" xlink:href=\"#reflex\"></use>"^^xsd:string ;
+    svg:transform "translate(0,100)" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/16> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/17> a svg:Use ;
+    xlink:href "#reflex" ;
+    svg:fragment "<use transform=\"translate(0,200)\" xlink:href=\"#reflex\"></use>"^^xsd:string ;
+    svg:transform "translate(0,200)" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/18> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/3> a svg:Defs ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/300/0> ;
+    rdf:_10 <https://data.rijksfinancien.nl/svg/doc/id/300/9> ;
+    rdf:_11 <https://data.rijksfinancien.nl/svg/doc/id/300/10> ;
+    rdf:_12 <https://data.rijksfinancien.nl/svg/doc/id/300/11> ;
+    rdf:_13 <https://data.rijksfinancien.nl/svg/doc/id/300/12> ;
+    rdf:_14 <https://data.rijksfinancien.nl/svg/doc/id/300/13> ;
+    rdf:_15 <https://data.rijksfinancien.nl/svg/doc/id/300/14> ;
+    rdf:_16 <https://data.rijksfinancien.nl/svg/doc/id/300/15> ;
+    rdf:_17 <https://data.rijksfinancien.nl/svg/doc/id/300/16> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/300/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/300/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/300/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/300/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/300/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/300/6> ;
+    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/300/7> ;
+    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/300/8> ;
+    svg:fragment """<defs><script type="text/javascript">
+    /**/
+var run = 2; //start with green light
+var test = 0;
+document.onclick = on_off;
+      
+function on_off() {
+  if( test == 0 ) {
+    test = 1;
+    window.clearTimeout( tout );
+  }
+  else {
+    test = 0;
+    switch_lights();
+  }
+}
+      
+function switch_lights() {
+  switch (run) {
+    case 0:
+      set_col( 1,0,0 );
+      run = 1;
+      break;
+    case 1:
+      set_col( 1,1,0 );
+      run = 2;
+      break;
+    case 2:
+      set_col( 0,0,1 );
+      run = 3;
+      break;
+    case 3:
+      set_col( 0,1,0 );
+      run = 0;
+      break;
+    default:
+      set_col( 1,0,0 );
+      run = 2;
+  }
+  tout = window.setTimeout( "switch_lights()", 1000 );
+}
+      
+function set_col( c1, c2, c3 ) {
+  if( c1 == 1 )
+    document.getElementById("redlight").setAttribute( "fill", "url(#r)" );
+  else
+    document.getElementById("redlight").setAttribute( "fill", "url(#b)" );
+  if( c2 == 1 )
+    document.getElementById("yellight").setAttribute( "fill", "url(#y)" );
+  else
+    document.getElementById("yellight").setAttribute( "fill", "url(#b)" );
+  if( c3 == 1 )
+    document.getElementById("grelight").setAttribute( "fill", "url(#g)" );
+  else
+    document.getElementById("grelight").setAttribute( "fill", "url(#b)" );
+}
+    /**/
+    </script><linearGradient id="back" x1="0" x2="0.4" y1="0" y2="0.9"><stop offset="0" stop-color="#5c656c"></stop><stop offset="1" stop-color="#aab2b7"></stop></linearGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="r" r="0.5"><stop offset="0" stop-color="#fc7474"></stop><stop offset="0.7" stop-color="#d53a3a"></stop><stop offset="1" stop-color="#af0000"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="y" r="0.5"><stop offset="0" stop-color="#fcfc74"></stop><stop offset="0.7" stop-color="#d4d53a"></stop><stop offset="1" stop-color="#afa500"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="g" r="0.5"><stop offset="0" stop-color="#74fc94"></stop><stop offset="0.7" stop-color="#3ad55e"></stop><stop offset="1" stop-color="#00af29"></stop></radialGradient><radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="b" r="0.5"><stop offset="0" stop-color="#4d4d4d"></stop><stop offset="0.7" stop-color="#1a1a1a"></stop><stop offset="1" stop-color="#000000"></stop></radialGradient><linearGradient id="rg" x1="0" x2="0" y1="0" y2="1.05"><stop offset="0" stop-color="#fff" stop-opacity="0.9"></stop><stop offset="0.7" stop-color="#fff" stop-opacity="0.2"></stop><stop offset="1" stop-color="#fff" stop-opacity="0.3"></stop></linearGradient><path d="M 35,50 A 34,34 0 0,1 95,50 Q 98,55 95,60 Q 65,78 35,60 Q 32,55 35,50 z" fill="url(#rg)" id="reflex"></path></defs>"""^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/5> a svg:Rect ;
+    svg:fill "url(#back)" ;
+    svg:fragment "<rect fill=\"url(#back)\" height=\"320\" width=\"120\" x=\"5\" y=\"5\" stroke=\"#000\" stroke-width=\"10\"></rect>"^^xsd:string ;
+    svg:height "320" ;
+    svg:stroke "#000" ;
+    svg:stroke-width "10" ;
+    svg:width "120" ;
+    svg:x "5" ;
+    svg:y "5" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/6> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/7> a svg:Circle ;
+    svg:cx "65" ;
+    svg:cy "65" ;
+    svg:fill "url(#r)" ;
+    svg:fragment "<circle cx=\"65\" cy=\"65\" fill=\"url(#r)\" id=\"redlight\" r=\"40\" stroke=\"#000\" stroke-width=\"8\"></circle>"^^xsd:string ;
+    svg:id "redlight" ;
+    svg:r "40" ;
+    svg:stroke "#000" ;
+    svg:stroke-width "8" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/8> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/9> a svg:Circle ;
+    svg:cx "65" ;
+    svg:cy "165" ;
+    svg:fill "url(#y)" ;
+    svg:fragment "<circle cx=\"65\" cy=\"165\" fill=\"url(#y)\" id=\"yellight\" r=\"40\" stroke=\"#000\" stroke-width=\"8\"></circle>"^^xsd:string ;
+    svg:id "yellight" ;
+    svg:r "40" ;
+    svg:stroke "#000" ;
+    svg:stroke-width "8" .
+
+doc:1-svg-document-generation a prov:Activity ;
+    prov:atTime "2024-02-20T22:39:04.439545+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
+
+<https://data.rijksfinancien.nl/svg/doc/id/100/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/100/1> a svg:Metadata ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1100/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/1100/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/1100/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/1100/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/1100/4> ;
+    svg:fragment """<metadata><metadata><metadata>image/svg+xml</metadata><metadata></metadata><title>Animierte Ampel</title><title>2005-31-12</title><title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        <title>Manuel Strehl</title></title></title><title><title><title>http://www.manuel-strehl.de</title></title></title><title>de-DE</title><title><title><title>Ampel</title><title>animiert</title><title>Verkehr</title><title>Stop</title><title>Fußgänger</title><title>Stadt</title><title>Straße</title><title>Kreuzung</title><title>traffic light</title><title>animated</title><title>roadtravel</title><title>traffic signal</title><title>transport</title><title>stop</title><title>roadsign</title><title>go</title><title>pedestrian</title><title>city</title><title>street</title><title>crossroads</title></title></title><title></title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        </title></metadata><title><title></title><title></title><title></title><title></title><title></title><title></title></title></metadata>"""^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/100/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1100/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1100/1> a svg:Metadata ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/11100/0> ;
+    rdf:_10 <https://data.rijksfinancien.nl/svg/doc/id/11100/9> ;
+    rdf:_11 <https://data.rijksfinancien.nl/svg/doc/id/11100/10> ;
+    rdf:_12 <https://data.rijksfinancien.nl/svg/doc/id/11100/11> ;
+    rdf:_13 <https://data.rijksfinancien.nl/svg/doc/id/11100/12> ;
+    rdf:_14 <https://data.rijksfinancien.nl/svg/doc/id/11100/13> ;
+    rdf:_15 <https://data.rijksfinancien.nl/svg/doc/id/11100/14> ;
+    rdf:_16 <https://data.rijksfinancien.nl/svg/doc/id/11100/15> ;
+    rdf:_17 <https://data.rijksfinancien.nl/svg/doc/id/11100/16> ;
+    rdf:_18 <https://data.rijksfinancien.nl/svg/doc/id/11100/17> ;
+    rdf:_19 <https://data.rijksfinancien.nl/svg/doc/id/11100/18> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/11100/1> ;
+    rdf:_20 <https://data.rijksfinancien.nl/svg/doc/id/11100/19> ;
+    rdf:_21 <https://data.rijksfinancien.nl/svg/doc/id/11100/20> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/11100/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/11100/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/11100/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/11100/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/11100/6> ;
+    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/11100/7> ;
+    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/11100/8> ;
+    svg:fragment """<metadata><metadata>image/svg+xml</metadata><metadata></metadata><title>Animierte Ampel</title><title>2005-31-12</title><title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        <title>Manuel Strehl</title></title></title><title><title><title>http://www.manuel-strehl.de</title></title></title><title>de-DE</title><title><title><title>Ampel</title><title>animiert</title><title>Verkehr</title><title>Stop</title><title>Fußgänger</title><title>Stadt</title><title>Straße</title><title>Kreuzung</title><title>traffic light</title><title>animated</title><title>roadtravel</title><title>traffic signal</title><title>transport</title><title>stop</title><title>roadsign</title><title>go</title><title>pedestrian</title><title>city</title><title>street</title><title>crossroads</title></title></title><title></title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        </title></metadata>"""^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1100/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1100/3> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/31100/0> ;
+    rdf:_10 <https://data.rijksfinancien.nl/svg/doc/id/31100/9> ;
+    rdf:_11 <https://data.rijksfinancien.nl/svg/doc/id/31100/10> ;
+    rdf:_12 <https://data.rijksfinancien.nl/svg/doc/id/31100/11> ;
+    rdf:_13 <https://data.rijksfinancien.nl/svg/doc/id/31100/12> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/31100/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/31100/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/31100/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/31100/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/31100/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/31100/6> ;
+    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/31100/7> ;
+    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/31100/8> ;
+    svg:fragment "<title><title></title><title></title><title></title><title></title><title></title><title></title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1100/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/1> a svg:Metadata ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/111100/0> ;
+    svg:fragment "<metadata>image/svg+xml</metadata>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/10> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/11> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1111100/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/1111100/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/1111100/2> ;
+    svg:fragment "<title><title><title>http://www.manuel-strehl.de</title></title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/12> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/13> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1311100/0> ;
+    svg:fragment "<title>de-DE</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/14> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/15> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1511100/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/1511100/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/1511100/2> ;
+    svg:fragment "<title><title><title>Ampel</title><title>animiert</title><title>Verkehr</title><title>Stop</title><title>Fußgänger</title><title>Stadt</title><title>Straße</title><title>Kreuzung</title><title>traffic light</title><title>animated</title><title>roadtravel</title><title>traffic signal</title><title>transport</title><title>stop</title><title>roadsign</title><title>go</title><title>pedestrian</title><title>city</title><title>street</title><title>crossroads</title></title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/16> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/17> a svg:Title ;
+    svg:fragment "<title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/18> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/19> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1911100/0> ;
+    svg:fragment """<title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        </title>"""^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/20> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/3> a svg:Metadata ;
+    svg:fragment "<metadata></metadata>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/5> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/511100/0> ;
+    svg:fragment "<title>Animierte Ampel</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/6> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/7> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/711100/0> ;
+    svg:fragment "<title>2005-31-12</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/8> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/9> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/911100/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/911100/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/911100/2> ;
+    svg:fragment """<title><title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        <title>Manuel Strehl</title></title></title>"""^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/111100/0> a svg:TextElement ;
+    svg:fragment "image/svg+xml" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1111100/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1111100/1> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/11111100/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/11111100/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/11111100/2> ;
+    svg:fragment "<title><title>http://www.manuel-strehl.de</title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1111100/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11111100/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11111100/1> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/111111100/0> ;
+    svg:fragment "<title>http://www.manuel-strehl.de</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11111100/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/111111100/0> a svg:TextElement ;
+    svg:fragment "http://www.manuel-strehl.de" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1111511100/0> a svg:TextElement ;
+    svg:fragment "Stadt" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/111511100/0> a svg:TextElement ;
+    svg:fragment "Ampel" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11300/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11300/1> a svg:Stop ;
+    svg:fragment "<stop offset=\"0\" stop-color=\"#4d4d4d\"></stop>"^^xsd:string ;
+    svg:offset "0" ;
+    svg:stop-color "#4d4d4d" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11300/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11300/3> a svg:Stop ;
+    svg:fragment "<stop offset=\"0.7\" stop-color=\"#1a1a1a\"></stop>"^^xsd:string ;
+    svg:offset "0.7" ;
+    svg:stop-color "#1a1a1a" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11300/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11300/5> a svg:Stop ;
+    svg:fragment "<stop offset=\"1\" stop-color=\"#000000\"></stop>"^^xsd:string ;
+    svg:offset "1" ;
+    svg:stop-color "#000000" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11300/6> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/1> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/111511100/0> ;
+    svg:fragment "<title>Ampel</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/10> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/11> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1111511100/0> ;
+    svg:fragment "<title>Stadt</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/12> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/13> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1311511100/0> ;
+    svg:fragment "<title>Straße</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/14> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/15> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1511511100/0> ;
+    svg:fragment "<title>Kreuzung</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/16> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/17> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1711511100/0> ;
+    svg:fragment "<title>traffic light</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/18> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/19> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1911511100/0> ;
+    svg:fragment "<title>animated</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/20> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/21> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/2111511100/0> ;
+    svg:fragment "<title>roadtravel</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/22> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/23> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/2311511100/0> ;
+    svg:fragment "<title>traffic signal</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/24> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/25> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/2511511100/0> ;
+    svg:fragment "<title>transport</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/26> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/27> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/2711511100/0> ;
+    svg:fragment "<title>stop</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/28> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/29> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/2911511100/0> ;
+    svg:fragment "<title>roadsign</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/3> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/311511100/0> ;
+    svg:fragment "<title>animiert</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/30> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/31> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/3111511100/0> ;
+    svg:fragment "<title>go</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/32> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/33> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/3311511100/0> ;
+    svg:fragment "<title>pedestrian</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/34> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/35> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/3511511100/0> ;
+    svg:fragment "<title>city</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/36> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/37> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/3711511100/0> ;
+    svg:fragment "<title>street</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/38> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/39> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/3911511100/0> ;
+    svg:fragment "<title>crossroads</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/40> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/5> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/511511100/0> ;
+    svg:fragment "<title>Verkehr</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/6> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/7> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/711511100/0> ;
+    svg:fragment "<title>Stop</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/8> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11511100/9> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/911511100/0> ;
+    svg:fragment "<title>Fußgänger</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11911100/0> a svg:TextElement ;
+    svg:fragment "Manuel Strehl" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1300/0> a svg:TextElement ;
+    svg:fragment """
+    /**/
+var run = 2; //start with green light
+var test = 0;
+document.onclick = on_off;
+      
+function on_off() {
+  if( test == 0 ) {
+    test = 1;
+    window.clearTimeout( tout );
+  }
+  else {
+    test = 0;
+    switch_lights();
+  }
+}
+      
+function switch_lights() {
+  switch (run) {
+    case 0:
+      set_col( 1,0,0 );
+      run = 1;
+      break;
+    case 1:
+      set_col( 1,1,0 );
+      run = 2;
+      break;
+    case 2:
+      set_col( 0,0,1 );
+      run = 3;
+      break;
+    case 3:
+      set_col( 0,1,0 );
+      run = 0;
+      break;
+    default:
+      set_col( 1,0,0 );
+      run = 2;
+  }
+  tout = window.setTimeout( "switch_lights()", 1000 );
+}
+      
+function set_col( c1, c2, c3 ) {
+  if( c1 == 1 )
+    document.getElementById("redlight").setAttribute( "fill", "url(#r)" );
+  else
+    document.getElementById("redlight").setAttribute( "fill", "url(#b)" );
+  if( c2 == 1 )
+    document.getElementById("yellight").setAttribute( "fill", "url(#y)" );
+  else
+    document.getElementById("yellight").setAttribute( "fill", "url(#b)" );
+  if( c3 == 1 )
+    document.getElementById("grelight").setAttribute( "fill", "url(#g)" );
+  else
+    document.getElementById("grelight").setAttribute( "fill", "url(#b)" );
+}
+    /**/
+    """ .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1311100/0> a svg:TextElement ;
+    svg:fragment "de-DE" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1311511100/0> a svg:TextElement ;
+    svg:fragment "Straße" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/13300/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/13300/1> a svg:Stop ;
+    svg:fragment "<stop offset=\"0\" stop-color=\"#fff\" stop-opacity=\"0.9\"></stop>"^^xsd:string ;
+    svg:offset "0" ;
+    svg:stop-color "#fff" ;
+    svg:stop-opacity "0.9" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/13300/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/13300/3> a svg:Stop ;
+    svg:fragment "<stop offset=\"0.7\" stop-color=\"#fff\" stop-opacity=\"0.2\"></stop>"^^xsd:string ;
+    svg:offset "0.7" ;
+    svg:stop-color "#fff" ;
+    svg:stop-opacity "0.2" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/13300/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/13300/5> a svg:Stop ;
+    svg:fragment "<stop offset=\"1\" stop-color=\"#fff\" stop-opacity=\"0.3\"></stop>"^^xsd:string ;
+    svg:offset "1" ;
+    svg:stop-color "#fff" ;
+    svg:stop-opacity "0.3" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/13300/6> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1511100/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1511100/1> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/11511100/0> ;
+    rdf:_10 <https://data.rijksfinancien.nl/svg/doc/id/11511100/9> ;
+    rdf:_11 <https://data.rijksfinancien.nl/svg/doc/id/11511100/10> ;
+    rdf:_12 <https://data.rijksfinancien.nl/svg/doc/id/11511100/11> ;
+    rdf:_13 <https://data.rijksfinancien.nl/svg/doc/id/11511100/12> ;
+    rdf:_14 <https://data.rijksfinancien.nl/svg/doc/id/11511100/13> ;
+    rdf:_15 <https://data.rijksfinancien.nl/svg/doc/id/11511100/14> ;
+    rdf:_16 <https://data.rijksfinancien.nl/svg/doc/id/11511100/15> ;
+    rdf:_17 <https://data.rijksfinancien.nl/svg/doc/id/11511100/16> ;
+    rdf:_18 <https://data.rijksfinancien.nl/svg/doc/id/11511100/17> ;
+    rdf:_19 <https://data.rijksfinancien.nl/svg/doc/id/11511100/18> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/11511100/1> ;
+    rdf:_20 <https://data.rijksfinancien.nl/svg/doc/id/11511100/19> ;
+    rdf:_21 <https://data.rijksfinancien.nl/svg/doc/id/11511100/20> ;
+    rdf:_22 <https://data.rijksfinancien.nl/svg/doc/id/11511100/21> ;
+    rdf:_23 <https://data.rijksfinancien.nl/svg/doc/id/11511100/22> ;
+    rdf:_24 <https://data.rijksfinancien.nl/svg/doc/id/11511100/23> ;
+    rdf:_25 <https://data.rijksfinancien.nl/svg/doc/id/11511100/24> ;
+    rdf:_26 <https://data.rijksfinancien.nl/svg/doc/id/11511100/25> ;
+    rdf:_27 <https://data.rijksfinancien.nl/svg/doc/id/11511100/26> ;
+    rdf:_28 <https://data.rijksfinancien.nl/svg/doc/id/11511100/27> ;
+    rdf:_29 <https://data.rijksfinancien.nl/svg/doc/id/11511100/28> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/11511100/2> ;
+    rdf:_30 <https://data.rijksfinancien.nl/svg/doc/id/11511100/29> ;
+    rdf:_31 <https://data.rijksfinancien.nl/svg/doc/id/11511100/30> ;
+    rdf:_32 <https://data.rijksfinancien.nl/svg/doc/id/11511100/31> ;
+    rdf:_33 <https://data.rijksfinancien.nl/svg/doc/id/11511100/32> ;
+    rdf:_34 <https://data.rijksfinancien.nl/svg/doc/id/11511100/33> ;
+    rdf:_35 <https://data.rijksfinancien.nl/svg/doc/id/11511100/34> ;
+    rdf:_36 <https://data.rijksfinancien.nl/svg/doc/id/11511100/35> ;
+    rdf:_37 <https://data.rijksfinancien.nl/svg/doc/id/11511100/36> ;
+    rdf:_38 <https://data.rijksfinancien.nl/svg/doc/id/11511100/37> ;
+    rdf:_39 <https://data.rijksfinancien.nl/svg/doc/id/11511100/38> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/11511100/3> ;
+    rdf:_40 <https://data.rijksfinancien.nl/svg/doc/id/11511100/39> ;
+    rdf:_41 <https://data.rijksfinancien.nl/svg/doc/id/11511100/40> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/11511100/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/11511100/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/11511100/6> ;
+    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/11511100/7> ;
+    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/11511100/8> ;
+    svg:fragment "<title><title>Ampel</title><title>animiert</title><title>Verkehr</title><title>Stop</title><title>Fußgänger</title><title>Stadt</title><title>Straße</title><title>Kreuzung</title><title>traffic light</title><title>animated</title><title>roadtravel</title><title>traffic signal</title><title>transport</title><title>stop</title><title>roadsign</title><title>go</title><title>pedestrian</title><title>city</title><title>street</title><title>crossroads</title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1511100/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1511511100/0> a svg:TextElement ;
+    svg:fragment "Kreuzung" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1711511100/0> a svg:TextElement ;
+    svg:fragment "traffic light" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1911100/1> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/11911100/0> ;
+    svg:fragment "<title>Manuel Strehl</title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1911100/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1911511100/0> a svg:TextElement ;
+    svg:fragment "animated" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/2111511100/0> a svg:TextElement ;
+    svg:fragment "roadtravel" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/2311511100/0> a svg:TextElement ;
+    svg:fragment "traffic signal" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/2511511100/0> a svg:TextElement ;
+    svg:fragment "transport" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/2711511100/0> a svg:TextElement ;
+    svg:fragment "stop" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/2911511100/0> a svg:TextElement ;
+    svg:fragment "roadsign" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/1> a svg:Script ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1300/0> ;
+    svg:fragment """<script type="text/javascript">
+    /**/
+var run = 2; //start with green light
+var test = 0;
+document.onclick = on_off;
+      
+function on_off() {
+  if( test == 0 ) {
+    test = 1;
+    window.clearTimeout( tout );
+  }
+  else {
+    test = 0;
+    switch_lights();
+  }
+}
+      
+function switch_lights() {
+  switch (run) {
+    case 0:
+      set_col( 1,0,0 );
+      run = 1;
+      break;
+    case 1:
+      set_col( 1,1,0 );
+      run = 2;
+      break;
+    case 2:
+      set_col( 0,0,1 );
+      run = 3;
+      break;
+    case 3:
+      set_col( 0,1,0 );
+      run = 0;
+      break;
+    default:
+      set_col( 1,0,0 );
+      run = 2;
+  }
+  tout = window.setTimeout( "switch_lights()", 1000 );
+}
+      
+function set_col( c1, c2, c3 ) {
+  if( c1 == 1 )
+    document.getElementById("redlight").setAttribute( "fill", "url(#r)" );
+  else
+    document.getElementById("redlight").setAttribute( "fill", "url(#b)" );
+  if( c2 == 1 )
+    document.getElementById("yellight").setAttribute( "fill", "url(#y)" );
+  else
+    document.getElementById("yellight").setAttribute( "fill", "url(#b)" );
+  if( c3 == 1 )
+    document.getElementById("grelight").setAttribute( "fill", "url(#g)" );
+  else
+    document.getElementById("grelight").setAttribute( "fill", "url(#b)" );
+}
+    /**/
+    </script>"""^^xsd:string ;
+    svg:type "text/javascript" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/10> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/11> a svg:RadialGradient ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/11300/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/11300/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/11300/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/11300/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/11300/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/11300/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/11300/6> ;
+    svg:cx "0.5" ;
+    svg:cy "0.5" ;
+    svg:fragment "<radialGradient cx=\"0.5\" cy=\"0.5\" fx=\"0.5\" fy=\"0.5\" id=\"b\" r=\"0.5\"><stop offset=\"0\" stop-color=\"#4d4d4d\"></stop><stop offset=\"0.7\" stop-color=\"#1a1a1a\"></stop><stop offset=\"1\" stop-color=\"#000000\"></stop></radialGradient>"^^xsd:string ;
+    svg:fx "0.5" ;
+    svg:fy "0.5" ;
+    svg:id "b" ;
+    svg:r "0.5" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/12> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/13> a svg:LinearGradient ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/13300/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/13300/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/13300/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/13300/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/13300/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/13300/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/13300/6> ;
+    svg:fragment "<linearGradient id=\"rg\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1.05\"><stop offset=\"0\" stop-color=\"#fff\" stop-opacity=\"0.9\"></stop><stop offset=\"0.7\" stop-color=\"#fff\" stop-opacity=\"0.2\"></stop><stop offset=\"1\" stop-color=\"#fff\" stop-opacity=\"0.3\"></stop></linearGradient>"^^xsd:string ;
+    svg:id "rg" ;
+    svg:x1 "0" ;
+    svg:x2 "0" ;
+    svg:y1 "0" ;
+    svg:y2 "1.05" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/14> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/15> a svg:Path ;
+    svg:d "M 35,50 A 34,34 0 0,1 95,50 Q 98,55 95,60 Q 65,78 35,60 Q 32,55 35,50 z" ;
+    svg:fill "url(#rg)" ;
+    svg:fragment "<path d=\"M 35,50 A 34,34 0 0,1 95,50 Q 98,55 95,60 Q 65,78 35,60 Q 32,55 35,50 z\" fill=\"url(#rg)\" id=\"reflex\"></path>"^^xsd:string ;
+    svg:id "reflex" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/16> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/3> a svg:LinearGradient ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/3300/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/3300/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/3300/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/3300/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/3300/4> ;
+    svg:fragment "<linearGradient id=\"back\" x1=\"0\" x2=\"0.4\" y1=\"0\" y2=\"0.9\"><stop offset=\"0\" stop-color=\"#5c656c\"></stop><stop offset=\"1\" stop-color=\"#aab2b7\"></stop></linearGradient>"^^xsd:string ;
+    svg:id "back" ;
+    svg:x1 "0" ;
+    svg:x2 "0.4" ;
+    svg:y1 "0" ;
+    svg:y2 "0.9" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/5> a svg:RadialGradient ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/5300/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/5300/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/5300/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/5300/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/5300/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/5300/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/5300/6> ;
+    svg:cx "0.5" ;
+    svg:cy "0.5" ;
+    svg:fragment "<radialGradient cx=\"0.5\" cy=\"0.5\" fx=\"0.5\" fy=\"0.5\" id=\"r\" r=\"0.5\"><stop offset=\"0\" stop-color=\"#fc7474\"></stop><stop offset=\"0.7\" stop-color=\"#d53a3a\"></stop><stop offset=\"1\" stop-color=\"#af0000\"></stop></radialGradient>"^^xsd:string ;
+    svg:fx "0.5" ;
+    svg:fy "0.5" ;
+    svg:id "r" ;
+    svg:r "0.5" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/6> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/7> a svg:RadialGradient ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/7300/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/7300/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/7300/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/7300/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/7300/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/7300/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/7300/6> ;
+    svg:cx "0.5" ;
+    svg:cy "0.5" ;
+    svg:fragment "<radialGradient cx=\"0.5\" cy=\"0.5\" fx=\"0.5\" fy=\"0.5\" id=\"y\" r=\"0.5\"><stop offset=\"0\" stop-color=\"#fcfc74\"></stop><stop offset=\"0.7\" stop-color=\"#d4d53a\"></stop><stop offset=\"1\" stop-color=\"#afa500\"></stop></radialGradient>"^^xsd:string ;
+    svg:fx "0.5" ;
+    svg:fy "0.5" ;
+    svg:id "y" ;
+    svg:r "0.5" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/8> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/9> a svg:RadialGradient ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/9300/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/9300/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/9300/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/9300/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/9300/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/9300/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/9300/6> ;
+    svg:cx "0.5" ;
+    svg:cy "0.5" ;
+    svg:fragment "<radialGradient cx=\"0.5\" cy=\"0.5\" fx=\"0.5\" fy=\"0.5\" id=\"g\" r=\"0.5\"><stop offset=\"0\" stop-color=\"#74fc94\"></stop><stop offset=\"0.7\" stop-color=\"#3ad55e\"></stop><stop offset=\"1\" stop-color=\"#00af29\"></stop></radialGradient>"^^xsd:string ;
+    svg:fx "0.5" ;
+    svg:fy "0.5" ;
+    svg:id "g" ;
+    svg:r "0.5" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/1> a svg:Title ;
+    svg:fragment "<title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/10> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/11> a svg:Title ;
+    svg:fragment "<title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/12> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/3> a svg:Title ;
+    svg:fragment "<title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/5> a svg:Title ;
+    svg:fragment "<title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/6> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/7> a svg:Title ;
+    svg:fragment "<title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/8> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31100/9> a svg:Title ;
+    svg:fragment "<title></title>"^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3111511100/0> a svg:TextElement ;
+    svg:fragment "go" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/311511100/0> a svg:TextElement ;
+    svg:fragment "animiert" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3300/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3300/1> a svg:Stop ;
+    svg:fragment "<stop offset=\"0\" stop-color=\"#5c656c\"></stop>"^^xsd:string ;
+    svg:offset "0" ;
+    svg:stop-color "#5c656c" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3300/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3300/3> a svg:Stop ;
+    svg:fragment "<stop offset=\"1\" stop-color=\"#aab2b7\"></stop>"^^xsd:string ;
+    svg:offset "1" ;
+    svg:stop-color "#aab2b7" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3300/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3311511100/0> a svg:TextElement ;
+    svg:fragment "pedestrian" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3511511100/0> a svg:TextElement ;
+    svg:fragment "city" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3711511100/0> a svg:TextElement ;
+    svg:fragment "street" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3911511100/0> a svg:TextElement ;
+    svg:fragment "crossroads" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/511100/0> a svg:TextElement ;
+    svg:fragment "Animierte Ampel" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/511511100/0> a svg:TextElement ;
+    svg:fragment "Verkehr" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/5300/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/5300/1> a svg:Stop ;
+    svg:fragment "<stop offset=\"0\" stop-color=\"#fc7474\"></stop>"^^xsd:string ;
+    svg:offset "0" ;
+    svg:stop-color "#fc7474" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/5300/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/5300/3> a svg:Stop ;
+    svg:fragment "<stop offset=\"0.7\" stop-color=\"#d53a3a\"></stop>"^^xsd:string ;
+    svg:offset "0.7" ;
+    svg:stop-color "#d53a3a" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/5300/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/5300/5> a svg:Stop ;
+    svg:fragment "<stop offset=\"1\" stop-color=\"#af0000\"></stop>"^^xsd:string ;
+    svg:offset "1" ;
+    svg:stop-color "#af0000" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/5300/6> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/711100/0> a svg:TextElement ;
+    svg:fragment "2005-31-12" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/711511100/0> a svg:TextElement ;
+    svg:fragment "Stop" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/7300/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/7300/1> a svg:Stop ;
+    svg:fragment "<stop offset=\"0\" stop-color=\"#fcfc74\"></stop>"^^xsd:string ;
+    svg:offset "0" ;
+    svg:stop-color "#fcfc74" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/7300/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/7300/3> a svg:Stop ;
+    svg:fragment "<stop offset=\"0.7\" stop-color=\"#d4d53a\"></stop>"^^xsd:string ;
+    svg:offset "0.7" ;
+    svg:stop-color "#d4d53a" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/7300/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/7300/5> a svg:Stop ;
+    svg:fragment "<stop offset=\"1\" stop-color=\"#afa500\"></stop>"^^xsd:string ;
+    svg:offset "1" ;
+    svg:stop-color "#afa500" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/7300/6> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/911100/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/911100/1> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1911100/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/1911100/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/1911100/2> ;
+    svg:fragment """<title>
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        <title>Manuel Strehl</title></title>"""^^xsd:string .
+
+<https://data.rijksfinancien.nl/svg/doc/id/911100/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/911511100/0> a svg:TextElement ;
+    svg:fragment "Fußgänger" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/9300/0> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/9300/1> a svg:Stop ;
+    svg:fragment "<stop offset=\"0\" stop-color=\"#74fc94\"></stop>"^^xsd:string ;
+    svg:offset "0" ;
+    svg:stop-color "#74fc94" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/9300/2> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/9300/3> a svg:Stop ;
+    svg:fragment "<stop offset=\"0.7\" stop-color=\"#3ad55e\"></stop>"^^xsd:string ;
+    svg:offset "0.7" ;
+    svg:stop-color "#3ad55e" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/9300/4> a svg:TextElement ;
+    svg:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/9300/5> a svg:Stop ;
+    svg:fragment "<stop offset=\"1\" stop-color=\"#00af29\"></stop>"^^xsd:string ;
+    svg:offset "1" ;
+    svg:stop-color "#00af29" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/9300/6> a svg:TextElement ;
+    svg:fragment "" .
+
+svg:Defs a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#DefsElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'defs' SVG element defines a container for reusable definitions."@en ;
+    skos:prefLabel "the defs element"@en ;
+    xml1:tag "defs" .
 
 svg:Document a owl:Class ;
     dct:conformsTo svg: ;
@@ -3307,13 +4448,21 @@ svg:Path a owl:Class ;
     skos:prefLabel "the path element"@en ;
     xml1:tag "path" .
 
-svg:RadialGradient a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#RadialGradientElement> ;
+svg:Rect a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#RectElement> ;
     rdfs:isDefinedBy svg: ;
     rdfs:subClassOf svg:Element ;
-    skos:definition "The 'radialGradient' SVG element defines a radial gradient paint server."@en ;
-    skos:prefLabel "the radialGradient element"@en ;
-    xml1:tag "radialGradient" .
+    skos:definition "The 'rect' SVG element defines a rectangle."@en ;
+    skos:prefLabel "the rect element"@en ;
+    xml1:tag "rect" .
+
+svg:Script a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/script.html#ScriptElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'script' SVG element includes scripts within an SVG document."@en ;
+    skos:prefLabel "the script element"@en ;
+    xml1:tag "script" .
 
 svg:color-profile a owl:DatatypeProperty ;
     rdfs:domain svg:element ;
@@ -3490,6 +4639,21 @@ section:5.6.2 a dcm:Text ;
     rdfs:isDefinedBy xlink: ;
     skos:prefLabel "§ 5.6.2 actuate Attribute"@en .
 
+<https://data.rijksfinancien.nl/svg/doc/id/1911100/0> a svg:TextElement ;
+    svg:fragment "",
+        """
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        """ .
+
+svg:LinearGradient a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#LinearGradientElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'linearGradient' SVG element defines a linear gradient paint server."@en ;
+    skos:prefLabel "the linearGradient element"@en ;
+    xml1:tag "linearGradient" .
+
 svg:mask a owl:DatatypeProperty ;
     rdfs:domain svg:element ;
     rdfs:isDefinedBy svg: ;
@@ -3543,6 +4707,14 @@ construct {
   bind(iri(concat(str($this),'-svg-document-generation')) as ?activity)
   bind(now() as ?activityDateTime)
 }""" .
+
+svg:Use a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#UseElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'use' SVG element provides a way to use a group of SVG elements defined elsewhere in the SVG document."@en ;
+    skos:prefLabel "the use element"@en ;
+    xml1:tag "use" .
 
 section:5.5 a dcm:Text ;
     dct:isPartOf standard:xlink ;
@@ -3598,6 +4770,22 @@ svg:Circle a owl:Class ;
     skos:definition "The 'circle' SVG element defines a circle."@en ;
     skos:prefLabel "the circle element"@en ;
     xml1:tag "circle" .
+
+svg:Metadata a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/metadata.html#MetadataElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'metadata' SVG element provides metadata about an SVG document."@en ;
+    skos:prefLabel "the metadata element"@en ;
+    xml1:tag "metadata" .
+
+svg:RadialGradient a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#RadialGradientElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'radialGradient' SVG element defines a radial gradient paint server."@en ;
+    skos:prefLabel "the radialGradient element"@en ;
+    xml1:tag "radialGradient" .
 
 svg:font a owl:DatatypeProperty ;
     rdfs:domain svg:element ;
@@ -3676,6 +4864,14 @@ svg:y2 "409.21478" .""" ;
     foaf:depiction "https://www.rijksfinancien.nl/themes/custom/indicia_theme/files/logo-rijksoverheid.svg"^^xsd:anyURI ;
     foaf:homepage "https://www.rijksfinancien.nl/"^^xsd:anyURI .
 
+svg:Stop a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#StopElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'stop' SVG element defines a gradient stop."@en ;
+    skos:prefLabel "the stop element"@en ;
+    xml1:tag "stop" .
+
 xml1:Element a owl:Class ;
     dct:conformsTo <https://data.rijksfinancien.nl/xml/id/section/XML-Spec> ;
     rdfs:isDefinedBy xml1: ;
@@ -3710,12 +4906,27 @@ xml1: a void:Dataset,
     foaf:depiction "https://www.rijksfinancien.nl/themes/custom/indicia_theme/files/logo-rijksoverheid.svg"^^xsd:anyURI ;
     foaf:homepage "https://www.rijksfinancien.nl/"^^xsd:anyURI .
 
+svg:Title a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#TitleElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'title' SVG element provides a title for an SVG document or a description for an SVG container element."@en ;
+    skos:prefLabel "the title element"@en ;
+    xml1:tag "title" .
+
 svg:Element a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement> ;
     rdfs:isDefinedBy svg: ;
     rdfs:subClassOf dom:Element ;
     skos:definition "An element with namespace URI \"http://www.w3.org/2000/svg\" as defined in the SVG specification, that is used to create and manipulate SVG content."@en ;
     skos:prefLabel "The SVG DOM element"@en .
+
+svg:TextElement a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf dom:Element ;
+    skos:definition "A plain text element in a SVG document."@en ;
+    skos:prefLabel "The SVG DOM text element"@en .
 
 xml1:attribute a owl:DatatypeProperty ;
     rdfs:domain xml1:Element ;

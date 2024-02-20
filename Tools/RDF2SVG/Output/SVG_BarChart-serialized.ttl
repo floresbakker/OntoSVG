@@ -4,6 +4,7 @@
 @prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
 @prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix function: <https://data.rijksfinancien.nl/svg/model/function/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -132,7 +133,7 @@ xmlns:cc a owl:DatatypeProperty ;
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'cc' attribute is used to specify the Creative Commons namespace within an XML document. It associates elements and attributes with Creative Commons licenses and metadata."@en ;
     skos:prefLabel "the cc attribute"@en ;
-    xml1:key "xmlns:cc" .
+    xml1:key "cc" .
 
 xmlns:dc a owl:DatatypeProperty ;
     rdfs:domain xml1:Element ;
@@ -141,7 +142,7 @@ xmlns:dc a owl:DatatypeProperty ;
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'dc' attribute is used to specify the Dublin Core namespace within an XML document. It associates elements and attributes with Dublin Core metadata terms."@en ;
     skos:prefLabel "the dc attribute"@en ;
-    xml1:key "xmlns:dc" .
+    xml1:key "dc" .
 
 xmlns:rdf a owl:DatatypeProperty ;
     rdfs:domain xml1:Element ;
@@ -150,7 +151,7 @@ xmlns:rdf a owl:DatatypeProperty ;
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'rdf' attribute is used to specify the RDF namespace within an XML document. It associates elements and attributes with RDF resources and statements."@en ;
     skos:prefLabel "the rdf attribute"@en ;
-    xml1:key "xmlns:rdf" .
+    xml1:key "rdf" .
 
 xmlns:xlink a owl:DatatypeProperty ;
     rdfs:domain xml1:Element ;
@@ -159,7 +160,7 @@ xmlns:xlink a owl:DatatypeProperty ;
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'xlink' attribute is used to specify the XLink namespace within an XML document. It associates elements and attributes with XLink resources and links."@en ;
     skos:prefLabel "the xlink attribute"@en ;
-    xml1:key "xmlns:xlink" .
+    xml1:key "xlink" .
 
 xmlns:xsi a owl:DatatypeProperty ;
     rdfs:domain xml1:Element ;
@@ -168,7 +169,7 @@ xmlns:xsi a owl:DatatypeProperty ;
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'xsi' attribute is used to specify the XML Schema Instance namespace within an XML document. It associates elements and attributes with XML Schema definitions."@en ;
     skos:prefLabel "the xsi attribute"@en ;
-    xml1:key "xmlns:xsi" .
+    xml1:key "xsi" .
 
 xml1:Attribute a owl:Class ;
     dct:conformsTo <https://data.rijksfinancien.nl/xml/id/section/XML-Spec> ;
@@ -3127,6 +3128,28 @@ svg:zoomAndPan a owl:DatatypeProperty ;
     skos:prefLabel "the zoomAndPan attribute"@en ;
     xml1:key "zoomAndPan" .
 
+function:getXMLKey a sh:SPARQLFunction ;
+    rdfs:comment "Returns the key of an XML attribute, either with or without prefix." ;
+    sh:parameter [ sh:datatype xsd:anyURI ;
+            sh:description "An xml attribute as defined in an ontology." ;
+            sh:path function:attribute ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xml: <http://www.w3.org/XML/1998/namespace#>
+
+SELECT ?result WHERE {
+         $attribute xml:key ?key;
+         rdfs:isDefinedBy ?ontology.   
+         ?ontology vann:preferredNamespacePrefix ?prefix.
+         BIND(IF(?prefix = "svg" || $attribute = xml:xmlns,?key, CONCAT(?prefix,":",?key)) as ?result).
+  }
+
+       """ .
+
 shp:Document a sh:NodeShape ;
     rdfs:isDefinedBy svg: ;
     sh:description "A SVG document contains a required documenttype SVG and a root SVG element."@en ;
@@ -3229,7 +3252,7 @@ doc:BarChart a svg:Svg ;
     svg:width "500" .
 
 doc:BarChartDocument-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-19T12:32:16.164359+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-02-20T22:35:31.453695+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
 
@@ -3453,6 +3476,7 @@ rule:Serialize_SVG_fragment_SVG_Element a sh:SPARQLRule ;
     skos:prefLabel "SVG element fragment serialisation rule"@en ;
     sh:construct """
 
+prefix function: <https://data.rijksfinancien.nl/svg/model/function/>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix svg: <https://data.rijksfinancien.nl/svg/model/def/>
@@ -3473,7 +3497,8 @@ construct {
   {
     select (group_concat(distinct ?attribute;separator=' ') as ?attributes) {
       $this ?attribute0 ?value.
-      ?attribute0 xml:key ?key.
+      ?attribute0 rdfs:subPropertyOf xml:attribute.
+      bind(function:getXMLKey(?attribute0) as ?key)
       bind(concat(?key,'="',str(?value),'"') as ?attribute)
     }
   }
@@ -3688,7 +3713,7 @@ svg:filter a owl:DatatypeProperty ;
 
 xmlns: a void:Dataset,
         owl:Ontology ;
-    dct:abstract "The XMLNS Ontology provides a formal representation of XML Namespace declarations. It defines classes and properties to describe XML Namespace attributes and their usage within XML documents."@en ;
+    dct:abstract "The XMLNS Core Ontology provides a formal representation of XML Namespace declarations. It defines classes and properties to describe XML Namespace attributes and their usage within XML documents."@en ;
     dct:created "2024-02-19"^^xsd:date ;
     dct:creator "Flores Bakker" ;
     dct:description "The XMLNS Ontology formalizes XML Namespace declarations, offering a structured representation of namespace attributes and their significance within XML documents. It includes definitions for essential concepts such as xmlns:xsi, xmlns:rdf, xmlns:xlink, xmlns:dc, xmlns:cc, etc. The ontology serves as a reference for understanding and working with XML Namespace declarations within the context of RDF-based applications."@en ;
@@ -3766,7 +3791,7 @@ svg:Svg a owl:Class ;
 
 xlink: a void:Dataset,
         owl:Ontology ;
-    dct:abstract "The XLINK Ontology provides a formal representation of the XML Linking Language (XLink) Version 1.1. It defines classes and properties to describe the structure and semantics of XLink elements and attributes."@en ;
+    dct:abstract "The XLINK Core Ontology provides a formal representation of the XML Linking Language (XLink) Version 1.1. It defines classes and properties to describe the structure and semantics of XLink elements and attributes."@en ;
     dct:created "2024-02-19"^^xsd:date ;
     dct:creator "Flores Bakker" ;
     dct:description "The XLINK Ontology formalizes the XML Linking Language (XLink) Version 1.1, offering a structured representation of its elements and attributes. It includes definitions for essential concepts such as XLink element types, link locators, semantic attributes, and behavior attributes. The ontology serves as a reference for understanding and working with XLink within the context of RDF-based applications."@en ;
@@ -3814,7 +3839,7 @@ xml1:Element a owl:Class ;
 
 xml1: a void:Dataset,
         owl:Ontology ;
-    dct:abstract "The XML Ontology provides a formal representation of the Extensible Markup Language (XML) Version 1.0 (Fifth Edition). It defines classes and properties to describe the structure and semantics of XML documents, elements, attributes, comments, processing instructions, CDATA sections, and text elements."@en ;
+    dct:abstract "The XML Core Ontology provides a formal representation of the Extensible Markup Language (XML) Version 1.0 (Fifth Edition). It defines classes and properties to describe the structure and semantics of XML documents, elements, attributes, comments, processing instructions, CDATA sections, and text elements."@en ;
     dct:created "2023-10-29"^^xsd:date ;
     dct:creator "Flores Bakker" ;
     dct:description "The XML Ontology formalizes the Extensible Markup Language (XML) Version 1.0 (Fifth Edition), offering a structured representation of its components and features. It includes definitions for essential concepts such as XML documents, elements, attributes, comments, processing instructions, CDATA sections, and text elements. The ontology serves as a reference for understanding and working with XML within the context of RDF-based applications."@en ;
@@ -3859,7 +3884,8 @@ svg: a void:Dataset,
     dct:conformsTo "https://www.w3.org/TR/SVG11/"^^xsd:anyURI ;
     dct:created "2024-02-14"^^xsd:date ;
     dct:creator "Flores Bakker" ;
-    dct:description "The SVG Vocabulary establishes a standard representation of SVG elements and attributes, enabling automatic generation of graphics using semantic web technology, leveraging interoperability and tooling support for SVG-based applications. It provides definitions for SVG elements such as <svg>, <rect>, <circle>, <path>, etc., along with their respective attributes such as 'fill', 'stroke', 'width', 'height', etc. This vocabulary adheres to the SVG 1.1 specification and can serve as a reference guide for implementing SVG features in web applications."@en ;
+    dct:description "The OntoSVG vocabulary establishes a standard representation of SVG elements and attributes, enabling automatic generation of graphics using semantic web technology, leveraging interoperability and tooling support for SVG-based applications. It provides definitions for SVG elements such as <svg>, <rect>, <circle>, <path>, etc., along with their respective attributes such as 'fill', 'stroke', 'width', 'height', etc. This vocabulary adheres to the SVG 1.1 specification and can serve as a reference guide for implementing SVG features in semantic web applications."@en,
+        "The SVG Vocabulary establishes a standard representation of SVG elements and attributes, enabling automatic generation of graphics using semantic web technology, leveraging interoperability and tooling support for SVG-based applications. It provides definitions for SVG elements such as <svg>, <rect>, <circle>, <path>, etc., along with their respective attributes such as 'fill', 'stroke', 'width', 'height', etc. This vocabulary adheres to the SVG 1.1 specification and can serve as a reference guide for implementing SVG features in web applications."@en ;
     dct:language "iso639-1:en" ;
     dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
     dct:publisher <https://www.example.com> ;
@@ -3888,12 +3914,15 @@ An example SVG document:
   
    <!-- Mouth (smile) -->
   <path d="M 60 120 Q 100 150 140 120" fill="none" stroke="black" stroke-width="3"></path></svg>
-	
+
 This can be represented in RDF using the SVG Vocabulary as follows:
-	
+
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
+@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
 
 doc:smileyDocument a svg:Document ;
     rdf:_1 doc:smiley ;
@@ -3902,11 +3931,11 @@ doc:smileyDocument a svg:Document ;
 doc:smiley a svg:Svg ;
     rdf:_1 doc:head ;
     rdf:_2 doc:leftEye ;
-	rdf:_3 doc:rightEye ;
+    rdf:_3 doc:rightEye ;
     rdf:_4 doc:mouth ;
     svg:height "200" ;
     svg:width "200" ;
-    svg:xmlns "http://www.w3.org/2000/svg" .
+    xml:xmlns "http://www.w3.org/2000/svg" .
 
 doc:mouth a svg:Path ;
     svg:d "M 60 120 Q 100 150 140 120" ;
@@ -4005,9 +4034,15 @@ doc:rightEye a svg:Circle ;
     respec:introduction """
 In today's digital era, Scalable Vector Graphics (SVG) play a vital role in creating interactive and visually appealing web content. SVG provides a powerful framework for defining vector-based graphics using XML syntax, enabling high-quality rendering across various devices and resolutions. Whether it's creating intricate illustrations, interactive data visualizations, or animated icons, SVG empowers designers and developers to unleash their creativity while ensuring optimal performance and accessibility.
 
+At the same time, graphics are not objects without context. It becomes more and more important to be able to model this context of graphics, both the metadata as well as the actual content of such graphics. With this we can generate, annotate, reuse, validate and understand these graphics better, and place them within a wider context of other information. OntoSVG uses semantic web compliant technology to parse, model and generate SVG images in an interoperable and meaningful way, preventing any vendor lock-in. Examples of graphics that can be modeled can be anything, from financial dashboards, architectonic designs up and till car images and the like.
+"""@en,
+        """
+In today's digital era, Scalable Vector Graphics (SVG) play a vital role in creating interactive and visually appealing web content. SVG provides a powerful framework for defining vector-based graphics using XML syntax, enabling high-quality rendering across various devices and resolutions. Whether it's creating intricate illustrations, interactive data visualizations, or animated icons, SVG empowers designers and developers to unleash their creativity while ensuring optimal performance and accessibility.
+
 At the same time, it becomes more and more important with regard to such graphics to be able to generate, annotate, reuse, validate and understand them.
 
 To harness the full potential of SVG, it's crucial to have a comprehensive description of its vocabulary - the elements and attributes that constitute SVG documents, with which SVG documents can be generated using semantic web technology. This RDF-based SVG Vocabulary aims to provide a structured representation of SVG elements and attributes, facilitating interoperability, generation, documentation, and tooling support for SVG-based applications.
 """@en ;
-    respec:objective "The objective of this SVG Vocabulary is to define the elements and attributes of the SVG standard (currently conforming to SVG 1.1), providing clear definitions, usage guidelines, and examples to aid developers and designers in automatically creating SVG content using semantic web technology."@en .
+    respec:objective "The objective of the OntoSVG vocabulary is to define the elements and attributes of the SVG standard (currently conforming to SVG 1.1), providing clear definitions, usage guidelines, and examples to aid developers and designers in automatically creating SVG content using semantic web technology."@en,
+        "The objective of this SVG Vocabulary is to define the elements and attributes of the SVG standard (currently conforming to SVG 1.1), providing clear definitions, usage guidelines, and examples to aid developers and designers in automatically creating SVG content using semantic web technology."@en .
 

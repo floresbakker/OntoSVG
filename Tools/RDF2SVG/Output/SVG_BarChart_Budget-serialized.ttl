@@ -296,13 +296,13 @@ xml1:xmlns a owl:DatatypeProperty ;
     skos:prefLabel "the xmlns attribute"@en ;
     xml1:key "xmlns" .
 
-doc:smileyDocument a svg:Document ;
-    rdf:_1 doc:smiley ;
-    prov:wasGeneratedBy doc:smileyDocument-svg-document-generation ;
+doc:BarChartDocument a svg:Document ;
+    rdf:_1 doc:BarChart ;
+    prov:wasGeneratedBy doc:BarChartDocument-svg-document-generation ;
     dom:documentType documentType:svg ;
     svg:fragment """<?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="200" width="200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" fill="yellow" r="90" stroke="black" stroke-width="2"></circle><circle cx="70" cy="70" fill="black" r="10"></circle><circle cx="130" cy="70" fill="black" r="10"></circle><path d="M 60 120 Q 100 150 140 120" fill="none" stroke="black" stroke-width="3"></path></svg>"""^^xsd:string .
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="1000" version="1.1" width="600" xmlns="http://www.w3.org/2000/svg"><text fill="black" font-size="16" transform="rotate(-90)" x="-180" y="20"></text><text fill="black" font-size="16" x="350" y="375">Amount (Euro)</text><line x1="300" x2="300" y1="50" y2="350" stroke="black" stroke-width="2"></line><line x1="300" x2="550" y1="350" y2="350" stroke="black" stroke-width="2"></line><rect fill="#0077b6" height="50" width="100" x="300" y="50"></rect><text fill="black" font-size="16" x="275" y="75" text-anchor="end">Budgeted Expenditures</text><text fill="black" font-size="14" x="450" y="75" text-anchor="middle">100</text><rect fill="#0077b6" height="50" width="150" x="300" y="150"></rect><text fill="black" font-size="16" x="275" y="175" text-anchor="end">Realized Expenditures</text><text fill="black" font-size="14" x="500" y="175" text-anchor="middle">150</text><rect fill="#0077b6" height="50" width="200" x="300" y="250"></rect><text fill="black" font-size="16" x="275" y="275" text-anchor="end">Budgeted Receipts</text><text fill="black" font-size="14" x="550" y="275" text-anchor="middle">200</text></svg>"""^^xsd:string .
 
 svg:A a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#AElement> ;
@@ -712,14 +712,6 @@ svg:Image a owl:Class ;
     skos:prefLabel "the image element"@en ;
     xml1:tag "image" .
 
-svg:Line a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#LineElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'line' SVG element represents a straight line segment."@en ;
-    skos:prefLabel "the line element"@en ;
-    xml1:tag "line" .
-
 svg:LinearGradient a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#LinearGradientElement> ;
     rdfs:isDefinedBy svg: ;
@@ -768,6 +760,14 @@ svg:Mpath a owl:Class ;
     skos:prefLabel "the mpath element"@en ;
     xml1:tag "mpath" .
 
+svg:Path a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/paths.html#PathElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'path' SVG element defines a set of path data."@en ;
+    skos:prefLabel "the path element"@en ;
+    xml1:tag "path" .
+
 svg:Pattern a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#PatternElement> ;
     rdfs:isDefinedBy svg: ;
@@ -791,14 +791,6 @@ svg:Polyline a owl:Class ;
     skos:definition "The 'polyline' SVG element defines a set of connected straight line segments."@en ;
     skos:prefLabel "the polyline element"@en ;
     xml1:tag "polyline" .
-
-svg:Rect a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#RectElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'rect' SVG element defines a rectangle."@en ;
-    skos:prefLabel "the rect element"@en ;
-    xml1:tag "rect" .
 
 svg:Script a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/script.html#ScriptElement> ;
@@ -847,21 +839,6 @@ svg:Symbol a owl:Class ;
     skos:definition "The 'symbol' SVG element defines a reusable graphics object."@en ;
     skos:prefLabel "the symbol element"@en ;
     xml1:tag "symbol" .
-
-svg:Text a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'text' SVG element defines a block of text."@en ;
-    skos:prefLabel "the text element"@en ;
-    xml1:tag "text" .
-
-svg:TextElement a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf dom:Element ;
-    skos:definition "A plain text element in a SVG document."@en ;
-    skos:prefLabel "The SVG DOM text element"@en .
 
 svg:TextPath a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextPathElement> ;
@@ -3247,50 +3224,164 @@ xml1:documentRestriction a owl:Restriction ;
     owl:onProperty dom:documentType ;
     skos:prefLabel "xml document type restriction"@en .
 
-doc:head a svg:Circle ;
-    svg:cx "100" ;
-    svg:cy "100" ;
-    svg:fill "yellow" ;
-    svg:fragment "<circle cx=\"100\" cy=\"100\" fill=\"yellow\" r=\"90\" stroke=\"black\" stroke-width=\"2\"></circle>"^^xsd:string ;
-    svg:r "90" ;
-    svg:stroke "black" ;
-    svg:stroke-width "2" .
+doc:AmountText a svg:TextElement ;
+    svg:fragment "Amount (Euro)" .
 
-doc:leftEye a svg:Circle ;
-    svg:cx "70" ;
-    svg:cy "70" ;
-    svg:fill "black" ;
-    svg:fragment "<circle cx=\"70\" cy=\"70\" fill=\"black\" r=\"10\"></circle>"^^xsd:string ;
-    svg:r "10" .
-
-doc:mouth a svg:Path ;
-    svg:d "M 60 120 Q 100 150 140 120" ;
-    svg:fill "none" ;
-    svg:fragment "<path d=\"M 60 120 Q 100 150 140 120\" fill=\"none\" stroke=\"black\" stroke-width=\"3\"></path>"^^xsd:string ;
-    svg:stroke "black" ;
-    svg:stroke-width "3" .
-
-doc:rightEye a svg:Circle ;
-    svg:cx "130" ;
-    svg:cy "70" ;
-    svg:fill "black" ;
-    svg:fragment "<circle cx=\"130\" cy=\"70\" fill=\"black\" r=\"10\"></circle>"^^xsd:string ;
-    svg:r "10" .
-
-doc:smiley a svg:Svg ;
-    rdf:_1 doc:head ;
-    rdf:_2 doc:leftEye ;
-    rdf:_3 doc:rightEye ;
-    rdf:_4 doc:mouth ;
+doc:BarChart a svg:Svg ;
+    rdf:_1 doc:Y-axis-Text ;
+    rdf:_10 doc:RealizedExpendituresAmount ;
+    rdf:_11 doc:BudgetedReceiptsRectangle ;
+    rdf:_12 doc:BudgetedReceiptsText ;
+    rdf:_13 doc:BudgetedReceiptsAmount ;
+    rdf:_2 doc:X-axis-Text ;
+    rdf:_3 doc:Y-axis-Line ;
+    rdf:_4 doc:X-axis-Line ;
+    rdf:_5 doc:BudgetedExpendituresRectangle ;
+    rdf:_6 doc:BudgetedExpendituresText ;
+    rdf:_7 doc:BudgetedExpendituresAmount ;
+    rdf:_8 doc:RealizedExpendituresRectangle ;
+    rdf:_9 doc:RealizedExpendituresText ;
+    xml1:version "1.1" ;
     xml1:xmlns "http://www.w3.org/2000/svg" ;
-    svg:fragment "<svg height=\"200\" width=\"200\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"100\" cy=\"100\" fill=\"yellow\" r=\"90\" stroke=\"black\" stroke-width=\"2\"></circle><circle cx=\"70\" cy=\"70\" fill=\"black\" r=\"10\"></circle><circle cx=\"130\" cy=\"70\" fill=\"black\" r=\"10\"></circle><path d=\"M 60 120 Q 100 150 140 120\" fill=\"none\" stroke=\"black\" stroke-width=\"3\"></path></svg>"^^xsd:string ;
-    svg:height "200" ;
-    svg:width "200" .
+    svg:fragment "<svg height=\"1000\" version=\"1.1\" width=\"600\" xmlns=\"http://www.w3.org/2000/svg\"><text fill=\"black\" font-size=\"16\" transform=\"rotate(-90)\" x=\"-180\" y=\"20\"></text><text fill=\"black\" font-size=\"16\" x=\"350\" y=\"375\">Amount (Euro)</text><line x1=\"300\" x2=\"300\" y1=\"50\" y2=\"350\" stroke=\"black\" stroke-width=\"2\"></line><line x1=\"300\" x2=\"550\" y1=\"350\" y2=\"350\" stroke=\"black\" stroke-width=\"2\"></line><rect fill=\"#0077b6\" height=\"50\" width=\"100\" x=\"300\" y=\"50\"></rect><text fill=\"black\" font-size=\"16\" x=\"275\" y=\"75\" text-anchor=\"end\">Budgeted Expenditures</text><text fill=\"black\" font-size=\"14\" x=\"450\" y=\"75\" text-anchor=\"middle\">100</text><rect fill=\"#0077b6\" height=\"50\" width=\"150\" x=\"300\" y=\"150\"></rect><text fill=\"black\" font-size=\"16\" x=\"275\" y=\"175\" text-anchor=\"end\">Realized Expenditures</text><text fill=\"black\" font-size=\"14\" x=\"500\" y=\"175\" text-anchor=\"middle\">150</text><rect fill=\"#0077b6\" height=\"50\" width=\"200\" x=\"300\" y=\"250\"></rect><text fill=\"black\" font-size=\"16\" x=\"275\" y=\"275\" text-anchor=\"end\">Budgeted Receipts</text><text fill=\"black\" font-size=\"14\" x=\"550\" y=\"275\" text-anchor=\"middle\">200</text></svg>"^^xsd:string ;
+    svg:height "1000" ;
+    svg:version "1.1" ;
+    svg:width "600" .
 
-doc:smileyDocument-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-20T22:38:53.002923+00:00"^^xsd:dateTime ;
+doc:BarChartDocument-svg-document-generation a prov:Activity ;
+    prov:atTime "2024-02-20T22:35:34.572243+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
+
+doc:BudgetedExpendituresAmount a svg:Text ;
+    rdf:_1 doc:BudgetedExpendituresAmountValue ;
+    svg:fill "black" ;
+    svg:font-size "14" ;
+    svg:fragment "<text fill=\"black\" font-size=\"14\" x=\"450\" y=\"75\" text-anchor=\"middle\">100</text>"^^xsd:string ;
+    svg:text-anchor "middle" ;
+    svg:x "450" ;
+    svg:y "75" .
+
+doc:BudgetedExpendituresAmountValue a svg:TextElement ;
+    svg:fragment "100" .
+
+doc:BudgetedExpendituresRectangle a svg:Rect ;
+    svg:fill "#0077b6" ;
+    svg:fragment "<rect fill=\"#0077b6\" height=\"50\" width=\"100\" x=\"300\" y=\"50\"></rect>"^^xsd:string ;
+    svg:height "50" ;
+    svg:width "100" ;
+    svg:x "300" ;
+    svg:y "50" .
+
+doc:BudgetedExpendituresText a svg:Text ;
+    rdf:_1 doc:BudgetedExpendituresTextString ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:fragment "<text fill=\"black\" font-size=\"16\" x=\"275\" y=\"75\" text-anchor=\"end\">Budgeted Expenditures</text>"^^xsd:string ;
+    svg:text-anchor "end" ;
+    svg:x "275" ;
+    svg:y "75" .
+
+doc:BudgetedExpendituresTextString a svg:TextElement ;
+    svg:fragment "Budgeted Expenditures" .
+
+doc:BudgetedReceiptsAmount a svg:Text ;
+    rdf:_1 doc:BudgetedReceiptsAmountValue ;
+    svg:fill "black" ;
+    svg:font-size "14" ;
+    svg:fragment "<text fill=\"black\" font-size=\"14\" x=\"550\" y=\"275\" text-anchor=\"middle\">200</text>"^^xsd:string ;
+    svg:text-anchor "middle" ;
+    svg:x "550" ;
+    svg:y "275" .
+
+doc:BudgetedReceiptsAmountValue a svg:TextElement ;
+    svg:fragment "200" .
+
+doc:BudgetedReceiptsRectangle a svg:Rect ;
+    svg:fill "#0077b6" ;
+    svg:fragment "<rect fill=\"#0077b6\" height=\"50\" width=\"200\" x=\"300\" y=\"250\"></rect>"^^xsd:string ;
+    svg:height "50" ;
+    svg:width "200" ;
+    svg:x "300" ;
+    svg:y "250" .
+
+doc:BudgetedReceiptsText a svg:Text ;
+    rdf:_1 doc:BudgetedReceiptsTextString ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:fragment "<text fill=\"black\" font-size=\"16\" x=\"275\" y=\"275\" text-anchor=\"end\">Budgeted Receipts</text>"^^xsd:string ;
+    svg:text-anchor "end" ;
+    svg:x "275" ;
+    svg:y "275" .
+
+doc:BudgetedReceiptsTextString a svg:TextElement ;
+    svg:fragment "Budgeted Receipts" .
+
+doc:RealizedExpendituresAmount a svg:Text ;
+    rdf:_1 doc:RealizedExpendituresAmountValue ;
+    svg:fill "black" ;
+    svg:font-size "14" ;
+    svg:fragment "<text fill=\"black\" font-size=\"14\" x=\"500\" y=\"175\" text-anchor=\"middle\">150</text>"^^xsd:string ;
+    svg:text-anchor "middle" ;
+    svg:x "500" ;
+    svg:y "175" .
+
+doc:RealizedExpendituresAmountValue a svg:TextElement ;
+    svg:fragment "150" .
+
+doc:RealizedExpendituresRectangle a svg:Rect ;
+    svg:fill "#0077b6" ;
+    svg:fragment "<rect fill=\"#0077b6\" height=\"50\" width=\"150\" x=\"300\" y=\"150\"></rect>"^^xsd:string ;
+    svg:height "50" ;
+    svg:width "150" ;
+    svg:x "300" ;
+    svg:y "150" .
+
+doc:RealizedExpendituresText a svg:Text ;
+    rdf:_1 doc:RealizedExpendituresTextString ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:fragment "<text fill=\"black\" font-size=\"16\" x=\"275\" y=\"175\" text-anchor=\"end\">Realized Expenditures</text>"^^xsd:string ;
+    svg:text-anchor "end" ;
+    svg:x "275" ;
+    svg:y "175" .
+
+doc:RealizedExpendituresTextString a svg:TextElement ;
+    svg:fragment "Realized Expenditures" .
+
+doc:X-axis-Line a svg:Line ;
+    svg:fragment "<line x1=\"300\" x2=\"550\" y1=\"350\" y2=\"350\" stroke=\"black\" stroke-width=\"2\"></line>"^^xsd:string ;
+    svg:stroke "black" ;
+    svg:stroke-width "2" ;
+    svg:x1 "300" ;
+    svg:x2 "550" ;
+    svg:y1 "350" ;
+    svg:y2 "350" .
+
+doc:X-axis-Text a svg:Text ;
+    rdf:_1 doc:AmountText ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:fragment "<text fill=\"black\" font-size=\"16\" x=\"350\" y=\"375\">Amount (Euro)</text>"^^xsd:string ;
+    svg:x "350" ;
+    svg:y "375" .
+
+doc:Y-axis-Line a svg:Line ;
+    svg:fragment "<line x1=\"300\" x2=\"300\" y1=\"50\" y2=\"350\" stroke=\"black\" stroke-width=\"2\"></line>"^^xsd:string ;
+    svg:stroke "black" ;
+    svg:stroke-width "2" ;
+    svg:x1 "300" ;
+    svg:x2 "300" ;
+    svg:y1 "50" ;
+    svg:y2 "350" .
+
+doc:Y-axis-Text a svg:Text ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:fragment "<text fill=\"black\" font-size=\"16\" transform=\"rotate(-90)\" x=\"-180\" y=\"20\"></text>"^^xsd:string ;
+    svg:transform "rotate(-90)" ;
+    svg:x "-180" ;
+    svg:y "20" .
 
 svg:Document a owl:Class ;
     dct:conformsTo svg: ;
@@ -3298,14 +3389,6 @@ svg:Document a owl:Class ;
     owl:equivalentClass svg:documentRestriction ;
     skos:definition "An SVG document consists of a tree of elements and text. Each element is denoted in the source by a start tag, such as ‘<circle>’, and an end tag, such as ‘</circle>’. Tags have to be nested such that elements are all completely within each other, without overlapping. Elements can have attributes, which control how the elements work. The SVG Core Vocabulary defines a set of elements that can be used in a SVG document, along with rules about the ways in which the elements can be nested. SVG user agents (e.g., web browsers) parse a SVG document, turning it into a DOM (Document Object Model) tree. A DOM tree is an in-memory representation of a document. A SVG document represents a media-independent description of interactive graphical content. A SVG document can be rendered to a screen. To influence exactly how such rendering takes place, authors can use a styling language such as CSS."@en ;
     skos:prefLabel "svg document"@en .
-
-svg:Path a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/paths.html#PathElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'path' SVG element defines a set of path data."@en ;
-    skos:prefLabel "the path element"@en ;
-    xml1:tag "path" .
 
 svg:RadialGradient a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#RadialGradientElement> ;
@@ -3490,6 +3573,22 @@ section:5.6.2 a dcm:Text ;
     rdfs:isDefinedBy xlink: ;
     skos:prefLabel "§ 5.6.2 actuate Attribute"@en .
 
+svg:Circle a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#CircleElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'circle' SVG element defines a circle."@en ;
+    skos:prefLabel "the circle element"@en ;
+    xml1:tag "circle" .
+
+svg:Line a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#LineElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'line' SVG element represents a straight line segment."@en ;
+    skos:prefLabel "the line element"@en ;
+    xml1:tag "line" .
+
 svg:mask a owl:DatatypeProperty ;
     rdfs:domain svg:element ;
     rdfs:isDefinedBy svg: ;
@@ -3544,6 +3643,14 @@ construct {
   bind(now() as ?activityDateTime)
 }""" .
 
+svg:Rect a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#RectElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'rect' SVG element defines a rectangle."@en ;
+    skos:prefLabel "the rect element"@en ;
+    xml1:tag "rect" .
+
 section:5.5 a dcm:Text ;
     dct:isPartOf standard:xlink ;
     dct:source "https://www.w3.org/TR/xlink/#link-semantics"^^xsd:anyURI ;
@@ -3591,13 +3698,12 @@ xmlns: a void:Dataset,
     foaf:depiction "https://www.rijksfinancien.nl/themes/custom/indicia_theme/files/logo-rijksoverheid.svg"^^xsd:anyURI ;
     foaf:homepage "https://www.rijksfinancien.nl/"^^xsd:anyURI .
 
-svg:Circle a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#CircleElement> ;
+svg:TextElement a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement> ;
     rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'circle' SVG element defines a circle."@en ;
-    skos:prefLabel "the circle element"@en ;
-    xml1:tag "circle" .
+    rdfs:subClassOf dom:Element ;
+    skos:definition "A plain text element in a SVG document."@en ;
+    skos:prefLabel "The SVG DOM text element"@en .
 
 svg:font a owl:DatatypeProperty ;
     rdfs:domain svg:element ;
@@ -3618,6 +3724,14 @@ standard:xlink a dct:Standard ;
     dct:source "http://www.w3.org/TR/xml11"^^xsd:anyURI ;
     rdfs:isDefinedBy xml1: ;
     skos:prefLabel "Extensible Markup Language (XML) 1.1 (Second Edition)"@en .
+
+svg:Text a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'text' SVG element defines a block of text."@en ;
+    skos:prefLabel "the text element"@en ;
+    xml1:tag "text" .
 
 svg:marker a owl:DatatypeProperty ;
     rdfs:domain svg:element ;

@@ -43,7 +43,6 @@ prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#>
     owl:versionInfo '0.1.0';
     vann:preferredNamespacePrefix 'xsi';
     vann:preferredNamespaceUri 'http://www.w3.org/XML/1998/namespace';
-    void:subSet graph:model;
     void:uriRegexPattern '^http://www.w3.org/XML/1998/namespace';
     void:uriSpace 'http://www.w3.org/XML/1998/namespace'^^xsd:anyURI.
 
@@ -74,8 +73,7 @@ prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#>
     skos:prefLabel '§ 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation'@en;
     rdfs:isDefinedBy xsi:.
 
-### Attribute
- 
+### Attributes
 
   xsi:nil
     a owl:DatatypeProperty;
