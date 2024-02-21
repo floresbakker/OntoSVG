@@ -302,7 +302,7 @@ doc:1 a svg:Document ;
     dom:documentType documentType:svg ;
     svg:fragment """<?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="100%" version="1" viewBox="-960 -540 1920 1080" width="100%" xmlns="http://www.w3.org/2000/svg"><title>Penang Island textured model CSS3 animation</title><desc>Rotating textured pseudo-3D model of Penang Island, animated by CMG Lee using elevation data from http://commons.wikimedia.org/wiki/File:Penang_Island_heightmap_ASTGTM2_N05E100_dem.png and bitmap from http://commons.wikimedia.org/wiki/File:LANDSAT_semenanjung_malaysia_-_2.jpg .</desc><style type="text/css">
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="100%" version="1" viewBox="-960 -540 1920 1080" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Penang Island textured model CSS3 animation</title><desc>Rotating textured pseudo-3D model of Penang Island, animated by CMG Lee using elevation data from http://commons.wikimedia.org/wiki/File:Penang_Island_heightmap_ASTGTM2_N05E100_dem.png and bitmap from http://commons.wikimedia.org/wiki/File:LANDSAT_semenanjung_malaysia_-_2.jpg .</desc><style type="text/css">
   @keyframes         scale { from { transform:         scale(1,1);   }
                              to   { transform:         scale(1,0.3); } }
   @-moz-keyframes    scale { from { -moz-transform:    scale(1,1);   }
@@ -3218,8 +3218,9 @@ xml1:documentRestriction a owl:Restriction ;
     rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/00/6> ;
     rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/00/7> ;
     rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/00/8> ;
+    xmlns:xlink "http://www.w3.org/1999/xlink" ;
     xml1:xmlns "http://www.w3.org/2000/svg" ;
-    svg:fragment """<svg height="100%" version="1" viewBox="-960 -540 1920 1080" width="100%" xmlns="http://www.w3.org/2000/svg"><title>Penang Island textured model CSS3 animation</title><desc>Rotating textured pseudo-3D model of Penang Island, animated by CMG Lee using elevation data from http://commons.wikimedia.org/wiki/File:Penang_Island_heightmap_ASTGTM2_N05E100_dem.png and bitmap from http://commons.wikimedia.org/wiki/File:LANDSAT_semenanjung_malaysia_-_2.jpg .</desc><style type="text/css">
+    svg:fragment """<svg height="100%" version="1" viewBox="-960 -540 1920 1080" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Penang Island textured model CSS3 animation</title><desc>Rotating textured pseudo-3D model of Penang Island, animated by CMG Lee using elevation data from http://commons.wikimedia.org/wiki/File:Penang_Island_heightmap_ASTGTM2_N05E100_dem.png and bitmap from http://commons.wikimedia.org/wiki/File:LANDSAT_semenanjung_malaysia_-_2.jpg .</desc><style type="text/css">
   @keyframes         scale { from { transform:         scale(1,1);   }
                              to   { transform:         scale(1,0.3); } }
   @-moz-keyframes    scale { from { -moz-transform:    scale(1,1);   }
@@ -3377,7 +3378,7 @@ xml1:documentRestriction a owl:Restriction ;
     svg:r "99999" .
 
 doc:1-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-21T16:59:15.780773+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-02-21T17:58:51.529501+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
 

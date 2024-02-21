@@ -3505,7 +3505,7 @@ function set_col( c1, c2, c3 ) {
     svg:stroke-width "8" .
 
 doc:1-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-20T22:39:04.439545+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-02-21T16:59:28.328349+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
 

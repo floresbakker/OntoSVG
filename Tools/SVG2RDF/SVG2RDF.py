@@ -26,7 +26,7 @@ doc   = Namespace("https://data.rijksfinancien.nl/svg/doc/id/")
 svg   = Namespace("https://data.rijksfinancien.nl/svg/model/def/")
 xml   = Namespace("http://www.w3.org/XML/1998/namespace#")
 xmlns = Namespace("http://www.w3.org/2000/xmlns/")
-xlink = Namespace ("http://www.w3.org/1999/xlink#")
+xlink = Namespace("http://www.w3.org/1999/xlink#")
 
 # function to read a graph (as a string) from a file 
 def readGraphFromFile(file_path):
@@ -143,6 +143,8 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
                             namespace_uri = xml
                         elif namespace == 'xlink':
                             namespace_uri = xlink
+                        elif namespace == 'xmlns':
+                            namespace_uri = xmlns
                         elif namespace == 'svg':
                             namespace_uri = svg
                         else:

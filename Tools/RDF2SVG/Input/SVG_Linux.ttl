@@ -1,28 +1,26 @@
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
-@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
-@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
-@prefix xmlns: <http://www.w3.org/2000/xmlns/> .
 @prefix xlink: <http://www.w3.org/1999/xlink#> .
+@prefix xml1: <http://www.w3.org/XML/1998/namespace#> .
+@prefix xmlns: <http://www.w3.org/2000/xmlns/> .
 
 doc:1 a svg:Document ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/0/2> .
 
 <https://data.rijksfinancien.nl/svg/doc/id/0/2> a svg:Svg ;
-    xml:xmlns "http://www.w3.org/2000/svg" ;
-    xmlns:cc "http://web.resource.org/cc/" ;
-    xmlns:dc "http://purl.org/dc/elements/1.1/" ;
-    xmlns:rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
-    xmlns:xlink "http://www.w3.org/1999/xlink" ;
-    svg:height "600pt" ;
-    svg:width "500pt" ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/20/0> ;
     rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/20/1> ;
     rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/20/2> ;
     rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/20/3> ;
-    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/20/4> .
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/20/4> ;
+    xmlns:cc "http://web.resource.org/cc/" ;
+    xmlns:dc "http://purl.org/dc/elements/1.1/" ;
+    xmlns:rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
+    xmlns:xlink "http://www.w3.org/1999/xlink" ;
+    xml1:xmlns "http://www.w3.org/2000/svg" ;
+    svg:height "600pt" ;
+    svg:width "500pt" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/1120/0> a svg:TextElement ;
     svg:fragment "" .
@@ -58,11 +56,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/11> a svg:LinearGradient ;
+    xlink:href "#linearGradient138" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient141" ;
     svg:x1 "0.47424799" ;
     svg:x2 "0.417539" ;
-    xlink:href "#linearGradient138" ;
     svg:y1 "0.020191999" ;
     svg:y2 "0.90125799" .
 
@@ -70,11 +68,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/13> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient142" ;
     svg:x1 "0.55880702" ;
     svg:x2 "0.553922" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "0.031192999" ;
     svg:y2 "0.94531101" .
 
@@ -82,11 +80,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/15> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient143" ;
     svg:x1 "0.46557701" ;
     svg:x2 "0.41365999" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "0.028819799" ;
     svg:y2 "0.93366498" .
 
@@ -94,11 +92,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/17> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient144" ;
     svg:x1 "0.70346397" ;
     svg:x2 "0.64553201" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "0.059404202" ;
     svg:y2 "0.94063401" .
 
@@ -106,11 +104,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/19> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient145" ;
     svg:x1 "0.46741399" ;
     svg:x2 "0.86741799" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "-0.036155298" ;
     svg:y2 "0.75857902" .
 
@@ -121,11 +119,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/21> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient146" ;
     svg:x1 "0.57152498" ;
     svg:x2 "0.57143003" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "0.023441499" ;
     svg:y2 "0.71875" .
 
@@ -133,11 +131,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/23> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient147" ;
     svg:x1 "0.5" ;
     svg:x2 "0.5" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "0.0234362" ;
     svg:y2 "0.8125" .
 
@@ -145,11 +143,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/25> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient148" ;
     svg:x1 "0.50799799" ;
     svg:x2 "0.51599997" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "0.37435901" ;
     svg:y2 "0.92820501" .
 
@@ -157,11 +155,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/27> a svg:LinearGradient ;
+    xlink:href "#linearGradient138" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient149" ;
     svg:x1 "0.5" ;
     svg:x2 "0.50400001" ;
-    xlink:href "#linearGradient138" ;
     svg:y1 "0.131707" ;
     svg:y2 "0.94634098" .
 
@@ -169,12 +167,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/29> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientTransform "matrix(-0.928523,0.283938,0.435332,0.943857,-1.91327e-7,5.49908e-8)" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient150" ;
     svg:x1 "-0.30509499" ;
     svg:x2 "0.156323" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "0.099496603" ;
     svg:y2 "0.94191301" .
 
@@ -190,11 +188,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/31> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient151" ;
     svg:x1 "0.433979" ;
     svg:x2 "0.487055" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "0.022184599" ;
     svg:y2 "1.02569" .
 
@@ -202,12 +200,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/33> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient152" ;
     svg:spreadMethod "reflect" ;
     svg:x1 "0.5" ;
     svg:x2 "0.5" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "0.89842999" ;
     svg:y2 "0.40625" .
 
@@ -215,11 +213,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/35> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient156" ;
     svg:x1 "0.43568701" ;
     svg:x2 "0.453989" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "0.98882002" ;
     svg:y2 "0.23093501" .
 
@@ -227,11 +225,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/37> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient157" ;
     svg:x1 "0.49180499" ;
     svg:x2 "0.49482101" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "1.15284" ;
     svg:y2 "0.41252401" .
 
@@ -239,11 +237,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/39> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient158" ;
     svg:x1 "0.51730198" ;
     svg:x2 "0.49843901" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "0.85418499" ;
     svg:y2 "0.136172" .
 
@@ -254,11 +252,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/41> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient159" ;
     svg:x1 "0.46201" ;
     svg:x2 "0.49215299" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "0.87917101" ;
     svg:y2 "0.096282303" .
 
@@ -266,11 +264,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/43> a svg:LinearGradient ;
+    xlink:href "#linearGradient162" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient161" ;
     svg:x1 "0.50086302" ;
     svg:x2 "0.41209599" ;
-    xlink:href "#linearGradient162" ;
     svg:y1 "0.34872901" ;
     svg:y2 "0.98558098" .
 
@@ -278,11 +276,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/45> a svg:LinearGradient ;
+    xlink:href "#linearGradient162" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient165" ;
     svg:x1 "0.60399801" ;
     svg:x2 "0.46399999" ;
-    xlink:href "#linearGradient162" ;
     svg:y1 "0.51020199" ;
     svg:y2 "0.98367399" .
 
@@ -290,11 +288,11 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/47> a svg:LinearGradient ;
+    xlink:href "#linearGradient162" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient166" ;
     svg:x1 "0.50000501" ;
     svg:x2 "0.50800002" ;
-    xlink:href "#linearGradient162" ;
     svg:y1 "0.191616" ;
     svg:y2 "0.97005898" .
 
@@ -302,14 +300,14 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/49> a svg:RadialGradient ;
+    xlink:href "#linearGradient172" ;
     svg:cx "0.5" ;
     svg:cy "0.5" ;
     svg:fx "0.5" ;
     svg:fy "0.5" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "radialGradient171" ;
-    svg:r "0.5" ;
-    xlink:href "#linearGradient172" .
+    svg:r "0.5" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/5> a svg:LinearGradient ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/5120/0> ;
@@ -323,18 +321,18 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/51> a svg:RadialGradient ;
-    svg:id "radialGradient176" ;
-    xlink:href "#linearGradient172" .
+    xlink:href "#linearGradient172" ;
+    svg:id "radialGradient176" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/52> a svg:TextElement ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/53> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientUnits "objectBoundingBox" ;
     svg:id "linearGradient178" ;
     svg:x1 "0.94027299" ;
     svg:x2 "0.19452" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "1.2934099" ;
     svg:y2 "-0.675295" .
 
@@ -342,6 +340,7 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/55> a svg:RadialGradient ;
+    xlink:href "#linearGradient172" ;
     svg:cx "446.77762" ;
     svg:cy "1219.4125" ;
     svg:fx "446.77762" ;
@@ -349,19 +348,18 @@ doc:1 a svg:Document ;
     svg:gradientTransform "scale(1.045233,0.956725)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "radialGradient1399" ;
-    svg:r "195.07191" ;
-    xlink:href "#linearGradient172" .
+    svg:r "195.07191" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/56> a svg:TextElement ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/57> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientTransform "scale(0.575262,1.738339)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1401" ;
     svg:x1 "400.57785" ;
     svg:x2 "400.84448" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "369.53015" ;
     svg:y2 "304.07886" .
 
@@ -369,12 +367,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/59> a svg:LinearGradient ;
+    xlink:href "#linearGradient138" ;
     svg:gradientTransform "scale(1.116071,0.896001)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1403" ;
     svg:x1 "303.01761" ;
     svg:x2 "297.0856" ;
-    xlink:href "#linearGradient138" ;
     svg:y1 "237.93179" ;
     svg:y2 "330.09561" .
 
@@ -385,12 +383,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/61> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientTransform "scale(0.816497,1.224744)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1405" ;
     svg:x1 "378.93771" ;
     svg:x2 "380.27319" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "278.60202" ;
     svg:y2 "243.91606" .
 
@@ -398,12 +396,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/63> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientTransform "scale(0.816497,1.224744)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1407" ;
     svg:x1 "381.38742" ;
     svg:x2 "380.5517" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "277.495" ;
     svg:y2 "245.68338" .
 
@@ -411,12 +409,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/65> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientTransform "scale(0.816497,1.224744)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1409" ;
     svg:x1 "379.09573" ;
     svg:x2 "376.79556" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "240.92712" ;
     svg:y2 "281.01636" .
 
@@ -424,12 +422,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/67> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientTransform "scale(0.816497,1.224744)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1411" ;
     svg:x1 "389.63535" ;
     svg:x2 "387.06866" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "242.28218" ;
     svg:y2 "281.32513" .
 
@@ -437,13 +435,13 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/69> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientTransform "scale(0.812855,1.230232)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1413" ;
     svg:spreadMethod "reflect" ;
     svg:x1 "437.57941" ;
     svg:x2 "437.57941" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "528.87177" ;
     svg:y2 "394.10361" .
 
@@ -458,12 +456,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/71> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientTransform "scale(0.649784,1.538974)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1415" ;
     svg:x1 "375.17325" ;
     svg:x2 "377.48541" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "419.78485" ;
     svg:y2 "324.03815" .
 
@@ -471,12 +469,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/73> a svg:LinearGradient ;
+    xlink:href "#linearGradient138" ;
     svg:gradientTransform "scale(1.074798,0.930408)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1417" ;
     svg:x1 "320.75104" ;
     svg:x2 "321.32224" ;
-    xlink:href "#linearGradient138" ;
     svg:y1 "498.17776" ;
     svg:y2 "614.50439" .
 
@@ -484,12 +482,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/75> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientTransform "scale(1.077001,0.928504)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1419" ;
     svg:x1 "322.48257" ;
     svg:x2 "323.2514" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "435.26761" ;
     svg:y2 "488.48251" .
 
@@ -497,12 +495,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/77> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientTransform "scale(0.571707,1.749147)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1421" ;
     svg:x1 "411.2215" ;
     svg:x2 "411.2215" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "242.94365" ;
     svg:y2 "331.44858" .
 
@@ -510,12 +508,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/79> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientTransform "scale(0.572667,1.746214)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1423" ;
     svg:x1 "867.34546" ;
     svg:x2 "867.33453" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "234.73897" ;
     svg:y2 "314.83911" .
 
@@ -526,12 +524,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/81> a svg:LinearGradient ;
+    xlink:href "#linearGradient162" ;
     svg:gradientTransform "scale(1.011514,0.988617)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1425" ;
     svg:x1 "236.25362" ;
     svg:x2 "212.5099" ;
-    xlink:href "#linearGradient162" ;
     svg:y1 "657.11133" ;
     svg:y2 "737.41229" .
 
@@ -539,12 +537,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/83> a svg:LinearGradient ;
+    xlink:href "#linearGradient153" ;
     svg:gradientTransform "scale(1.065499,0.938527)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1427" ;
     svg:x1 "381.56607" ;
     svg:x2 "279.64313" ;
-    xlink:href "#linearGradient153" ;
     svg:y1 "655.73102" ;
     svg:y2 "386.66583" .
 
@@ -552,12 +550,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/85> a svg:LinearGradient ;
+    xlink:href "#linearGradient162" ;
     svg:gradientTransform "scale(1.009851,0.990245)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1429" ;
     svg:x1 "218.11714" ;
     svg:x2 "203.12654" ;
-    xlink:href "#linearGradient162" ;
     svg:y1 "630.30475" ;
     svg:y2 "737.8537" .
 
@@ -565,12 +563,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/87> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientTransform "scale(1.007724,0.992335)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1431" ;
     svg:x1 "117.88966" ;
     svg:x2 "182.24524" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "587.23602" ;
     svg:y2 "704.73077" .
 
@@ -578,12 +576,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/89> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientTransform "scale(0.999504,1.000496)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1433" ;
     svg:x1 "223.10072" ;
     svg:x2 "230.53499" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "570.41809" ;
     svg:y2 "710.97723" .
 
@@ -599,12 +597,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/91> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientTransform "scale(1.065499,0.938527)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1435" ;
     svg:x1 "316.93988" ;
     svg:x2 "371.60889" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "474.01779" ;
     svg:y2 "582.63507" .
 
@@ -612,12 +610,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/93> a svg:LinearGradient ;
+    xlink:href "#linearGradient162" ;
     svg:gradientTransform "scale(1.218684,0.820557)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1437" ;
     svg:x1 "284.68652" ;
     svg:x2 "285.45923" ;
-    xlink:href "#linearGradient162" ;
     svg:y1 "410.46326" ;
     svg:y2 "485.69934" .
 
@@ -625,12 +623,12 @@ doc:1 a svg:Document ;
     svg:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/95> a svg:LinearGradient ;
+    xlink:href "#linearGradient167" ;
     svg:gradientTransform "scale(1.221941,0.81837)" ;
     svg:gradientUnits "userSpaceOnUse" ;
     svg:id "linearGradient1439" ;
     svg:x1 "288.82358" ;
     svg:x2 "288.37628" ;
-    xlink:href "#linearGradient167" ;
     svg:y1 "398.85422" ;
     svg:y2 "482.55939" .
 
