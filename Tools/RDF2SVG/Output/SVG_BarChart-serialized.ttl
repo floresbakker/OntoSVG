@@ -3266,7 +3266,7 @@ xml1:documentRestriction a owl:Restriction ;
     svg:fragment "Amount (Euro)" .
 
 doc:1-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-21T17:55:44.196757+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-03-11T20:56:23.896209+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
 

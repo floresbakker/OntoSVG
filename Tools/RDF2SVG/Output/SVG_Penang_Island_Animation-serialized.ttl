@@ -3378,7 +3378,7 @@ xml1:documentRestriction a owl:Restriction ;
     svg:r "99999" .
 
 doc:1-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-21T17:58:51.529501+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-03-11T20:59:24.458339+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
 

@@ -54,9 +54,10 @@ Now we can represent the very same document in <i>RDF</i> using the SVG-vocabula
 ```
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
 @prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
+@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
 
 doc:smileyDocument a svg:Document ;
     rdf:_1 doc:smiley ;
@@ -118,6 +119,7 @@ This bar chart is rendered in a browser as follows:
 ```
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
 @prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
+@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -305,10 +307,11 @@ doc:RealizedReceiptsAmountValue a svg:TextElement ;
 
 # Tools and dependencies
 
-This repository comes with two, fairly primitive, Python-based tools to handle SVG-documents and RDF-representations of SVG. 
+This repository comes with three, fairly primitive, Python-based tools to handle SVG-documents and RDF-representations of SVG. 
 
 1. SVG2RDF 
 2. RDF2SVG
+3. Playground
 
 
 
@@ -358,6 +361,28 @@ python RDF2SVG.py
 ```
 
 D. Go to the output folder in OntoSVG\Tools\RDF2SVG\Output and grab your SVG-file(s). Additionally included are Turtle-file(s) (*.ttl) that contain the serialized 'svg:fragment' properties for the very same SVG-document and the SVG-elements it contains. 
+
+## Playground
+
+The tool Playground offers a visual user interface in which a RDF-based representation of an SVG-document can be converted to an actual SVG-image. 
+
+### How to use Playground
+
+A. Install all necessary libraries (in this order):
+
+	1. pip install os 
+	2. pip install pyshacl
+	3. pip install rdflib
+
+NOTE: pyshacl has a dependency with an older RDFlib version. However, for an optimal functioning of the semantic SVG-vocabulary, the most recent release of RDFlib should be used. Hence, it is advised to first install pyshacl and then RDFlib, so that RDFlib is installed having the latest version. This is currently the least instrusive way of handling the dependency, offering accessibility for those not well versed in Python. 
+
+B. Run the script in the command prompt by typing: 
+
+```
+python playground.py
+```
+
+C. Navigate to the index.html file in the playground folder and click on it. Place your RDF-triples representing a SVG-document into the text area and press the button 'convert to SVG'. The playground will convert the triples to an SVG image and display this in your browser. This may take some time.
 
 
 ## Dependencies 

@@ -3249,7 +3249,7 @@ doc:BarChart a svg:Svg ;
     svg:width "600" .
 
 doc:BarChartDocument-svg-document-generation a prov:Activity ;
-    prov:atTime "2024-02-21T17:55:47.165699+00:00"^^xsd:dateTime ;
+    prov:atTime "2024-03-11T20:56:26.810428+00:00"^^xsd:dateTime ;
     prov:used svg:,
         rule:Document .
 

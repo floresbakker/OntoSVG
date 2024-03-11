@@ -1,0 +1,150 @@
+@prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
+@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
+@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+
+doc:BarChartDocument a svg:Document ;
+    rdf:_1 doc:BarChart .
+
+doc:BarChart a svg:Svg ;
+    xml:xmlns "http://www.w3.org/2000/svg";
+    xml:version "1.1";
+    svg:height "1000" ;
+    svg:version "1.1" ;
+    svg:width "600";
+    rdf:_1 doc:Y-axis-Text ;
+    rdf:_2 doc:X-axis-Text ;
+    rdf:_3 doc:Y-axis-Line ;
+    rdf:_4 doc:X-axis-Line ;
+    rdf:_5 doc:BudgetedExpendituresRectangle ;
+    rdf:_6 doc:BudgetedExpendituresText ;
+    rdf:_7 doc:BudgetedExpendituresAmount ;
+    rdf:_8 doc:RealizedExpendituresRectangle ;
+    rdf:_9 doc:RealizedExpendituresText ;
+    rdf:_10 doc:RealizedExpendituresAmount ;
+    rdf:_11 doc:BudgetedReceiptsRectangle ;
+    rdf:_12 doc:BudgetedReceiptsText ;
+    rdf:_13 doc:BudgetedReceiptsAmount .
+
+doc:Y-axis-Text a svg:Text ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:transform "rotate(-90)" ;
+    svg:x "-180" ;
+    svg:y "20" .
+
+doc:Y-axis-Line a svg:Line ;
+    svg:stroke "black" ;
+    svg:stroke-width "2" ;
+    svg:x1 "300" ;
+    svg:x2 "300" ;
+    svg:y1 "50" ;
+    svg:y2 "350" .
+
+doc:X-axis-Text a svg:Text ;
+    rdf:_1 doc:AmountText ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:x "350" ;
+    svg:y "375" .
+
+doc:X-axis-Line a svg:Line ;
+    svg:stroke "black" ;
+    svg:stroke-width "2" ;
+    svg:x1 "300" ;
+    svg:x2 "550" ;
+    svg:y1 "350" ;
+    svg:y2 "350" .
+
+doc:BudgetedExpendituresRectangle a svg:Rect ;
+    svg:fill "#0077b6" ;  # Smooth Blue Color
+    svg:height "50" ;
+    svg:width "100" ;
+    svg:x "300" ;
+    svg:y "50" .
+
+doc:BudgetedExpendituresText a svg:Text ;
+    rdf:_1 doc:BudgetedExpendituresTextString ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:text-anchor "end" ;
+    svg:x "275" ;
+    svg:y "75" .
+
+doc:BudgetedExpendituresAmount a svg:Text ;
+    rdf:_1 doc:BudgetedExpendituresAmountValue  ;
+    svg:fill "black" ;
+    svg:font-size "14" ;
+    svg:text-anchor "middle" ;
+    svg:x "450" ;
+    svg:y "75" .
+
+doc:RealizedExpendituresRectangle a svg:Rect ;
+    svg:fill "#0077b6" ;  # Smooth Blue Color
+    svg:height "50" ;
+    svg:width "150" ;
+    svg:x "300" ;
+    svg:y "150" .
+
+doc:RealizedExpendituresText a svg:Text ;
+    rdf:_1 doc:RealizedExpendituresTextString ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:text-anchor "end" ;
+    svg:x "275" ;
+    svg:y "175" .
+
+doc:RealizedExpendituresAmount a svg:Text ;
+    rdf:_1 doc:RealizedExpendituresAmountValue ;
+    svg:fill "black" ;
+    svg:font-size "14" ;
+    svg:text-anchor "middle" ;
+    svg:x "500" ;
+    svg:y "175" .
+
+doc:BudgetedReceiptsRectangle a svg:Rect ;
+    svg:fill "#0077b6" ;  # Smooth Blue Color
+    svg:height "50" ;
+    svg:width "200" ;
+    svg:x "300" ;
+    svg:y "250" .
+
+doc:BudgetedReceiptsText a svg:Text ;
+    rdf:_1 doc:BudgetedReceiptsTextString ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:text-anchor "end" ;
+    svg:x "275" ;
+    svg:y "275" .
+
+doc:BudgetedReceiptsAmount a svg:Text ;
+    rdf:_1 doc:BudgetedReceiptsAmountValue ;
+    svg:fill "black" ;
+    svg:font-size "14" ;
+    svg:text-anchor "middle" ;
+    svg:x "550" ;
+    svg:y "275" .
+
+doc:AmountText a svg:TextElement ;
+    svg:fragment "Amount (Euro)" .
+
+doc:BudgetedExpendituresTextString a svg:TextElement ;
+    svg:fragment "Budgeted Expenditures" .
+
+doc:BudgetedExpendituresAmountValue a svg:TextElement ;
+    svg:fragment "100" .
+
+doc:RealizedExpendituresTextString a svg:TextElement ;
+    svg:fragment "Realized Expenditures" .
+
+doc:RealizedExpendituresAmountValue a svg:TextElement ;
+    svg:fragment "150" .
+
+doc:BudgetedReceiptsTextString a svg:TextElement ;
+    svg:fragment "Budgeted Receipts" .
+
+doc:BudgetedReceiptsAmountValue a svg:TextElement ;
+    svg:fragment "200" .
+

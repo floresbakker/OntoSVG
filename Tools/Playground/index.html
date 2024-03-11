@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDF to SVG</title>
+</head>
+<body>
+    <h1>Playground for RDF to SVG Conversion</h1>
+    <form id="textForm" action="http://localhost:5000/convertSVG" method="post">
+        <label for="textInput">Enter triples:</label><br>
+        <textarea id="textInput" name="text" rows="4" cols="50"></textarea><br>
+        <button type="submit">Convert to SVG</button>
+    </form>
+
+    <div id="SVG">
+        {% if svg %}
+       
+            {{ svg | safe }}
+      
+        {% endif %}
+    </div>
+
+</body>
+</html>
