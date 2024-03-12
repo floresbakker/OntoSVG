@@ -4,7 +4,7 @@ Created on Wed Jul  5 18:40:53 2023
 
 @author: Flores Bakker
 
-The XML2RDF script offers a simple way of transforming an XML-document into a representation of the XML-code in RDF-based triples. Just set your base directory and place there your own XML-document so that the script can transform this to RDF-format.
+The SVG2RDF script offers a simple way of transforming an SGV-document into a representation of the XML-code in RDF-based triples. Just set your base directory and place there your own SVG-document so that the script can transform this to RDF-format.
 
 """
 
@@ -85,7 +85,7 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
         g.bind("xmlns", xmlns)
         g.bind("xlink", xlink)
 
-        # fill graph with html vocabulary
+        # fill graph with svg vocabulary
         xml_graph = Graph().parse(directory_path+"OntoSVG/Specification/svg - core.ttl" , format="ttl")
 
         # string for query to establish IRI of a 'tag' HTML element

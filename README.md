@@ -364,7 +364,7 @@ D. Go to the output folder in OntoSVG\Tools\RDF2SVG\Output and grab your SVG-fil
 
 ## Playground
 
-The tool Playground offers a visual user interface in which a RDF-based representation of an SVG-document can be converted to an actual SVG-image. 
+The tool Playground offers a visual user interface in which a RDF-based representation of an SVG-document can be converted to an actual SVG-image, and an actual SVG-image can be converted to a RDF-based representation of an SVG-document. 
 
 ### How to use Playground
 
@@ -382,7 +382,11 @@ B. Run the script in the command prompt by typing:
 python playground.py
 ```
 
-C. Navigate to the index.html file in the playground folder and click on it. Place your RDF-triples representing a SVG-document into the text area and press the button 'convert to SVG'. The playground will convert the triples to an SVG image and display this in your browser. This may take some time.
+C. Navigate to the URL http://localhost:5000/. Then choose one of two options:
+
+	*Option 1*: Place your RDF-triples representing a SVG-document into the corresponding text area and press the button 'convert to SVG'. The playground will convert the triples to an SVG image and display this in your browser. This may take some time.
+
+	*Option 2*: Place the SVG-code of your SVG-image into the corresponding text area and press the button 'convert to RDF'. The playground will convert the SVG image to a RDF-based representation of that image. This should be rather quick.
 
 
 ## Dependencies 
