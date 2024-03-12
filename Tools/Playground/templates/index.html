@@ -40,8 +40,8 @@
         <!-- First form -->
         <div class="form">
             <form action="http://localhost:5000/convert2SVG" method="post">
-                <label for="textInput">Enter RDF:</label><br>
-                <textarea id="rdfInput" name="rdf" rows="4" cols="50">{{rdfInput}}</textarea><br>
+                <label for="textInput">RDF</label><br>
+                <textarea id="rdfInput" name="rdf" rows="15" cols="60">{{rdfInput}}</textarea><br>
                 <button type="submit">Convert to SVG</button>
             </form>
         </div>
@@ -74,8 +74,8 @@
         <!-- Second form -->
         <div class="form">
             <form action="http://localhost:5000/convert2RDF" method="post">
-                <label for="rdf">Enter SVG:</label><br>
-                <textarea id="svgInput" name="svg" rows="4" cols="50">{{svgRawInput}}</textarea><br>
+                <label for="rdf">SVG</label><br>
+                <textarea id="svgInput" name="svg" rows="15" cols="60">{{svgRawInput}}</textarea><br>
                 <button type="submit">Convert to RDF</button>
             </form>
         </div>

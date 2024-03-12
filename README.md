@@ -386,9 +386,9 @@ python playground.py
 
 C. Navigate to the URL http://localhost:5000/. Then choose one of two options:
 
-	*Option 1*: Place your RDF-triples representing a SVG-document into the corresponding text area and press the button 'convert to SVG'. The playground will convert the triples to an SVG image and display this in your browser. This may take some time.
+   *Option 1*: Place your RDF-triples representing a SVG-document into the corresponding text area and press the button 'convert to SVG'. The playground will convert the triples to an SVG image and display this in your browser. This may take some time.
 
-	*Option 2*: Place the SVG-code of your SVG-image into the corresponding text area and press the button 'convert to RDF'. The playground will convert the SVG image to a RDF-based representation of that image. This should be rather quick.
+   *Option 2*: Place the SVG-code of your SVG-image into the corresponding text area and press the button 'convert to RDF'. The playground will convert the SVG image to a RDF-based representation of that image. This should be rather quick.
 
 
 ## Dependencies 

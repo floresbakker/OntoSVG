@@ -22,7 +22,7 @@ xlink = Namespace("http://www.w3.org/1999/xlink#")
 
 
 # Function to read a graph (as a string) from a file 
-def readGraphFromFile(file_path):
+def readStringFromFile(file_path):
     # Open each file in read mode
     with open(file_path, 'r', encoding='utf-8') as file:
             # Read the content of the file and append it to the existing string
@@ -31,13 +31,15 @@ def readGraphFromFile(file_path):
 
 
 # Get the SVG vocabulary and place it in a string
-svg_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/svg - core.ttl")
-svg_serialisation = readGraphFromFile(directory_path + "OntoSVG/Specification/svg - serialisation.ttl")
-xml_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/xml - core.ttl")
-xmlns_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/xmlns - core.ttl")
-xlink_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/xlink - core.ttl")
+svg_vocabulary = readStringFromFile(directory_path + "OntoSVG/Specification/svg - core.ttl")
+svg_serialisation = readStringFromFile(directory_path + "OntoSVG/Specification/svg - serialisation.ttl")
+xml_vocabulary = readStringFromFile(directory_path + "OntoSVG/Specification/xml - core.ttl")
+xmlns_vocabulary = readStringFromFile(directory_path + "OntoSVG/Specification/xmlns - core.ttl")
+xlink_vocabulary = readStringFromFile(directory_path + "OntoSVG/Specification/xlink - core.ttl")
 
 vocabulary = svg_vocabulary + svg_serialisation + xml_vocabulary + xmlns_vocabulary + xlink_vocabulary
+example_rdf_code = readStringFromFile(directory_path + "OntoSVG/Examples/example_rdf_code.ttl")
+example_svg_code = readStringFromFile(directory_path + "OntoSVG/Examples/example_svg_code.svg")
 
 
 def generate_element_id(element):
@@ -263,7 +265,7 @@ def convert_to_rdf():
 
 @app.route('/')
 def index():
-    return render_template('index.html', svgOutput="SVG output image is shown here", svgRawOutput= "Raw output SVG code is shown here", svgInput="SVG input image is shown here", rdfOutput="RDF output code is shown here", rdfInput="RDF input code is shown here", svgRawInput="SVG raw input code is shown here")
+    return render_template('index.html', svgOutput="SVG output image is shown here", svgRawOutput= "SVG output code is shown here", svgInput="SVG input image is shown here", rdfOutput="RDF output code is shown here", rdfInput=example_rdf_code, svgRawInput=example_svg_code)
 
 if __name__ == '__main__':
     app.run()
