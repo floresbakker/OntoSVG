@@ -364,7 +364,9 @@ D. Go to the output folder in OntoSVG\Tools\RDF2SVG\Output and grab your SVG-fil
 
 ## Playground
 
-The tool Playground offers a visual user interface in which a RDF-based representation of an SVG-document can be converted to an actual SVG-image, and an actual SVG-image can be converted to a RDF-based representation of an SVG-document. 
+The tool Playground offers a visual user interface in which a RDF-based representation of an SVG-document can be converted to an actual SVG-image, and an actual SVG-image can be converted to a RDF-based representation of an SVG-document.
+
+![A screenshot of the playground environment](/Examples/Playground.png)
 
 ### How to use Playground
 
