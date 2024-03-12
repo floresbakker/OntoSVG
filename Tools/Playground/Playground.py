@@ -129,11 +129,11 @@ def convert_to_svg():
     serializable_graph = rdflib.Graph().parse(data=serializable_graph_string , format="turtle")
     svg_fragment = iteratePyShacl(svg_serialisation, serializable_graph)
     print("SVG fragment =", svg_fragment)
-    return render_template('index.html', svg=svg_fragment)
+    return render_template('index.html', svgOutput=svg_fragment, svgRawOutput=svg_fragment, rdfInput=text)
 
 @app.route('/convert2RDF', methods=['POST'])
 def convert_to_rdf():
-        xml_doc = request.form['svg']
+        svgInput = request.form['svg']
         # initialize graph
         g = Graph(bind_namespaces="rdflib")
               
@@ -161,7 +161,7 @@ def convert_to_rdf():
         '''
 
         # parse xml document
-        soup = BeautifulSoup(xml_doc, features="xml")
+        soup = BeautifulSoup(svgInput, features="xml")
         root_element = soup.contents[0]
         root_id = generate_element_id(root_element)
        
@@ -259,11 +259,11 @@ def convert_to_rdf():
 
         # return the resulting triples
         triples = g.serialize(format="turtle")
-        return render_template('index.html', triples=triples)
+        return render_template('index.html', rdfOutput=triples, svgInput = svgInput, svgRawInput = svgInput)
 
 @app.route('/')
 def index():
-    return render_template('index.html', svg="SVG is generated here", triples="RDF is generated here")
+    return render_template('index.html', svgOutput="SVG output image is shown here", svgRawOutput= "Raw output SVG code is shown here", svgInput="SVG input image is shown here", rdfOutput="RDF output code is shown here", rdfInput="RDF input code is shown here", svgRawInput="SVG raw input code is shown here")
 
 if __name__ == '__main__':
     app.run()
