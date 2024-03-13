@@ -54,6 +54,11 @@
                 <!-- Use the safe filter to render SVG content without HTML escaping -->
                 {{ svgOutput | safe }}
             </div>
+            {% else %}
+            <div class="output-container">
+                
+                SVG output image is rendered here
+            </div>
             {% endif %}
         </div>
 
@@ -64,6 +69,11 @@
             <div class="output-container">
                 <!-- show SVG content with HTML escaping -->
                 {{ svgRawOutput }}
+            </div>
+            {% else %}
+            <div class="output-container">
+                
+                Raw SVG output code is shown here
             </div>
             {% endif %}
         </div>
@@ -88,18 +98,29 @@
                 <!-- Use the safe filter to render SVG content without HTML escaping -->
                 {{ svgInput | safe }}
             </div>
+            {% else %}
+            <div class="output-container">
+                
+                SVG input image is rendered here
+            </div>
             {% endif %}
         </div>
 
         <!-- Output box for the second form (text content) -->
         <div class="output-box">
             <!-- Text content -->
-            {% if rdfOutput %}
-            <div class="output-container">
-                <!-- Display text output here -->
-                {{ rdfOutput }}
-            </div>
-            {% endif %}
+          {% if rdfOutput %}
+          <div class="output-container">
+            {% for triple in rdfOutput %}
+            <div class="triple">{{ triple }}</div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <div class="output-container">
+                
+                RDF output code is shown here
+          </div>
+          {% endif %}
         </div>
     </div>
 </body>

@@ -260,12 +260,12 @@ def convert_to_rdf():
                       g.add((doc[child_id], svg["fragment"], Literal(text_fragment)))
 
         # return the resulting triples
-        triples = g.serialize(format="turtle")
+        triples = g.serialize(format="turtle").split('\n')
         return render_template('index.html', rdfOutput=triples, svgInput = svgInput, svgRawInput = svgInput)
 
 @app.route('/')
 def index():
-    return render_template('index.html', svgOutput="SVG output image is shown here", svgRawOutput= "SVG output code is shown here", svgInput="SVG input image is shown here", rdfOutput="RDF output code is shown here", rdfInput=example_rdf_code, svgRawInput=example_svg_code)
+    return render_template('index.html', rdfInput=example_rdf_code, svgRawInput=example_svg_code)
 
 if __name__ == '__main__':
     app.run()
