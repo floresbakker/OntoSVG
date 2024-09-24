@@ -104,25 +104,23 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:prefLabel 'Text Elements'@en;
     rdfs:isDefinedBy xml:.
 
-### XML Document
+### XML Classes
 
   xml:Document
     a owl:Class;
-    owl:equivalentClass xml:documentRestriction;
+    rdfs:subClassOf dom:Document;
     skos:definition 'A document encoded in XML (eXtensible Markup Language).'@en;
     skos:prefLabel 'xml document'@en;
     rdfs:isDefinedBy xml:.
 
-  xml:documentRestriction
-    a owl:Restriction;
-    owl:hasValue documentType:xml;
-    owl:onProperty dom:documentType;
-    skos:prefLabel 'xml document type restriction'@en;
-	skos:definition "Class of all things that have a documenttype 'xml'."@en;
+  xml:DocumentType
+    a owl:Class;
+    rdfs:subClassOf dom:DocumentType;
+    skos:definition 'A DOCTYPE is a required preamble.'@en;
+    skos:prefLabel 'the DOCTYPE'@en;
+    skos:example'<!DOCTYPE xml>';
     rdfs:isDefinedBy xml:.
-
-### XML components
-
+    
   xml:Element
     a owl:Class;
     dct:conformsTo section:XML-Spec;
@@ -136,6 +134,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     a owl:Class;
     dct:conformsTo section:XML-Spec;
     xml:tag 'attribute';
+    rdfs:subClassOf dom:Attribute;    
     skos:definition 'An XML attribute is a name-value pair associated with an XML element.'@en;
     skos:prefLabel 'XML Attribute'@en;
     rdfs:isDefinedBy xml:.
@@ -144,6 +143,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     a owl:Class;
     dct:conformsTo section:XML-Spec;
     xml:tag 'comment';
+    rdfs:subClassOf dom:Comment;    
     skos:definition 'An XML comment is a piece of text within an XML document that is not interpreted as markup by the XML processor.'@en;
     skos:prefLabel 'XML Comment'@en;
     rdfs:isDefinedBy xml:.
@@ -152,26 +152,36 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     a owl:Class;
     dct:conformsTo section:XML-Spec;
     xml:tag 'processing-instruction';
+    rdfs:subClassOf dom:ProcessingInstruction;
     skos:definition 'An XML processing instruction provides instructions to the XML processor.'@en;
     skos:prefLabel 'XML Processing Instruction'@en;
     rdfs:isDefinedBy xml:.
 
-  xml:CDATA
+  xml:CDATASection
     a owl:Class;
     dct:conformsTo section:XML-Spec;
     xml:tag 'cdata';
+    rdfs:subClassOf dom:CDATASection;    
     skos:definition 'A CDATA section in an XML document is used to include blocks of text that should not be interpreted as markup by the XML processor.'@en;
     skos:prefLabel 'XML CDATA Section'@en;
     rdfs:isDefinedBy xml:.
 
-  xml:TextElement
+  xml:Text
     a owl:Class;
-    rdfs:subClassOf dom:Element;
-    skos:definition 'A DOM element in a XML document that has textual content and that does not contain any XML vocabulary.'@en;
-    skos:prefLabel 'text element'@en;
+    rdfs:subClassOf dom:Text;
+    skos:definition 'A DOM node in a XML document that has textual content and that does not contain any XML vocabulary.'@en;
+    skos:prefLabel 'text'@en;
     rdfs:isDefinedBy xml:.
     
-### XML attributes
+### XML properties ###
+
+  xml:documentTypeName
+    a owl:DatatypeProperty;
+    rdfs:domain xml:DocumentType;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the doctype name of a doctype declaration in a XML document."@en;
+    skos:prefLabel 'has document type name'@en;
+    rdfs:isDefinedBy xml:.
  
   xml:attribute
     a owl:DatatypeProperty;
@@ -193,9 +203,18 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
   xml:fragment
     a owl:DatatypeProperty;
-    rdfs:domain xml:Element;
-    rdfs:range rdf:HTML;
-    skos:definition 'Property that links the xml fragment that is represented by an element within a XML-document to that element.'@en;
+    rdfs:domain
+      [ a owl:Class;
+        owl:unionOf
+          ( xml:CDATASection
+            xml:Comment
+            xml:Document
+            xml:DocumentType
+            xml:Element
+            xml:Text
+            ) ];
+    rdfs:range rdf:XML;
+    skos:definition 'Property that links a node in a XML-document with its XML fragment.'@en;
     skos:prefLabel 'fragment property'@en;
     rdfs:isDefinedBy xml:.
 
@@ -248,3 +267,334 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:definition "Specifies the space for XML."@en;
     skos:prefLabel 'the space attribute'@en;
     rdfs:isDefinedBy xml:.
+
+### XML Shapes ###
+
+shp:SerializableNode
+    a sh:NodeShape;
+    sh:rule rule:XMLFragmentSerializationAlgorithm;
+    sh:target target:SerializableNode;
+    skos:prefLabel 'serializable node shape'@en;
+    rdfs:isDefinedBy xml:.
+
+  target:SerializableNode
+    a sh:SPARQLTarget;
+    rdfs:comment 'Select nodes in a XML document that do not have an XML fragment yet, and whose child nodes all have an XML fragment already.'@en;
+    sh:prefixes xml:;
+    sh:select '''
+select $this {
+
+  # Select all nodes in the XML document...
+  $this a/rdfs:subClassOf* dom:Node.
+  
+  # ...that do not yet have an xml fragment.
+  filter not exists { $this xml:fragment []. }
+  
+  # ...but whose child nodes all have an xml fragment
+  filter not exists {
+    $this ?member ?child.
+    filter(strstarts(str(?member),concat(str(rdf:),'_')))               
+    filter not exists { ?child xml:fragment []. }
+    ?child a/rdfs:subClassOf* dom:Node.
+  }
+}''';
+    rdfs:isDefinedBy xml:.
+
+  rule:XMLFragmentSerializationAlgorithm
+    a sh:SPARQLRule;
+    rdfs:comment 'Create the XML fragment for a node in a XML document.'@en;
+    skos:prefLabel 'XML fragment serialization algorithm'@en;
+    sh:prefixes xml:;
+    sh:construct '''
+construct {
+
+  # Assert the new XML fragment for this node in the XML document
+  $this xml:fragment ?fragment.
+  
+} where {
+
+  # Establish the class of the node in the XML document
+  $this a/rdfs:subClassOf* ?class.
+  ?class rdfs:isDefinedBy xml:.
+
+  # Build the XML fragment for the node in the XML document depending on its class
+  bind(if(?class = xml:Element,                function:getElementFragment($this), 
+       if(?class = xml:Text ,                  function:getTextFragment($this), 
+       if(?class = xml:Comment,                function:getCommentFragment($this), 
+       if(?class = xml:CDATASection,           function:getCDATASectionFragment($this), 
+       if(?class = xml:ProcessingInstruction,  function:getProcessingInstructionFragment($this), 
+       if(?class = xml:DocumentType,           function:getDocumentTypeFragment($this), 
+       if(?class = xml:Document,               function:getDocumentFragment($this), ?unboundDummy))))))
+  as ?fragmentString)
+  
+  # Convert result from string to rdf:XML
+  bind(strdt(?fragmentString, rdf:XML) as ?fragment)
+
+}''';
+    rdfs:isDefinedBy xml:.
+
+function:getElementFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML element in a XML document." ;
+    sh:parameter [
+        sh:path function:element ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A xml element in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <https://data.rijksfinancien.nl/xml/model/function/>      
+    prefix xml: <https://data.rijksfinancien.nl/xml/model/def/>
+    
+    select ?result where {
+    
+    # Retrieve the tag name & namespace of the element.
+    $element a ?class.
+    ?class xml:tag ?tag;
+           rdfs:isDefinedBy ?ontology.
+    
+    # Get the XML attributes for the element, if there are any.
+    bind(str(function:getElementAttribute($element, ?ontology)) as ?attributes)
+    
+    # Get the XML fragments of child nodes for the element, if there are any.
+    bind(str(function:getChildNodeFragment($element)) as ?fragments)
+    
+    # Build the XML fragment for this XML element, by combining everything retrieved above.
+    bind(
+    concat(
+      '<',?tag,if(!bound(?attributes),'',concat(' ',?attributes)),'>',
+      if(!bound(?fragments),concat('</',?tag,'>'),concat(?fragments,'</',?tag,'>'))) as ?result)
+}
+	
+""" .
+
+
+function:getTextFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML text node in a XML document." ;
+    sh:parameter [
+        sh:path function:text ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A XML text node in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+    
+    prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
+    prefix xsd: <http://www.w3.org/2001/XMLSchema#>     
+    
+    select ?result where {
+    
+    # Text is stored in de data attribute of DOM text nodes
+    $text dom:data ?data.
+    
+    # Establish the XML fragment for this XML text node
+    bind(strdt(?data,xsd:string) as ?result)
+}
+	
+""" .
+
+function:getCommentFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML comment in a XML document." ;
+    sh:parameter [
+        sh:path function:comment ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A XML comment in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <https://data.rijksfinancien.nl/xml/model/function/>
+    
+    select ?result where {
+     
+    # Establish the XML fragment for this XML comment
+    bind(concat('<!--',function:getChildNodeFragment($comment),'-->') as ?result)
+}
+	
+""" .
+
+function:getCDATASectionFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML CDATA Section in a XML document." ;
+    sh:parameter [
+        sh:path function:CDATASection ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A XML CDATA Section in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <https://data.rijksfinancien.nl/xml/model/function/>
+    
+    select ?result where {
+     
+    # Establish the XML fragment for this XML CDATA
+    bind(concat('<![CDATA[',function:getChildNodeFragment($CDATASection),']]>') as ?result)
+}
+	
+""" .
+
+function:getProcessingInstructionFragment
+    a sh:SPARQLFunction ;
+    rdfs:processingInstruction "Returns a XML fragment for a XML processing instruction in a XML document." ;
+    sh:parameter [
+        sh:path function:processingInstruction ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A XML processing instruction in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <https://data.rijksfinancien.nl/xml/model/function/>       
+    
+    select ?result where {
+
+    # Establish the XML fragment for this XML processingInstruction
+    bind(concat('<?',function:getChildNodeFragment($processingInstruction),'>') as ?result)
+}
+	
+""" .
+
+function:getDocumentTypeFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML DocumentType in a XML document." ;
+    sh:parameter [
+        sh:path function:doctype ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An XML DocumentType in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+    
+    prefix xml: <https://data.rijksfinancien.nl/xml/model/def/>
+    
+    select ?result where {
+    
+    # Establish the doctype name for this Document Type.
+    $doctype xml:documentTypeName ?name.
+    bind(concat('<!DOCTYPE ',str(?name),'>') as ?result)
+}
+	
+""" .
+	
+function:getDocumentFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML Document" ;
+    sh:parameter [
+        sh:path function:document ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <https://data.rijksfinancien.nl/xml/model/function/>    
+    
+    select ?result where {
+    
+    # Establish the XML fragment of the XML document by retrieving the XML fragments of all child nodes.
+    bind(function:getChildNodeFragment($document) as ?result)
+    
+}
+	
+""" .
+
+function:getChildNodeFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment of child nodes for a node in an XML Document" ;
+    sh:parameter [
+        sh:path function:node ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A node in an XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+    
+    prefix xml: <https://data.rijksfinancien.nl/xml/model/def/>
+  	prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+    
+    select ?result where {
+    
+    { # Get the XML fragments of child nodes, if there are any.
+    select $node (group_concat(str(?fragment);separator='') as ?result) {
+      {
+        select $node ?member ?fragment {
+          $node ?member ?childNode.
+          filter(strstarts(str(?member),concat(str(rdf:),'_')))
+          ?childNode xml:fragment ?fragment.
+        }
+        order by xsd:integer(strafter(str(?member),concat(str(rdf:),'_')))
+       }
+      } group by $node
+     }
+    }
+""" .
+
+function:getElementAttribute
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns an XML attribute of an XML element" ;
+    sh:parameter [
+        sh:path function:element ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An XML element in an XML document." ;
+        sh:order 1;
+    ] ;
+     sh:parameter [
+        sh:path function:ontologyElement ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A ontology that defines an element class." ;
+        sh:order 2;
+    ] ;   
+    sh:returnType xsd:string ;
+    sh:select """
+    
+    prefix xml: <https://data.rijksfinancien.nl/xml/model/def/>
+    
+    select ?result where {
+   
+    { # Get the XML attributes for this element, if there are any.
+    select $element (group_concat(distinct ?attribute) as ?result) {
+      $element ?attribute0 ?value.
+      bind(function:getXMLKey(?attribute0, ?ontologyElement) as ?key)
+      bind(concat(?key,'="',str(?value),'"') as ?attribute)
+      } group by $element
+     }   
+    }
+""" .
+
+function:getXMLKey
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns the key of an XML attribute, either with or without prefix." ;
+    sh:parameter [
+        sh:path function:attribute ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An xml attribute as defined in an ontology." ;
+        sh:order 1;
+    ] ;
+     sh:parameter [
+        sh:path function:ontologyElement ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An ontology that defines the class of the element that is connected to the attribute." ;
+        sh:order 2;
+    ] ;      
+    sh:returnType xsd:string ;
+    sh:select """
+
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix xml: <http://www.w3.org/XML/1998/namespace#>
+
+SELECT ?result WHERE {
+         $attribute xml:key ?key;
+                    rdfs:isDefinedBy ?ontologyAttribute.   
+         ?ontologyAttribute vann:preferredNamespacePrefix ?prefix.
+         
+         # If the attribute as defined in an ontology is used on an element of the same ontology, we do not have to include a prefix in the key of the attribute. If not, we append the prefix to the key. An exception is made for the xml:xmlns attribute.
+         BIND(IF(?ontologyAttribute = $ontologyElement || $attribute = xml:xmlns,?key, CONCAT(?prefix,":",?key)) as ?result).
+  }
+
+       """ .

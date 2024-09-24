@@ -65,8 +65,11 @@ This can be represented in RDF using the SVG Vocabulary as follows:
 @prefix xml: <http://www.w3.org/XML/1998/namespace#> .
 
 doc:smileyDocument a svg:Document ;
-    rdf:_1 doc:smiley ;
-    dom:documentType documentType:svg .
+    rdf:_1 doc:type;
+    rdf:_2 doc:smiley .
+    
+doc:type rdf:type xml:DocumentType;
+     xml:documentTypeName 'svg'.
 
 doc:smiley a svg:Svg ;
     rdf:_1 doc:head ;
@@ -122,18 +125,18 @@ doc:rightEye a svg:Circle ;
 
 svg:Element
     a owl:Class;
-    rdfs:subClassOf dom:Element;
+    rdfs:subClassOf xml:Element;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement>;
     skos:definition 'An element with namespace URI "http://www.w3.org/2000/svg" as defined in the SVG specification, that is used to create and manipulate SVG content.'@en;
     skos:prefLabel "The SVG DOM element"@en;
     rdfs:isDefinedBy svg:.
 
-svg:TextElement
+svg:Text
     a owl:Class;
-    rdfs:subClassOf dom:Element;
+    rdfs:subClassOf xml:Text;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TextElement>;
-    skos:definition "A plain text element in a SVG document."@en;
-    skos:prefLabel "The SVG DOM text element"@en;
+    skos:definition "A plain text node in a SVG document."@en;
+    skos:prefLabel "The SVG DOM text node"@en;
     rdfs:isDefinedBy svg:.
 
 ### SVG elements
@@ -3450,27 +3453,12 @@ svg:stroke-dashoffset
     skos:prefLabel 'the writing-mode attribute'@en;
     rdfs:isDefinedBy svg:.
 
-  svg:fragment
-    a owl:DatatypeProperty;
-    rdfs:domain dom:Element;
-    rdfs:range rdf:XML;
-    skos:definition 'Property that links the xml fragment that is represented by an element within a XML-based SVG document to that element.'@en;
-    skos:prefLabel 'fragment property'@en;
-    rdfs:isDefinedBy svg:.
-
 ### SVG Document
 
   svg:Document
     a owl:Class;
-    owl:equivalentClass svg:documentRestriction;
+    rdfs:subClassOf xml:Document;
     dct:conformsTo svg:;
     skos:definition 'An SVG document consists of a tree of elements and text. Each element is denoted in the source by a start tag, such as ‘<circle>’, and an end tag, such as ‘</circle>’. Tags have to be nested such that elements are all completely within each other, without overlapping. Elements can have attributes, which control how the elements work. The SVG Core Vocabulary defines a set of elements that can be used in a SVG document, along with rules about the ways in which the elements can be nested. SVG user agents (e.g., web browsers) parse a SVG document, turning it into a DOM (Document Object Model) tree. A DOM tree is an in-memory representation of a document. A SVG document represents a media-independent description of interactive graphical content. A SVG document can be rendered to a screen. To influence exactly how such rendering takes place, authors can use a styling language such as CSS.'@en;
     skos:prefLabel 'svg document'@en;
-    rdfs:isDefinedBy svg:.
-
-  svg:documentRestriction
-    a owl:Restriction;
-    owl:hasValue documentType:svg;
-    owl:onProperty dom:documentType;
-    skos:prefLabel 'svg document type restriction'@en;
     rdfs:isDefinedBy svg:.
