@@ -1,7 +1,6 @@
 prefix dcm: <http://purl.org/dc/dcmitype/>
 prefix dct: <http://purl.org/dc/terms/>
 prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
-prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -12,7 +11,7 @@ prefix standard: <https://data.rijksfinancien.nl/xml/id/standard/>
 prefix status: <http://purl.org/adms/status/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
-prefix xml: <http://www.w3.org/XML/1998/namespace#> 
+prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/> 
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
   dom:

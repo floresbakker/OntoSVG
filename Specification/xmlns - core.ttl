@@ -11,7 +11,7 @@ prefix standard: <https://data.rijksfinancien.nl/xmlns/id/standard/>
 prefix status: <http://purl.org/adms/status/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
-prefix xml: <http://www.w3.org/XML/1998/namespace#> 
+prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/> 
 prefix xmlns: <http://www.w3.org/2000/xmlns/> 
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 

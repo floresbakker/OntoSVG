@@ -1,18 +1,24 @@
 prefix dcm: <http://purl.org/dc/dcmitype/>
 prefix dct: <http://purl.org/dc/terms/>
+prefix decl: <https://data.rijksfinancien.nl/xml/id/decl/>
 prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
 prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rule: <http://www.w3.org/XML/1998/namespace#model/rule/>
 prefix section: <https://data.rijksfinancien.nl/xml/id/section/>
+prefix sh: <http://www.w3.org/ns/shacl#>
+prefix shp: <http://www.w3.org/XML/1998/namespace#model/shp/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix standard: <https://data.rijksfinancien.nl/xml/id/standard/>
 prefix status: <http://purl.org/adms/status/>
+prefix target: <http://www.w3.org/XML/1998/namespace#model/target/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
-prefix xml: <http://www.w3.org/XML/1998/namespace#> 
+prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/> 
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
   xml:
@@ -39,11 +45,42 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
       rdf:,
       rdfs:,
       skos:;
+    sh:declare
+      decl:dom,
+      decl:function, 
+      decl:xml,
+      decl:rdf,
+      decl:rdfs,
+      decl:xsd;      
     owl:versionInfo '0.1.0';
     vann:preferredNamespacePrefix 'xml';
-    vann:preferredNamespaceUri 'http://www.w3.org/XML/1998/namespace#';
-    void:uriRegexPattern '^http://www.w3.org/XML/1998/namespace#';
+    vann:preferredNamespaceUri 'http://www.w3.org/XML/1998/namespace#model/def/';
+    void:uriRegexPattern '^http://www.w3.org/XML/1998/namespace#model/def/';
     void:uriSpace 'http://www.w3.org/XML/1998/namespace#'^^xsd:anyURI.
+
+  decl:dom
+    sh:prefix "dom";
+    sh:namespace "https://data.rijksfinancien.nl/dom/model/def/"^^xsd:anyURI.
+
+  decl:function
+    sh:prefix "function";
+    sh:namespace "https://data.rijksfinancien.nl/html/model/function/"^^xsd:anyURI.    
+
+  decl:xml
+    sh:prefix "xml";
+    sh:namespace "http://www.w3.org/XML/1998/namespace#model/def/"^^xsd:anyURI.
+
+  decl:rdf
+    sh:prefix "rdf";
+    sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI.
+
+  decl:rdfs
+    sh:prefix "rdfs";
+    sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI.
+
+  decl:xsd
+    sh:prefix "xsd";
+    sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI.
 
   standard:xml
     a dct:Standard;
@@ -124,7 +161,6 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
   xml:Element
     a owl:Class;
     dct:conformsTo section:XML-Spec;
-    xml:tag 'element';
     rdfs:subClassOf dom:Element;
     skos:definition 'An XML element in the Document Object Model (DOM) represents a unit of data in an XML document.'@en;
     skos:prefLabel 'XML DOM element'@en;
@@ -133,7 +169,6 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
   xml:Attribute
     a owl:Class;
     dct:conformsTo section:XML-Spec;
-    xml:tag 'attribute';
     rdfs:subClassOf dom:Attribute;    
     skos:definition 'An XML attribute is a name-value pair associated with an XML element.'@en;
     skos:prefLabel 'XML Attribute'@en;
@@ -142,7 +177,6 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
   xml:Comment
     a owl:Class;
     dct:conformsTo section:XML-Spec;
-    xml:tag 'comment';
     rdfs:subClassOf dom:Comment;    
     skos:definition 'An XML comment is a piece of text within an XML document that is not interpreted as markup by the XML processor.'@en;
     skos:prefLabel 'XML Comment'@en;
@@ -151,7 +185,6 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
   xml:ProcessingInstruction
     a owl:Class;
     dct:conformsTo section:XML-Spec;
-    xml:tag 'processing-instruction';
     rdfs:subClassOf dom:ProcessingInstruction;
     skos:definition 'An XML processing instruction provides instructions to the XML processor.'@en;
     skos:prefLabel 'XML Processing Instruction'@en;
@@ -160,7 +193,6 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
   xml:CDATASection
     a owl:Class;
     dct:conformsTo section:XML-Spec;
-    xml:tag 'cdata';
     rdfs:subClassOf dom:CDATASection;    
     skos:definition 'A CDATA section in an XML document is used to include blocks of text that should not be interpreted as markup by the XML processor.'@en;
     skos:prefLabel 'XML CDATA Section'@en;
@@ -291,7 +323,7 @@ select $this {
   filter not exists { $this xml:fragment []. }
   
   # ...but whose child nodes all have an xml fragment
-  filter not exists {
+  minus {
     $this ?member ?child.
     filter(strstarts(str(?member),concat(str(rdf:),'_')))               
     filter not exists { ?child xml:fragment []. }
@@ -324,7 +356,7 @@ construct {
        if(?class = xml:CDATASection,           function:getCDATASectionFragment($this), 
        if(?class = xml:ProcessingInstruction,  function:getProcessingInstructionFragment($this), 
        if(?class = xml:DocumentType,           function:getDocumentTypeFragment($this), 
-       if(?class = xml:Document,               function:getDocumentFragment($this), ?unboundDummy))))))
+       if(?class = xml:Document,               function:getDocumentFragment($this), ?unboundDummy)))))))
   as ?fragmentString)
   
   # Convert result from string to rdf:XML
@@ -344,8 +376,9 @@ function:getElementFragment
     sh:returnType xsd:string ;
     sh:select """
 
-    prefix function: <https://data.rijksfinancien.nl/xml/model/function/>      
-    prefix xml: <https://data.rijksfinancien.nl/xml/model/def/>
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>  
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
     
     select ?result where {
     
@@ -406,7 +439,7 @@ function:getCommentFragment
     sh:returnType xsd:string ;
     sh:select """
 
-    prefix function: <https://data.rijksfinancien.nl/xml/model/function/>
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>
     
     select ?result where {
      
@@ -427,7 +460,7 @@ function:getCDATASectionFragment
     sh:returnType xsd:string ;
     sh:select """
 
-    prefix function: <https://data.rijksfinancien.nl/xml/model/function/>
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>
     
     select ?result where {
      
@@ -448,7 +481,7 @@ function:getProcessingInstructionFragment
     sh:returnType xsd:string ;
     sh:select """
 
-    prefix function: <https://data.rijksfinancien.nl/xml/model/function/>       
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>       
     
     select ?result where {
 
@@ -469,7 +502,7 @@ function:getDocumentTypeFragment
     sh:returnType xsd:string ;
     sh:select """
     
-    prefix xml: <https://data.rijksfinancien.nl/xml/model/def/>
+    prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
     
     select ?result where {
     
@@ -491,7 +524,7 @@ function:getDocumentFragment
     sh:returnType xsd:string ;
     sh:select """
 
-    prefix function: <https://data.rijksfinancien.nl/xml/model/function/>    
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>    
     
     select ?result where {
     
@@ -513,7 +546,7 @@ function:getChildNodeFragment
     sh:returnType xsd:string ;
     sh:select """
     
-    prefix xml: <https://data.rijksfinancien.nl/xml/model/def/>
+    prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
   	prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
     
@@ -552,14 +585,17 @@ function:getElementAttribute
     sh:returnType xsd:string ;
     sh:select """
     
-    prefix xml: <https://data.rijksfinancien.nl/xml/model/def/>
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>    
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
     
     select ?result where {
    
     { # Get the XML attributes for this element, if there are any.
     select $element (group_concat(distinct ?attribute) as ?result) {
       $element ?attribute0 ?value.
-      bind(function:getXMLKey(?attribute0, ?ontologyElement) as ?key)
+      ?attribute0 rdfs:subPropertyOf xml:attribute.
+      bind(function:getXMLKey(?attribute0, $ontologyElement) as ?key)
       bind(concat(?key,'="',str(?value),'"') as ?attribute)
       } group by $element
      }   
@@ -586,7 +622,7 @@ function:getXMLKey
 
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix vann: <http://purl.org/vocab/vann/>
-prefix xml: <http://www.w3.org/XML/1998/namespace#>
+prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
 
 SELECT ?result WHERE {
          $attribute xml:key ?key;
@@ -594,7 +630,8 @@ SELECT ?result WHERE {
          ?ontologyAttribute vann:preferredNamespacePrefix ?prefix.
          
          # If the attribute as defined in an ontology is used on an element of the same ontology, we do not have to include a prefix in the key of the attribute. If not, we append the prefix to the key. An exception is made for the xml:xmlns attribute.
-         BIND(IF(?ontologyAttribute = $ontologyElement || $attribute = xml:xmlns,?key, CONCAT(?prefix,":",?key)) as ?result).
+         
+         BIND(IF(?ontologyAttribute = $ontologyElement || $attribute = xml:xmlns,?key, CONCAT(?prefix,":",?key)) as ?result)
   }
 
        """ .

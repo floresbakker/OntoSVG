@@ -18,12 +18,15 @@ directory_path = os.path.abspath(os.path.join(current_dir, '..', '..','..'))
 rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
 rdfs  = Namespace("http://www.w3.org/2000/01/rdf-schema#")
 doc   = Namespace("https://data.rijksfinancien.nl/svg/doc/id/")
+dom   = Namespace("https://data.rijksfinancien.nl/dom/model/def/") 
 svg   = Namespace("https://data.rijksfinancien.nl/svg/model/def/")
-xml   = Namespace("http://www.w3.org/XML/1998/namespace#")
+xml   = Namespace("http://www.w3.org/XML/1998/namespace#model/def/")
 xmlns = Namespace("http://www.w3.org/2000/xmlns/")
 xlink = Namespace("http://www.w3.org/1999/xlink#")
 
-
+def writeGraph(graph, name):
+    graph.serialize(destination=directory_path + "/OntoSVG/Tools/Playground/" + name + ".ttl", format="turtle")
+    
 # Function to read a graph (as a string) from a file 
 def readStringFromFile(file_path):
     # Open each file in read mode
@@ -33,14 +36,14 @@ def readStringFromFile(file_path):
     return file_content
 
 
-# Get the SVG vocabulary and place it in a string
-svg_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/svg - core.ttl")
-svg_serialisation = readStringFromFile(directory_path + "/OntoSVG/Specification/svg - serialisation.ttl")
+# Get all the vocabularies and place them in a string
+dom_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/dom - core.ttl")
 xml_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xml - core.ttl")
 xmlns_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xmlns - core.ttl")
 xlink_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xlink - core.ttl")
+svg_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/svg - core.ttl")
 
-vocabulary = svg_vocabulary + svg_serialisation + xml_vocabulary + xmlns_vocabulary + xlink_vocabulary
+vocabulary = dom_vocabulary + '\n' + xml_vocabulary + '\n' + xmlns_vocabulary + '\n' + xlink_vocabulary + '\n' + svg_vocabulary + '\n'
 example_rdf_code = readStringFromFile(directory_path + "/OntoSVG/Examples/example_rdf_code.ttl")
 example_svg_code = readStringFromFile(directory_path + "/OntoSVG/Examples/example_svg_code.svg")
 
@@ -88,11 +91,12 @@ def iteratePyShacl(shaclgraph, serializable_graph):
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX svg: <https://data.rijksfinancien.nl/svg/model/def/>
+        PREFIX xml: <http://www.w3.org/XML/1998/namespace#model/def/> 
 
         ASK 
         WHERE {
           ?document a svg:Document ;
-                  svg:fragment ?fragment.
+                  xml:fragment ?fragment.
         }
 
         ''')   
@@ -101,6 +105,7 @@ def iteratePyShacl(shaclgraph, serializable_graph):
         for result in resultquery:
             print ("ask result = ", result)
             if result == False:
+                writeGraph(serializable_graph, 'TEST')
                 return iteratePyShacl(shaclgraph, serializable_graph)
          
             else:
@@ -109,11 +114,12 @@ def iteratePyShacl(shaclgraph, serializable_graph):
                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                PREFIX svg: <https://data.rijksfinancien.nl/svg/model/def/>
+               PREFIX xml: <http://www.w3.org/XML/1998/namespace#model/def/> 
 
                select ?fragment
                WHERE {
                  ?svgElement a svg:Svg ;
-                         svg:fragment ?fragment.
+                         xml:fragment ?fragment.
                }
 
                ''')   
@@ -130,9 +136,9 @@ def convert_to_svg():
     g = rdflib.Graph().parse(data=text , format="turtle")
     # Zet de RDF-triples om naar een string
     triples = g.serialize(format='turtle')
-    serializable_graph_string = vocabulary + triples
+    serializable_graph_string = vocabulary + '\n' + triples
     serializable_graph = rdflib.Graph().parse(data=serializable_graph_string , format="turtle")
-    svg_fragment = iteratePyShacl(svg_serialisation, serializable_graph)
+    svg_fragment = iteratePyShacl(xml_vocabulary, serializable_graph)
     print("SVG fragment =", svg_fragment)
     return render_template('index.html', svgOutput=svg_fragment, svgRawOutput=svg_fragment, rdfInput=text)
 
@@ -158,7 +164,7 @@ def convert_to_rdf():
             
         prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        prefix xml: <http://www.w3.org/XML/1998/namespace#>
+        prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
 
         select ?element_IRI where {
           ?element_IRI xml:tag ?tag
