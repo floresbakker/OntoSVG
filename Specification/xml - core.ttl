@@ -109,7 +109,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
   xml:Document
     a owl:Class;
     owl:equivalentClass xml:documentRestriction;
-    skos:definition ''@en;
+    skos:definition 'A document encoded in XML (eXtensible Markup Language).'@en;
     skos:prefLabel 'xml document'@en;
     rdfs:isDefinedBy xml:.
 
@@ -118,6 +118,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     owl:hasValue documentType:xml;
     owl:onProperty dom:documentType;
     skos:prefLabel 'xml document type restriction'@en;
+	skos:definition "Class of all things that have a documenttype 'xml'."@en;
     rdfs:isDefinedBy xml:.
 
 ### XML components
@@ -187,6 +188,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
     skos:prefLabel 'the xmlns attribute'@en;
+	skos:definition "Specifies a namespace."@en;
     rdfs:isDefinedBy xml:.
 
   xml:fragment
@@ -204,6 +206,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
     skos:prefLabel 'the id attribute'@en;
+	skos:definition "Specifies an identifier for an XML element."@en;
     rdfs:isDefinedBy xml:.
 
   xml:name
@@ -213,6 +216,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
     skos:prefLabel 'the name attribute'@en;
+	skos:definition "Specifies a name for an XML element."@en;
     rdfs:isDefinedBy xml:.
 
   xml:base

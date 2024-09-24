@@ -4,12 +4,15 @@ from rdflib import Graph, Namespace, Literal, RDF
 import pyshacl
 from bs4 import BeautifulSoup
 from bs4.element import Tag, NavigableString
-
+import os
 
 app = Flask(__name__)
 
+# Get the current working directory in which the Playground.py file is located.
+current_dir = os.getcwd()
+
 # Set the path to the desired standard directory. 
-directory_path = "C:/Users/Administrator/Documents/Branches/"
+directory_path = os.path.abspath(os.path.join(current_dir, '..', '..','..'))
 
 # namespace declaration
 rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
@@ -31,15 +34,15 @@ def readStringFromFile(file_path):
 
 
 # Get the SVG vocabulary and place it in a string
-svg_vocabulary = readStringFromFile(directory_path + "OntoSVG/Specification/svg - core.ttl")
-svg_serialisation = readStringFromFile(directory_path + "OntoSVG/Specification/svg - serialisation.ttl")
-xml_vocabulary = readStringFromFile(directory_path + "OntoSVG/Specification/xml - core.ttl")
-xmlns_vocabulary = readStringFromFile(directory_path + "OntoSVG/Specification/xmlns - core.ttl")
-xlink_vocabulary = readStringFromFile(directory_path + "OntoSVG/Specification/xlink - core.ttl")
+svg_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/svg - core.ttl")
+svg_serialisation = readStringFromFile(directory_path + "/OntoSVG/Specification/svg - serialisation.ttl")
+xml_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xml - core.ttl")
+xmlns_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xmlns - core.ttl")
+xlink_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xlink - core.ttl")
 
 vocabulary = svg_vocabulary + svg_serialisation + xml_vocabulary + xmlns_vocabulary + xlink_vocabulary
-example_rdf_code = readStringFromFile(directory_path + "OntoSVG/Examples/example_rdf_code.ttl")
-example_svg_code = readStringFromFile(directory_path + "OntoSVG/Examples/example_svg_code.svg")
+example_rdf_code = readStringFromFile(directory_path + "/OntoSVG/Examples/example_rdf_code.ttl")
+example_svg_code = readStringFromFile(directory_path + "/OntoSVG/Examples/example_svg_code.svg")
 
 
 def generate_element_id(element):
@@ -148,7 +151,7 @@ def convert_to_rdf():
         g.bind("xlink", xlink)
 
         # fill graph with svg vocabulary
-        xml_graph = Graph().parse(directory_path+"OntoSVG/Specification/svg - core.ttl" , format="ttl")
+        xml_graph = Graph().parse(directory_path+"/OntoSVG/Specification/svg - core.ttl" , format="ttl")
 
         # string for query to establish IRI of a 'tag' HTML element
         tagquerystring = '''
@@ -227,7 +230,7 @@ def convert_to_rdf():
                 for child in element.children:
                     member_count = member_count + 1 # count the number of direct children, so that we can establish the sequence of appearance of the children within the parent element, through the 'rdf:_x' property between parent and child.
                     
-                    # if the child is an html tag element get its unique identifier based on sourceline and sourcepos
+                    # if the child is an xml tag element get its unique identifier based on sourceline and sourcepos
                     if isinstance(child, Tag):
                       if child.name == None  :
                           childname = ""

@@ -11,8 +11,11 @@ import pyshacl
 import rdflib 
 import os
 
+# Get the current working directory in which the RDF2SVG.py file is located.
+current_dir = os.getcwd()
+
 # Set the path to the desired standard directory. 
-directory_path = "C:/Users/Administrator/Documents/Branches/"
+directory_path = os.path.abspath(os.path.join(current_dir, '..', '..', '..'))
 
 # Function to read a graph (as a string) from a file 
 def readGraphFromFile(file_path):
@@ -68,18 +71,18 @@ def iteratePyShacl(vocabulary, serializable_graph):
              
 
 # Get the SVG vocabulary and place it in a string
-svg_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/svg - core.ttl")
-svg_serialisation = readGraphFromFile(directory_path + "OntoSVG/Specification/svg - serialisation.ttl")
-xml_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/xml - core.ttl")
-xmlns_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/xmlns - core.ttl")
-xlink_vocabulary = readGraphFromFile(directory_path + "OntoSVG/Specification/xlink - core.ttl")
+svg_vocabulary = readGraphFromFile(directory_path + "/OntoSVG/Specification/svg - core.ttl")
+svg_serialisation = readGraphFromFile(directory_path + "/OntoSVG/Specification/svg - serialisation.ttl")
+xml_vocabulary = readGraphFromFile(directory_path + "/OntoSVG/Specification/xml - core.ttl")
+xmlns_vocabulary = readGraphFromFile(directory_path + "/OntoSVG/Specification/xmlns - core.ttl")
+xlink_vocabulary = readGraphFromFile(directory_path + "/OntoSVG/Specification/xlink - core.ttl")
 
 vocabulary = svg_vocabulary + svg_serialisation + xml_vocabulary + xmlns_vocabulary + xlink_vocabulary
 
 # loop through any turtle files in the input directory
-for filename in os.listdir(directory_path+"OntoSVG/Tools/RDF2SVG/Input"):
+for filename in os.listdir(directory_path+"/OntoSVG/Tools/RDF2SVG/Input"):
     if filename.endswith(".ttl"):
-        file_path = os.path.join(directory_path+"OntoSVG/Tools/RDF2SVG/Input", filename)
+        file_path = os.path.join(directory_path+"/OntoSVG/Tools/RDF2SVG/Input", filename)
         
         # Establish the stem of the file name for reuse in newly created files
         filename_stem = os.path.splitext(filename)[0]

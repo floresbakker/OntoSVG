@@ -15,9 +15,11 @@ import os
 
 from rdflib.namespace import NamespaceManager
 
-# Set the path to the desired standard directory. 
-directory_path = "C:/Users/Administrator/Documents/Branches/"
+# Get the current working directory in which the Playground.py file is located.
+current_dir = os.getcwd()
 
+# Set the path to the desired standard directory. 
+directory_path = os.path.abspath(os.path.join(current_dir, '..', '..', '..'))
 
 # namespace declaration
 rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
@@ -63,9 +65,9 @@ def generate_element_id(element):
 
 
 # loop through any xml files in the input directory
-for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
+for filename in os.listdir(directory_path+"/OntoSVG/Tools/SVG2RDF/Input"):
     if filename.endswith(".svg"):
-        file_path = os.path.join(directory_path+"OntoSVG/Tools/SVG2RDF/Input", filename)
+        file_path = os.path.join(directory_path+"/OntoSVG/Tools/SVG2RDF/Input", filename)
         
         # Establish the stem of the file name for reuse in newly created files
         filename_stem = os.path.splitext(filename)[0]
@@ -86,7 +88,7 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
         g.bind("xlink", xlink)
 
         # fill graph with svg vocabulary
-        xml_graph = Graph().parse(directory_path+"OntoSVG/Specification/svg - core.ttl" , format="ttl")
+        xml_graph = Graph().parse(directory_path+"/OntoSVG/Specification/svg - core.ttl" , format="ttl")
 
         # string for query to establish IRI of a 'tag' HTML element
         tagquerystring = '''
@@ -204,7 +206,7 @@ for filename in os.listdir(directory_path+"OntoSVG/Tools/SVG2RDF/Input"):
                       g.add((doc[child_id], svg["fragment"], Literal(text_fragment)))
 
         # write the resulting graph to file
-        g.serialize(destination=directory_path+"OntoSVG/Tools/SVG2RDF/Output/" + filename_stem + "-parsed.ttl", format="turtle")
+        g.serialize(destination=directory_path+"/OntoSVG/Tools/SVG2RDF/Output/" + filename_stem + "-parsed.ttl", format="turtle")
         
         print ("SVG file ", filename," is succesfullly transformed to file ", filename_stem + "-parsed.ttl in Turtle format.")
     else: 
