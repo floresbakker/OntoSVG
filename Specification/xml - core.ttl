@@ -64,7 +64,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
   decl:function
     sh:prefix "function";
-    sh:namespace "https://data.rijksfinancien.nl/html/model/function/"^^xsd:anyURI.    
+    sh:namespace "http://www.w3.org/XML/1998/namespace#model/function/"^^xsd:anyURI.    
 
   decl:xml
     sh:prefix "xml";
@@ -360,7 +360,7 @@ construct {
   as ?fragmentString)
   
   # Convert result from string to rdf:XML
-  bind(strdt(?fragmentString, rdf:XML) as ?fragment)
+  bind(strdt(str(?fragmentString), rdf:XML) as ?fragment)
 
 }''';
     rdfs:isDefinedBy xml:.
@@ -577,7 +577,7 @@ function:getElementAttribute
         sh:order 1;
     ] ;
      sh:parameter [
-        sh:path function:ontologyElement ;
+        sh:path function:ontology ;
         sh:datatype xsd:anyURI ;
         sh:description "A ontology that defines an element class." ;
         sh:order 2;
@@ -595,7 +595,7 @@ function:getElementAttribute
     select $element (group_concat(distinct ?attribute) as ?result) {
       $element ?attribute0 ?value.
       ?attribute0 rdfs:subPropertyOf xml:attribute.
-      bind(function:getXMLKey(?attribute0, $ontologyElement) as ?key)
+      bind(function:getXMLKey(?attribute0, $ontology) as ?key)
       bind(concat(?key,'="',str(?value),'"') as ?attribute)
       } group by $element
      }   
@@ -612,7 +612,7 @@ function:getXMLKey
         sh:order 1;
     ] ;
      sh:parameter [
-        sh:path function:ontologyElement ;
+        sh:path function:ontology ;
         sh:datatype xsd:anyURI ;
         sh:description "An ontology that defines the class of the element that is connected to the attribute." ;
         sh:order 2;
@@ -625,13 +625,14 @@ prefix vann: <http://purl.org/vocab/vann/>
 prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
 
 SELECT ?result WHERE {
+
          $attribute xml:key ?key;
                     rdfs:isDefinedBy ?ontologyAttribute.   
          ?ontologyAttribute vann:preferredNamespacePrefix ?prefix.
          
          # If the attribute as defined in an ontology is used on an element of the same ontology, we do not have to include a prefix in the key of the attribute. If not, we append the prefix to the key. An exception is made for the xml:xmlns attribute.
          
-         BIND(IF(?ontologyAttribute = $ontologyElement || $attribute = xml:xmlns,?key, CONCAT(?prefix,":",?key)) as ?result)
+         BIND(IF(?ontologyAttribute = $ontology || $attribute = xml:xmlns,?key, CONCAT(?prefix,":",?key)) as ?result)
   }
 
        """ .
