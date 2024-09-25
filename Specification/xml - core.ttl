@@ -346,17 +346,17 @@ construct {
 } where {
 
   # Establish the class of the node in the XML document
-  $this a/rdfs:subClassOf* ?class.
-  ?class rdfs:isDefinedBy xml:.
+  $this a/rdfs:subClassOf* ?classXML.
+  ?classXML rdfs:isDefinedBy xml:.
 
   # Build the XML fragment for the node in the XML document depending on its class
-  bind(if(?class = xml:Element,                function:getElementFragment($this), 
-       if(?class = xml:Text ,                  function:getTextFragment($this), 
-       if(?class = xml:Comment,                function:getCommentFragment($this), 
-       if(?class = xml:CDATASection,           function:getCDATASectionFragment($this), 
-       if(?class = xml:ProcessingInstruction,  function:getProcessingInstructionFragment($this), 
-       if(?class = xml:DocumentType,           function:getDocumentTypeFragment($this), 
-       if(?class = xml:Document,               function:getDocumentFragment($this), ?unboundDummy)))))))
+  bind(if(?classXML = xml:Element,                function:getElementFragment($this), 
+       if(?classXML = xml:Text ,                  function:getTextFragment($this), 
+       if(?classXML = xml:Comment,                function:getCommentFragment($this), 
+       if(?classXML = xml:CDATASection,           function:getCDATASectionFragment($this), 
+       if(?classXML = xml:ProcessingInstruction,  function:getProcessingInstructionFragment($this), 
+       if(?classXML = xml:DocumentType,           function:getDocumentTypeFragment($this), 
+       if(?classXML = xml:Document,               function:getDocumentFragment($this), ?unboundDummy)))))))
   as ?fragmentString)
   
   # Convert result from string to rdf:XML
@@ -378,6 +378,7 @@ function:getElementFragment
 
     prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>  
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    prefix vann: <http://purl.org/vocab/vann/>
     prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
     
     select ?result where {
@@ -386,22 +387,23 @@ function:getElementFragment
     $element a ?class.
     ?class xml:tag ?tag;
            rdfs:isDefinedBy ?ontology.
-    
+
     # Get the XML attributes for the element, if there are any.
-    bind(str(function:getElementAttribute($element, ?ontology)) as ?attributes)
-    
+    bind(function:getElementAttribute($element, ?ontology) as ?attributes)
+ 
     # Get the XML fragments of child nodes for the element, if there are any.
-    bind(str(function:getChildNodeFragment($element)) as ?fragments)
+    bind(function:getChildNodeFragment($element) as ?childFragments)
     
     # Build the XML fragment for this XML element, by combining everything retrieved above.
     bind(
     concat(
       '<',?tag,if(!bound(?attributes),'',concat(' ',?attributes)),'>',
-      if(!bound(?fragments),concat('</',?tag,'>'),concat(?fragments,'</',?tag,'>'))) as ?result)
+      if(!bound(?childFragments),concat('</',?tag,'>'),concat(?childFragments,'</',?tag,'>'))) as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)  
+      
 }
 	
 """ .
-
 
 function:getTextFragment
     a sh:SPARQLFunction ;
@@ -423,7 +425,8 @@ function:getTextFragment
     $text dom:data ?data.
     
     # Establish the XML fragment for this XML text node
-    bind(strdt(?data,xsd:string) as ?result)
+    bind(strdt(?data,xsd:string) as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)  
 }
 	
 """ .
@@ -444,7 +447,8 @@ function:getCommentFragment
     select ?result where {
      
     # Establish the XML fragment for this XML comment
-    bind(concat('<!--',function:getChildNodeFragment($comment),'-->') as ?result)
+    bind(concat('<!--',function:getChildNodeFragment($comment),'-->') as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)  
 }
 	
 """ .
@@ -465,7 +469,8 @@ function:getCDATASectionFragment
     select ?result where {
      
     # Establish the XML fragment for this XML CDATA
-    bind(concat('<![CDATA[',function:getChildNodeFragment($CDATASection),']]>') as ?result)
+    bind(concat('<![CDATA[',function:getChildNodeFragment($CDATASection),']]>') as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)  
 }
 	
 """ .
@@ -486,7 +491,8 @@ function:getProcessingInstructionFragment
     select ?result where {
 
     # Establish the XML fragment for this XML processingInstruction
-    bind(concat('<?',function:getChildNodeFragment($processingInstruction),'>') as ?result)
+    bind(concat('<?',function:getChildNodeFragment($processingInstruction),'>') as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)    
 }
 	
 """ .
@@ -508,7 +514,8 @@ function:getDocumentTypeFragment
     
     # Establish the doctype name for this Document Type.
     $doctype xml:documentTypeName ?name.
-    bind(concat('<!DOCTYPE ',str(?name),'>') as ?result)
+    bind(concat('<!DOCTYPE ',str(?name),'>') as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)    
 }
 	
 """ .
@@ -529,8 +536,9 @@ function:getDocumentFragment
     select ?result where {
     
     # Establish the XML fragment of the XML document by retrieving the XML fragments of all child nodes.
-    bind(function:getChildNodeFragment($document) as ?result)
-    
+    bind(function:getChildNodeFragment($document) as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)
+
 }
 	
 """ .
@@ -553,7 +561,7 @@ function:getChildNodeFragment
     select ?result where {
     
     { # Get the XML fragments of child nodes, if there are any.
-    select $node (group_concat(str(?fragment);separator='') as ?result) {
+    select $node (group_concat(str(?fragment);separator='') as ?fragments) {
       {
         select $node ?member ?fragment {
           $node ?member ?childNode.
@@ -564,6 +572,7 @@ function:getChildNodeFragment
        }
       } group by $node
      }
+    bind(if(bound(?fragments),?fragments,'') as ?result) 
     }
 """ .
 
@@ -587,18 +596,20 @@ function:getElementAttribute
     
     prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>    
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    prefix vann: <http://purl.org/vocab/vann/>
     prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
     
     select ?result where {
    
     { # Get the XML attributes for this element, if there are any.
-    select $element (group_concat(distinct ?attribute) as ?result) {
+    select $element (group_concat(distinct ?attribute) as ?attributes) {
       $element ?attribute0 ?value.
       ?attribute0 rdfs:subPropertyOf xml:attribute.
       bind(function:getXMLKey(?attribute0, $ontology) as ?key)
       bind(concat(?key,'="',str(?value),'"') as ?attribute)
       } group by $element
      }   
+    bind(if(bound(?attributes),?attributes,'') as ?result) 
     }
 """ .
 
@@ -632,7 +643,7 @@ SELECT ?result WHERE {
          
          # If the attribute as defined in an ontology is used on an element of the same ontology, we do not have to include a prefix in the key of the attribute. If not, we append the prefix to the key. An exception is made for the xml:xmlns attribute.
          
-         BIND(IF(?ontologyAttribute = $ontology || $attribute = xml:xmlns,?key, CONCAT(?prefix,":",?key)) as ?result)
+         bind(if(?ontologyAttribute = $ontology || $attribute = xml:xmlns,?key,concat(?prefix,":",?key)) as ?result)
   }
 
        """ .
