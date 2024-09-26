@@ -11,7 +11,7 @@ prefix status: <http://purl.org/adms/status/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
 prefix xlink: <http://www.w3.org/1999/xlink#> 
-prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/> 
+prefix xml: <http://www.w3.org/XML/1998/namespace/model/def/> 
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
   xlink:
