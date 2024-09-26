@@ -347,8 +347,7 @@ construct {
 } where {
 
   # Establish the class of the node in the XML document
-  $this a ?class.
-  ?class rdfs:subClassOf* ?classXML.
+  $this a/rdfs:subClassOf* ?classXML.
   ?classXML rdfs:isDefinedBy xml:.
 
   # Build the XML fragment for the node in the XML document depending on its class
@@ -561,8 +560,6 @@ function:getChildNodeFragment
     
     select ?result where {
     
-    $parentNode a ?class.
-    
     { # Get the XML fragments of child nodes, if there are any.
     select $parentNode (group_concat(str(?childFragment);separator='') as ?childFragments) {
       {
@@ -604,16 +601,14 @@ function:getElementAttribute
     
     select ?result where {
 
-    $elementXML a ?class.
-
     { # Get the XML attributes for this element, if there are any.
     
     select $elementXML (group_concat(distinct ?attributeFragment) as ?attributesFragment) {  
  
       $elementXML ?attribute ?value.
       ?attribute rdfs:subPropertyOf xml:attribute;
-                  xml:key ?key;
-                  rdfs:isDefinedBy ?ontologyAttribute.   
+                 xml:key ?key;
+                 rdfs:isDefinedBy ?ontologyAttribute.   
       ?ontologyAttribute vann:preferredNamespacePrefix ?prefix.
          
       # Establish whether we need a prefixed key or not, based on whether the attribute is from a foreign ontology or not. If the attribute in question is defined in the same ontology of the element, we do not have to include a prefix in the key of the attribute. If the attribute is from some ontology other than the one of the element, we append the prefix to the key. An exception is made for the xml:xmlns attribute.
