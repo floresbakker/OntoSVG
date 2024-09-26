@@ -561,6 +561,8 @@ function:getChildNodeFragment
     
     select ?result where {
     
+    $parentNode a ?class.
+    
     { # Get the XML fragments of child nodes, if there are any.
     select $parentNode (group_concat(str(?childFragment);separator='') as ?childFragments) {
       {
