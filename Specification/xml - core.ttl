@@ -321,12 +321,13 @@ select $this {
   # Select all DOM nodes... 
   $this a/rdfs:subClassOf* dom:Node.
   
-  filter not exists { $this rdfs:isDefinedBy dom:}
+  #...in a XML document...
+  $this a/rdfs:subClassOf*/rdfs:isDefinedBy xml:.
   
   # ...that do not yet have an xml fragment.
   filter not exists { $this xml:fragment []. }
   
-  # ...but whose child nodes all have an xml fragment
+  # ...but whose child nodes (if any) all have an xml fragment
   minus {
     $this ?member ?child.
     filter(strstarts(str(?member),concat(str(rdf:),'_')))               
