@@ -1,3 +1,4 @@
+# Generic prefixes
 prefix dcm: <http://purl.org/dc/dcmitype/>
 prefix dct: <http://purl.org/dc/terms/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
@@ -5,14 +6,17 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
-prefix standard: <https://data.rijksfinancien.nl/xmlns/id/standard/>
 prefix status: <http://purl.org/adms/status/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
-prefix xml: <http://www.w3.org/XML/1998/namespace/model/def/> 
-prefix xmlns: <http://www.w3.org/2000/xmlns/> 
+prefix xml: <http://www.w3.org/XML/model/def/>  
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
+# XMLNS prefixes
+prefix standard: <http://www.w3.org/2000/xmlns/id/standard/>
+prefix xmlns: <http://www.w3.org/2000/xmlns/model/def/>
+
+#xmlns: {
   xmlns:
     a
       owl:Ontology,
@@ -39,9 +43,9 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
       skos:;
     owl:versionInfo '0.1.0';
     vann:preferredNamespacePrefix 'xmlns';
-    vann:preferredNamespaceUri 'http://www.w3.org/2000/xmlns/';
-    void:uriRegexPattern '^http://www.w3.org/2000/xmlns/';
-    void:uriSpace 'http://www.w3.org/2000/xmlns/'^^xsd:anyURI.
+    vann:preferredNamespaceUri 'http://www.w3.org/2000/xmlns/model/def/';
+    void:uriRegexPattern '^http://www.w3.org/2000/xmlns/model/def/';
+    void:uriSpace 'http://www.w3.org/2000/xmlns/model/def/'^^xsd:anyURI.
 
   standard:xmlns
     a dct:Standard;
@@ -49,7 +53,16 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     dct:source 'https://www.w3.org/TR/xml-names11/'^^xsd:anyURI;
     skos:prefLabel 'Namespaces in XML 1.1 (Second Edition)'@en.
 
-### Attribute
+### Classes ###
+
+  xmlns:Attribute
+    rdf:type owl:Class;
+    rdfs:subClassOf xml:Attribute;
+    skos:definition """An XSI attribute is used to provide information related to XML Schema validation within an XML document. Such an attribute allows XML documents to declare how they relate to XML Schemas, specify the data types of elements, and control schema validation behavior."""@en;
+    skos:prefLabel 'attribute'@en;
+    rdfs:isDefinedBy xmlns:.
+
+### Properties ###
 
   xmlns:xsi 
     a owl:DatatypeProperty;
@@ -57,6 +70,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xmlns:Attribute;
     skos:definition "The 'xsi' attribute is used to specify the XML Schema Instance namespace within an XML document. It associates elements and attributes with XML Schema definitions."@en;
     skos:prefLabel 'the xsi attribute'@en;
     rdfs:isDefinedBy xmlns:.
@@ -67,6 +81,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xmlns:Attribute;    
     skos:definition "The 'rdf' attribute is used to specify the RDF namespace within an XML document. It associates elements and attributes with RDF resources and statements."@en;
     skos:prefLabel 'the rdf attribute'@en;
     rdfs:isDefinedBy xmlns:.
@@ -77,6 +92,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xmlns:Attribute;    
     skos:definition "The 'xlink' attribute is used to specify the XLink namespace within an XML document. It associates elements and attributes with XLink resources and links."@en;
     skos:prefLabel 'the xlink attribute'@en;
     rdfs:isDefinedBy xmlns:.
@@ -87,6 +103,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xmlns:Attribute;    
     skos:definition "The 'dc' attribute is used to specify the Dublin Core namespace within an XML document. It associates elements and attributes with Dublin Core metadata terms."@en;
     skos:prefLabel 'the dc attribute'@en;
     rdfs:isDefinedBy xmlns:.
@@ -97,7 +114,9 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xmlns:Attribute;    
     skos:definition "The 'cc' attribute is used to specify the Creative Commons namespace within an XML document. It associates elements and attributes with Creative Commons licenses and metadata."@en;
     skos:prefLabel 'the cc attribute'@en;
     rdfs:isDefinedBy xmlns:.
 
+#}

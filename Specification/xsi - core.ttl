@@ -1,19 +1,23 @@
+# Generic prefixes
 prefix dcm: <http://purl.org/dc/dcmitype/>
 prefix dct: <http://purl.org/dc/terms/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix section: <https://data.rijksfinancien.nl/xsi/id/section/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
-prefix standard: <https://data.rijksfinancien.nl/xsi/id/standard/>
 prefix status: <http://purl.org/adms/status/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
-prefix xml: <http://www.w3.org/XML/1998/namespace/model/def/> 
+prefix xml: <http://www.w3.org/XML/model/def/> 
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#>
 
+# XSI prefixes
+prefix section: <http://www.w3.org/2001/XMLSchema-instance/id/section/>
+prefix standard: <http://www.w3.org/2001/XMLSchema-instance/id/standard/>
+prefix xsi: <http://www.w3.org/2001/XMLSchema-instance/model/def/>
+
+#xsi: {
   xsi:
     a
       owl:Ontology,
@@ -40,9 +44,9 @@ prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#>
       skos:;
     owl:versionInfo '0.1.0';
     vann:preferredNamespacePrefix 'xsi';
-    vann:preferredNamespaceUri 'http://www.w3.org/XML/1998/namespace';
-    void:uriRegexPattern '^http://www.w3.org/XML/1998/namespace';
-    void:uriSpace 'http://www.w3.org/XML/1998/namespace'^^xsd:anyURI.
+    vann:preferredNamespaceUri 'http://www.w3.org/XML/model/def/';
+    void:uriRegexPattern '^http://www.w3.org/XML/model/def/';
+    void:uriSpace 'http://www.w3.org/XML/model/def/'^^xsd:anyURI.
 
   standard:xsi
     a dct:Standard;
@@ -71,7 +75,17 @@ prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#>
     skos:prefLabel '§ 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation'@en;
     rdfs:isDefinedBy xsi:.
 
-### Attributes
+### Classes ###
+
+  xsi:Attribute
+    rdf:type owl:Class;
+    rdfs:subClassOf xml:Attribute;
+    dct:conformsTo section:AttributesAndSyntax;
+    skos:definition """An XSI attribute is used to provide information related to XML Schema validation within an XML document. Such an attribute allows XML documents to declare how they relate to XML Schemas, specify the data types of elements, and control schema validation behavior."""@en;
+    skos:prefLabel 'attribute'@en;
+    rdfs:isDefinedBy xsi:.
+
+### Properties ###
 
   xsi:nil
     a owl:DatatypeProperty;
@@ -80,6 +94,7 @@ prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#>
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xsi:Attribute;
     skos:definition "The xsi:nil attribute indicates whether an element has a nil value. When the xsi:nil attribute is set to 'true', it signifies that the element has no value. This attribute is typically used in XML Schema instance documents to represent null or empty values for elements defined in XML Schema."@en;
     skos:prefLabel 'the nil attribute'@en;
     rdfs:isDefinedBy xsi:.
@@ -91,6 +106,7 @@ prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#>
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xsi:Attribute;    
     skos:definition "The 'schemaLocation' attribute is used in XML documents associated with XML Schema validation. It specifies the location of the XML Schema definition (XSD) that describes the structure and constraints of elements in the document."@en;
     skos:prefLabel 'the schemaLocation attribute'@en;
     rdfs:isDefinedBy xsi:.
@@ -102,7 +118,9 @@ prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#>
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xsi:Attribute;    
     skos:definition "The 'type' attribute is used in XML documents associated with XML Schema validation. It specifies the data type of an element or an attribute in accordance with the XML Schema definition (XSD)."@en;
     skos:prefLabel 'the type attribute'@en;
     rdfs:isDefinedBy xsi:.
 
+#}

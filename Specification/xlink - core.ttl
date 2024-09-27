@@ -1,19 +1,23 @@
+# Generic prefixes
 prefix dcm: <http://purl.org/dc/dcmitype/>
 prefix dct: <http://purl.org/dc/terms/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix section: <https://data.rijksfinancien.nl/xlink/id/section/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
-prefix standard: <https://data.rijksfinancien.nl/xlink/id/standard/>
 prefix status: <http://purl.org/adms/status/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
-prefix xlink: <http://www.w3.org/1999/xlink#> 
-prefix xml: <http://www.w3.org/XML/1998/namespace/model/def/> 
+prefix xml: <http://www.w3.org/XML/model/def/> 
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
+# XLink prefixes
+prefix section: <https://www.w3.org/1999/xlink/id/section/>
+prefix standard: <https://www.w3.org/1999/xlink/id/standard/>
+prefix xlink: <https://www.w3.org/1999/xlink/model/def/> 
+
+#xlink: {
   xlink:
     a
       owl:Ontology,
@@ -40,9 +44,9 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
       skos:;
     owl:versionInfo '0.1.0';
     vann:preferredNamespacePrefix 'xlink';
-    vann:preferredNamespaceUri 'http://www.w3.org/1999/xlink#';
-    void:uriRegexPattern '^http://www.w3.org/1999/xlink#';
-    void:uriSpace 'http://www.w3.org/1999/xlink#'^^xsd:anyURI;
+    vann:preferredNamespaceUri 'https://www.w3.org/1999/xlink/model/def/';
+    void:uriRegexPattern '^https://www.w3.org/1999/xlink/model/def/';
+    void:uriSpace 'http://www.w3.org/1999/xlink/model/def/'^^xsd:anyURI;
     skos:example """
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
@@ -113,13 +117,24 @@ svg:y2 "409.21478" .""".
     skos:prefLabel '§ 5.7 Traversal Attributes (label, from, and to)'@en;
     rdfs:isDefinedBy xlink:.
 
-### Attribute
+### Classes ###
+
+  xlink:Attribute
+    rdf:type owl:Class;
+    rdfs:subClassOf xml:Attribute;
+    dct:conformsTo section:AttributesAndSyntax;
+    skos:definition """An XLink attribute is used to create various types of links within an XML document. Such an attribute allows XML documents to declare how  elements in XML documents are linked to other resources."""@en;
+    skos:prefLabel 'attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+### Properties ###
  
   xlink:actuate
     a owl:DatatypeProperty;
     dct:conformsTo section:5.6.2;
     xml:key 'actuate';
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xlink:Attribute;
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the mechanism for processing XLink."@en;
@@ -131,6 +146,7 @@ svg:y2 "409.21478" .""".
     dct:conformsTo section:5.5;
     xml:key 'arcrole';
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xlink:Attribute;    
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the arc role for XLink."@en;
@@ -142,6 +158,7 @@ svg:y2 "409.21478" .""".
     dct:conformsTo section:5.7;
     xml:key 'from';
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xlink:Attribute;    
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the from for XLink."@en;
@@ -153,6 +170,7 @@ svg:y2 "409.21478" .""".
     dct:conformsTo section:5.4;
     xml:key 'href';
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xlink:Attribute;    
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the reference for XLink."@en;
@@ -164,6 +182,7 @@ svg:y2 "409.21478" .""".
     dct:conformsTo section:5.7;
     xml:key 'label';
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xlink:Attribute;    
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the label for XLink."@en;
@@ -175,6 +194,7 @@ svg:y2 "409.21478" .""".
     dct:conformsTo section:5.5;
     xml:key 'role';
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xlink:Attribute;    
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the role for XLink."@en;
@@ -186,6 +206,7 @@ svg:y2 "409.21478" .""".
     dct:conformsTo section:5.6.1;
     xml:key 'show';
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xlink:Attribute;    
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the display behavior for XLink."@en;
@@ -197,6 +218,7 @@ svg:y2 "409.21478" .""".
     dct:conformsTo section:5.5;
     xml:key 'title';
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xlink:Attribute;    
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the title for XLink."@en;
@@ -208,6 +230,7 @@ svg:y2 "409.21478" .""".
     dct:conformsTo section:5.7;
     xml:key 'to';
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xlink:Attribute;    
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the to for XLink."@en;
@@ -219,9 +242,11 @@ svg:y2 "409.21478" .""".
     dct:conformsTo section:5.3;
     xml:key 'type';
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xlink:Attribute;    
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     skos:definition "Specifies the type for XLink."@en;
     skos:prefLabel 'the type attribute'@en;
     rdfs:isDefinedBy xlink:.
 
+#}
