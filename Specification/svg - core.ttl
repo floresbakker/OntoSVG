@@ -19,7 +19,7 @@ prefix section: <http://www.w3.org/SVG/id/section/>
 prefix standard: <http://www.w3.org/SVG/id/standard/>
 prefix svg: <http://www.w3.org/SVG/model/def/>
 
-#svg: {
+svg: {
 svg:
     a
       owl:Ontology,
@@ -146,6 +146,14 @@ svg:Text
     rdfs:subClassOf xml:Text;
     skos:definition "A plain text node in a SVG document."@en;
     skos:prefLabel "The SVG DOM text node"@en;
+    rdfs:isDefinedBy svg:.
+    
+svg:Attribute
+    rdf:type owl:Class;
+    rdfs:subClassOf dom:Attribute;
+    dct:conformsTo section:AttributesAndSyntax;
+    skos:definition """A SVG attribute is a characteristic applied to elements within an SVG (Scalable Vector Graphics) document that defines various properties and behaviors of graphical content, such as shapes, text, colors, and transformations. SVG attributes modify the appearance, structure, and behavior of vector graphics in XML-based markup, enabling interaction, animation, and dynamic styling."""@en;
+    skos:prefLabel 'attribute'@en;
     rdfs:isDefinedBy svg:.
 
 ### SVG elements
@@ -874,7 +882,8 @@ svg:Vkern
 ### Properties
 
 svg:accent-height
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'accent-height';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain [
@@ -889,7 +898,8 @@ svg:accent-height
     rdfs:isDefinedBy svg:.
 
 svg:accumulate
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'accumulate';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animation;
@@ -899,7 +909,8 @@ svg:accumulate
     rdfs:isDefinedBy svg:.
 
 svg:additive
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'additive';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -909,7 +920,8 @@ svg:additive
     rdfs:isDefinedBy svg:.
 
 svg:alphabetic
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'alphabetic';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:glyph;
@@ -919,7 +931,8 @@ svg:alphabetic
     rdfs:isDefinedBy svg:.
 
 svg:amplitude
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'amplitude';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feFuncA;
@@ -929,7 +942,8 @@ svg:amplitude
     rdfs:isDefinedBy svg:.
 
 svg:arabic-form
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;;
     xml:key 'arabic-form';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -939,7 +953,8 @@ svg:arabic-form
     rdfs:isDefinedBy svg:.
 
 svg:ascent
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'ascent';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -949,7 +964,8 @@ svg:ascent
     rdfs:isDefinedBy svg:.
 
 svg:attributeName
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'attributeName';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -959,7 +975,8 @@ svg:attributeName
     rdfs:isDefinedBy svg:.
 
 svg:attributeType
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'attributeType';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -969,7 +986,8 @@ svg:attributeType
     rdfs:isDefinedBy svg:.
 
 svg:azimuth
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'azimuth';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:audio;
@@ -979,7 +997,8 @@ svg:azimuth
     rdfs:isDefinedBy svg:.
 
 svg:baseFrequency
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'baseFrequency';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feTurbulence;
@@ -989,7 +1008,8 @@ svg:baseFrequency
     rdfs:isDefinedBy svg:.
 
 svg:baseProfile
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'baseProfile';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:Svg;
@@ -999,7 +1019,8 @@ svg:baseProfile
     rdfs:isDefinedBy svg:.
 
 svg:bbox
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'bbox';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -1009,7 +1030,8 @@ svg:bbox
     rdfs:isDefinedBy svg:.
 
 svg:begin
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'begin';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animation;
@@ -1019,7 +1041,8 @@ svg:begin
     rdfs:isDefinedBy svg:.
 
 svg:bias
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'bias';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feConvolveMatrix;
@@ -1029,7 +1052,8 @@ svg:bias
     rdfs:isDefinedBy svg:.
 
 svg:by
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'by';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1039,7 +1063,8 @@ svg:by
     rdfs:isDefinedBy svg:.
 
 svg:calcMode
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'calcMode';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animateTransform;
@@ -1049,7 +1074,8 @@ svg:calcMode
     rdfs:isDefinedBy svg:.
 
 svg:cap-height
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'cap-height';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -1059,7 +1085,8 @@ svg:cap-height
     rdfs:isDefinedBy svg:.
 
 svg:class
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'class';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:any;
@@ -1069,7 +1096,8 @@ svg:class
     rdfs:isDefinedBy svg:.
 
 svg:clipPathUnits
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;;
     xml:key 'clipPathUnits';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:clipPath;
@@ -1079,7 +1107,8 @@ svg:clipPathUnits
     rdfs:isDefinedBy svg:.
 
 svg:contentScriptType
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'contentScriptType';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:Svg;
@@ -1089,7 +1118,8 @@ svg:contentScriptType
     rdfs:isDefinedBy svg:.
 
 svg:contentStyleType
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'contentStyleType';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:Svg;
@@ -1099,7 +1129,8 @@ svg:contentStyleType
     rdfs:isDefinedBy svg:.
 
 svg:cx
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'cx';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:Circle;
@@ -1109,7 +1140,8 @@ svg:cx
     rdfs:isDefinedBy svg:.
 
 svg:cy
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'cy';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:Circle;
@@ -1119,7 +1151,8 @@ svg:cy
     rdfs:isDefinedBy svg:.
 
 svg:d
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'd';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:path;
@@ -1129,7 +1162,8 @@ svg:d
     rdfs:isDefinedBy svg:.
 
 svg:descent
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'descent';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -1139,7 +1173,8 @@ svg:descent
     rdfs:isDefinedBy svg:.
 
 svg:diffuseConstant
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'diffuseConstant';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feDiffuseLighting;
@@ -1149,7 +1184,8 @@ svg:diffuseConstant
     rdfs:isDefinedBy svg:.
 
 svg:divisor
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'divisor';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feConvolveMatrix;
@@ -1159,7 +1195,8 @@ svg:divisor
     rdfs:isDefinedBy svg:.
 
 svg:dur
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'dur';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animation;
@@ -1169,7 +1206,8 @@ svg:dur
     rdfs:isDefinedBy svg:.
 
 svg:dx
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'dx';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:tspan;
@@ -1179,7 +1217,8 @@ svg:dx
     rdfs:isDefinedBy svg:.
 
 svg:dy
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'dy';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:tspan;
@@ -1189,7 +1228,8 @@ svg:dy
     rdfs:isDefinedBy svg:.
 
 svg:edgeMode
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'edgeMode';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feConvolveMatrix;
@@ -1199,7 +1239,8 @@ svg:edgeMode
     rdfs:isDefinedBy svg:.
 
 svg:elevation
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'elevation';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feDistantLight;
@@ -1209,7 +1250,8 @@ svg:elevation
     rdfs:isDefinedBy svg:.
 
 svg:end
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'end';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1219,7 +1261,8 @@ svg:end
     rdfs:isDefinedBy svg:.
 
 svg:exponent
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'exponent';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feFuncA;
@@ -1229,7 +1272,8 @@ svg:exponent
     rdfs:isDefinedBy svg:.
 
 svg:externalResourcesRequired
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'externalResourcesRequired';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:Svg;
@@ -1239,7 +1283,8 @@ svg:externalResourcesRequired
     rdfs:isDefinedBy svg:.
 
 svg:fill
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'fill';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:any;
@@ -1249,7 +1294,8 @@ svg:fill
     rdfs:isDefinedBy svg:.
 
 svg:filterRes
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'filterRes';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:filter;
@@ -1259,7 +1305,8 @@ svg:filterRes
     rdfs:isDefinedBy svg:.
 
 svg:filterUnits
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'filterUnits';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:filter;
@@ -1269,7 +1316,8 @@ svg:filterUnits
     rdfs:isDefinedBy svg:.
 
 svg:font-family
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'font-family';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -1279,7 +1327,8 @@ svg:font-family
     rdfs:isDefinedBy svg:.
 
 svg:font-size
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'font-size';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -1289,7 +1338,8 @@ svg:font-size
     rdfs:isDefinedBy svg:.
 
 svg:font-stretch
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'font-stretch';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -1299,7 +1349,8 @@ svg:font-stretch
     rdfs:isDefinedBy svg:.
 
 svg:font-style
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'font-style';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -1309,7 +1360,8 @@ svg:font-style
     rdfs:isDefinedBy svg:.
 
 svg:font-variant
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'font-variant';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -1319,7 +1371,8 @@ svg:font-variant
     rdfs:isDefinedBy svg:.
 
 svg:font-weight
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'font-weight';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -1329,7 +1382,8 @@ svg:font-weight
     rdfs:isDefinedBy svg:.
 
 svg:format
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'format';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:audio;
@@ -1339,7 +1393,8 @@ svg:format
     rdfs:isDefinedBy svg:.
 
 svg:from
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'from';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:set;
@@ -1349,7 +1404,8 @@ svg:from
     rdfs:isDefinedBy svg:.
 
 svg:fx
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'fx';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:RadialGradient;
@@ -1359,7 +1415,8 @@ svg:fx
     rdfs:isDefinedBy svg:.
 
 svg:fy
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'fy';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:radialGradient;
@@ -1369,7 +1426,8 @@ svg:fy
     rdfs:isDefinedBy svg:.
 
 svg:g1
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'g1';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -1379,7 +1437,8 @@ svg:g1
     rdfs:isDefinedBy svg:.
 
 svg:g2
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'g2';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -1389,7 +1448,8 @@ svg:g2
     rdfs:isDefinedBy svg:.
 
 svg:glyph-name
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'glyph-name';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:altGlyph;
@@ -1399,7 +1459,8 @@ svg:glyph-name
     rdfs:isDefinedBy svg:.
 
 svg:glyphRef
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'glyphRef';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:altGlyph;
@@ -1409,7 +1470,8 @@ svg:glyphRef
     rdfs:isDefinedBy svg:.
 
 svg:gradientTransform
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'gradientTransform';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:linearGradient;
@@ -1419,7 +1481,8 @@ svg:gradientTransform
     rdfs:isDefinedBy svg:.
 
 svg:gradientUnits
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'gradientUnits';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:linearGradient;
@@ -1429,7 +1492,8 @@ svg:gradientUnits
     rdfs:isDefinedBy svg:.
 
 svg:hanging
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'hanging';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -1439,7 +1503,8 @@ svg:hanging
     rdfs:isDefinedBy svg:.
 
 svg:height
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'height';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:any;
@@ -1449,7 +1514,8 @@ svg:height
     rdfs:isDefinedBy svg:.
 
 svg:horiz-adv-x
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'horiz-adv-x';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:glyph;
@@ -1459,7 +1525,8 @@ svg:horiz-adv-x
     rdfs:isDefinedBy svg:.
 
 svg:horiz-origin-x
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'horiz-origin-x';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:glyph;
@@ -1469,7 +1536,8 @@ svg:horiz-origin-x
     rdfs:isDefinedBy svg:.
 
 svg:horiz-origin-y
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'horiz-origin-y';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:glyph;
@@ -1479,7 +1547,8 @@ svg:horiz-origin-y
     rdfs:isDefinedBy svg:.
 
 svg:id
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'id';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:any;
@@ -1489,7 +1558,8 @@ svg:id
     rdfs:isDefinedBy svg:.
 
 svg:ideographic
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'ideographic';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -1499,7 +1569,8 @@ svg:ideographic
     rdfs:isDefinedBy svg:.
 
 svg:in
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'in';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feMergeNode;
@@ -1509,7 +1580,8 @@ svg:in
     rdfs:isDefinedBy svg:.
 
 svg:in2
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'in2';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feMergeNode;
@@ -1519,7 +1591,8 @@ svg:in2
     rdfs:isDefinedBy svg:.
 
 svg:intercept
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'intercept';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feFuncA;
@@ -1529,7 +1602,8 @@ svg:intercept
     rdfs:isDefinedBy svg:.
 
 svg:k
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'k';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feComposite;
@@ -1539,7 +1613,8 @@ svg:k
     rdfs:isDefinedBy svg:.
 
 svg:k1
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'k1';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feComposite;
@@ -1549,7 +1624,8 @@ svg:k1
     rdfs:isDefinedBy svg:.
 
 svg:k2
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'k2';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feComposite;
@@ -1559,7 +1635,8 @@ svg:k2
     rdfs:isDefinedBy svg:.
 
 svg:k3
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'k3';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feComposite;
@@ -1569,7 +1646,8 @@ svg:k3
     rdfs:isDefinedBy svg:.
 
 svg:k4
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'k4';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feComposite;
@@ -1579,7 +1657,8 @@ svg:k4
     rdfs:isDefinedBy svg:.
 
 svg:kernelMatrix
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'kernelMatrix';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feConvolveMatrix;
@@ -1589,7 +1668,8 @@ svg:kernelMatrix
     rdfs:isDefinedBy svg:.
 
 svg:kernelUnitLength
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'kernelUnitLength';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feConvolveMatrix;
@@ -1599,7 +1679,8 @@ svg:kernelUnitLength
     rdfs:isDefinedBy svg:.
 
 xml:keyPoints
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'keyPoints';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animateMotion;
@@ -1609,7 +1690,8 @@ xml:keyPoints
     rdfs:isDefinedBy svg:.
 
 xml:keySplines
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'keySplines';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animateMotion;
@@ -1619,7 +1701,8 @@ xml:keySplines
     rdfs:isDefinedBy svg:.
 
 xml:keyTimes
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'keyTimes';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animateMotion;
@@ -1629,7 +1712,8 @@ xml:keyTimes
     rdfs:isDefinedBy svg:.
 
 svg:lang
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'lang';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:any;
@@ -1639,7 +1723,8 @@ svg:lang
     rdfs:isDefinedBy svg:.
 
 svg:lengthAdjust
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'lengthAdjust';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:textPath;
@@ -1649,7 +1734,8 @@ svg:lengthAdjust
     rdfs:isDefinedBy svg:.
 
 svg:limitingConeAngle
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'limitingConeAngle';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feSpotLight;
@@ -1659,7 +1745,8 @@ svg:limitingConeAngle
     rdfs:isDefinedBy svg:.
 
 svg:local
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'local';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:fePointLight;
@@ -1669,7 +1756,8 @@ svg:local
     rdfs:isDefinedBy svg:.
 
 svg:markerHeight
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'markerHeight';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:marker;
@@ -1678,7 +1766,8 @@ svg:markerHeight
     skos:prefLabel 'the markerHeight attribute'@en;
     rdfs:isDefinedBy svg:.
 svg:markerUnits
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'markerUnits';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:marker;
@@ -1688,7 +1777,8 @@ svg:markerUnits
     rdfs:isDefinedBy svg:.
 
 svg:markerWidth
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'markerWidth';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:marker;
@@ -1698,7 +1788,8 @@ svg:markerWidth
     rdfs:isDefinedBy svg:.
 
 svg:maskContentUnits
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'maskContentUnits';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:mask;
@@ -1708,7 +1799,8 @@ svg:maskContentUnits
     rdfs:isDefinedBy svg:.
 
 svg:maskUnits
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'maskUnits';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:mask;
@@ -1718,7 +1810,8 @@ svg:maskUnits
     rdfs:isDefinedBy svg:.
 
 svg:mathematical
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'mathematical';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -1728,7 +1821,8 @@ svg:mathematical
     rdfs:isDefinedBy svg:.
 
 svg:max
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'max';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1738,7 +1832,8 @@ svg:max
     rdfs:isDefinedBy svg:.
 
 svg:media
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'media';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:style;
@@ -1748,7 +1843,8 @@ svg:media
     rdfs:isDefinedBy svg:.
 
 svg:method
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'method';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feColorMatrix;
@@ -1758,7 +1854,8 @@ svg:method
     rdfs:isDefinedBy svg:.
 
 svg:min
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'min';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1768,7 +1865,8 @@ svg:min
     rdfs:isDefinedBy svg:.
 
 svg:mode
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'mode';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feBlend;
@@ -1778,7 +1876,8 @@ svg:mode
     rdfs:isDefinedBy svg:.
 
 svg:name
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'name';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1788,7 +1887,8 @@ svg:name
     rdfs:isDefinedBy svg:.
 
 svg:numOctaves
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'numOctaves';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feTurbulence;
@@ -1798,7 +1898,8 @@ svg:numOctaves
     rdfs:isDefinedBy svg:.
 
 svg:offset
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'offset';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:stop;
@@ -1808,7 +1909,8 @@ svg:offset
     rdfs:isDefinedBy svg:.
 
 svg:onabort
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onabort';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1818,7 +1920,8 @@ svg:onabort
     rdfs:isDefinedBy svg:.
 
 svg:onactivate
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onactivate';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1828,7 +1931,8 @@ svg:onactivate
     rdfs:isDefinedBy svg:.
 
 svg:onbegin
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onbegin';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1838,7 +1942,8 @@ svg:onbegin
     rdfs:isDefinedBy svg:.
 
 svg:onclick
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onclick';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1848,7 +1953,8 @@ svg:onclick
     rdfs:isDefinedBy svg:.
 
 svg:onend
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onend';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1858,7 +1964,8 @@ svg:onend
     rdfs:isDefinedBy svg:.
 
 svg:onerror
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onerror';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1868,7 +1975,8 @@ svg:onerror
     rdfs:isDefinedBy svg:.
 
 svg:onfocusin
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onfocusin';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1878,7 +1986,8 @@ svg:onfocusin
     rdfs:isDefinedBy svg:.
 
 svg:onfocusout
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onfocusout';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1888,7 +1997,8 @@ svg:onfocusout
     rdfs:isDefinedBy svg:.
 
 svg:onload
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onload';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1898,7 +2008,8 @@ svg:onload
     rdfs:isDefinedBy svg:.
 
 svg:onmousedown
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onmousedown';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1908,7 +2019,8 @@ svg:onmousedown
     rdfs:isDefinedBy svg:.
 
 svg:onmousemove
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onmousemove';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1918,7 +2030,8 @@ svg:onmousemove
     rdfs:isDefinedBy svg:.
 
 svg:onmouseout
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onmouseout';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1928,7 +2041,8 @@ svg:onmouseout
     rdfs:isDefinedBy svg:.
 
 svg:onmouseover
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onmouseover';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1938,7 +2052,8 @@ svg:onmouseover
     rdfs:isDefinedBy svg:.
 
 svg:onmouseup
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onmouseup';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1948,7 +2063,8 @@ svg:onmouseup
     rdfs:isDefinedBy svg:.
 
 svg:onrepeat
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onrepeat';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1958,7 +2074,8 @@ svg:onrepeat
     rdfs:isDefinedBy svg:.
 
 svg:onresize
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onresize';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1968,7 +2085,8 @@ svg:onresize
     rdfs:isDefinedBy svg:.
 
 svg:onscroll
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onscroll';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1978,7 +2096,8 @@ svg:onscroll
     rdfs:isDefinedBy svg:.
 
 svg:onunload
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onunload';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1988,7 +2107,8 @@ svg:onunload
     rdfs:isDefinedBy svg:.
 
 svg:onzoom
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'onzoom';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -1998,7 +2118,8 @@ svg:onzoom
     rdfs:isDefinedBy svg:.
 
 svg:operator
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'operator';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feBlend;
@@ -2008,7 +2129,8 @@ svg:operator
     rdfs:isDefinedBy svg:.
 
 svg:order
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'order';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feConvolveMatrix;
@@ -2018,7 +2140,8 @@ svg:order
     rdfs:isDefinedBy svg:.
 
 svg:orient
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'orient';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:marker;
@@ -2028,7 +2151,8 @@ svg:orient
     rdfs:isDefinedBy svg:.
 
 svg:orientation
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'orientation';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font;
@@ -2038,7 +2162,8 @@ svg:orientation
     rdfs:isDefinedBy svg:.
 
 svg:origin
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'origin';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feDistantLight;
@@ -2048,7 +2173,8 @@ svg:origin
     rdfs:isDefinedBy svg:.
 
 svg:overline-position
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'overline-position';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font;
@@ -2058,7 +2184,8 @@ svg:overline-position
     rdfs:isDefinedBy svg:.
 
 svg:overline-thickness
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'overline-thickness';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font;
@@ -2068,7 +2195,8 @@ svg:overline-thickness
     rdfs:isDefinedBy svg:.
 
 svg:panose-1
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'panose-1';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -2078,7 +2206,8 @@ svg:panose-1
     rdfs:isDefinedBy svg:.
 
 svg:path
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'path';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:marker;
@@ -2088,7 +2217,8 @@ svg:path
     rdfs:isDefinedBy svg:.
 
 svg:pathLength
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'pathLength';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animateMotion;
@@ -2098,7 +2228,8 @@ svg:pathLength
     rdfs:isDefinedBy svg:.
 
 svg:patternContentUnits
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'patternContentUnits';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:pattern;
@@ -2108,7 +2239,8 @@ svg:patternContentUnits
     rdfs:isDefinedBy svg:.
 
 svg:patternTransform
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'patternTransform';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:pattern;
@@ -2118,7 +2250,8 @@ svg:patternTransform
     rdfs:isDefinedBy svg:.
 
 svg:patternUnits
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'patternUnits';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:pattern;
@@ -2128,7 +2261,8 @@ svg:patternUnits
     rdfs:isDefinedBy svg:.
 
 svg:points
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'points';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:polyline;
@@ -2138,7 +2272,8 @@ svg:points
     rdfs:isDefinedBy svg:.
 
 svg:pointsAtX
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'pointsAtX';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feSpotLight;
@@ -2148,7 +2283,8 @@ svg:pointsAtX
     rdfs:isDefinedBy svg:.
 
 svg:pointsAtY
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'pointsAtY';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feSpotLight;
@@ -2158,7 +2294,8 @@ svg:pointsAtY
     rdfs:isDefinedBy svg:.
 
 svg:pointsAtZ
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'pointsAtZ';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feSpotLight;
@@ -2168,7 +2305,8 @@ svg:pointsAtZ
     rdfs:isDefinedBy svg:.
 
 svg:preserveAlpha
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'preserveAlpha';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feConvolveMatrix;
@@ -2178,7 +2316,8 @@ svg:preserveAlpha
     rdfs:isDefinedBy svg:.
 
 svg:preserveAspectRatio
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'preserveAspectRatio';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:marker;
@@ -2188,7 +2327,8 @@ svg:preserveAspectRatio
     rdfs:isDefinedBy svg:.
 
 svg:primitiveUnits
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'primitiveUnits';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:filter;
@@ -2198,7 +2338,8 @@ svg:primitiveUnits
     rdfs:isDefinedBy svg:.
 
 svg:r
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'r';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:circle;
@@ -2208,7 +2349,8 @@ svg:r
     rdfs:isDefinedBy svg:.
 
 svg:radius
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'radius';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:radialGradient;
@@ -2218,7 +2360,8 @@ svg:radius
     rdfs:isDefinedBy svg:.
 
 svg:refX
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;;
     xml:key 'refX';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:marker;
@@ -2228,7 +2371,8 @@ svg:refX
     rdfs:isDefinedBy svg:.
 
 svg:refY
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'refY';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:marker;
@@ -2238,7 +2382,8 @@ svg:refY
     rdfs:isDefinedBy svg:.
 
 svg:rendering-intent
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'rendering-intent';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:color-profile;
@@ -2248,7 +2393,8 @@ svg:rendering-intent
     rdfs:isDefinedBy svg:.
 
 svg:repeatCount
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'repeatCount';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -2258,7 +2404,8 @@ svg:repeatCount
     rdfs:isDefinedBy svg:.
 
 svg:repeatDur
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'repeatDur';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -2268,7 +2415,8 @@ svg:repeatDur
     rdfs:isDefinedBy svg:.
 
 svg:requiredExtensions
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'requiredExtensions';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:script;
@@ -2278,7 +2426,8 @@ svg:requiredExtensions
     rdfs:isDefinedBy svg:.
 
 svg:requiredFeatures
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'requiredFeatures';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:script;
@@ -2288,7 +2437,8 @@ svg:requiredFeatures
     rdfs:isDefinedBy svg:.
 
 svg:restart
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'restart';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animate;
@@ -2298,7 +2448,8 @@ svg:restart
     rdfs:isDefinedBy svg:.
 
 svg:result
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'result';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:filter;
@@ -2308,7 +2459,8 @@ svg:result
     rdfs:isDefinedBy svg:.
 
 svg:rotate
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'rotate';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animateTransform;
@@ -2318,7 +2470,8 @@ svg:rotate
     rdfs:isDefinedBy svg:.
 
 svg:rx
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'rx';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:ellipse;
@@ -2328,7 +2481,8 @@ svg:rx
     rdfs:isDefinedBy svg:.
 
 svg:ry
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'ry';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:ellipse;
@@ -2338,7 +2492,8 @@ svg:ry
     rdfs:isDefinedBy svg:.
 
 svg:scale
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;;
     xml:key 'scale';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animateTransform;
@@ -2348,7 +2503,8 @@ svg:scale
     rdfs:isDefinedBy svg:.
 
 svg:seed
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'seed';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feTurbulence;
@@ -2358,7 +2514,8 @@ svg:seed
     rdfs:isDefinedBy svg:.
 
 svg:slope
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'slope';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feFuncA;
@@ -2368,7 +2525,8 @@ svg:slope
     rdfs:isDefinedBy svg:.
 
 svg:spacing
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'spacing';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:glyph;
@@ -2378,7 +2536,8 @@ svg:spacing
     rdfs:isDefinedBy svg:.
 
 svg:specularConstant
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'specularConstant';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feSpecularLighting;
@@ -2388,7 +2547,8 @@ svg:specularConstant
     rdfs:isDefinedBy svg:.
 
 svg:specularExponent
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'specularExponent';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feSpecularLighting;
@@ -2398,7 +2558,8 @@ svg:specularExponent
     rdfs:isDefinedBy svg:.
 
 svg:spreadMethod
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'spreadMethod';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:gradient;
@@ -2408,7 +2569,8 @@ svg:spreadMethod
     rdfs:isDefinedBy svg:.
 
 svg:startOffset
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'startOffset';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:textPath;
@@ -2418,7 +2580,8 @@ svg:startOffset
     rdfs:isDefinedBy svg:.
 
 svg:stdDeviation
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stdDeviation';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feGaussianBlur;
@@ -2428,7 +2591,8 @@ svg:stdDeviation
     rdfs:isDefinedBy svg:.
 
 svg:stemh
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stemh';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:fontFace;
@@ -2438,7 +2602,8 @@ svg:stemh
     rdfs:isDefinedBy svg:.
 
 svg:stemv
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stemv';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:fontFace;
@@ -2448,7 +2613,8 @@ svg:stemv
     rdfs:isDefinedBy svg:.
 
 svg:stitchTiles
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stitchTiles';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feTurbulence;
@@ -2458,7 +2624,8 @@ svg:stitchTiles
     rdfs:isDefinedBy svg:.
 
 svg:strikethrough-position
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'strikethrough-position';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:fontFace;
@@ -2468,7 +2635,8 @@ svg:strikethrough-position
     rdfs:isDefinedBy svg:.
 
 svg:strikethrough-thickness
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'strikethrough-thickness';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:fontFace;
@@ -2478,7 +2646,8 @@ svg:strikethrough-thickness
     rdfs:isDefinedBy svg:.
 
 svg:string
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'string';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:tref;
@@ -2488,7 +2657,8 @@ svg:string
     rdfs:isDefinedBy svg:.
 
 svg:style
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'style';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:style;
@@ -2498,7 +2668,8 @@ svg:style
     rdfs:isDefinedBy svg:.
 
 svg:surfaceScale
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'surfaceScale';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feDiffuseLighting;
@@ -2508,7 +2679,8 @@ svg:surfaceScale
     rdfs:isDefinedBy svg:.
 
 svg:systemLanguage
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'systemLanguage';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:Svg;
@@ -2518,7 +2690,8 @@ svg:systemLanguage
     rdfs:isDefinedBy svg:.
 
 svg:tableValues
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'tableValues';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feComponentTransfer;
@@ -2528,7 +2701,8 @@ svg:tableValues
     rdfs:isDefinedBy svg:.
 
 svg:target
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'target';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:a;
@@ -2538,7 +2712,8 @@ svg:target
     rdfs:isDefinedBy svg:.
 
 svg:targetX
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'targetX';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feConvolveMatrix;
@@ -2548,7 +2723,8 @@ svg:targetX
     rdfs:isDefinedBy svg:.
 
 svg:targetY
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'targetY';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feConvolveMatrix;
@@ -2558,7 +2734,8 @@ svg:targetY
     rdfs:isDefinedBy svg:.
 
 svg:textLength
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'textLength';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -2568,7 +2745,8 @@ svg:textLength
     rdfs:isDefinedBy svg:.
 
 svg:title
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'title';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:title;
@@ -2578,7 +2756,8 @@ svg:title
     rdfs:isDefinedBy svg:.
 
 svg:to
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'to';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:animateMotion;
@@ -2588,7 +2767,8 @@ svg:to
     rdfs:isDefinedBy svg:.
 
 svg:transform
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'transform';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:g;
@@ -2598,7 +2778,8 @@ svg:transform
     rdfs:isDefinedBy svg:.
 
 svg:type
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'type';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -2608,7 +2789,8 @@ svg:type
     rdfs:isDefinedBy svg:.
 
 svg:u1
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'u1';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face-uri;
@@ -2618,7 +2800,8 @@ svg:u1
     rdfs:isDefinedBy svg:.
 
 svg:u2
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'u2';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face-uri;
@@ -2628,7 +2811,8 @@ svg:u2
     rdfs:isDefinedBy svg:.
 
 svg:underline-position
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'underline-position';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font;
@@ -2638,7 +2822,8 @@ svg:underline-position
     rdfs:isDefinedBy svg:.
 
 svg:underline-thickness
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'underline-thickness';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font;
@@ -2648,7 +2833,8 @@ svg:underline-thickness
     rdfs:isDefinedBy svg:.
 
 svg:unicode
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'unicode';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:glyph;
@@ -2658,7 +2844,8 @@ svg:unicode
     rdfs:isDefinedBy svg:.
 
 svg:unicode-range
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'unicode-range';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -2668,7 +2855,8 @@ svg:unicode-range
     rdfs:isDefinedBy svg:.
 
 svg:units-per-em
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'units-per-em';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font;
@@ -2678,7 +2866,8 @@ svg:units-per-em
     rdfs:isDefinedBy svg:.
 
 svg:v-alphabetic
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'v-alphabetic';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -2688,7 +2877,8 @@ svg:v-alphabetic
     rdfs:isDefinedBy svg:.
 
 svg:v-hanging
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'v-hanging';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -2698,7 +2888,8 @@ svg:v-hanging
     rdfs:isDefinedBy svg:.
 
 svg:v-ideographic
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'v-ideographic';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -2708,7 +2899,8 @@ svg:v-ideographic
     rdfs:isDefinedBy svg:.
 
 svg:v-mathematical
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'v-mathematical';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -2718,7 +2910,8 @@ svg:v-mathematical
     rdfs:isDefinedBy svg:.
 
 svg:values
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'values';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:gradient;
@@ -2728,7 +2921,8 @@ svg:values
     rdfs:isDefinedBy svg:.
 
 svg:version
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'version';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:Svg;
@@ -2738,7 +2932,8 @@ svg:version
     rdfs:isDefinedBy svg:.
 
 svg:vert-adv-y
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'vert-adv-y';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font;
@@ -2748,7 +2943,8 @@ svg:vert-adv-y
     rdfs:isDefinedBy svg:.
 
 svg:vert-origin-x
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'vert-origin-x';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -2758,7 +2954,8 @@ svg:vert-origin-x
     rdfs:isDefinedBy svg:.
 
 svg:vert-origin-y
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'vert-origin-y';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -2768,7 +2965,8 @@ svg:vert-origin-y
     rdfs:isDefinedBy svg:.
 
 svg:viewBox
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'viewBox';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:Svg;
@@ -2778,7 +2976,8 @@ svg:viewBox
     rdfs:isDefinedBy svg:.
 
 svg:viewTarget
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'viewTarget';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:view;
@@ -2788,7 +2987,8 @@ svg:viewTarget
     rdfs:isDefinedBy svg:.
 
 svg:width
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'width';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain [
@@ -2801,7 +3001,8 @@ svg:width
     rdfs:isDefinedBy svg:.
 
 svg:widths
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'widths';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feConvolveMatrix;
@@ -2811,7 +3012,8 @@ svg:widths
     rdfs:isDefinedBy svg:.
 
 svg:x
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;;
     xml:key 'x';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:circle;
@@ -2821,7 +3023,8 @@ svg:x
     rdfs:isDefinedBy svg:.
 
 svg:x-height
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'x-height';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:font-face;
@@ -2831,7 +3034,8 @@ svg:x-height
     rdfs:isDefinedBy svg:.
 
 svg:x1
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'x1';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:line;
@@ -2841,7 +3045,8 @@ svg:x1
     rdfs:isDefinedBy svg:.
 
 svg:x2
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'x2';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:line;
@@ -2851,7 +3056,8 @@ svg:x2
     rdfs:isDefinedBy svg:.
 
 svg:xChannelSelector
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'xChannelSelector';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feDisplacementMap;
@@ -2861,7 +3067,8 @@ svg:xChannelSelector
     rdfs:isDefinedBy svg:.
 
 svg:y
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'y';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:circle;
@@ -2871,7 +3078,8 @@ svg:y
     rdfs:isDefinedBy svg:.
 
 svg:y1
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'y1';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:line;
@@ -2881,7 +3089,8 @@ svg:y1
     rdfs:isDefinedBy svg:.
 
 svg:y2
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'y2';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:line;
@@ -2891,7 +3100,8 @@ svg:y2
     rdfs:isDefinedBy svg:.
 
 svg:yChannelSelector
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'yChannelSelector';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:feDisplacementMap;
@@ -2901,7 +3111,8 @@ svg:yChannelSelector
     rdfs:isDefinedBy svg:.
 
 svg:z
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'z';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:fePointLight;
@@ -2911,7 +3122,8 @@ svg:z
     rdfs:isDefinedBy svg:.
 
 svg:zoomAndPan
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'zoomAndPan';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:Svg;
@@ -2923,7 +3135,8 @@ svg:zoomAndPan
 ### SVG properties (modeled as attributes)
 
 svg:alignment-baseline
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'alignment-baseline';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -2933,7 +3146,8 @@ svg:alignment-baseline
     rdfs:isDefinedBy svg:.
 
 svg:baseline-shift
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'baseline-shift';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:text;
@@ -2943,7 +3157,8 @@ svg:baseline-shift
     rdfs:isDefinedBy svg:.
 
 svg:clip
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'clip';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:marker;
@@ -2953,7 +3168,8 @@ svg:clip
     rdfs:isDefinedBy svg:.
 
 svg:clip-path
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'clip-path';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -2963,7 +3179,8 @@ svg:clip-path
     rdfs:isDefinedBy svg:.
 
 svg:clip-rule
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'clip-rule';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -2973,7 +3190,8 @@ svg:clip-rule
     rdfs:isDefinedBy svg:.
 
 svg:color
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'color';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -2983,7 +3201,8 @@ svg:color
     rdfs:isDefinedBy svg:.
 
 svg:color-interpolation
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;;
     xml:key 'color-interpolation';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -2993,7 +3212,8 @@ svg:color-interpolation
     rdfs:isDefinedBy svg:.
 
 svg:color-interpolation-filters
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'color-interpolation-filters';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3003,7 +3223,8 @@ svg:color-interpolation-filters
     rdfs:isDefinedBy svg:.
 
 svg:color-profile
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'color-profile';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3013,7 +3234,8 @@ svg:color-profile
     rdfs:isDefinedBy svg:.
 
 svg:color-rendering
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'color-rendering';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3023,7 +3245,8 @@ svg:color-rendering
     rdfs:isDefinedBy svg:.
 
 svg:cursor
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'cursor';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3033,7 +3256,8 @@ svg:cursor
     rdfs:isDefinedBy svg:.
 
 svg:direction
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'direction';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3043,7 +3267,8 @@ svg:direction
     rdfs:isDefinedBy svg:.
 
 svg:display
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'display';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3053,7 +3278,8 @@ svg:display
     rdfs:isDefinedBy svg:.
 
 svg:dominant-baseline
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;;
     xml:key 'dominant-baseline';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3063,7 +3289,8 @@ svg:dominant-baseline
     rdfs:isDefinedBy svg:.
 
 svg:enable-background
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'enable-background';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3073,7 +3300,8 @@ svg:enable-background
     rdfs:isDefinedBy svg:.
 
 svg:fill-opacity
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'fill-opacity';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3083,7 +3311,8 @@ svg:fill-opacity
     rdfs:isDefinedBy svg:.
 
 svg:fill-rule
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'fill-rule';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3093,7 +3322,8 @@ svg:fill-rule
     rdfs:isDefinedBy svg:.
 
 svg:filter
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'filter';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3103,7 +3333,8 @@ svg:filter
     rdfs:isDefinedBy svg:.
 
 svg:flood-color
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'flood-color';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3113,7 +3344,8 @@ svg:flood-color
     rdfs:isDefinedBy svg:.
 
 svg:flood-opacity
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'flood-opacity';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3123,7 +3355,8 @@ svg:flood-opacity
     rdfs:isDefinedBy svg:.
 
 svg:font
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'font';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3133,7 +3366,8 @@ svg:font
     rdfs:isDefinedBy svg:.
 
 svg:font-size-adjust
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'font-size-adjust';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3143,7 +3377,8 @@ svg:font-size-adjust
     rdfs:isDefinedBy svg:.
 
 svg:glyph-orientation-horizontal
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'glyph-orientation-horizontal';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3153,7 +3388,8 @@ svg:glyph-orientation-horizontal
     rdfs:isDefinedBy svg:.
 
 svg:glyph-orientation-vertical
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'glyph-orientation-vertical';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3163,7 +3399,8 @@ svg:glyph-orientation-vertical
     rdfs:isDefinedBy svg:.
 
 svg:image-rendering
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'image-rendering';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3173,7 +3410,8 @@ svg:image-rendering
     rdfs:isDefinedBy svg:.
 
 svg:kerning
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'kerning';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3183,7 +3421,8 @@ svg:kerning
     rdfs:isDefinedBy svg:.
 
 svg:letter-spacing
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'letter-spacing';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3193,7 +3432,8 @@ svg:letter-spacing
     rdfs:isDefinedBy svg:.
 
 svg:lighting-color
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'lighting-color';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3203,7 +3443,8 @@ svg:lighting-color
     rdfs:isDefinedBy svg:.
 
 svg:marker
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'marker';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3213,7 +3454,8 @@ svg:marker
     rdfs:isDefinedBy svg:.
 
 svg:marker-end
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'marker-end';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3223,7 +3465,8 @@ svg:marker-end
     rdfs:isDefinedBy svg:.
 
 svg:marker-mid
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'marker-mid';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3233,7 +3476,8 @@ svg:marker-mid
     rdfs:isDefinedBy svg:.
 
 svg:marker-start
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'marker-start';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3243,7 +3487,8 @@ svg:marker-start
     rdfs:isDefinedBy svg:.
 
 svg:mask
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'mask';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3253,7 +3498,8 @@ svg:mask
     rdfs:isDefinedBy svg:.
 
 svg:opacity
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'opacity';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3263,7 +3509,8 @@ svg:opacity
     rdfs:isDefinedBy svg:.
 
 svg:overflow
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;;
     xml:key 'overflow';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3273,7 +3520,8 @@ svg:overflow
     rdfs:isDefinedBy svg:.
 
 svg:pointer-events
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'pointer-events';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3283,7 +3531,8 @@ svg:pointer-events
     rdfs:isDefinedBy svg:.
 
 svg:shape-rendering
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'shape-rendering';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3293,7 +3542,8 @@ svg:shape-rendering
     rdfs:isDefinedBy svg:.
 
 svg:stop-color
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stop-color';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3303,7 +3553,8 @@ svg:stop-color
     rdfs:isDefinedBy svg:.
 
 svg:stop-opacity
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stop-opacity';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3313,7 +3564,8 @@ svg:stop-opacity
     rdfs:isDefinedBy svg:.
 
 svg:stroke
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stroke';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3323,7 +3575,8 @@ svg:stroke
     rdfs:isDefinedBy svg:.
 
 svg:stroke-dasharray
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stroke-dasharray';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3333,7 +3586,8 @@ svg:stroke-dasharray
     rdfs:isDefinedBy svg:.
 
 svg:stroke-dashoffset
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stroke-dashoffset';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3343,7 +3597,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:stroke-linecap
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stroke-linecap';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3353,7 +3608,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:stroke-linejoin
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stroke-linejoin';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3363,7 +3619,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:stroke-miterlimit
-    a owl:DatatypeProperty;
+      a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stroke-miterlimit';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3373,7 +3630,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:stroke-opacity
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stroke-opacity';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3383,7 +3641,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:stroke-width
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'stroke-width';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3393,7 +3652,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:text-anchor
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;;
     xml:key 'text-anchor';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3403,7 +3663,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:text-decoration
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'text-decoration';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3413,7 +3674,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:text-rendering
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'text-rendering';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3423,7 +3685,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:unicode-bidi
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'unicode-bidi';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3433,7 +3696,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:visibility
-    a owl:DatatypeProperty;
+     a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'visibility';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3443,7 +3707,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:word-spacing
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'word-spacing';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3453,7 +3718,8 @@ svg:stroke-dashoffset
     rdfs:isDefinedBy svg:.
 
   svg:writing-mode
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      svg:Attribute;
     xml:key 'writing-mode';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain svg:element;
@@ -3462,4 +3728,4 @@ svg:stroke-dashoffset
     skos:prefLabel 'the writing-mode attribute'@en;
     rdfs:isDefinedBy svg:.
 
-#}
+}

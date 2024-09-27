@@ -23,7 +23,7 @@ prefix standard: <http://www.w3.org/XML/id/standard/>
 prefix target: <http://www.w3.org/XML/model/target/>
 prefix xml: <http://www.w3.org/XML/model/def/> 
 
-#xml: {
+xml: {
   xml:
     a
       owl:Ontology,
@@ -218,7 +218,8 @@ prefix xml: <http://www.w3.org/XML/model/def/>
     rdfs:isDefinedBy xml:.
  
   xml:attribute
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+      xml:Attribute;
     rdfs:domain xml:Element;
     rdfs:range rdfs:Literal;
     skos:definition "Property that is the parent property of all existing XML attributes. An attribute is a name-value pair that is associated with an XML element. Attributes provide additional information about an element and are specified within the start tag of an element. Attributes can modify the behavior or appearance of an element, define relationships between elements, or provide other metadata. The name of the attribute is followed by an equal sign (=) and the attribute's value, which is enclosed in double or single quotes. Some attributes affect the element simply by their presence in the start tag of the element, with the value implicitly being an empty string."@en;
@@ -231,6 +232,7 @@ prefix xml: <http://www.w3.org/XML/model/def/>
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
     rdfs:subPropertyOf xml:attribute;
+    rdf:type xml:Attribute;
     skos:prefLabel 'the xmlns attribute'@en;
 	skos:definition "Specifies a namespace."@en;
     rdfs:isDefinedBy xml:.
@@ -252,6 +254,15 @@ prefix xml: <http://www.w3.org/XML/model/def/>
     skos:prefLabel 'fragment property'@en;
     rdfs:isDefinedBy xml:.
 
+  xml:key
+    a owl:DatatypeProperty;
+    rdfs:subPropertyOf dom:localName;
+    rdfs:domain xml:Attribute;
+    rdfs:range xsd:string;
+    skos:definition 'Property that links the key name of a specific attribute to a XML attribute.'@en;
+    skos:prefLabel 'key property'@en;
+    rdfs:isDefinedBy xml:.
+    
   xml:id
     a owl:DatatypeProperty;
     xml:key 'id';
@@ -597,30 +608,31 @@ function:getElementAttribute
     ] ;   
     sh:returnType xsd:string ;
     sh:select """
-    
+
+    prefix dom: <http://www.w3.org/DOM/model/def/>    
     prefix function: <http://www.w3.org/XML/model/function/>    
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     prefix vann: <http://purl.org/vocab/vann/>
     prefix xml: <http://www.w3.org/XML/model/def/>
     
     select ?result where {
-
-    { # Get the XML attributes for this element, if there are any.
-    
+    optional 
+    { 
+    # Get the XML attributes for this element, if there are any.
     select $elementXML (group_concat(distinct ?attributeFragment) as ?attributesFragment) {  
  
       $elementXML ?attribute ?value.
-      ?attribute rdfs:subPropertyOf xml:attribute;
-                 xml:key ?key;
+      ?attribute a/rdfs:subClassOf* dom:Attribute;
+                 ?localName ?key;
                  rdfs:isDefinedBy ?ontologyAttribute.   
       ?ontologyAttribute vann:preferredNamespacePrefix ?prefix.
+      ?localName rdfs:subPropertyOf dom:localName. 
          
-      # Establish whether we need a prefixed key or not, based on whether the attribute is from a foreign ontology or not. If the attribute in question is defined in the same ontology of the element, we do not have to include a prefix in the key of the attribute. If the attribute is from some ontology other than the one of the element, we append the prefix to the key. An exception is made for the xml:xmlns attribute.
-         
-      bind(if(?ontologyAttribute = $ontology || ?attribute = xml:xmlns,?key,concat(?prefix,":",?key)) as ?prefixedKey)
+      # An attribute’s qualified name is its local name if its namespace prefix is null, and its namespace prefix, followed by ":", followed by its local name, otherwise. The namespace prefix is null when the attribute resides in the same namespace as the element. An exception is made for the xml:xmlns attribute.         
+      bind(if(?ontologyAttribute = $ontology || ?attribute = xml:xmlns,?key,concat(?prefix,":",?key)) as ?qualifiedName)
       
       # Establish a key - value pair for the attribute
-      bind(concat(?prefixedKey,'="',str(?value),'"') as ?attributeFragment)
+      bind(concat(?qualifiedName,'="',str(?value),'"') as ?attributeFragment)
       } group by $elementXML
      }
     # Establish result     
@@ -628,4 +640,4 @@ function:getElementAttribute
     }
 """ .
 
-#}
+}

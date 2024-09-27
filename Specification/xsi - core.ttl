@@ -17,7 +17,7 @@ prefix section: <http://www.w3.org/2001/XMLSchema-instance/id/section/>
 prefix standard: <http://www.w3.org/2001/XMLSchema-instance/id/standard/>
 prefix xsi: <http://www.w3.org/2001/XMLSchema-instance/model/def/>
 
-#xsi: {
+xsi: {
   xsi:
     a
       owl:Ontology,
@@ -123,4 +123,4 @@ prefix xsi: <http://www.w3.org/2001/XMLSchema-instance/model/def/>
     skos:prefLabel 'the type attribute'@en;
     rdfs:isDefinedBy xsi:.
 
-#}
+}
