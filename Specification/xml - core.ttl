@@ -23,7 +23,7 @@ prefix standard: <http://www.w3.org/XML/id/standard/>
 prefix target: <http://www.w3.org/XML/model/target/>
 prefix xml: <http://www.w3.org/XML/model/def/> 
 
-xml: {
+#xml: {
   xml:
     a
       owl:Ontology,
@@ -264,7 +264,8 @@ xml: {
     rdfs:isDefinedBy xml:.
     
   xml:id
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+    xml:Attribute;
     xml:key 'id';
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
@@ -274,7 +275,8 @@ xml: {
     rdfs:isDefinedBy xml:.
 
   xml:name
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+    xml:Attribute;
     xml:key 'name';
     rdfs:domain xml:Element;
     rdfs:range xsd:string;
@@ -284,7 +286,8 @@ xml: {
     rdfs:isDefinedBy xml:.
 
   xml:base
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+    xml:Attribute;
     xml:key 'base';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain xml:Element;
@@ -294,7 +297,8 @@ xml: {
     rdfs:isDefinedBy xml:.
 
   xml:lang
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+    xml:Attribute;
     xml:key 'lang';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain xml:Element;
@@ -304,7 +308,8 @@ xml: {
     rdfs:isDefinedBy xml:.
 
   xml:space
-    a owl:DatatypeProperty;
+    a owl:DatatypeProperty,
+    xml:Attribute;
     xml:key 'space';
     rdfs:subPropertyOf xml:attribute;
     rdfs:domain xml:Element;
@@ -640,4 +645,4 @@ function:getElementAttribute
     }
 """ .
 
-}
+#}

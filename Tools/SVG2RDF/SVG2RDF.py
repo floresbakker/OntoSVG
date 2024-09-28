@@ -19,16 +19,16 @@ from rdflib.namespace import NamespaceManager
 current_dir = os.getcwd()
 
 # Set the path to the desired standard directory. 
-directory_path = os.path.abspath(os.path.join(current_dir, '..', '..', '..'))
+directory_path = os.path.abspath(os.path.join(current_dir, '..'))
 
 # namespace declaration
 rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
 rdfs  = Namespace("http://www.w3.org/2000/01/rdf-schema#")
-doc   = Namespace("https://data.rijksfinancien.nl/svg/doc/id/")
-svg   = Namespace("https://data.rijksfinancien.nl/svg/model/def/")
-xml   = Namespace("http://www.w3.org/XML/1998/namespace#")
-xmlns = Namespace("http://www.w3.org/2000/xmlns/")
-xlink = Namespace("http://www.w3.org/1999/xlink#")
+doc   = Namespace("https://example.org/doc/id/")
+svg   = Namespace("http://www.w3.org/SVG/model/def/")
+xml   = Namespace("http://www.w3.org/XML/model/def/")
+xmlns = Namespace("http://www.w3.org/2000/xmlns/model/def/")
+xlink = Namespace("https://www.w3.org/1999/xlink/model/def/")
 
 # function to read a graph (as a string) from a file 
 def readGraphFromFile(file_path):
@@ -39,28 +39,24 @@ def readGraphFromFile(file_path):
     return file_content
 
 def generate_element_id(element):
-    
-    parent_string = ""
-    for parent in element.parents:
-        parent_sibling_count = 0
-        for parent_sibling in parent.previous_siblings:    
-            parent_sibling_count = parent_sibling_count + 1
-        horizontal_parental_index = parent_sibling_count
-        if parent.name:
-            parent_string = parent_string + str(horizontal_parental_index)
-        else:
-            parent_string = parent_string + "0"
-        
-    
-    count_sibling = 0
-    for sibling in element.previous_siblings:    
-        count_sibling = count_sibling + 1
-    horizontal_index = count_sibling
-    
-    element_id = f"{parent_string}/{horizontal_index}" 
-    
-    return element_id.replace("[document]/","")
+    # Base case: If there's no parent, return an empty string (root-level element)
+    if element.parent is None:
+        return "1"
 
+    # Initialize the sibling index for the current element
+    sibling_index = 1
+    # Count previous siblings (including text and non-element nodes)
+    for sibling in element.previous_siblings:
+        sibling_index += 1
+
+    # Recursive call: Get the parent's ID
+    parent_id = generate_element_id(element.parent)
+
+    # If the parent ID is not empty, append the current element's sibling index
+    if parent_id:
+        return f"{parent_id}.{sibling_index}"
+    else:
+        return str(sibling_index)  # This happens at the root level
 
 
 
@@ -77,8 +73,7 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/SVG2RDF/Input"):
 
         # initialize graph
         g = Graph(bind_namespaces="rdflib")
-        
-      
+              
         g.bind("rdf", rdf)
         g.bind("rdfs", rdfs)
         g.bind("doc", doc)
@@ -95,7 +90,7 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/SVG2RDF/Input"):
             
         prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        prefix xml: <http://www.w3.org/XML/1998/namespace#>
+        prefix xml: <http://www.w3.org/XML/model/def/>
 
         select ?element_IRI where {
           ?element_IRI xml:tag ?tag
@@ -107,17 +102,14 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/SVG2RDF/Input"):
         root_element = soup.contents[0]
         root_id = generate_element_id(root_element)
        
-        
-       
-      
-        # loop through each element in the XML document
+        # loop through each node in the XML document
         for element in soup.descendants:
             # check if the element is an XML tag element
             if isinstance(element, Tag):
                 # establish unique id for the XML tag element
                 element_id = generate_element_id(element)
                 
-                # establish IRI for the tag class based on the HTML vocabulary
+                # establish IRI for the tag class based on the SVG vocabulary
                 tag_result = xml_graph.query(tagquerystring, initBindings={"tag" : Literal(element.name)})
                 for row in tag_result:
                     tag_IRI = row.element_IRI
@@ -164,16 +156,13 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/SVG2RDF/Input"):
                             attribute_value = values
                         # Add optional attributes of the element to the graph
                         g.add((doc[element_id], namespace_uri[local_name], Literal(attribute_value)))
-                    
-                    
-                    
 
                 # go through the direct children of the element
                 member_count = 0 # initialize count
                 for child in element.children:
                     member_count = member_count + 1 # count the number of direct children, so that we can establish the sequence of appearance of the children within the parent element, through the 'rdf:_x' property between parent and child.
                     
-                    # if the child is an html tag element get its unique identifier based on sourceline and sourcepos
+                    # if the child is an xml tag element get its unique identifier based on sourceline and sourcepos
                     if isinstance(child, Tag):
                       if child.name == None  :
                           childname = ""
@@ -182,27 +171,27 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/SVG2RDF/Input"):
                       child_id = generate_element_id(child)
                       g.add((doc[element_id], rdf["_" + str(member_count)], doc[child_id]))
                       
-                    # if the child is an text element, create a unique identifier based on sourceline and sourcepos of its parent and the sequence position of the child within the parent, as the html-parser does not have sourceline and sourcepos available as attributes for text elements.
+                    # if the child is an text node, create a unique identifier based on sourceline and sourcepos of its parent and the sequence position of the child within the parent, as the xml-parser does not have sourceline and sourcepos available as attributes for text nodes.
                     elif isinstance(child, NavigableString):
                       if child.name == None  :
-                            childname = "TextElement"
+                            childname = "Text"
                       else:
                             childname = child.name
                       child_id = generate_element_id(child)
                       
-                      # write to graph that the parent element has a child with a certain sequence position
+                      # write to graph that the parent node has a child with a certain sequence position
                       g.add((doc[element_id], rdf["_" + str(member_count)], doc[child_id]))  
                       
-                      # write to graph that the child element is of type TextElement
-                      g.add((doc[child_id], RDF.type, svg["TextElement"]))
+                      # write to graph that the child node is of type Text
+                      g.add((doc[child_id], RDF.type, svg["Text"]))
                       
-                      # empty content (of type None) in html needs to be converted to empty string
+                      # empty content (of type None) in xml needs to be converted to empty string
                       if element.string == None: 
                           text_fragment = "" 
                       else:
                           text_fragment = element.string
                       
-                      # write string content of the text element to the graph
+                      # write string content of the text node to the graph
                       g.add((doc[child_id], svg["fragment"], Literal(text_fragment)))
 
         # write the resulting graph to file

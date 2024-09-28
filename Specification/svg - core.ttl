@@ -19,7 +19,7 @@ prefix section: <http://www.w3.org/SVG/id/section/>
 prefix standard: <http://www.w3.org/SVG/id/standard/>
 prefix svg: <http://www.w3.org/SVG/model/def/>
 
-svg: {
+#svg: {
 svg:
     a
       owl:Ontology,
@@ -150,7 +150,7 @@ svg:Text
     
 svg:Attribute
     rdf:type owl:Class;
-    rdfs:subClassOf dom:Attribute;
+    rdfs:subClassOf xml:Attribute;
     dct:conformsTo section:AttributesAndSyntax;
     skos:definition """A SVG attribute is a characteristic applied to elements within an SVG (Scalable Vector Graphics) document that defines various properties and behaviors of graphical content, such as shapes, text, colors, and transformations. SVG attributes modify the appearance, structure, and behavior of vector graphics in XML-based markup, enabling interaction, animation, and dynamic styling."""@en;
     skos:prefLabel 'attribute'@en;
@@ -3728,4 +3728,4 @@ svg:stroke-dashoffset
     skos:prefLabel 'the writing-mode attribute'@en;
     rdfs:isDefinedBy svg:.
 
-}
+#}

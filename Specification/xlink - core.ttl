@@ -17,7 +17,7 @@ prefix section: <https://www.w3.org/1999/xlink/id/section/>
 prefix standard: <https://www.w3.org/1999/xlink/id/standard/>
 prefix xlink: <https://www.w3.org/1999/xlink/model/def/> 
 
-xlink: {
+#xlink: {
   xlink:
     a
       owl:Ontology,
@@ -249,4 +249,4 @@ svg:y2 "409.21478" .""".
     skos:prefLabel 'the type attribute'@en;
     rdfs:isDefinedBy xlink:.
 
-}
+#}
