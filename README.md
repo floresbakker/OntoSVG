@@ -19,7 +19,6 @@ In today's digital era, Scalable Vector Graphics (SVG) play a vital role in crea
 At the same time, graphics are not objects without context. It becomes more and more important to be able to model this context of graphics, both the metadata as well as the actual content of such graphics. With this we can generate, annotate, reuse, validate and understand these graphics better, and place them within a wider context of other information. OntoSVG uses semantic web compliant technology to parse, model and generate SVG images in an interoperable and meaningful way, preventing any vendor lock-in. Examples of graphics that can be modeled can be anything, from financial dashboards, architectonic designs up and till car images and the like.
 
 
-
 # Introduction
 
 Let us go through the semantic SVG-vocabulary with an example of an ordinary SVG-document.
@@ -52,16 +51,17 @@ This graphic is rendered in a browser as follows:
 Now we can represent the very same document in <i>RDF</i> using the SVG-vocabulary. As it is very cumbersome to do so by hand, a <i>SVG2RDF</i> tool is available in this repository that will do exactly that for you. For further information on this tool and other neat tools, scroll down this Readme file.
 
 ```
-@prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
-@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
-@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+prefix doc: <https://example.org/doc/id> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix svg: <http://www.w3.org/SVG/model/def/> 
+prefix xml: <http://www.w3.org/XML/model/def/> 
 
 doc:smileyDocument a svg:Document ;
-    rdf:_1 doc:smiley ;
-    dom:documentType documentType:svg .
+    rdf:_1 doc:docType;
+    rdf:_2 doc:smiley .
+
+doc:docType rdf:type xml:DocumentType;
+    xml:documentTypeName 'svg'.    
 
 doc:smiley a svg:Svg ;
     rdf:_1 doc:head ;
@@ -117,48 +117,49 @@ This bar chart is rendered in a browser as follows:
 
 
 ```
-@prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
-@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
-@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
-@prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+prefix doc: <https://example.org/doc/id> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix svg: <http://www.w3.org/SVG/model/def/> 
+prefix xml: <http://www.w3.org/XML/model/def/> 
 
 doc:BarChartDocument a svg:Document ;
-    rdf:_1 doc:BarChart ;
-    dom:documentType documentType:svg .
+    rdf:_1 doc:docType ;
+    rdf:_2 doc:barChart .
 
-doc:BarChart a svg:Svg ;
+doc:docType rdf:type xml:DocumentType;
+    xml:documentTypeName 'svg'.    
+
+doc:barChart a svg:Svg ;
     xml:xmlns "http://www.w3.org/2000/svg";
     xml:version "1.1";
     svg:height "350" ;
     svg:width "500" ;
-    rdf:_1 doc:Y-axis-Text ;
-    rdf:_2 doc:X-axis-Text ;
-    rdf:_3 doc:Y-axis-Line ;
-    rdf:_4 doc:X-axis-Line ;
-    rdf:_5 doc:BudgetedExpendituresRectangle ;
-    rdf:_6 doc:BudgetedExpendituresText ;
-    rdf:_7 doc:BudgetedExpendituresAmount ;
-    rdf:_8 doc:RealizedExpendituresRectangle ;
-    rdf:_9 doc:RealizedExpendituresText ;
-    rdf:_10 doc:RealizedExpendituresAmount ;
-    rdf:_11 doc:BudgetedReceiptsRectangle ;
-    rdf:_12 doc:BudgetedReceiptsText ;
-    rdf:_13 doc:BudgetedReceiptsAmount ;
-    rdf:_14 doc:RealizedReceiptsRectangle ;
-    rdf:_15 doc:RealizedReceiptsText ;
-    rdf:_16 doc:RealizedReceiptsAmount .
+    rdf:_1 doc:y-axis-Text ;
+    rdf:_2 doc:x-axis-Text ;
+    rdf:_3 doc:y-axis-Line ;
+    rdf:_4 doc:x-axis-Line ;
+    rdf:_5 doc:budgetedExpendituresRectangle ;
+    rdf:_6 doc:budgetedExpendituresText ;
+    rdf:_7 doc:budgetedExpendituresAmount ;
+    rdf:_8 doc:realizedExpendituresRectangle ;
+    rdf:_9 doc:realizedExpendituresText ;
+    rdf:_10 doc:realizedExpendituresAmount ;
+    rdf:_11 doc:budgetedReceiptsRectangle ;
+    rdf:_12 doc:budgetedReceiptsText ;
+    rdf:_13 doc:budgetedReceiptsAmount ;
+    rdf:_14 doc:realizedReceiptsRectangle ;
+    rdf:_15 doc:realizedReceiptsText ;
+    rdf:_16 doc:realizedReceiptsAmount .
 
-doc:Y-axis-Text a svg:Text ;
-    rdf:_1 doc:AmountText ;
+doc:y-axis-Text a svg:Text ;
+    rdf:_1 doc:amountText ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:transform "rotate(-90)" ;
     svg:x "-180" ;
     svg:y "20" .
 
-doc:Y-axis-Line a svg:Line ;
+doc:y-axis-Line a svg:Line ;
     svg:stroke "black" ;
     svg:stroke-width "2" ;
     svg:x1 "50" ;
@@ -166,14 +167,14 @@ doc:Y-axis-Line a svg:Line ;
     svg:y1 "50" ;
     svg:y2 "300" .
 
-doc:X-axis-Text a svg:Text ;
-    rdf:_1 doc:TransactionTypeText ;
+doc:x-axis-Text a svg:Text ;
+    rdf:_1 doc:transactionTypeText ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:x "200" ;
     svg:y "330" .
 
-doc:X-axis-Line a svg:Line ;
+doc:x-axis-Line a svg:Line ;
     svg:stroke "black" ;
     svg:stroke-width "2" ;
     svg:x1 "50" ;
@@ -181,126 +182,126 @@ doc:X-axis-Line a svg:Line ;
     svg:y1 "300" ;
     svg:y2 "300" .
 
-doc:BudgetedExpendituresRectangle a svg:Rect ;
+doc:budgetedExpendituresRectangle a svg:Rect ;
     svg:fill "blue" ;
     svg:height "50" ;
     svg:width "50" ;
     svg:x "80" ;
     svg:y "250" .
 
-doc:BudgetedExpendituresText a svg:Text ;
-    rdf:_1 doc:BudgetedExpendituresTextString ;
+doc:budgetedExpendituresText a svg:Text ;
+    rdf:_1 doc:budgetedExpendituresTextString ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:text-anchor "middle" ;
     svg:x "90" ;
     svg:y "210" .
 
-doc:BudgetedExpendituresAmount a svg:Text ;
-    rdf:_1 doc:BudgetedExpendituresAmountValue  ;
+doc:budgetedExpendituresAmount a svg:Text ;
+    rdf:_1 doc:budgetedExpendituresAmountValue  ;
     svg:fill "black" ;
     svg:font-size "14" ;
     svg:text-anchor "middle" ;
     svg:x "105" ;
     svg:y "245" .
 
-doc:RealizedExpendituresRectangle a svg:Rect ;
+doc:realizedExpendituresRectangle a svg:Rect ;
     svg:fill "red" ;
     svg:height "25" ;
     svg:width "50" ;
     svg:x "180" ;
     svg:y "275" .
 
-doc:RealizedExpendituresText a svg:Text ;
-    rdf:_1 doc:RealizedExpendituresTextString ;
+doc:realizedExpendituresText a svg:Text ;
+    rdf:_1 doc:realizedExpendituresTextString ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:text-anchor "middle" ;
     svg:x "190" ;
     svg:y "230" .
 
-doc:RealizedExpendituresAmount a svg:Text ;
-    rdf:_1 doc:RealizedExpendituresAmountValue ;
+doc:realizedExpendituresAmount a svg:Text ;
+    rdf:_1 doc:realizedExpendituresAmountValue ;
     svg:fill "black" ;
     svg:font-size "14" ;
     svg:text-anchor "middle" ;
     svg:x "205" ;
     svg:y "270" .
 
-doc:BudgetedReceiptsRectangle a svg:Rect ;
+doc:budgetedReceiptsRectangle a svg:Rect ;
     svg:fill "green" ;
     svg:height "35" ;
     svg:width "50" ;
     svg:x "280" ;
     svg:y "265" .
 
-doc:BudgetedReceiptsText a svg:Text ;
-    rdf:_1 doc:BudgetedReceiptsTextString ;
+doc:budgetedReceiptsText a svg:Text ;
+    rdf:_1 doc:budgetedReceiptsTextString ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:text-anchor "middle" ;
     svg:x "290" ;
     svg:y "210" .
 
-doc:BudgetedReceiptsAmount a svg:Text ;
-    rdf:_1 doc:BudgetedReceiptsAmountValue ;
+doc:budgetedReceiptsAmount a svg:Text ;
+    rdf:_1 doc:budgetedReceiptsAmountValue ;
     svg:fill "black" ;
     svg:font-size "14" ;
     svg:text-anchor "middle" ;
     svg:x "305" ;
     svg:y "260" .
 
-doc:RealizedReceiptsRectangle a svg:Rect ;
+doc:realizedReceiptsRectangle a svg:Rect ;
     svg:fill "orange" ;
     svg:height "20" ;
     svg:width "50" ;
     svg:x "380" ;
     svg:y "280" .
 
-doc:RealizedReceiptsText a svg:Text ;
-    rdf:_1 doc:RealizedReceiptsTextString ;
+doc:realizedReceiptsText a svg:Text ;
+    rdf:_1 doc:realizedReceiptsTextString ;
     svg:fill "black" ;
     svg:font-size "16" ;
     svg:text-anchor "middle" ;
     svg:x "390" ;
     svg:y "230" .
 
-doc:RealizedReceiptsAmount a svg:Text ;
-    rdf:_1 doc:RealizedReceiptsAmountValue ;
+doc:realizedReceiptsAmount a svg:Text ;
+    rdf:_1 doc:realizedReceiptsAmountValue ;
     svg:fill "black" ;
     svg:font-size "14" ;
     svg:text-anchor "middle" ;
     svg:x "405" ;
     svg:y "275" .
 
-doc:AmountText a svg:TextElement ;
+doc:amountText a svg:TextElement ;
     svg:fragment "Amount (Euro)" .
 
-doc:TransactionTypeText a svg:TextElement ;
+doc:transactionTypeText a svg:TextElement ;
     svg:fragment "Transaction type" .
 
-doc:BudgetedExpendituresTextString a svg:TextElement ;
+doc:budgetedExpendituresTextString a svg:TextElement ;
     svg:fragment "Budgeted Expenditures" .
 
-doc:BudgetedExpendituresAmountValue a svg:TextElement ;
+doc:budgetedExpendituresAmountValue a svg:TextElement ;
     svg:fragment "200" .
 
-doc:RealizedExpendituresTextString a svg:TextElement ;
+doc:realizedExpendituresTextString a svg:TextElement ;
     svg:fragment "Realized Expenditures" .
 
-doc:RealizedExpendituresAmountValue a svg:TextElement ;
+doc:realizedExpendituresAmountValue a svg:TextElement ;
     svg:fragment "100" .
 
-doc:BudgetedReceiptsTextString a svg:TextElement ;
+doc:budgetedReceiptsTextString a svg:TextElement ;
     svg:fragment "Budgeted Receipts" .
 
-doc:BudgetedReceiptsAmountValue a svg:TextElement ;
+doc:budgetedReceiptsAmountValue a svg:TextElement ;
     svg:fragment "150" .
 
-doc:RealizedReceiptsTextString a svg:TextElement ;
+doc:realizedReceiptsTextString a svg:TextElement ;
     svg:fragment "Realized Receipts" .
 
-doc:RealizedReceiptsAmountValue a svg:TextElement ;
+doc:realizedReceiptsAmountValue a svg:TextElement ;
     svg:fragment "80" .
 
 ```
@@ -350,8 +351,6 @@ A. Install all necessary libraries (in this order):
 	2. pip install pyshacl
 	3. pip install rdflib
 
-NOTE: pyshacl has a dependency with an older RDFlib version. However, for an optimal functioning of the semantic SVG-vocabulary, the most recent release of RDFlib should be used. Hence, it is advised to first install pyshacl and then RDFlib, so that RDFlib is installed having the latest version. This is currently the least instrusive way of handling the dependency, offering accessibility for those not well versed in Python. 
-
 B. Place one or more Turtle-files (*.ttl) in the input folder in OntoSVG\Tools\RDF2SVG\Input. A Turtle-file should represent a SVG-document using the SVG-vocabulary from this repository.
 
 C. Run the script in the command prompt by typing: 
@@ -375,8 +374,6 @@ A. Install all necessary libraries (in this order):
 	1. pip install os 
 	2. pip install pyshacl
 	3. pip install rdflib
-
-NOTE: pyshacl has a dependency with an older RDFlib version. However, for an optimal functioning of the semantic SVG-vocabulary, the most recent release of RDFlib should be used. Hence, it is advised to first install pyshacl and then RDFlib, so that RDFlib is installed having the latest version. This is currently the least instrusive way of handling the dependency, offering accessibility for those not well versed in Python. 
 
 B. Run the script in the command prompt by typing: 
 
