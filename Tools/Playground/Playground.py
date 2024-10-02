@@ -18,11 +18,11 @@ directory_path = os.path.abspath(os.path.join(current_dir, '..', '..','..'))
 rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
 rdfs  = Namespace("http://www.w3.org/2000/01/rdf-schema#")
 doc   = Namespace("https://data.rijksfinancien.nl/svg/doc/id/")
-dom   = Namespace("https://data.rijksfinancien.nl/dom/model/def/") 
-svg   = Namespace("https://data.rijksfinancien.nl/svg/model/def/")
-xml   = Namespace("http://www.w3.org/XML/1998/namespace#model/def/")
-xmlns = Namespace("http://www.w3.org/2000/xmlns/")
-xlink = Namespace("http://www.w3.org/1999/xlink#")
+dom   = Namespace("http://www.w3.org/DOM/model/def/") 
+svg   = Namespace("http://www.w3.org/SVG/model/def/")
+xml   = Namespace("http://www.w3.org/XML/model/def/")
+xmlns = Namespace("http://www.w3.org/2000/xmlns/model/def/")
+xlink = Namespace("https://www.w3.org/1999/xlink/model/def/")
 
 def writeGraph(graph, name):
     graph.serialize(destination=directory_path + "/OntoSVG/Tools/Playground/" + name + ".ttl", format="turtle")
@@ -90,8 +90,8 @@ def iteratePyShacl(shaclgraph, serializable_graph):
             
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX svg: <https://data.rijksfinancien.nl/svg/model/def/>
-        PREFIX xml: <http://www.w3.org/XML/1998/namespace#model/def/> 
+        PREFIX svg: <http://www.w3.org/SVG/model/def/>
+        PREFIX xml: <http://www.w3.org/XML/model/def/> 
 
         ASK 
         WHERE {
@@ -111,10 +111,10 @@ def iteratePyShacl(shaclgraph, serializable_graph):
             else:
                 svgQuery = serializable_graph.query('''
                    
-               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-               PREFIX svg: <https://data.rijksfinancien.nl/svg/model/def/>
-               PREFIX xml: <http://www.w3.org/XML/1998/namespace#model/def/> 
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX svg: <http://www.w3.org/SVG/model/def/>
+        PREFIX xml: <http://www.w3.org/XML/model/def/>  
 
                select ?fragment
                WHERE {
@@ -164,7 +164,7 @@ def convert_to_rdf():
             
         prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
+        prefix xml: <http://www.w3.org/XML/model/def/>
 
         select ?element_IRI where {
           ?element_IRI xml:tag ?tag

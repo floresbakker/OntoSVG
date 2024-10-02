@@ -60,6 +60,7 @@ prefix xml: <http://www.w3.org/XML/model/def/>
     respec:acknowledgements '''
     This standard has been developed through collaborative efforts and contributions from a diverse community of experts and stakeholders. Their dedication and expertise have been instrumental in bringing this vocabulary to fruition.'''@en;
 
+
     foaf:depiction 'https://www.rijksfinancien.nl/themes/custom/indicia_theme/files/logo-rijksoverheid.svg'^^xsd:anyURI;
     foaf:homepage 'https://www.rijksfinancien.nl/'^^xsd:anyURI;
     owl:imports

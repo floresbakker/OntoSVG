@@ -1,0 +1,985 @@
+prefix decl: <https://data.rijksfinancien.nl/xml/id/decl/>
+prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
+prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> 
+prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rule: <http://www.w3.org/XML/1998/namespace#model/rule/>
+prefix sh: <http://www.w3.org/ns/shacl#>
+prefix shp: <http://www.w3.org/XML/1998/namespace#model/shp/>
+prefix svg: <https://data.rijksfinancien.nl/svg/model/def/>
+prefix target: <http://www.w3.org/XML/1998/namespace#model/target/>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix void: <http://rdfs.org/ns/void#>
+prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#>
+prefix xmlns: <http://www.w3.org/2000/xmlns/>
+prefix xlink: <http://www.w3.org/1999/xlink#> 
+
+prefix dcm: <http://purl.org/dc/dcmitype/>
+prefix dct: <http://purl.org/dc/terms/>
+prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix respec: <https://respec.org/model/>
+prefix section: <https://data.rijksfinancien.nl/svg/id/section/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix standard: <https://data.rijksfinancien.nl/svg/id/standard/>
+prefix status: <http://purl.org/adms/status/>
+
+
+### DATA
+
+<https://data.rijksfinancien.nl/svg/doc/id/10/13> a svg:Path ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/10/3> ;
+    svg:d "M 60 120 Q 100 150 140 120" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/10/3> a svg:Circle ;
+    xml:fragment 'bla';
+    svg:cx "100" .
+
+### XML Shapes ###
+
+shp:SerializableNode
+    a sh:NodeShape;
+    sh:rule rule:XMLFragmentSerializationAlgorithm;
+    sh:target target:SerializableNode;
+    skos:prefLabel 'serializable node shape'@en;
+    rdfs:isDefinedBy xml:.
+
+  target:SerializableNode
+    a sh:SPARQLTarget;
+    rdfs:comment 'Select nodes in a XML document that do not have an XML fragment yet, and whose child nodes all have an XML fragment already.'@en;
+    sh:prefixes xml:;
+    sh:select '''
+select $this {
+
+  # Select all DOM nodes... 
+  $this a/rdfs:subClassOf* dom:Node.
+    
+  # ...that do not yet have an xml fragment.
+  filter not exists { $this xml:fragment []. }
+  
+  # ...but whose child nodes all have an xml fragment
+  minus {
+    $this ?member ?child.
+    filter(strstarts(str(?member),concat(str(rdf:),'_')))               
+    filter not exists { ?child xml:fragment []. }
+    ?child a/rdfs:subClassOf* dom:Node.
+  }
+}''';
+    rdfs:isDefinedBy xml:.
+
+  rule:XMLFragmentSerializationAlgorithm
+    a sh:SPARQLRule;
+    rdfs:comment 'Create the XML fragment for a node in a XML document.'@en;
+    skos:prefLabel 'XML fragment serialization algorithm'@en;
+    sh:prefixes xml:;
+    sh:construct '''
+construct {
+
+  # Assert the new XML fragment for this node in the XML document
+  $this xml:fragment ?fragment.
+  
+} where {
+
+  # Establish the class of the node in the XML document
+  $this a/rdfs:subClassOf* ?classXML.
+  ?classXML rdfs:isDefinedBy xml:.
+
+  $this a ?class.
+  ?class xml:tag ?tag;
+           rdfs:isDefinedBy ?ontology.
+ 
+    # Get the XML fragments of child nodes for the element, if there are any.
+    bind(function:getChildNodeFragment($this) as ?childFragments)
+    
+    # Build the XML fragment for this XML element, by combining everything retrieved above.
+    bind(concat(?tag, ' has child fragments: ', ?childFragments) as ?fragment) 
+
+}''';
+    rdfs:isDefinedBy xml:.
+
+function:getElementFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML element in a XML document." ;
+    sh:parameter [
+        sh:path function:element ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A xml element in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>  
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    prefix vann: <http://purl.org/vocab/vann/>
+    prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
+    
+    select ?result where {
+    
+    # Retrieve the tag name & namespace of the element.
+    $element a ?class.
+    ?class xml:tag ?tag;
+           rdfs:isDefinedBy ?ontology.
+
+    # Get the XML attributes for the element, if there are any.
+    bind(function:getElementAttribute($element, ?ontology) as ?attributes)
+ 
+    # Get the XML fragments of child nodes for the element, if there are any.
+    bind(function:getChildNodeFragment($element) as ?childFragments)
+    
+    # Build the XML fragment for this XML element, by combining everything retrieved above.
+    bind(
+    concat(
+      '<',?tag,if(?attributes='','',concat(' ',?attributes)),'>',
+      if(?childFragments='',concat('</',?tag,'>'),concat(?childFragments,'</',?tag,'>'))) as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)  
+      
+}
+	
+""" .
+
+function:getTextFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML text node in a XML document." ;
+    sh:parameter [
+        sh:path function:text ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A XML text node in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+    
+    prefix dom: <https://data.rijksfinancien.nl/dom/model/def/>
+    prefix xsd: <http://www.w3.org/2001/XMLSchema#>     
+    
+    select ?result where {
+    
+    # Text is stored in de data attribute of DOM text nodes
+    $text dom:data ?data.
+    
+    # Establish the XML fragment for this XML text node
+    bind(strdt(?data,xsd:string) as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)  
+}
+	
+""" .
+
+function:getCommentFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML comment in a XML document." ;
+    sh:parameter [
+        sh:path function:comment ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A XML comment in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>
+    
+    select ?result where {
+     
+    # Establish the XML fragment for this XML comment
+    bind(concat('<!--',function:getChildNodeFragment($comment),'-->') as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)  
+}
+	
+""" .
+
+function:getCDATASectionFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML CDATA Section in a XML document." ;
+    sh:parameter [
+        sh:path function:CDATASection ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A XML CDATA Section in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>
+    
+    select ?result where {
+     
+    # Establish the XML fragment for this XML CDATA
+    bind(concat('<![CDATA[',function:getChildNodeFragment($CDATASection),']]>') as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)  
+}
+	
+""" .
+
+function:getProcessingInstructionFragment
+    a sh:SPARQLFunction ;
+    rdfs:processingInstruction "Returns a XML fragment for a XML processing instruction in a XML document." ;
+    sh:parameter [
+        sh:path function:processingInstruction ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A XML processing instruction in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>       
+    
+    select ?result where {
+
+    # Establish the XML fragment for this XML processingInstruction
+    bind(concat('<?',function:getChildNodeFragment($processingInstruction),'>') as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)    
+}
+	
+""" .
+
+function:getDocumentTypeFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML DocumentType in a XML document." ;
+    sh:parameter [
+        sh:path function:doctype ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An XML DocumentType in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+    
+    prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
+    
+    select ?result where {
+    
+    # Establish the doctype name for this Document Type.
+    $doctype xml:documentTypeName ?name.
+    bind(concat('<!DOCTYPE ',str(?name),'>') as ?fragment)
+    bind(if(bound(?fragment),?fragment,'') as ?result)    
+}
+	
+""" .
+	
+function:getDocumentFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment for a XML Document" ;
+    sh:parameter [
+        sh:path function:xmlDocument ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>    
+    
+    select ?result where {
+    
+    # Establish the XML fragment of the XML document by retrieving the XML fragments of all child nodes.
+    bind(function:getChildNodeFragment($xmlDocument) as ?result)
+    
+}
+	
+""" .
+
+function:getChildNodeFragment
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns a XML fragment of child nodes for a node in an XML Document" ;
+    sh:parameter [
+        sh:path function:parentNode ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A node in an XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+    
+    prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
+  	prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+    
+    select ?result where {
+    
+    { # Get the XML fragments of child nodes, if there are any.
+    select $parentNode (group_concat(str(?childFragment);separator='') as ?childFragments) {
+      {
+        select $parentNode ?member ?childFragment {
+          $parentNode ?member ?childNode.
+          filter(strstarts(str(?member),concat(str(rdf:),'_')))
+          ?childNode xml:fragment ?childFragment.
+        }
+        order by xsd:integer(strafter(str(?member),concat(str(rdf:),'_')))
+       }
+      } group by $parentNode
+     }
+    bind(if(bound(?childFragments),?childFragments,'') as ?result) 
+    }
+""" .
+
+function:getElementAttribute
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns an XML attribute of an XML element" ;
+    sh:parameter [
+        sh:path function:element ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An XML element in an XML document." ;
+        sh:order 1;
+    ] ;
+     sh:parameter [
+        sh:path function:ontology ;
+        sh:datatype xsd:anyURI ;
+        sh:description "A ontology that defines an element class." ;
+        sh:order 2;
+    ] ;   
+    sh:returnType xsd:string ;
+    sh:select """
+    
+    prefix function: <http://www.w3.org/XML/1998/namespace#model/function/>    
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    prefix vann: <http://purl.org/vocab/vann/>
+    prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
+    
+    select ?result where {
+   
+    { # Get the XML attributes for this element, if there are any.
+    select $element (group_concat(distinct ?attribute) as ?attributes) {
+      $element ?attribute0 ?value.
+      ?attribute0 rdfs:subPropertyOf xml:attribute.
+      bind(function:getXMLKey(?attribute0, $ontology) as ?key)
+      bind(concat(?key,'="',str(?value),'"') as ?attribute)
+      } group by $element
+     }   
+    bind(if(bound(?attributes),?attributes,'') as ?result) 
+    }
+""" .
+
+function:getXMLKey
+    a sh:SPARQLFunction ;
+    rdfs:comment "Returns the key of an XML attribute, either with or without prefix." ;
+    sh:parameter [
+        sh:path function:attribute ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An xml attribute as defined in an ontology." ;
+        sh:order 1;
+    ] ;
+     sh:parameter [
+        sh:path function:ontology ;
+        sh:datatype xsd:anyURI ;
+        sh:description "An ontology that defines the class of the element that is connected to the attribute." ;
+        sh:order 2;
+    ] ;      
+    sh:returnType xsd:string ;
+    sh:select """
+
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix vann: <http://purl.org/vocab/vann/>
+prefix xml: <http://www.w3.org/XML/1998/namespace#model/def/>
+
+SELECT ?result WHERE {
+
+         $attribute xml:key ?key;
+                    rdfs:isDefinedBy ?ontologyAttribute.   
+         ?ontologyAttribute vann:preferredNamespacePrefix ?prefix.
+         
+         # If the attribute as defined in an ontology is used on an element of the same ontology, we do not have to include a prefix in the key of the attribute. If not, we append the prefix to the key. An exception is made for the xml:xmlns attribute.
+         
+         bind(if(?ontologyAttribute = $ontology || $attribute = xml:xmlns,?key,concat(?prefix,":",?key)) as ?result)
+  }
+
+       """ . 
+
+### DOM Document
+
+  dom:Node
+    a owl:Class;
+    dct:conformsTo section:Node;
+    skos:definition 'A node is an object that implements Node. A node participates in a tree, which is known as the node tree.'@en;
+    skos:prefLabel 'Node'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:Document
+    a owl:Class;
+    rdfs:subClassOf dom:Node;
+    dct:conformsTo section:Document;
+    skos:definition "In the DOM specification, the term 'document' is used for any markup-based resource, ranging from short static documents to long essays or reports with rich multimedia, as well as to fully-fledged interactive applications. Each such document is represented as a node tree, whose root is a document. Some of the nodes in a tree can have children, while others are always leaves. "@en;
+    skos:prefLabel 'Document'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:DocumentType
+    a owl:Class;
+    rdfs:subClassOf dom:Node;
+    dct:conformsTo section:DocumentType;
+    skos:prefLabel 'Doctype'@en;
+    skos:definition "Represents the document type declaration (<!DOCTYPE>) of a DOM-document. It specifies the document type to which the document conforms."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:Attribute
+    a owl:Class;
+    rdfs:subClassOf dom:Node;
+    dct:conformsTo section:Attribute;
+    skos:definition 'An attribute is a name-value pair associated with a DOM element. An attributes has a namespace (null or a non-empty string), namespace prefix (null or a non-empty string), local name (a non-empty string), value (a string), and element (null or an element).'@en;
+    skos:prefLabel 'Attribute'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:DocumentFragment
+    a owl:Class;
+    rdfs:subClassOf dom:Node;
+    dct:conformsTo section:DocumentFragment;
+    skos:definition "Represents a minimal document object that has no parent. It can be used to hold a group of nodes for processing purposes before adding them to the main document."@en;
+    skos:prefLabel 'Document Fragment'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:ShadowRoot
+    a owl:Class;
+    rdfs:subClassOf dom:DocumentFragment;
+    dct:conformsTo section:ShadowRoot;
+    skos:definition "Represents a separate subtree of the document tree that can be associated with a particular element, effectively creating a 'shadow DOM' within the element."@en;
+    skos:prefLabel 'Shadow Root'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:Element
+    a owl:Class;
+    rdfs:subClassOf dom:Node;
+    dct:conformsTo section:Element;
+    skos:definition 'Represents an element in the document. Each element may contain other elements, attributes, or text nodes.'@en;
+    skos:prefLabel 'Element'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:DocumentElement
+    a owl:Class;
+    rdfs:subClassOf dom:Element;
+    dct:conformsTo section:DocumentElement;
+    skos:definition "The document element of a document is the element whose parent is that document."@en;
+    skos:prefLabel 'Document element'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:CharacterData
+    a owl:Class;
+    rdfs:subClassOf dom:Node;
+    dct:conformsTo section:CharacterData;
+    skos:definition 'Represents textual data nodes within a DOM document. It is a common superclass for specific types of nodes that contain text, including elements, comments, and CDATA sections.'@en;
+    skos:prefLabel 'Character Data'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:Comment
+    a owl:Class;
+    rdfs:subClassOf dom:CharacterData;
+    dct:conformsTo section:Comment;
+    skos:definition "Represents a comment in the HTML or XML document. Comments are not rendered but are included in the DOM for developers' reference."@en;
+    skos:prefLabel 'Comment'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:ProcessingInstruction
+    a owl:Class;
+    rdfs:subClassOf dom:CharacterData;
+    dct:conformsTo section:ProcessingInstruction;
+    skos:definition 'Represents a processing instruction in the DOM document. Processing instructions provide instructions to the application for processing the document.'@en;
+    skos:prefLabel 'Processing Instruction'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:Text
+    a owl:Class;
+    rdfs:subClassOf dom:CharacterData;
+    dct:conformsTo section:Text;
+    skos:definition "Represents textual content within a DOM document. It's used to represent plain text nodes that are not part of markup elements. Text nodes can occur within elements, between elements, or as the content of attributes."@en;
+    skos:prefLabel 'Text'@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:CDATASection
+    a owl:Class;
+    rdfs:subClassOf dom:Text;
+    dct:conformsTo section:CDATASection;
+    skos:definition 'A CDATA section in a DOM document is used to include blocks of text that should not be interpreted as markup by a processor.'@en;
+    skos:prefLabel 'CDATA Section'@en;
+    rdfs:isDefinedBy dom:.
+
+### DOM attributes
+ 
+  dom:nodeName
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Node;
+    rdfs:domain dom:Node;
+    rdfs:range xsd:string;
+    skos:prefLabel 'node name'@en;
+    skos:definition "Specifies a name for a DOM node."@en;
+    rdfs:isDefinedBy dom:.
+ 
+  dom:documentBaseURL
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Node;
+    rdfs:domain dom:Document;
+    rdfs:range xsd:string;
+    skos:prefLabel 'document base URL'@en;
+    skos:definition "Specifies the node document's document base URL."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:namespace
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Element;
+    rdfs:domain dom:Element;
+    rdfs:range xsd:anyUri;
+    skos:prefLabel 'namespace'@en;
+    skos:definition "Specifies the namespace for a DOM element."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:namespacePrefix
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Element;
+    rdfs:domain dom:Element;
+    rdfs:range xsd:string;
+    skos:prefLabel 'namespace prefix'@en;
+    skos:definition "Specifies the namespace prefix for a DOM element."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:localName
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Element;
+    rdfs:domain dom:Element;
+    rdfs:range xsd:string;
+    skos:prefLabel 'local name'@en;
+    skos:definition "Specifies the local name for a DOM element."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:customElementState
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Element;
+    rdfs:domain dom:Element;
+    rdfs:range xsd:string;
+    skos:prefLabel 'custom element state'@en;
+    skos:definition "Specifies a custom element state for a DOM element."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:customElementDefinition
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Element;
+    rdfs:domain dom:Element;
+    rdfs:range xsd:string;
+    skos:prefLabel 'custom element definition'@en;
+    skos:definition "Specifies a custom element definition for a DOM element."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:isValue
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Element;
+    rdfs:domain dom:Element;
+    rdfs:range xsd:string;
+    skos:prefLabel 'is value'@en;
+    skos:definition "Specifies an is value for a DOM element."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:class
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Class;
+    dom:key 'class';
+    rdfs:domain dom:Element;
+    rdfs:range xsd:string;
+    rdf:type dom:Attribute;
+    skos:prefLabel 'the class attribute'@en;
+    skos:definition "Specifies a class for a DOM element."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:id
+    a owl:DatatypeProperty;
+    dct:conformsTo section:ID;
+    dom:key 'id';
+    rdfs:domain dom:Element;
+    rdfs:range xsd:string;
+    rdf:type dom:Attribute;
+    skos:prefLabel 'the id attribute'@en;
+    skos:definition "Specifies an associated unique identifier (ID) for a DOM element."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:slot
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Slot;
+    dom:key 'slot';
+    rdfs:domain dom:Element;
+    rdfs:range xsd:string;
+    rdf:type dom:Attribute;
+    skos:prefLabel 'the slot attribute'@en;
+    skos:definition "Specifies a slot for a DOM element."@en;
+    rdfs:isDefinedBy dom:.
+
+  dom:name
+    a owl:DatatypeProperty;
+    dct:conformsTo section:Name;
+    rdfs:domain dom:Element;
+    rdfs:range xsd:string;
+    rdf:type dom:Attribute;
+    skos:prefLabel 'the name attribute'@en;
+    skos:definition "Specifies a name for a DOM element."@en;
+    rdfs:isDefinedBy dom:.
+
+
+
+  xmlns:xsi 
+    a owl:DatatypeProperty;
+    xml:key 'xsi';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:definition "The 'xsi' attribute is used to specify the XML Schema Instance namespace within an XML document. It associates elements and attributes with XML Schema definitions."@en;
+    skos:prefLabel 'the xsi attribute'@en;
+    rdfs:isDefinedBy xmlns:.
+
+  xmlns:rdf
+    a owl:DatatypeProperty;
+    xml:key 'rdf';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:definition "The 'rdf' attribute is used to specify the RDF namespace within an XML document. It associates elements and attributes with RDF resources and statements."@en;
+    skos:prefLabel 'the rdf attribute'@en;
+    rdfs:isDefinedBy xmlns:.
+
+  xmlns:xlink 
+    a owl:DatatypeProperty;
+    xml:key 'xlink';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:definition "The 'xlink' attribute is used to specify the XLink namespace within an XML document. It associates elements and attributes with XLink resources and links."@en;
+    skos:prefLabel 'the xlink attribute'@en;
+    rdfs:isDefinedBy xmlns:.
+
+  xmlns:dc 
+    a owl:DatatypeProperty;
+    xml:key 'dc';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:definition "The 'dc' attribute is used to specify the Dublin Core namespace within an XML document. It associates elements and attributes with Dublin Core metadata terms."@en;
+    skos:prefLabel 'the dc attribute'@en;
+    rdfs:isDefinedBy xmlns:.
+
+  xmlns:cc
+    a owl:DatatypeProperty;
+    xml:key 'cc';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:definition "The 'cc' attribute is used to specify the Creative Commons namespace within an XML document. It associates elements and attributes with Creative Commons licenses and metadata."@en;
+    skos:prefLabel 'the cc attribute'@en;
+    rdfs:isDefinedBy xmlns:.
+
+
+
+
+  xsi:nil
+    a owl:DatatypeProperty;
+    dct:conformsTo section:2.6.2;
+    xml:key 'nil';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:definition "The xsi:nil attribute indicates whether an element has a nil value. When the xsi:nil attribute is set to 'true', it signifies that the element has no value. This attribute is typically used in XML Schema instance documents to represent null or empty values for elements defined in XML Schema."@en;
+    skos:prefLabel 'the nil attribute'@en;
+    rdfs:isDefinedBy xsi:.
+
+  xsi:schemaLocation
+    a owl:DatatypeProperty;
+    dct:conformsTo section:2.6.3;
+    xml:key 'schemaLocation';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:definition "The 'schemaLocation' attribute is used in XML documents associated with XML Schema validation. It specifies the location of the XML Schema definition (XSD) that describes the structure and constraints of elements in the document."@en;
+    skos:prefLabel 'the schemaLocation attribute'@en;
+    rdfs:isDefinedBy xsi:.
+
+  xsi:type
+    a owl:DatatypeProperty;
+    dct:conformsTo section:2.6.1;
+    xml:key 'type';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    skos:definition "The 'type' attribute is used in XML documents associated with XML Schema validation. It specifies the data type of an element or an attribute in accordance with the XML Schema definition (XSD)."@en;
+    skos:prefLabel 'the type attribute'@en;
+    rdfs:isDefinedBy xsi:.
+
+ 
+  xlink:actuate
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.6.2;
+    xml:key 'actuate';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the mechanism for processing XLink."@en;
+    skos:prefLabel 'the actuate attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  xlink:arcrole
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.5;
+    xml:key 'arcrole';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the arc role for XLink."@en;
+    skos:prefLabel 'the arcrole attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  xlink:from
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.7;
+    xml:key 'from';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the from for XLink."@en;
+    skos:prefLabel 'the from attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  xlink:href
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.4;
+    xml:key 'href';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the reference for XLink."@en;
+    skos:prefLabel 'the href attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  xlink:label
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.7;
+    xml:key 'label';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the label for XLink."@en;
+    skos:prefLabel 'the label attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  xlink:role
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.5;
+    xml:key 'role';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the role for XLink."@en;
+    skos:prefLabel 'the role attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  xlink:show
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.6.1;
+    xml:key 'show';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the display behavior for XLink."@en;
+    skos:prefLabel 'the show attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  xlink:title
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.5;
+    xml:key 'title';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the title for XLink."@en;
+    skos:prefLabel 'the title attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  xlink:to
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.7;
+    xml:key 'to';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the to for XLink."@en;
+    skos:prefLabel 'the to attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+  xlink:type
+    a owl:DatatypeProperty;
+    dct:conformsTo section:5.3;
+    xml:key 'type';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    skos:definition "Specifies the type for XLink."@en;
+    skos:prefLabel 'the type attribute'@en;
+    rdfs:isDefinedBy xlink:.
+
+svg:
+    a
+      owl:Ontology,
+      respec:Ontology,
+      void:Dataset;
+    dct:conformsTo 'https://www.w3.org/TR/SVG11/'^^xsd:anyURI;
+    dct:created '2024-02-14'^^xsd:date;
+    dct:creator
+      'Flores Bakker';
+    dct:language 'iso639-1:en';
+    dct:license 'https://creativecommons.org/licenses/by/4.0/'^^xsd:anyURI;
+    dct:publisher <https://www.example.com>;
+    dct:status status:UnderDevelopment;
+    dct:title 'SVG Core Vocabulary'@en;
+    dct:source <https://www.example.com/svg-vocabulary>;
+    foaf:homepage 'https://www.example.com/'^^xsd:anyURI;
+    owl:versionInfo '1.0';
+    vann:preferredNamespacePrefix 'svg';
+    vann:preferredNamespaceUri 'http://www.w3.org/2000/svg/';
+    void:uriSpace 'http://www.w3.org/2000/svg/'^^xsd:anyURI.
+
+### Classes ###
+
+### Generic SVG ###
+
+svg:Document
+    a owl:Class;
+    rdfs:subClassOf xml:Document;
+    dct:conformsTo svg:;
+    skos:definition 'An SVG document consists of a tree of elements and text. Each element is denoted in the source by a start tag, such as ‘<circle>’, and an end tag, such as ‘</circle>’. Tags have to be nested such that elements are all completely within each other, without overlapping. Elements can have attributes, which control how the elements work. The SVG Core Vocabulary defines a set of elements that can be used in a SVG document, along with rules about the ways in which the elements can be nested. SVG user agents (e.g., web browsers) parse a SVG document, turning it into a DOM (Document Object Model) tree. A DOM tree is an in-memory representation of a document. A SVG document represents a media-independent description of interactive graphical content. A SVG document can be rendered to a screen. To influence exactly how such rendering takes place, authors can use a styling language such as CSS.'@en;
+    skos:prefLabel 'svg document'@en;
+    rdfs:isDefinedBy svg:.
+    
+svg:Element
+    a owl:Class;
+    rdfs:subClassOf xml:Element;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#Element>;
+    skos:definition 'An element with namespace URI "http://www.w3.org/2000/svg" as defined in the SVG specification, that is used to create and manipulate SVG content.'@en;
+    skos:prefLabel "The SVG DOM element"@en;
+    rdfs:isDefinedBy svg:.
+
+svg:Text
+    a owl:Class;
+    rdfs:subClassOf xml:Text;
+    skos:definition "A plain text node in a SVG document."@en;
+    skos:prefLabel "The SVG DOM text node"@en;
+    rdfs:isDefinedBy svg:.
+
+### SVG elements
+
+svg:Circle
+    a owl:Class;
+    xml:tag 'circle';
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#CircleElement>;
+    rdfs:subClassOf svg:Element;
+    rdfs:isDefinedBy svg:.
+
+svg:Path
+    a owl:Class;
+    xml:tag 'path';
+    dct:conformsTo <https://www.w3.org/TR/SVG11/paths.html#PathElement>;
+    rdfs:subClassOf svg:Element;
+    rdfs:isDefinedBy svg:.
+
+### Properties
+
+svg:cx
+    a owl:DatatypeProperty;
+    xml:key 'cx';
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:domain svg:Circle;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy svg:.
+
+  xml:
+    a
+      owl:Ontology;
+    owl:imports
+      dct:,
+      owl:,
+      rdf:,
+      rdfs:,
+      skos:;
+    sh:declare
+      decl:dom,
+      decl:function, 
+      decl:xml,
+      decl:rdf,
+      decl:rdfs,
+      decl:xsd;      
+    owl:versionInfo '0.1.0';
+    vann:preferredNamespacePrefix 'xml';
+    vann:preferredNamespaceUri 'http://www.w3.org/XML/1998/namespace#model/def/';
+    void:uriRegexPattern '^http://www.w3.org/XML/1998/namespace#model/def/';
+    void:uriSpace 'http://www.w3.org/XML/1998/namespace#'^^xsd:anyURI.
+
+  decl:dom
+    sh:prefix "dom";
+    sh:namespace "https://data.rijksfinancien.nl/dom/model/def/"^^xsd:anyURI.
+
+  decl:function
+    sh:prefix "function";
+    sh:namespace "http://www.w3.org/XML/1998/namespace#model/function/"^^xsd:anyURI.    
+
+  decl:xml
+    sh:prefix "xml";
+    sh:namespace "http://www.w3.org/XML/1998/namespace#model/def/"^^xsd:anyURI.
+
+  decl:rdf
+    sh:prefix "rdf";
+    sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI.
+
+  decl:rdfs
+    sh:prefix "rdfs";
+    sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI.
+
+  decl:xsd
+    sh:prefix "xsd";
+    sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI.
+
+
+### XML Classes
+
+  xml:Document
+    a owl:Class;
+    rdfs:subClassOf dom:Document;
+    rdfs:isDefinedBy xml:.
+
+  xml:DocumentType
+    a owl:Class;
+    rdfs:subClassOf dom:DocumentType;
+    rdfs:isDefinedBy xml:.
+    
+  xml:Element
+    a owl:Class;;
+    rdfs:subClassOf dom:Element;
+    rdfs:isDefinedBy xml:.
+
+  xml:Attribute
+    a owl:Class;
+    rdfs:subClassOf dom:Attribute;    
+    rdfs:isDefinedBy xml:.
+
+  xml:Comment
+    a owl:Class;
+    rdfs:subClassOf dom:Comment;    
+    rdfs:isDefinedBy xml:.
+
+  xml:ProcessingInstruction
+    a owl:Class;
+    rdfs:subClassOf dom:ProcessingInstruction;
+    rdfs:isDefinedBy xml:.
+
+  xml:CDATASection
+    a owl:Class;
+    rdfs:subClassOf dom:CDATASection;    
+    rdfs:isDefinedBy xml:.
+
+  xml:Text
+    a owl:Class;
+    rdfs:subClassOf dom:Text;
+    rdfs:isDefinedBy xml:.
+    
+### XML properties ###
+
+  xml:documentTypeName
+    a owl:DatatypeProperty;
+    rdfs:domain xml:DocumentType;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy xml:.
+
+  xml:xmlns
+    a owl:DatatypeProperty;
+    xml:key 'xmlns';
+    rdfs:domain xml:Element;
+    rdfs:range xsd:string;
+    rdfs:subPropertyOf xml:attribute;
+    rdfs:isDefinedBy xml:.
+

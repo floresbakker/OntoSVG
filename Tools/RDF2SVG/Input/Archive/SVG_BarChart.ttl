@@ -1,0 +1,247 @@
+prefix doc: <https://example.org/doc/id> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix svg: <http://www.w3.org/SVG/model/def/> 
+prefix xml: <http://www.w3.org/XML/model/def/> 
+
+doc:1 a svg:Document ;
+    rdf:_1 doc:1.1 ;
+    rdf:_2 doc:1.2 . 
+
+doc:1.1 rdf:type xml:DocumentType;
+    xml:documentTypeName 'svg'.
+
+doc:1.2 a svg:Svg ;
+    rdf:_1 doc:10.0 ;
+    rdf:_10 doc:10.9 ;
+    rdf:_11 doc:10.10 ;
+    rdf:_12 doc:10.11 ;
+    rdf:_13 doc:10.12 ;
+    rdf:_14 doc:10.13 ;
+    rdf:_15 doc:10.14 ;
+    rdf:_16 doc:10.15 ;
+    rdf:_17 doc:10.16 ;
+    rdf:_18 doc:10.17 ;
+    rdf:_19 doc:10.18 ;
+    rdf:_2 doc:10.1 ;
+    rdf:_20 doc:10.19 ;
+    rdf:_21 doc:10.20 ;
+    rdf:_22 doc:10.21 ;
+    rdf:_23 doc:10.22 ;
+    rdf:_24 doc:10.23 ;
+    rdf:_25 doc:10.24 ;
+    rdf:_26 doc:10.25 ;
+    rdf:_27 doc:10.26 ;
+    rdf:_28 doc:10.27 ;
+    rdf:_29 doc:10.28 ;
+    rdf:_3 doc:10.2 ;
+    rdf:_30 doc:10.29 ;
+    rdf:_31 doc:10.30 ;
+    rdf:_4 doc:10.3 ;
+    rdf:_5 doc:10.4 ;
+    rdf:_6 doc:10.5 ;
+    rdf:_7 doc:10.6 ;
+    rdf:_8 doc:10.7 ;
+    rdf:_9 doc:10.8 ;
+    xml:xmlns "http://www.w3.org/2000/svg" ;
+    svg:height "350" ;
+    svg:version "1.1" ;
+    svg:width "500" .
+
+doc:010.0 a svg:Text ;
+    svg:fragment "Amount (Euro)" .
+
+doc:10.0 a svg:Text ;
+    rdf:_1 doc:010.0 ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:transform "rotate(-90)" ;
+    svg:x "-180" ;
+    svg:y "20" .
+
+doc:10.1 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.10 a svg:Text ;
+    rdf:_1 doc:1010.0 ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:text-anchor "middle" ;
+    svg:x "90" ;
+    svg:y "210" .
+
+doc:10.11 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.12 a svg:Text ;
+    rdf:_1 doc:1210.0 ;
+    svg:fill "black" ;
+    svg:font-size "14" ;
+    svg:text-anchor "middle" ;
+    svg:x "105" ;
+    svg:y "245" .
+
+doc:10.13 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.14 a svg:Rect ;
+    svg:fill "red" ;
+    svg:height "25" ;
+    svg:width "50" ;
+    svg:x "180" ;
+    svg:y "275" .
+
+doc:10.15 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.16 a svg:Text ;
+    rdf:_1 doc:1610.0 ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:text-anchor "middle" ;
+    svg:x "190" ;
+    svg:y "230" .
+
+doc:10.17 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.18 a svg:Text ;
+    rdf:_1 doc:1810.0 ;
+    svg:fill "black" ;
+    svg:font-size "14" ;
+    svg:text-anchor "middle" ;
+    svg:x "205" ;
+    svg:y "270" .
+
+doc:10.19 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.2 a svg:Text ;
+    rdf:_1 doc:210.0 ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:x "200" ;
+    svg:y "330" .
+
+doc:10.20 a svg:Rect ;
+    svg:fill "green" ;
+    svg:height "35" ;
+    svg:width "50" ;
+    svg:x "280" ;
+    svg:y "265" .
+
+doc:10.21 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.22 a svg:Text ;
+    rdf:_1 doc:2210.0 ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:text-anchor "middle" ;
+    svg:x "290" ;
+    svg:y "210" .
+
+doc:10.23 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.24 a svg:Text ;
+    rdf:_1 doc:2410.0 ;
+    svg:fill "black" ;
+    svg:font-size "14" ;
+    svg:text-anchor "middle" ;
+    svg:x "305" ;
+    svg:y "260" .
+
+doc:10.25 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.26 a svg:Rect ;
+    svg:fill "orange" ;
+    svg:height "20" ;
+    svg:width "50" ;
+    svg:x "380" ;
+    svg:y "280" .
+
+doc:10.27 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.28 a svg:Text ;
+    rdf:_1 doc:2810.0 ;
+    svg:fill "black" ;
+    svg:font-size "16" ;
+    svg:text-anchor "middle" ;
+    svg:x "390" ;
+    svg:y "230" .
+
+doc:10.29 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.3 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.30 a svg:Text ;
+    rdf:_1 doc:3010.0 ;
+    svg:fill "black" ;
+    svg:font-size "14" ;
+    svg:text-anchor "middle" ;
+    svg:x "405" ;
+    svg:y "275" .
+
+doc:10.4 a svg:Line ;
+    svg:stroke "black" ;
+    svg:stroke-width "2" ;
+    svg:x1 "50" ;
+    svg:x2 "50" ;
+    svg:y1 "50" ;
+    svg:y2 "300" .
+
+doc:10.5 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.6 a svg:Line ;
+    svg:stroke "black" ;
+    svg:stroke-width "2" ;
+    svg:x1 "50" ;
+    svg:x2 "450" ;
+    svg:y1 "300" ;
+    svg:y2 "300" .
+
+doc:10.7 a svg:Text ;
+    svg:fragment "" .
+
+doc:10.8 a svg:Rect ;
+    svg:fill "blue" ;
+    svg:height "50" ;
+    svg:width "50" ;
+    svg:x "80" ;
+    svg:y "250" .
+
+doc:10.9 a svg:Text ;
+    svg:fragment "" .
+
+doc:1010.0 a svg:Text ;
+    svg:fragment "Budgeted Expenditures" .
+
+doc:1210.0 a svg:Text ;
+    svg:fragment "200" .
+
+doc:1610.0 a svg:Text ;
+    svg:fragment "Realized Expenditures" .
+
+doc:1810.0 a svg:Text ;
+    svg:fragment "100" .
+
+doc:210.0 a svg:Text ;
+    svg:fragment "Transaction type" .
+
+doc:2210.0 a svg:Text ;
+    svg:fragment "Budgeted Receipts" .
+
+doc:2410.0 a svg:Text ;
+    svg:fragment "150" .
+
+doc:2810.0 a svg:Text ;
+    svg:fragment "Realized Receipts" .
+
+doc:3010.0 a svg:Text ;
+    svg:fragment "80" .
+

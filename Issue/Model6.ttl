@@ -1,0 +1,117 @@
+prefix ex: <https://example.org/>
+prefix function: <https://example.org/function/> 
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rule: <https://example.org/rule/>
+prefix sh: <http://www.w3.org/ns/shacl#>
+prefix shp: <https:example.org/shp/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ex: {
+
+### DATA
+
+ex:123 rdf:type ex:Class;
+       rdfs:label '123'.
+ex:456 rdf:type ex:Class;
+       rdfs:label '456'.
+ex:789 rdf:type ex:Class;
+       rdfs:label '789'.
+
+
+### SHAPES
+shp:NestedFunction
+    a sh:NodeShape;
+    sh:rule rule:NestedFunction;
+    sh:targetClass ex:Class.
+
+rule:NestedFunction
+    a sh:SPARQLRule;
+    sh:construct '''
+    
+  prefix ex: <https://example.org/>
+  prefix function: <https://example.org/function/> 
+
+  construct {
+  
+  $this ex:result ?result.
+  $this ex:binding ?binding.
+  
+} where {
+
+bind(function:A($this) as ?result)
+bind('rule:NestedFunction' as ?binding)
+  
+}'''.
+
+function:A
+    a sh:SPARQLFunction ;
+    sh:parameter [
+        sh:path function:element2;
+        sh:datatype xsd:anyURI ;
+        sh:description "A xml element in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <https://example.org/function/>  
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+    select ?result where {
+    $element2 rdfs:label ?label.
+    bind(concat('A: ', ?label,' ', function:B($element2)) as ?pre_result)
+    bind('bindingA' as ?binding)
+    bind(concat(?pre_result, ?binding) as ?result)
+    
+}
+	
+""" .
+
+
+function:B
+    a sh:SPARQLFunction ;
+    sh:parameter [
+        sh:path function:element3;
+        sh:datatype xsd:anyURI ;
+        sh:description "A xml element in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+
+    prefix function: <https://example.org/function/>  
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    
+    select ?result where {
+    
+    $element3 rdfs:label ?label.    
+    bind(concat('B: ', ?label,' ', function:C($element3)) as ?pre_result)
+    bind('bindingB' as ?binding)
+    bind(concat(?pre_result, ?binding) as ?result)
+    
+}
+""" .
+
+function:C
+    a sh:SPARQLFunction ;
+    sh:parameter [
+        sh:path function:element4;
+        sh:datatype xsd:anyURI ;
+        sh:description "A xml element in a XML document." ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:select """
+    
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    
+    select ?result where {
+
+    $element4 rdfs:label ?label.
+    bind(concat('C:',?label,' ') as ?pre_result)
+    bind('bindingC' as ?binding)
+    bind(concat(?pre_result, ?binding) as ?result)
+    
+}
+""" .
+
+}

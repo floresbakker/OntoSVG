@@ -1,7 +1,7 @@
 @prefix dcm: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix decl: <http://www.w3.org/XML/id/decl/> .
-@prefix doc: <https://example.org/doc/id> .
+@prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
 @prefix dom: <http://www.w3.org/DOM/model/def/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix function: <http://www.w3.org/XML/model/function/> .
@@ -22,7 +22,7 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xlink: <https://www.w3.org/1999/xlink/model/def/> .
 @prefix xml1: <http://www.w3.org/XML/model/def/> .
-@prefix xmlns: <http://www.w3.org/2000/xmlns/model/def/> .
+@prefix xmlns: <http://www.w3.org/2000/xmlns/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.w3.org/2000/xmlns/id/standard/xmlns> a dct:Standard ;
@@ -30,10 +30,10 @@
     dct:source "https://www.w3.org/TR/xml-names11/"^^xsd:anyURI ;
     skos:prefLabel "Namespaces in XML 1.1 (Second Edition)"@en .
 
-xmlns:cc a xmlns:Attribute,
+<http://www.w3.org/2000/xmlns/model/def/cc> a <http://www.w3.org/2000/xmlns/model/def/Attribute>,
         owl:DatatypeProperty ;
     rdfs:domain xml1:Element ;
-    rdfs:isDefinedBy xmlns: ;
+    rdfs:isDefinedBy <http://www.w3.org/2000/xmlns/model/def/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'cc' attribute is used to specify the Creative Commons namespace within an XML document. It associates elements and attributes with Creative Commons licenses and metadata."@en ;
@@ -41,10 +41,10 @@ xmlns:cc a xmlns:Attribute,
     xml1:fragment "None"^^rdf:XML ;
     xml1:key "cc" .
 
-xmlns:dc a xmlns:Attribute,
+<http://www.w3.org/2000/xmlns/model/def/dc> a <http://www.w3.org/2000/xmlns/model/def/Attribute>,
         owl:DatatypeProperty ;
     rdfs:domain xml1:Element ;
-    rdfs:isDefinedBy xmlns: ;
+    rdfs:isDefinedBy <http://www.w3.org/2000/xmlns/model/def/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'dc' attribute is used to specify the Dublin Core namespace within an XML document. It associates elements and attributes with Dublin Core metadata terms."@en ;
@@ -52,10 +52,10 @@ xmlns:dc a xmlns:Attribute,
     xml1:fragment "None"^^rdf:XML ;
     xml1:key "dc" .
 
-xmlns:rdf a xmlns:Attribute,
+<http://www.w3.org/2000/xmlns/model/def/rdf> a <http://www.w3.org/2000/xmlns/model/def/Attribute>,
         owl:DatatypeProperty ;
     rdfs:domain xml1:Element ;
-    rdfs:isDefinedBy xmlns: ;
+    rdfs:isDefinedBy <http://www.w3.org/2000/xmlns/model/def/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'rdf' attribute is used to specify the RDF namespace within an XML document. It associates elements and attributes with RDF resources and statements."@en ;
@@ -63,10 +63,10 @@ xmlns:rdf a xmlns:Attribute,
     xml1:fragment "None"^^rdf:XML ;
     xml1:key "rdf" .
 
-xmlns:xlink a xmlns:Attribute,
+<http://www.w3.org/2000/xmlns/model/def/xlink> a <http://www.w3.org/2000/xmlns/model/def/Attribute>,
         owl:DatatypeProperty ;
     rdfs:domain xml1:Element ;
-    rdfs:isDefinedBy xmlns: ;
+    rdfs:isDefinedBy <http://www.w3.org/2000/xmlns/model/def/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'xlink' attribute is used to specify the XLink namespace within an XML document. It associates elements and attributes with XLink resources and links."@en ;
@@ -74,10 +74,10 @@ xmlns:xlink a xmlns:Attribute,
     xml1:fragment "None"^^rdf:XML ;
     xml1:key "xlink" .
 
-xmlns:xsi a xmlns:Attribute,
+<http://www.w3.org/2000/xmlns/model/def/xsi> a <http://www.w3.org/2000/xmlns/model/def/Attribute>,
         owl:DatatypeProperty ;
     rdfs:domain xml1:Element ;
-    rdfs:isDefinedBy xmlns: ;
+    rdfs:isDefinedBy <http://www.w3.org/2000/xmlns/model/def/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'xsi' attribute is used to specify the XML Schema Instance namespace within an XML document. It associates elements and attributes with XML Schema definitions."@en ;
@@ -299,22 +299,6 @@ svg:Cursor a owl:Class ;
     skos:definition "The 'cursor' SVG element defines a cursor."@en ;
     skos:prefLabel "the cursor element"@en ;
     xml1:tag "cursor" .
-
-svg:Defs a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#DefsElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'defs' SVG element defines a container for reusable definitions."@en ;
-    skos:prefLabel "the defs element"@en ;
-    xml1:tag "defs" .
-
-svg:Desc a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#DescElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'desc' SVG element provides a description for SVG content."@en ;
-    skos:prefLabel "the desc element"@en ;
-    xml1:tag "desc" .
 
 svg:Ellipse a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#EllipseElement> ;
@@ -580,14 +564,6 @@ svg:ForeignObject a owl:Class ;
     skos:prefLabel "the foreignObject element"@en ;
     xml1:tag "foreignObject" .
 
-svg:G a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#GElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'g' SVG element is a container used to group SVG shapes together."@en ;
-    skos:prefLabel "the g element"@en ;
-    xml1:tag "g" .
-
 svg:Glyph a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#GlyphElement> ;
     rdfs:isDefinedBy svg: ;
@@ -651,14 +627,6 @@ svg:Mask a owl:Class ;
     skos:definition "The 'mask' SVG element defines an alpha mask for compositing the current object into the background."@en ;
     skos:prefLabel "the mask element"@en ;
     xml1:tag "mask" .
-
-svg:Metadata a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/metadata.html#MetadataElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'metadata' SVG element provides metadata about an SVG document."@en ;
-    skos:prefLabel "the metadata element"@en ;
-    xml1:tag "metadata" .
 
 svg:MissingGlyph a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/fonts.html#MissingGlyphElement> ;
@@ -772,14 +740,6 @@ svg:TextPath a owl:Class ;
     skos:prefLabel "the textPath element"@en ;
     xml1:tag "textPath" .
 
-svg:Title a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#TitleElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'title' SVG element provides a title for an SVG document or a description for an SVG container element."@en ;
-    skos:prefLabel "the title element"@en ;
-    xml1:tag "title" .
-
 svg:Tref a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#TRefElement> ;
     rdfs:isDefinedBy svg: ;
@@ -795,14 +755,6 @@ svg:Tspan a owl:Class ;
     skos:definition "The 'tspan' SVG element allows for grouping multiple consecutive text elements into one logical entity."@en ;
     skos:prefLabel "the tspan element"@en ;
     xml1:tag "tspan" .
-
-svg:Use a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#UseElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'use' SVG element provides a way to use a group of SVG elements defined elsewhere in the SVG document."@en ;
-    skos:prefLabel "the use element"@en ;
-    xml1:tag "use" .
 
 svg:View a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#ViewElement> ;
@@ -3947,9 +3899,8 @@ shp:SerializableNode a sh:NodeShape ;
     sh:target target:SerializableNode .
 
 doc:1 a svg:Document ;
-    rdf:_1 doc:1.1 ;
-    rdf:_2 doc:1.2 ;
-    xml1:fragment "<!DOCTYPE svg><svg xmlns=\"http://www.w3.org/2000/svg\" height=\"200\" width=\"200\"><circle cx=\"100\" cy=\"100\" fill=\"yellow\" r=\"90\" stroke=\"black\" stroke-width=\"2\"></circle><circle cx=\"70\" cy=\"70\" fill=\"black\" r=\"10\"></circle><circle cx=\"130\" cy=\"70\" fill=\"black\" r=\"10\"></circle><path d=\"M 60 120 Q 100 150 140 120\" fill=\"none\" stroke=\"black\" stroke-width=\"3\"></path></svg>"^^rdf:XML .
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1/1> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/1/2> .
 
 <https://www.w3.org/1999/xlink/id/section/5.6> a dcm:Text ;
     dct:isPartOf <https://www.w3.org/1999/xlink/id/standard/xlink> ;
@@ -4204,20 +4155,28 @@ dom:localName a owl:DatatypeProperty ;
     skos:definition "Specifies the local name for a DOM element."@en ;
     skos:prefLabel "local name"@en .
 
+svg:Defs a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#DefsElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'defs' SVG element defines a container for reusable definitions."@en ;
+    skos:prefLabel "the defs element"@en ;
+    xml1:tag "defs" .
+
+svg:Desc a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#DescElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'desc' SVG element provides a description for SVG content."@en ;
+    skos:prefLabel "the desc element"@en ;
+    xml1:tag "desc" .
+
 svg:Document a owl:Class ;
     dct:conformsTo svg: ;
     rdfs:isDefinedBy svg: ;
     rdfs:subClassOf xml1:Document ;
     skos:definition "An SVG document consists of a tree of elements and text. Each element is denoted in the source by a start tag, such as ‘<circle>’, and an end tag, such as ‘</circle>’. Tags have to be nested such that elements are all completely within each other, without overlapping. Elements can have attributes, which control how the elements work. The SVG Core Vocabulary defines a set of elements that can be used in a SVG document, along with rules about the ways in which the elements can be nested. SVG user agents (e.g., web browsers) parse a SVG document, turning it into a DOM (Document Object Model) tree. A DOM tree is an in-memory representation of a document. A SVG document represents a media-independent description of interactive graphical content. A SVG document can be rendered to a screen. To influence exactly how such rendering takes place, authors can use a styling language such as CSS."@en ;
     skos:prefLabel "svg document"@en .
-
-svg:Path a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/paths.html#PathElement> ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf svg:Element ;
-    skos:definition "The 'path' SVG element defines a set of path data."@en ;
-    skos:prefLabel "the path element"@en ;
-    xml1:tag "path" .
 
 svg:RadialGradient a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/pservers.html#RadialGradientElement> ;
@@ -4349,93 +4308,426 @@ select $this {
   }
 }""" .
 
-doc:1.1 a xml1:DocumentType ;
+<https://data.rijksfinancien.nl/svg/doc/id/00/0> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/1> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/100/0> ;
+    xml1:fragment "<title>SVG Logo</title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/10> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/11> a svg:G ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1100/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/1100/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/1100/2> ;
+    svg:stroke "#000" ;
+    svg:stroke-width "38.0086" ;
+    xml1:fragment "<g stroke=\"#000\" stroke-width=\"38.0086\"><g id=\"svgstar\" transform=\"translate(150, 150)\"><path d=\"M-84.1487,-15.8513 a22.4171,22.4171 0 1 0 0,31.7026 h168.2974 a22.4171,22.4171 0 1 0 0,-31.7026 Z\" fill=\"#ffb13b\" id=\"svgbar\"></path><use xlink:href=\"#svgbar\" transform=\"rotate(45)\"></use><use xlink:href=\"#svgbar\" transform=\"rotate(90)\"></use><use xlink:href=\"#svgbar\" transform=\"rotate(135)\"></use></g></g>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/12> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/13> a svg:Use ;
+    xml1:fragment "<use xlink:href=\"#svgstar\"></use>"^^rdf:XML ;
+    xlink:href "#svgstar" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/14> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/15> a svg:Use ;
+    svg:opacity "0.85" ;
+    xml1:fragment "<use xlink:href=\"#base\" opacity=\"0.85\"></use>"^^rdf:XML ;
+    xlink:href "#base" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/16> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/17> a svg:Use ;
+    xml1:fragment "<use xlink:href=\"#SVG\"></use>"^^rdf:XML ;
+    xlink:href "#SVG" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/18> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/2> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/3> a svg:Desc ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/300/0> ;
+    xml1:fragment "<desc>Designed for the SVG Logo Contest in 2006 by Harvey Rayner, and adopted by W3C in 2009. It is available under the Creative Commons license for those who have an SVG product or who are using SVG on their site.</desc>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/4> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/5> a svg:Metadata ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/500/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/500/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/500/2> ;
+    svg:id "license" ;
+    xml1:fragment "<metadata id=\"license\"><metadata><metadata><title>SVG Logo</title><title>14-08-2009</title><title><title><title>W3C</title></title><title><title>Harvey Rayner, designer</title></title></title><title>See document description</title><title></title><title>image/svg+xml</title><title></title></metadata><title><title></title><title></title><title></title><title></title><title></title><title></title><title></title></title></metadata></metadata>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/6> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/7> a svg:Defs ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/700/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/700/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/700/2> ;
+    xml1:fragment "<defs><g fill=\"#ffffff\" id=\"SVG\" transform=\"scale(2) translate(20,79)\"><path d=\"M 5.482,31.319 C2.163,28.001 0.109,23.419 0.109,18.358 C0.109,8.232 8.322,0.024 18.443,0.024 C28.569,0.024 36.782,8.232 36.782,18.358 L26.042,18.358 C26.042,14.164 22.638,10.765 18.443,10.765 C14.249,10.765 10.850,14.164 10.850,18.358 C10.850,20.453 11.701,22.351 13.070,23.721 L13.075,23.721 C14.450,25.101 15.595,25.500 18.443,25.952 L18.443,25.952 C23.509,26.479 28.091,28.006 31.409,31.324 L31.409,31.324 C34.728,34.643 36.782,39.225 36.782,44.286 C36.782,54.412 28.569,62.625 18.443,62.625 C8.322,62.625 0.109,54.412 0.109,44.286 L10.850,44.286 C10.850,48.480 14.249,51.884 18.443,51.884 C22.638,51.884 26.042,48.480 26.042,44.286 C26.042,42.191 25.191,40.298 23.821,38.923 L23.816,38.923 C22.441,37.548 20.468,37.074 18.443,36.697 L18.443,36.692 C13.533,35.939 8.800,34.638 5.482,31.319 L5.482,31.319 L5.482,31.319 Z\" id=\"S\"></path><path d=\"M 73.452,0.024 L60.482,62.625 L49.742,62.625 L36.782,0.024 L47.522,0.024 L55.122,36.687 L62.712,0.024 L73.452,0.024 Z\" id=\"V\"></path><path d=\"M 91.792,25.952 L110.126,25.952 L110.126,44.286 L110.131,44.286 C110.131,54.413 101.918,62.626 91.792,62.626 C81.665,62.626 73.458,54.413 73.458,44.286 L73.458,44.286 L73.458,18.359 L73.453,18.359 C73.453,8.233 81.665,0.025 91.792,0.025 C101.913,0.025 110.126,8.233 110.126,18.359 L99.385,18.359 C99.385,14.169 95.981,10.765 91.792,10.765 C87.597,10.765 84.198,14.169 84.198,18.359 L84.198,44.286 L84.198,44.286 C84.198,48.481 87.597,51.880 91.792,51.880 C95.981,51.880 99.380,48.481 99.385,44.291 L99.385,44.286 L99.385,36.698 L91.792,36.698 L91.792,25.952 L91.792,25.952 Z\" id=\"G\"></path></g></defs>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/8> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/00/9> a svg:Path ;
+    svg:d "M8.5,150 H291.5 V250 C291.5,273.5 273.5,291.5 250,291.5 H50 C26.5,291.5 8.5,273.5 8.5,250 Z" ;
+    svg:fill "#000" ;
+    svg:id "base" ;
+    xml1:fragment "<path d=\"M8.5,150 H291.5 V250 C291.5,273.5 273.5,291.5 250,291.5 H50 C26.5,291.5 8.5,273.5 8.5,250 Z\" fill=\"#000\" id=\"base\"></path>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/01511500/0> a svg:Text ;
+    xml1:fragment "W3C" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/03511500/0> a svg:Text ;
+    xml1:fragment "Harvey Rayner, designer" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1/1> a xml1:DocumentType ;
     xml1:documentTypeName "svg" ;
     xml1:fragment "<!DOCTYPE svg>"^^rdf:XML .
 
-doc:1.2 a svg:Svg ;
-    rdf:_1 doc:10.0 ;
-    rdf:_10 doc:10.9 ;
-    rdf:_11 doc:10.10 ;
-    rdf:_12 doc:10.11 ;
-    rdf:_13 doc:10.12 ;
-    rdf:_14 doc:10.13 ;
-    rdf:_15 doc:10.14 ;
-    rdf:_2 doc:10.1 ;
-    rdf:_3 doc:10.2 ;
-    rdf:_4 doc:10.3 ;
-    rdf:_5 doc:10.4 ;
-    rdf:_6 doc:10.5 ;
-    rdf:_7 doc:10.6 ;
-    rdf:_8 doc:10.7 ;
-    rdf:_9 doc:10.8 ;
-    svg:height "200" ;
-    svg:width "200" ;
-    xml1:fragment "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"200\" width=\"200\"><circle cx=\"100\" cy=\"100\" fill=\"yellow\" r=\"90\" stroke=\"black\" stroke-width=\"2\"></circle><circle cx=\"70\" cy=\"70\" fill=\"black\" r=\"10\"></circle><circle cx=\"130\" cy=\"70\" fill=\"black\" r=\"10\"></circle><path d=\"M 60 120 Q 100 150 140 120\" fill=\"none\" stroke=\"black\" stroke-width=\"3\"></path></svg>"^^rdf:XML ;
+<https://data.rijksfinancien.nl/svg/doc/id/1/2> a svg:Svg ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/00/0> ;
+    rdf:_10 <https://data.rijksfinancien.nl/svg/doc/id/00/9> ;
+    rdf:_11 <https://data.rijksfinancien.nl/svg/doc/id/00/10> ;
+    rdf:_12 <https://data.rijksfinancien.nl/svg/doc/id/00/11> ;
+    rdf:_13 <https://data.rijksfinancien.nl/svg/doc/id/00/12> ;
+    rdf:_14 <https://data.rijksfinancien.nl/svg/doc/id/00/13> ;
+    rdf:_15 <https://data.rijksfinancien.nl/svg/doc/id/00/14> ;
+    rdf:_16 <https://data.rijksfinancien.nl/svg/doc/id/00/15> ;
+    rdf:_17 <https://data.rijksfinancien.nl/svg/doc/id/00/16> ;
+    rdf:_18 <https://data.rijksfinancien.nl/svg/doc/id/00/17> ;
+    rdf:_19 <https://data.rijksfinancien.nl/svg/doc/id/00/18> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/00/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/00/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/00/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/00/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/00/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/00/6> ;
+    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/00/7> ;
+    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/00/8> ;
+    xmlns:xlink "http://www.w3.org/1999/xlink" ;
+    svg:height "100%" ;
+    svg:viewBox "0 0 300 300" ;
+    svg:width "100%" ;
+    xml1:fragment "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"100%\" viewBox=\"0 0 300 300\" width=\"100%\"><title>SVG Logo</title><desc>Designed for the SVG Logo Contest in 2006 by Harvey Rayner, and adopted by W3C in 2009. It is available under the Creative Commons license for those who have an SVG product or who are using SVG on their site.</desc><metadata id=\"license\"><metadata><metadata><title>SVG Logo</title><title>14-08-2009</title><title><title><title>W3C</title></title><title><title>Harvey Rayner, designer</title></title></title><title>See document description</title><title></title><title>image/svg+xml</title><title></title></metadata><title><title></title><title></title><title></title><title></title><title></title><title></title><title></title></title></metadata></metadata><defs><g fill=\"#ffffff\" id=\"SVG\" transform=\"scale(2) translate(20,79)\"><path d=\"M 5.482,31.319 C2.163,28.001 0.109,23.419 0.109,18.358 C0.109,8.232 8.322,0.024 18.443,0.024 C28.569,0.024 36.782,8.232 36.782,18.358 L26.042,18.358 C26.042,14.164 22.638,10.765 18.443,10.765 C14.249,10.765 10.850,14.164 10.850,18.358 C10.850,20.453 11.701,22.351 13.070,23.721 L13.075,23.721 C14.450,25.101 15.595,25.500 18.443,25.952 L18.443,25.952 C23.509,26.479 28.091,28.006 31.409,31.324 L31.409,31.324 C34.728,34.643 36.782,39.225 36.782,44.286 C36.782,54.412 28.569,62.625 18.443,62.625 C8.322,62.625 0.109,54.412 0.109,44.286 L10.850,44.286 C10.850,48.480 14.249,51.884 18.443,51.884 C22.638,51.884 26.042,48.480 26.042,44.286 C26.042,42.191 25.191,40.298 23.821,38.923 L23.816,38.923 C22.441,37.548 20.468,37.074 18.443,36.697 L18.443,36.692 C13.533,35.939 8.800,34.638 5.482,31.319 L5.482,31.319 L5.482,31.319 Z\" id=\"S\"></path><path d=\"M 73.452,0.024 L60.482,62.625 L49.742,62.625 L36.782,0.024 L47.522,0.024 L55.122,36.687 L62.712,0.024 L73.452,0.024 Z\" id=\"V\"></path><path d=\"M 91.792,25.952 L110.126,25.952 L110.126,44.286 L110.131,44.286 C110.131,54.413 101.918,62.626 91.792,62.626 C81.665,62.626 73.458,54.413 73.458,44.286 L73.458,44.286 L73.458,18.359 L73.453,18.359 C73.453,8.233 81.665,0.025 91.792,0.025 C101.913,0.025 110.126,8.233 110.126,18.359 L99.385,18.359 C99.385,14.169 95.981,10.765 91.792,10.765 C87.597,10.765 84.198,14.169 84.198,18.359 L84.198,44.286 L84.198,44.286 C84.198,48.481 87.597,51.880 91.792,51.880 C95.981,51.880 99.380,48.481 99.385,44.291 L99.385,44.286 L99.385,36.698 L91.792,36.698 L91.792,25.952 L91.792,25.952 Z\" id=\"G\"></path></g></defs><path d=\"M8.5,150 H291.5 V250 C291.5,273.5 273.5,291.5 250,291.5 H50 C26.5,291.5 8.5,273.5 8.5,250 Z\" fill=\"#000\" id=\"base\"></path><g stroke=\"#000\" stroke-width=\"38.0086\"><g id=\"svgstar\" transform=\"translate(150, 150)\"><path d=\"M-84.1487,-15.8513 a22.4171,22.4171 0 1 0 0,31.7026 h168.2974 a22.4171,22.4171 0 1 0 0,-31.7026 Z\" fill=\"#ffb13b\" id=\"svgbar\"></path><use xlink:href=\"#svgbar\" transform=\"rotate(45)\"></use><use xlink:href=\"#svgbar\" transform=\"rotate(90)\"></use><use xlink:href=\"#svgbar\" transform=\"rotate(135)\"></use></g></g><use xlink:href=\"#svgstar\"></use><use xlink:href=\"#base\" opacity=\"0.85\"></use><use xlink:href=\"#SVG\"></use></svg>"^^rdf:XML ;
     xml1:xmlns "http://www.w3.org/2000/svg" .
 
-doc:10.0 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/100/0> a svg:Text ;
+    xml1:fragment "SVG Logo" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1100/0> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.1 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/1100/1> a svg:G ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/11100/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/11100/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/11100/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/11100/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/11100/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/11100/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/11100/6> ;
+    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/11100/7> ;
+    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/11100/8> ;
+    svg:id "svgstar" ;
+    svg:transform "translate(150, 150)" ;
+    xml1:fragment "<g id=\"svgstar\" transform=\"translate(150, 150)\"><path d=\"M-84.1487,-15.8513 a22.4171,22.4171 0 1 0 0,31.7026 h168.2974 a22.4171,22.4171 0 1 0 0,-31.7026 Z\" fill=\"#ffb13b\" id=\"svgbar\"></path><use xlink:href=\"#svgbar\" transform=\"rotate(45)\"></use><use xlink:href=\"#svgbar\" transform=\"rotate(90)\"></use><use xlink:href=\"#svgbar\" transform=\"rotate(135)\"></use></g>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1100/2> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.10 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/11100/0> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.11 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/11100/1> a svg:Path ;
+    svg:d "M-84.1487,-15.8513 a22.4171,22.4171 0 1 0 0,31.7026 h168.2974 a22.4171,22.4171 0 1 0 0,-31.7026 Z" ;
+    svg:fill "#ffb13b" ;
+    svg:id "svgbar" ;
+    xml1:fragment "<path d=\"M-84.1487,-15.8513 a22.4171,22.4171 0 1 0 0,31.7026 h168.2974 a22.4171,22.4171 0 1 0 0,-31.7026 Z\" fill=\"#ffb13b\" id=\"svgbar\"></path>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/2> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.12 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/11100/3> a svg:Use ;
+    svg:transform "rotate(45)" ;
+    xml1:fragment "<use xlink:href=\"#svgbar\" transform=\"rotate(45)\"></use>"^^rdf:XML ;
+    xlink:href "#svgbar" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/4> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.13 a svg:Path ;
-    svg:d "M 60 120 Q 100 150 140 120" ;
-    svg:fill "none" ;
-    svg:stroke "black" ;
-    svg:stroke-width "3" ;
-    xml1:fragment "<path d=\"M 60 120 Q 100 150 140 120\" fill=\"none\" stroke=\"black\" stroke-width=\"3\"></path>"^^rdf:XML .
+<https://data.rijksfinancien.nl/svg/doc/id/11100/5> a svg:Use ;
+    svg:transform "rotate(90)" ;
+    xml1:fragment "<use xlink:href=\"#svgbar\" transform=\"rotate(90)\"></use>"^^rdf:XML ;
+    xlink:href "#svgbar" .
 
-doc:10.14 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/11100/6> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.2 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/11100/7> a svg:Use ;
+    svg:transform "rotate(135)" ;
+    xml1:fragment "<use xlink:href=\"#svgbar\" transform=\"rotate(135)\"></use>"^^rdf:XML ;
+    xlink:href "#svgbar" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11100/8> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.3 a svg:Circle ;
-    svg:cx "100" ;
-    svg:cy "100" ;
-    svg:fill "yellow" ;
-    svg:r "90" ;
-    svg:stroke "black" ;
-    svg:stroke-width "2" ;
-    xml1:fragment "<circle cx=\"100\" cy=\"100\" fill=\"yellow\" r=\"90\" stroke=\"black\" stroke-width=\"2\"></circle>"^^rdf:XML .
+<https://data.rijksfinancien.nl/svg/doc/id/1111500/0> a svg:Text ;
+    xml1:fragment "image/svg+xml" .
 
-doc:10.4 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/111500/0> a svg:Text ;
+    xml1:fragment "SVG Logo" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11500/0> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.5 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/11500/1> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/111500/0> ;
+    xml1:fragment "<title>SVG Logo</title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11500/10> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.6 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/11500/11> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1111500/0> ;
+    xml1:fragment "<title>image/svg+xml</title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11500/12> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.7 a svg:Circle ;
-    svg:cx "70" ;
-    svg:cy "70" ;
-    svg:fill "black" ;
-    svg:r "10" ;
-    xml1:fragment "<circle cx=\"70\" cy=\"70\" fill=\"black\" r=\"10\"></circle>"^^rdf:XML .
+<https://data.rijksfinancien.nl/svg/doc/id/11500/13> a svg:Title ;
+    xml1:fragment "<title></title>"^^rdf:XML .
 
-doc:10.8 a svg:Text ;
+<https://data.rijksfinancien.nl/svg/doc/id/11500/14> a svg:Text ;
     xml1:fragment "" .
 
-doc:10.9 a svg:Circle ;
-    svg:cx "130" ;
-    svg:cy "70" ;
-    svg:fill "black" ;
-    svg:r "10" ;
-    xml1:fragment "<circle cx=\"130\" cy=\"70\" fill=\"black\" r=\"10\"></circle>"^^rdf:XML .
+<https://data.rijksfinancien.nl/svg/doc/id/11500/2> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11500/3> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/311500/0> ;
+    xml1:fragment "<title>14-08-2009</title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11500/4> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11500/5> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/511500/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/511500/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/511500/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/511500/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/511500/4> ;
+    xml1:fragment "<title><title><title>W3C</title></title><title><title>Harvey Rayner, designer</title></title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11500/6> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11500/7> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/711500/0> ;
+    xml1:fragment "<title>See document description</title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11500/8> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/11500/9> a svg:Title ;
+    xml1:fragment "<title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1500/0> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1500/1> a svg:Metadata ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/11500/0> ;
+    rdf:_10 <https://data.rijksfinancien.nl/svg/doc/id/11500/9> ;
+    rdf:_11 <https://data.rijksfinancien.nl/svg/doc/id/11500/10> ;
+    rdf:_12 <https://data.rijksfinancien.nl/svg/doc/id/11500/11> ;
+    rdf:_13 <https://data.rijksfinancien.nl/svg/doc/id/11500/12> ;
+    rdf:_14 <https://data.rijksfinancien.nl/svg/doc/id/11500/13> ;
+    rdf:_15 <https://data.rijksfinancien.nl/svg/doc/id/11500/14> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/11500/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/11500/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/11500/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/11500/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/11500/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/11500/6> ;
+    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/11500/7> ;
+    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/11500/8> ;
+    xml1:fragment "<metadata><title>SVG Logo</title><title>14-08-2009</title><title><title><title>W3C</title></title><title><title>Harvey Rayner, designer</title></title></title><title>See document description</title><title></title><title>image/svg+xml</title><title></title></metadata>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1500/2> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1500/3> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/31500/0> ;
+    rdf:_10 <https://data.rijksfinancien.nl/svg/doc/id/31500/9> ;
+    rdf:_11 <https://data.rijksfinancien.nl/svg/doc/id/31500/10> ;
+    rdf:_12 <https://data.rijksfinancien.nl/svg/doc/id/31500/11> ;
+    rdf:_13 <https://data.rijksfinancien.nl/svg/doc/id/31500/12> ;
+    rdf:_14 <https://data.rijksfinancien.nl/svg/doc/id/31500/13> ;
+    rdf:_15 <https://data.rijksfinancien.nl/svg/doc/id/31500/14> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/31500/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/31500/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/31500/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/31500/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/31500/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/31500/6> ;
+    rdf:_8 <https://data.rijksfinancien.nl/svg/doc/id/31500/7> ;
+    rdf:_9 <https://data.rijksfinancien.nl/svg/doc/id/31500/8> ;
+    xml1:fragment "<title><title></title><title></title><title></title><title></title><title></title><title></title><title></title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1500/4> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1511500/0> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/01511500/0> ;
+    xml1:fragment "<title>W3C</title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1700/0> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1700/1> a svg:Path ;
+    svg:d "M 5.482,31.319 C2.163,28.001 0.109,23.419 0.109,18.358 C0.109,8.232 8.322,0.024 18.443,0.024 C28.569,0.024 36.782,8.232 36.782,18.358 L26.042,18.358 C26.042,14.164 22.638,10.765 18.443,10.765 C14.249,10.765 10.850,14.164 10.850,18.358 C10.850,20.453 11.701,22.351 13.070,23.721 L13.075,23.721 C14.450,25.101 15.595,25.500 18.443,25.952 L18.443,25.952 C23.509,26.479 28.091,28.006 31.409,31.324 L31.409,31.324 C34.728,34.643 36.782,39.225 36.782,44.286 C36.782,54.412 28.569,62.625 18.443,62.625 C8.322,62.625 0.109,54.412 0.109,44.286 L10.850,44.286 C10.850,48.480 14.249,51.884 18.443,51.884 C22.638,51.884 26.042,48.480 26.042,44.286 C26.042,42.191 25.191,40.298 23.821,38.923 L23.816,38.923 C22.441,37.548 20.468,37.074 18.443,36.697 L18.443,36.692 C13.533,35.939 8.800,34.638 5.482,31.319 L5.482,31.319 L5.482,31.319 Z" ;
+    svg:id "S" ;
+    xml1:fragment "<path d=\"M 5.482,31.319 C2.163,28.001 0.109,23.419 0.109,18.358 C0.109,8.232 8.322,0.024 18.443,0.024 C28.569,0.024 36.782,8.232 36.782,18.358 L26.042,18.358 C26.042,14.164 22.638,10.765 18.443,10.765 C14.249,10.765 10.850,14.164 10.850,18.358 C10.850,20.453 11.701,22.351 13.070,23.721 L13.075,23.721 C14.450,25.101 15.595,25.500 18.443,25.952 L18.443,25.952 C23.509,26.479 28.091,28.006 31.409,31.324 L31.409,31.324 C34.728,34.643 36.782,39.225 36.782,44.286 C36.782,54.412 28.569,62.625 18.443,62.625 C8.322,62.625 0.109,54.412 0.109,44.286 L10.850,44.286 C10.850,48.480 14.249,51.884 18.443,51.884 C22.638,51.884 26.042,48.480 26.042,44.286 C26.042,42.191 25.191,40.298 23.821,38.923 L23.816,38.923 C22.441,37.548 20.468,37.074 18.443,36.697 L18.443,36.692 C13.533,35.939 8.800,34.638 5.482,31.319 L5.482,31.319 L5.482,31.319 Z\" id=\"S\"></path>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1700/2> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1700/3> a svg:Path ;
+    svg:d "M 73.452,0.024 L60.482,62.625 L49.742,62.625 L36.782,0.024 L47.522,0.024 L55.122,36.687 L62.712,0.024 L73.452,0.024 Z" ;
+    svg:id "V" ;
+    xml1:fragment "<path d=\"M 73.452,0.024 L60.482,62.625 L49.742,62.625 L36.782,0.024 L47.522,0.024 L55.122,36.687 L62.712,0.024 L73.452,0.024 Z\" id=\"V\"></path>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1700/4> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1700/5> a svg:Path ;
+    svg:d "M 91.792,25.952 L110.126,25.952 L110.126,44.286 L110.131,44.286 C110.131,54.413 101.918,62.626 91.792,62.626 C81.665,62.626 73.458,54.413 73.458,44.286 L73.458,44.286 L73.458,18.359 L73.453,18.359 C73.453,8.233 81.665,0.025 91.792,0.025 C101.913,0.025 110.126,8.233 110.126,18.359 L99.385,18.359 C99.385,14.169 95.981,10.765 91.792,10.765 C87.597,10.765 84.198,14.169 84.198,18.359 L84.198,44.286 L84.198,44.286 C84.198,48.481 87.597,51.880 91.792,51.880 C95.981,51.880 99.380,48.481 99.385,44.291 L99.385,44.286 L99.385,36.698 L91.792,36.698 L91.792,25.952 L91.792,25.952 Z" ;
+    svg:id "G" ;
+    xml1:fragment "<path d=\"M 91.792,25.952 L110.126,25.952 L110.126,44.286 L110.131,44.286 C110.131,54.413 101.918,62.626 91.792,62.626 C81.665,62.626 73.458,54.413 73.458,44.286 L73.458,44.286 L73.458,18.359 L73.453,18.359 C73.453,8.233 81.665,0.025 91.792,0.025 C101.913,0.025 110.126,8.233 110.126,18.359 L99.385,18.359 C99.385,14.169 95.981,10.765 91.792,10.765 C87.597,10.765 84.198,14.169 84.198,18.359 L84.198,44.286 L84.198,44.286 C84.198,48.481 87.597,51.880 91.792,51.880 C95.981,51.880 99.380,48.481 99.385,44.291 L99.385,44.286 L99.385,36.698 L91.792,36.698 L91.792,25.952 L91.792,25.952 Z\" id=\"G\"></path>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/1700/6> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/300/0> a svg:Text ;
+    xml1:fragment "Designed for the SVG Logo Contest in 2006 by Harvey Rayner, and adopted by W3C in 2009. It is available under the Creative Commons license for those who have an SVG product or who are using SVG on their site." .
+
+<https://data.rijksfinancien.nl/svg/doc/id/311500/0> a svg:Text ;
+    xml1:fragment "14-08-2009" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/0> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/1> a svg:Title ;
+    xml1:fragment "<title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/10> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/11> a svg:Title ;
+    xml1:fragment "<title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/12> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/13> a svg:Title ;
+    xml1:fragment "<title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/14> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/2> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/3> a svg:Title ;
+    xml1:fragment "<title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/4> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/5> a svg:Title ;
+    xml1:fragment "<title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/6> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/7> a svg:Title ;
+    xml1:fragment "<title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/8> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/31500/9> a svg:Title ;
+    xml1:fragment "<title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/3511500/0> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/03511500/0> ;
+    xml1:fragment "<title>Harvey Rayner, designer</title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/500/0> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/500/1> a svg:Metadata ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1500/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/1500/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/1500/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/1500/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/1500/4> ;
+    xmlns:cc "http://web.resource.org/cc/" ;
+    xmlns:dc "http://purl.org/dc/elements/1.1/" ;
+    xmlns:rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
+    xml1:fragment "<metadata><metadata><title>SVG Logo</title><title>14-08-2009</title><title><title><title>W3C</title></title><title><title>Harvey Rayner, designer</title></title></title><title>See document description</title><title></title><title>image/svg+xml</title><title></title></metadata><title><title></title><title></title><title></title><title></title><title></title><title></title><title></title></title></metadata>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/500/2> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/511500/0> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/511500/1> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1511500/0> ;
+    xml1:fragment "<title><title>W3C</title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/511500/2> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/511500/3> a svg:Title ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/3511500/0> ;
+    xml1:fragment "<title><title>Harvey Rayner, designer</title></title>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/511500/4> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/700/0> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/700/1> a svg:G ;
+    rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1700/0> ;
+    rdf:_2 <https://data.rijksfinancien.nl/svg/doc/id/1700/1> ;
+    rdf:_3 <https://data.rijksfinancien.nl/svg/doc/id/1700/2> ;
+    rdf:_4 <https://data.rijksfinancien.nl/svg/doc/id/1700/3> ;
+    rdf:_5 <https://data.rijksfinancien.nl/svg/doc/id/1700/4> ;
+    rdf:_6 <https://data.rijksfinancien.nl/svg/doc/id/1700/5> ;
+    rdf:_7 <https://data.rijksfinancien.nl/svg/doc/id/1700/6> ;
+    svg:fill "#ffffff" ;
+    svg:id "SVG" ;
+    svg:transform "scale(2) translate(20,79)" ;
+    xml1:fragment "<g fill=\"#ffffff\" id=\"SVG\" transform=\"scale(2) translate(20,79)\"><path d=\"M 5.482,31.319 C2.163,28.001 0.109,23.419 0.109,18.358 C0.109,8.232 8.322,0.024 18.443,0.024 C28.569,0.024 36.782,8.232 36.782,18.358 L26.042,18.358 C26.042,14.164 22.638,10.765 18.443,10.765 C14.249,10.765 10.850,14.164 10.850,18.358 C10.850,20.453 11.701,22.351 13.070,23.721 L13.075,23.721 C14.450,25.101 15.595,25.500 18.443,25.952 L18.443,25.952 C23.509,26.479 28.091,28.006 31.409,31.324 L31.409,31.324 C34.728,34.643 36.782,39.225 36.782,44.286 C36.782,54.412 28.569,62.625 18.443,62.625 C8.322,62.625 0.109,54.412 0.109,44.286 L10.850,44.286 C10.850,48.480 14.249,51.884 18.443,51.884 C22.638,51.884 26.042,48.480 26.042,44.286 C26.042,42.191 25.191,40.298 23.821,38.923 L23.816,38.923 C22.441,37.548 20.468,37.074 18.443,36.697 L18.443,36.692 C13.533,35.939 8.800,34.638 5.482,31.319 L5.482,31.319 L5.482,31.319 Z\" id=\"S\"></path><path d=\"M 73.452,0.024 L60.482,62.625 L49.742,62.625 L36.782,0.024 L47.522,0.024 L55.122,36.687 L62.712,0.024 L73.452,0.024 Z\" id=\"V\"></path><path d=\"M 91.792,25.952 L110.126,25.952 L110.126,44.286 L110.131,44.286 C110.131,54.413 101.918,62.626 91.792,62.626 C81.665,62.626 73.458,54.413 73.458,44.286 L73.458,44.286 L73.458,18.359 L73.453,18.359 C73.453,8.233 81.665,0.025 91.792,0.025 C101.913,0.025 110.126,8.233 110.126,18.359 L99.385,18.359 C99.385,14.169 95.981,10.765 91.792,10.765 C87.597,10.765 84.198,14.169 84.198,18.359 L84.198,44.286 L84.198,44.286 C84.198,48.481 87.597,51.880 91.792,51.880 C95.981,51.880 99.380,48.481 99.385,44.291 L99.385,44.286 L99.385,36.698 L91.792,36.698 L91.792,25.952 L91.792,25.952 Z\" id=\"G\"></path></g>"^^rdf:XML .
+
+<https://data.rijksfinancien.nl/svg/doc/id/700/2> a svg:Text ;
+    xml1:fragment "" .
+
+<https://data.rijksfinancien.nl/svg/doc/id/711500/0> a svg:Text ;
+    xml1:fragment "See document description" .
 
 <https://www.w3.org/1999/xlink/id/section/5.3> a dcm:Text ;
     dct:isPartOf <https://www.w3.org/1999/xlink/id/standard/xlink> ;
@@ -4474,6 +4766,14 @@ dom:Text a owl:Class ;
     rdfs:subClassOf dom:CharacterData ;
     skos:definition "Represents textual content within a DOM document. It's used to represent plain text nodes that are not part of markup elements. Text nodes can occur within elements, between elements, or as the content of attributes."@en ;
     skos:prefLabel "Text"@en .
+
+svg:Circle a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#CircleElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'circle' SVG element defines a circle."@en ;
+    skos:prefLabel "the circle element"@en ;
+    xml1:tag "circle" .
 
 svg:mask a owl:DatatypeProperty,
         svg:Attribute ;
@@ -4522,6 +4822,22 @@ dom:CharacterData a owl:Class ;
     skos:definition "Represents textual data nodes within a DOM document. It is a common superclass for specific types of nodes that contain text, including elements, comments, and CDATA sections."@en ;
     skos:prefLabel "Character Data"@en .
 
+svg:G a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#GElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'g' SVG element is a container used to group SVG shapes together."@en ;
+    skos:prefLabel "the g element"@en ;
+    xml1:tag "g" .
+
+svg:Metadata a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/metadata.html#MetadataElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'metadata' SVG element provides metadata about an SVG document."@en ;
+    skos:prefLabel "the metadata element"@en ;
+    xml1:tag "metadata" .
+
 xml1:DocumentType a owl:Class ;
     rdfs:isDefinedBy xml1: ;
     rdfs:subClassOf dom:DocumentType ;
@@ -4552,8 +4868,8 @@ svg:filter a owl:DatatypeProperty,
     xml1:fragment "None"^^rdf:XML ;
     xml1:key "filter" .
 
-xmlns:Attribute a owl:Class ;
-    rdfs:isDefinedBy xmlns: ;
+<http://www.w3.org/2000/xmlns/model/def/Attribute> a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/2000/xmlns/model/def/> ;
     rdfs:subClassOf xml1:Attribute ;
     skos:definition "An XSI attribute is used to provide information related to XML Schema validation within an XML document. Such an attribute allows XML documents to declare how they relate to XML Schemas, specify the data types of elements, and control schema validation behavior."@en ;
     skos:prefLabel "attribute"@en .
@@ -4565,15 +4881,15 @@ dom:Attribute a owl:Class ;
     skos:definition "An attribute is a name-value pair associated with a DOM element. An attributes has a namespace (null or a non-empty string), namespace prefix (null or a non-empty string), local name (a non-empty string), value (a string), and element (null or an element)."@en ;
     skos:prefLabel "Attribute"@en .
 
-svg:Circle a owl:Class ;
-    dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#CircleElement> ;
+svg:Path a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/paths.html#PathElement> ;
     rdfs:isDefinedBy svg: ;
     rdfs:subClassOf svg:Element ;
-    skos:definition "The 'circle' SVG element defines a circle."@en ;
-    skos:prefLabel "the circle element"@en ;
-    xml1:tag "circle" .
+    skos:definition "The 'path' SVG element defines a set of path data."@en ;
+    skos:prefLabel "the path element"@en ;
+    xml1:tag "path" .
 
-xmlns: a void:Dataset,
+<http://www.w3.org/2000/xmlns/model/def/> a void:Dataset,
         owl:Ontology ;
     dct:abstract "The XMLNS Core Ontology provides a formal representation of XML Namespace declarations. It defines classes and properties to describe XML Namespace attributes and their usage within XML documents."@en ;
     dct:created "2024-02-19"^^xsd:date ;
@@ -4598,6 +4914,14 @@ xmlns: a void:Dataset,
     owl:versionInfo "0.1.0" ;
     foaf:depiction "https://www.rijksfinancien.nl/themes/custom/indicia_theme/files/logo-rijksoverheid.svg"^^xsd:anyURI ;
     foaf:homepage "https://www.rijksfinancien.nl/"^^xsd:anyURI .
+
+svg:Use a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#UseElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'use' SVG element provides a way to use a group of SVG elements defined elsewhere in the SVG document."@en ;
+    skos:prefLabel "the use element"@en ;
+    xml1:tag "use" .
 
 <http://www.w3.org/DOM/id/section/Element> a dcm:Text ;
     dct:isPartOf <http://www.w3.org/DOM/id/standard/dom> ;
@@ -4659,12 +4983,6 @@ xlink:Attribute a owl:Class ;
     skos:definition "An XLink attribute is used to create various types of links within an XML document. Such an attribute allows XML documents to declare how  elements in XML documents are linked to other resources."@en ;
     skos:prefLabel "attribute"@en .
 
-svg:Text a owl:Class ;
-    rdfs:isDefinedBy svg: ;
-    rdfs:subClassOf xml1:Text ;
-    skos:definition "A plain text node in a SVG document."@en ;
-    skos:prefLabel "The SVG DOM text node"@en .
-
 xml1:Attribute a owl:Class ;
     dct:conformsTo <http://www.w3.org/XML/id/section/XML-Spec> ;
     rdfs:isDefinedBy xml1: ;
@@ -4724,6 +5042,14 @@ svg:y2 "409.21478" .""" ;
     dct:source "https://dom.spec.whatwg.org/"^^xsd:anyURI ;
     rdfs:isDefinedBy dom: ;
     skos:prefLabel "Document Object Model (DOM) - Living Standard"@en .
+
+svg:Title a owl:Class ;
+    dct:conformsTo <https://www.w3.org/TR/SVG11/struct.html#TitleElement> ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf svg:Element ;
+    skos:definition "The 'title' SVG element provides a title for an SVG document or a description for an SVG container element."@en ;
+    skos:prefLabel "the title element"@en ;
+    xml1:tag "title" .
 
 xml1:Element a owl:Class ;
     dct:conformsTo <http://www.w3.org/XML/id/section/XML-Spec> ;
@@ -4800,6 +5126,12 @@ dom: a void:Dataset,
     owl:versionInfo "0.1.0" ;
     foaf:depiction "https://www.rijksfinancien.nl/themes/custom/indicia_theme/files/logo-rijksoverheid.svg"^^xsd:anyURI ;
     foaf:homepage "https://www.rijksfinancien.nl/"^^xsd:anyURI .
+
+svg:Text a owl:Class ;
+    rdfs:isDefinedBy svg: ;
+    rdfs:subClassOf xml1:Text ;
+    skos:definition "A plain text node in a SVG document."@en ;
+    skos:prefLabel "The SVG DOM text node"@en .
 
 svg:Element a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/text.html#Element> ;
