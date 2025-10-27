@@ -38,7 +38,6 @@ xmlns:cc a xmlns:Attribute,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'cc' attribute is used to specify the Creative Commons namespace within an XML document. It associates elements and attributes with Creative Commons licenses and metadata."@en ;
     skos:prefLabel "the cc attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "cc" .
 
 xmlns:dc a xmlns:Attribute,
@@ -49,7 +48,6 @@ xmlns:dc a xmlns:Attribute,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'dc' attribute is used to specify the Dublin Core namespace within an XML document. It associates elements and attributes with Dublin Core metadata terms."@en ;
     skos:prefLabel "the dc attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "dc" .
 
 xmlns:rdf a xmlns:Attribute,
@@ -60,7 +58,6 @@ xmlns:rdf a xmlns:Attribute,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'rdf' attribute is used to specify the RDF namespace within an XML document. It associates elements and attributes with RDF resources and statements."@en ;
     skos:prefLabel "the rdf attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "rdf" .
 
 xmlns:xlink a xmlns:Attribute,
@@ -71,7 +68,6 @@ xmlns:xlink a xmlns:Attribute,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'xlink' attribute is used to specify the XLink namespace within an XML document. It associates elements and attributes with XLink resources and links."@en ;
     skos:prefLabel "the xlink attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "xlink" .
 
 xmlns:xsi a xmlns:Attribute,
@@ -82,7 +78,6 @@ xmlns:xsi a xmlns:Attribute,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "The 'xsi' attribute is used to specify the XML Schema Instance namespace within an XML document. It associates elements and attributes with XML Schema definitions."@en ;
     skos:prefLabel "the xsi attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "xsi" .
 
 <http://www.w3.org/DOM/id/section/DOMImplementation> a dcm:Text ;
@@ -106,7 +101,7 @@ xmlns:xsi a xmlns:Attribute,
 dom:DocumentElement a owl:Class ;
     dct:conformsTo <http://www.w3.org/DOM/id/section/DocumentElement> ;
     rdfs:isDefinedBy dom: ;
-    rdfs:subClassOf dom:Element ;
+    rdfs:subClassOf dom:DocumentTreeNode ;
     skos:definition "The document element of a document is the element whose parent is that document."@en ;
     skos:prefLabel "Document element"@en .
 
@@ -829,7 +824,6 @@ svg:accent-height a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the distance from the baseline to the accent."@en ;
     skos:prefLabel "the accent-height attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "accent-height" .
 
 svg:accumulate a owl:DatatypeProperty,
@@ -840,7 +834,6 @@ svg:accumulate a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Controls whether or not to accumulate the animation effect for subsequent iterations."@en ;
     skos:prefLabel "the accumulate attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "accumulate" .
 
 svg:additive a owl:DatatypeProperty,
@@ -851,7 +844,6 @@ svg:additive a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Controls whether or not to add the animation effect to the underlying value."@en ;
     skos:prefLabel "the additive attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "additive" .
 
 svg:alignment-baseline a owl:DatatypeProperty,
@@ -862,7 +854,6 @@ svg:alignment-baseline a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how an element is aligned with respect to its parent."@en ;
     skos:prefLabel "the alignment-baseline attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "alignment-baseline" .
 
 svg:alphabetic a owl:DatatypeProperty,
@@ -873,7 +864,6 @@ svg:alphabetic a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the distance from the top of the glyph to the alphabetic baseline."@en ;
     skos:prefLabel "the alphabetic attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "alphabetic" .
 
 svg:amplitude a owl:DatatypeProperty,
@@ -884,7 +874,6 @@ svg:amplitude a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the amplitude of the waveform function."@en ;
     skos:prefLabel "the amplitude attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "amplitude" .
 
 svg:arabic-form a owl:DatatypeProperty,
@@ -895,7 +884,6 @@ svg:arabic-form a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the form of the Arabic characters within a text element."@en ;
     skos:prefLabel "the arabic-form attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "arabic-form" .
 
 svg:ascent a owl:DatatypeProperty,
@@ -906,7 +894,6 @@ svg:ascent a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the distance from the baseline to the highest ascender in a font face."@en ;
     skos:prefLabel "the ascent attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "ascent" .
 
 svg:attributeName a owl:DatatypeProperty,
@@ -917,7 +904,6 @@ svg:attributeName a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the name of the attribute to animate."@en ;
     skos:prefLabel "the attributeName attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "attributeName" .
 
 svg:attributeType a owl:DatatypeProperty,
@@ -928,7 +914,6 @@ svg:attributeType a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the type of attribute to animate."@en ;
     skos:prefLabel "the attributeType attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "attributeType" .
 
 svg:azimuth a owl:DatatypeProperty,
@@ -939,7 +924,6 @@ svg:azimuth a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the direction from which the audio content is perceived to be coming."@en ;
     skos:prefLabel "the azimuth attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "azimuth" .
 
 svg:baseFrequency a owl:DatatypeProperty,
@@ -950,7 +934,6 @@ svg:baseFrequency a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the base frequency for the noise function of the turbulence."@en ;
     skos:prefLabel "the baseFrequency attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "baseFrequency" .
 
 svg:baseProfile a owl:DatatypeProperty,
@@ -961,7 +944,6 @@ svg:baseProfile a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the base profile of the SVG document."@en ;
     skos:prefLabel "the baseProfile attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "baseProfile" .
 
 svg:baseline-shift a owl:DatatypeProperty,
@@ -972,7 +954,6 @@ svg:baseline-shift a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how an element is shifted relative to its baseline."@en ;
     skos:prefLabel "the baseline-shift attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "baseline-shift" .
 
 svg:bbox a owl:DatatypeProperty,
@@ -983,7 +964,6 @@ svg:bbox a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the bounding box of the text."@en ;
     skos:prefLabel "the bbox attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "bbox" .
 
 svg:begin a owl:DatatypeProperty,
@@ -994,7 +974,6 @@ svg:begin a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the begin time for the animation."@en ;
     skos:prefLabel "the begin attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "begin" .
 
 svg:bias a owl:DatatypeProperty,
@@ -1005,7 +984,6 @@ svg:bias a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the bias value for the convolution matrix."@en ;
     skos:prefLabel "the bias attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "bias" .
 
 svg:by a owl:DatatypeProperty,
@@ -1016,7 +994,6 @@ svg:by a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the end value for the animation."@en ;
     skos:prefLabel "the by attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "by" .
 
 svg:calcMode a owl:DatatypeProperty,
@@ -1027,7 +1004,6 @@ svg:calcMode a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the calculation mode for the animation."@en ;
     skos:prefLabel "the calcMode attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "calcMode" .
 
 svg:cap-height a owl:DatatypeProperty,
@@ -1038,7 +1014,6 @@ svg:cap-height a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the distance from the baseline to the top of the capital letters."@en ;
     skos:prefLabel "the cap-height attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "cap-height" .
 
 svg:class a owl:DatatypeProperty,
@@ -1049,7 +1024,6 @@ svg:class a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the class of the element."@en ;
     skos:prefLabel "the class attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "class" .
 
 svg:clip a owl:DatatypeProperty,
@@ -1060,7 +1034,6 @@ svg:clip a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the clip path."@en ;
     skos:prefLabel "the clip attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "clip" .
 
 svg:clip-path a owl:DatatypeProperty,
@@ -1071,7 +1044,6 @@ svg:clip-path a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the ID of the clipping path."@en ;
     skos:prefLabel "the clip-path attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "clip-path" .
 
 svg:clip-rule a owl:DatatypeProperty,
@@ -1082,7 +1054,6 @@ svg:clip-rule a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the algorithm for determining the clipping path."@en ;
     skos:prefLabel "the clip-rule attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "clip-rule" .
 
 svg:clipPathUnits a owl:DatatypeProperty,
@@ -1093,7 +1064,6 @@ svg:clipPathUnits a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the coordinate system for the clip path."@en ;
     skos:prefLabel "the clipPathUnits attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "clipPathUnits" .
 
 svg:color a owl:DatatypeProperty,
@@ -1104,7 +1074,6 @@ svg:color a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the color of the element."@en ;
     skos:prefLabel "the color attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "color" .
 
 svg:color-interpolation a owl:DatatypeProperty,
@@ -1115,7 +1084,6 @@ svg:color-interpolation a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the color interpolation method."@en ;
     skos:prefLabel "the color-interpolation attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "color-interpolation" .
 
 svg:color-interpolation-filters a owl:DatatypeProperty,
@@ -1126,7 +1094,6 @@ svg:color-interpolation-filters a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the color interpolation method for filters."@en ;
     skos:prefLabel "the color-interpolation-filters attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "color-interpolation-filters" .
 
 svg:color-rendering a owl:DatatypeProperty,
@@ -1137,7 +1104,6 @@ svg:color-rendering a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the color rendering method."@en ;
     skos:prefLabel "the color-rendering attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "color-rendering" .
 
 svg:contentScriptType a owl:DatatypeProperty,
@@ -1148,7 +1114,6 @@ svg:contentScriptType a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the scripting language for the content of the 'script' element."@en ;
     skos:prefLabel "the contentScriptType attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "contentScriptType" .
 
 svg:contentStyleType a owl:DatatypeProperty,
@@ -1159,7 +1124,6 @@ svg:contentStyleType a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the styling language for the content of the 'style' element."@en ;
     skos:prefLabel "the contentStyleType attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "contentStyleType" .
 
 svg:cursor a owl:DatatypeProperty,
@@ -1170,7 +1134,6 @@ svg:cursor a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the cursor to be displayed when the mouse pointer is over the element."@en ;
     skos:prefLabel "the cursor attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "cursor" .
 
 svg:cx a owl:DatatypeProperty,
@@ -1181,7 +1144,6 @@ svg:cx a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the x-coordinate of the center of the circle."@en ;
     skos:prefLabel "the cx attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "cx" .
 
 svg:cy a owl:DatatypeProperty,
@@ -1192,7 +1154,6 @@ svg:cy a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the y-coordinate of the center of the circle."@en ;
     skos:prefLabel "the cy attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "cy" .
 
 svg:d a owl:DatatypeProperty,
@@ -1203,7 +1164,6 @@ svg:d a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the path data for the 'path' element."@en ;
     skos:prefLabel "the d attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "d" .
 
 svg:descent a owl:DatatypeProperty,
@@ -1214,7 +1174,6 @@ svg:descent a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the distance from the baseline to the lowest descender in a font face."@en ;
     skos:prefLabel "the descent attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "descent" .
 
 svg:diffuseConstant a owl:DatatypeProperty,
@@ -1225,7 +1184,6 @@ svg:diffuseConstant a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the constant value for the diffuse lighting filter."@en ;
     skos:prefLabel "the diffuseConstant attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "diffuseConstant" .
 
 svg:direction a owl:DatatypeProperty,
@@ -1236,7 +1194,6 @@ svg:direction a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the directionality of the element's text."@en ;
     skos:prefLabel "the direction attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "direction" .
 
 svg:display a owl:DatatypeProperty,
@@ -1247,7 +1204,6 @@ svg:display a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the rendering of the element."@en ;
     skos:prefLabel "the display attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "display" .
 
 svg:divisor a owl:DatatypeProperty,
@@ -1258,7 +1214,6 @@ svg:divisor a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the divisor value for the convolution matrix."@en ;
     skos:prefLabel "the divisor attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "divisor" .
 
 svg:dominant-baseline a owl:DatatypeProperty,
@@ -1269,7 +1224,6 @@ svg:dominant-baseline a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how an element is aligned with respect to its parent."@en ;
     skos:prefLabel "the dominant-baseline attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "dominant-baseline" .
 
 svg:dur a owl:DatatypeProperty,
@@ -1280,7 +1234,6 @@ svg:dur a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the duration for the animation."@en ;
     skos:prefLabel "the dur attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "dur" .
 
 svg:dx a owl:DatatypeProperty,
@@ -1291,7 +1244,6 @@ svg:dx a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the offset along the x-axis for the text position."@en ;
     skos:prefLabel "the dx attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "dx" .
 
 svg:dy a owl:DatatypeProperty,
@@ -1302,7 +1254,6 @@ svg:dy a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the offset along the y-axis for the text position."@en ;
     skos:prefLabel "the dy attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "dy" .
 
 svg:edgeMode a owl:DatatypeProperty,
@@ -1313,7 +1264,6 @@ svg:edgeMode a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the edge mode for the convolution matrix."@en ;
     skos:prefLabel "the edgeMode attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "edgeMode" .
 
 svg:elevation a owl:DatatypeProperty,
@@ -1324,7 +1274,6 @@ svg:elevation a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the elevation angle for the distant light source."@en ;
     skos:prefLabel "the elevation attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "elevation" .
 
 svg:enable-background a owl:DatatypeProperty,
@@ -1335,7 +1284,6 @@ svg:enable-background a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the background that will be applied to the element."@en ;
     skos:prefLabel "the enable-background attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "enable-background" .
 
 svg:end a owl:DatatypeProperty,
@@ -1346,7 +1294,6 @@ svg:end a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the end value for the animation."@en ;
     skos:prefLabel "the end attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "end" .
 
 svg:exponent a owl:DatatypeProperty,
@@ -1357,7 +1304,6 @@ svg:exponent a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the exponent value for the function."@en ;
     skos:prefLabel "the exponent attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "exponent" .
 
 svg:externalResourcesRequired a owl:DatatypeProperty,
@@ -1368,7 +1314,6 @@ svg:externalResourcesRequired a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies whether the referenced resources are required for rendering."@en ;
     skos:prefLabel "the externalResourcesRequired attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "externalResourcesRequired" .
 
 svg:fill a owl:DatatypeProperty,
@@ -1379,7 +1324,6 @@ svg:fill a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the fill color or pattern for an element."@en ;
     skos:prefLabel "the fill attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "fill" .
 
 svg:fill-opacity a owl:DatatypeProperty,
@@ -1390,7 +1334,6 @@ svg:fill-opacity a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the opacity of the fill color."@en ;
     skos:prefLabel "the fill-opacity attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "fill-opacity" .
 
 svg:fill-rule a owl:DatatypeProperty,
@@ -1401,7 +1344,6 @@ svg:fill-rule a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the algorithm for determining the inside of the shape."@en ;
     skos:prefLabel "the fill-rule attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "fill-rule" .
 
 svg:filterRes a owl:DatatypeProperty,
@@ -1412,7 +1354,6 @@ svg:filterRes a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the resolution for the filter effects."@en ;
     skos:prefLabel "the filterRes attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "filterRes" .
 
 svg:filterUnits a owl:DatatypeProperty,
@@ -1423,7 +1364,6 @@ svg:filterUnits a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the coordinate system for the filter effects."@en ;
     skos:prefLabel "the filterUnits attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "filterUnits" .
 
 svg:flood-color a owl:DatatypeProperty,
@@ -1434,7 +1374,6 @@ svg:flood-color a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the color of the flood fill."@en ;
     skos:prefLabel "the flood-color attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "flood-color" .
 
 svg:flood-opacity a owl:DatatypeProperty,
@@ -1445,7 +1384,6 @@ svg:flood-opacity a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the opacity of the flood fill."@en ;
     skos:prefLabel "the flood-opacity attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "flood-opacity" .
 
 svg:font-family a owl:DatatypeProperty,
@@ -1456,7 +1394,6 @@ svg:font-family a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the font family for the text."@en ;
     skos:prefLabel "the font-family attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "font-family" .
 
 svg:font-size a owl:DatatypeProperty,
@@ -1467,7 +1404,6 @@ svg:font-size a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the font size for the text."@en ;
     skos:prefLabel "the font-size attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "font-size" .
 
 svg:font-size-adjust a owl:DatatypeProperty,
@@ -1478,7 +1414,6 @@ svg:font-size-adjust a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the aspect value for font size."@en ;
     skos:prefLabel "the font-size-adjust attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "font-size-adjust" .
 
 svg:font-stretch a owl:DatatypeProperty,
@@ -1489,7 +1424,6 @@ svg:font-stretch a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the font stretch for the text."@en ;
     skos:prefLabel "the font-stretch attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "font-stretch" .
 
 svg:font-style a owl:DatatypeProperty,
@@ -1500,7 +1434,6 @@ svg:font-style a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the font style for the text."@en ;
     skos:prefLabel "the font-style attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "font-style" .
 
 svg:font-variant a owl:DatatypeProperty,
@@ -1511,7 +1444,6 @@ svg:font-variant a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the font variant for the text."@en ;
     skos:prefLabel "the font-variant attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "font-variant" .
 
 svg:font-weight a owl:DatatypeProperty,
@@ -1522,7 +1454,6 @@ svg:font-weight a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the font weight for the text."@en ;
     skos:prefLabel "the font-weight attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "font-weight" .
 
 svg:format a owl:DatatypeProperty,
@@ -1533,7 +1464,6 @@ svg:format a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the format of the audio data."@en ;
     skos:prefLabel "the format attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "format" .
 
 svg:from a owl:DatatypeProperty,
@@ -1544,7 +1474,6 @@ svg:from a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the start value for the animation."@en ;
     skos:prefLabel "the from attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "from" .
 
 svg:fx a owl:DatatypeProperty,
@@ -1555,7 +1484,6 @@ svg:fx a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the x-coordinate of the center of the first circle in the radial gradient."@en ;
     skos:prefLabel "the fx attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "fx" .
 
 svg:fy a owl:DatatypeProperty,
@@ -1566,7 +1494,6 @@ svg:fy a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the y-coordinate of the center of the first circle in the radial gradient."@en ;
     skos:prefLabel "the fy attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "fy" .
 
 svg:g1 a owl:DatatypeProperty,
@@ -1577,7 +1504,6 @@ svg:g1 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the transformation matrix for the font."@en ;
     skos:prefLabel "the g1 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "g1" .
 
 svg:g2 a owl:DatatypeProperty,
@@ -1588,7 +1514,6 @@ svg:g2 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the transformation matrix for the font."@en ;
     skos:prefLabel "the g2 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "g2" .
 
 svg:glyph-name a owl:DatatypeProperty,
@@ -1599,7 +1524,6 @@ svg:glyph-name a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the name of the glyph."@en ;
     skos:prefLabel "the glyph-name attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "glyph-name" .
 
 svg:glyph-orientation-horizontal a owl:DatatypeProperty,
@@ -1610,7 +1534,6 @@ svg:glyph-orientation-horizontal a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the rotation angle for horizontal glyphs."@en ;
     skos:prefLabel "the glyph-orientation-horizontal attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "glyph-orientation-horizontal" .
 
 svg:glyph-orientation-vertical a owl:DatatypeProperty,
@@ -1621,7 +1544,6 @@ svg:glyph-orientation-vertical a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the rotation angle for vertical glyphs."@en ;
     skos:prefLabel "the glyph-orientation-vertical attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "glyph-orientation-vertical" .
 
 svg:glyphRef a owl:DatatypeProperty,
@@ -1632,7 +1554,6 @@ svg:glyphRef a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the reference to the glyph."@en ;
     skos:prefLabel "the glyphRef attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "glyphRef" .
 
 svg:gradientTransform a owl:DatatypeProperty,
@@ -1643,7 +1564,6 @@ svg:gradientTransform a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the transformation applied to the gradient."@en ;
     skos:prefLabel "the gradientTransform attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "gradientTransform" .
 
 svg:gradientUnits a owl:DatatypeProperty,
@@ -1654,7 +1574,6 @@ svg:gradientUnits a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the coordinate system for the gradient."@en ;
     skos:prefLabel "the gradientUnits attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "gradientUnits" .
 
 svg:hanging a owl:DatatypeProperty,
@@ -1665,7 +1584,6 @@ svg:hanging a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the hanging value for the font."@en ;
     skos:prefLabel "the hanging attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "hanging" .
 
 svg:height a owl:DatatypeProperty,
@@ -1676,7 +1594,6 @@ svg:height a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the height of an element."@en ;
     skos:prefLabel "the height attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "height" .
 
 svg:horiz-adv-x a owl:DatatypeProperty,
@@ -1687,7 +1604,6 @@ svg:horiz-adv-x a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the horizontal advance for the glyph."@en ;
     skos:prefLabel "the horiz-adv-x attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "horiz-adv-x" .
 
 svg:horiz-origin-x a owl:DatatypeProperty,
@@ -1698,7 +1614,6 @@ svg:horiz-origin-x a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the horizontal origin for the glyph."@en ;
     skos:prefLabel "the horiz-origin-x attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "horiz-origin-x" .
 
 svg:horiz-origin-y a owl:DatatypeProperty,
@@ -1709,7 +1624,6 @@ svg:horiz-origin-y a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the vertical origin for the glyph."@en ;
     skos:prefLabel "the horiz-origin-y attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "horiz-origin-y" .
 
 svg:id a owl:DatatypeProperty,
@@ -1720,7 +1634,6 @@ svg:id a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the identifier for an element."@en ;
     skos:prefLabel "the id attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "id" .
 
 svg:ideographic a owl:DatatypeProperty,
@@ -1731,7 +1644,6 @@ svg:ideographic a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the ideographic value for the font."@en ;
     skos:prefLabel "the ideographic attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "ideographic" .
 
 svg:image-rendering a owl:DatatypeProperty,
@@ -1742,7 +1654,6 @@ svg:image-rendering a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how the image should be scaled and smoothed."@en ;
     skos:prefLabel "the image-rendering attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "image-rendering" .
 
 svg:in a owl:DatatypeProperty,
@@ -1753,7 +1664,6 @@ svg:in a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the input for the merge node."@en ;
     skos:prefLabel "the in attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "in" .
 
 svg:in2 a owl:DatatypeProperty,
@@ -1764,7 +1674,6 @@ svg:in2 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the second input for the merge node."@en ;
     skos:prefLabel "the in2 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "in2" .
 
 svg:intercept a owl:DatatypeProperty,
@@ -1775,7 +1684,6 @@ svg:intercept a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the intercept value for the function."@en ;
     skos:prefLabel "the intercept attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "intercept" .
 
 svg:k a owl:DatatypeProperty,
@@ -1786,7 +1694,6 @@ svg:k a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the k value for the feComposite element."@en ;
     skos:prefLabel "the k attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "k" .
 
 svg:k1 a owl:DatatypeProperty,
@@ -1797,7 +1704,6 @@ svg:k1 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the k1 value for the feComposite element."@en ;
     skos:prefLabel "the k1 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "k1" .
 
 svg:k2 a owl:DatatypeProperty,
@@ -1808,7 +1714,6 @@ svg:k2 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the k2 value for the feComposite element."@en ;
     skos:prefLabel "the k2 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "k2" .
 
 svg:k3 a owl:DatatypeProperty,
@@ -1819,7 +1724,6 @@ svg:k3 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the k3 value for the feComposite element."@en ;
     skos:prefLabel "the k3 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "k3" .
 
 svg:k4 a owl:DatatypeProperty,
@@ -1830,7 +1734,6 @@ svg:k4 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the k4 value for the feComposite element."@en ;
     skos:prefLabel "the k4 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "k4" .
 
 svg:kernelMatrix a owl:DatatypeProperty,
@@ -1841,7 +1744,6 @@ svg:kernelMatrix a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the kernel matrix for the convolution."@en ;
     skos:prefLabel "the kernelMatrix attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "kernelMatrix" .
 
 svg:kernelUnitLength a owl:DatatypeProperty,
@@ -1852,7 +1754,6 @@ svg:kernelUnitLength a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the unit length for the kernel."@en ;
     skos:prefLabel "the kernelUnitLength attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "kernelUnitLength" .
 
 svg:kerning a owl:DatatypeProperty,
@@ -1863,7 +1764,6 @@ svg:kerning a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies whether kerning is applied."@en ;
     skos:prefLabel "the kerning attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "kerning" .
 
 svg:lang a owl:DatatypeProperty,
@@ -1874,7 +1774,6 @@ svg:lang a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the language of an element."@en ;
     skos:prefLabel "the lang attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "lang" .
 
 svg:lengthAdjust a owl:DatatypeProperty,
@@ -1885,7 +1784,6 @@ svg:lengthAdjust a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how text is adjusted for length."@en ;
     skos:prefLabel "the lengthAdjust attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "lengthAdjust" .
 
 svg:letter-spacing a owl:DatatypeProperty,
@@ -1896,7 +1794,6 @@ svg:letter-spacing a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the spacing between characters."@en ;
     skos:prefLabel "the letter-spacing attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "letter-spacing" .
 
 svg:lighting-color a owl:DatatypeProperty,
@@ -1907,7 +1804,6 @@ svg:lighting-color a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the color for lighting effects."@en ;
     skos:prefLabel "the lighting-color attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "lighting-color" .
 
 svg:limitingConeAngle a owl:DatatypeProperty,
@@ -1918,7 +1814,6 @@ svg:limitingConeAngle a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the limiting cone angle for the spotlight."@en ;
     skos:prefLabel "the limitingConeAngle attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "limitingConeAngle" .
 
 svg:local a owl:DatatypeProperty,
@@ -1929,7 +1824,6 @@ svg:local a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the local value for the point light."@en ;
     skos:prefLabel "the local attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "local" .
 
 svg:marker-end a owl:DatatypeProperty,
@@ -1940,7 +1834,6 @@ svg:marker-end a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the marker for the end of the element."@en ;
     skos:prefLabel "the marker-end attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "marker-end" .
 
 svg:marker-mid a owl:DatatypeProperty,
@@ -1951,7 +1844,6 @@ svg:marker-mid a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the marker for the middle of the element."@en ;
     skos:prefLabel "the marker-mid attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "marker-mid" .
 
 svg:marker-start a owl:DatatypeProperty,
@@ -1962,7 +1854,6 @@ svg:marker-start a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the marker for the start of the element."@en ;
     skos:prefLabel "the marker-start attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "marker-start" .
 
 svg:markerHeight a owl:DatatypeProperty,
@@ -1973,7 +1864,6 @@ svg:markerHeight a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the height of the marker."@en ;
     skos:prefLabel "the markerHeight attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "markerHeight" .
 
 svg:markerUnits a owl:DatatypeProperty,
@@ -1984,7 +1874,6 @@ svg:markerUnits a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the coordinate system for the marker."@en ;
     skos:prefLabel "the markerUnits attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "markerUnits" .
 
 svg:markerWidth a owl:DatatypeProperty,
@@ -1995,7 +1884,6 @@ svg:markerWidth a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the width of the marker."@en ;
     skos:prefLabel "the markerWidth attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "markerWidth" .
 
 svg:maskContentUnits a owl:DatatypeProperty,
@@ -2006,7 +1894,6 @@ svg:maskContentUnits a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the coordinate system for the mask content."@en ;
     skos:prefLabel "the maskContentUnits attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "maskContentUnits" .
 
 svg:maskUnits a owl:DatatypeProperty,
@@ -2017,7 +1904,6 @@ svg:maskUnits a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the coordinate system for the mask."@en ;
     skos:prefLabel "the maskUnits attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "maskUnits" .
 
 svg:mathematical a owl:DatatypeProperty,
@@ -2028,7 +1914,6 @@ svg:mathematical a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the mathematical value for the font."@en ;
     skos:prefLabel "the mathematical attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "mathematical" .
 
 svg:max a owl:DatatypeProperty,
@@ -2039,7 +1924,6 @@ svg:max a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the maximum value for the animation."@en ;
     skos:prefLabel "the max attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "max" .
 
 svg:media a owl:DatatypeProperty,
@@ -2050,7 +1934,6 @@ svg:media a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the media for the style."@en ;
     skos:prefLabel "the media attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "media" .
 
 svg:method a owl:DatatypeProperty,
@@ -2061,7 +1944,6 @@ svg:method a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the method for the feColorMatrix."@en ;
     skos:prefLabel "the method attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "method" .
 
 svg:min a owl:DatatypeProperty,
@@ -2072,7 +1954,6 @@ svg:min a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the minimum value for the animation."@en ;
     skos:prefLabel "the min attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "min" .
 
 svg:mode a owl:DatatypeProperty,
@@ -2083,7 +1964,6 @@ svg:mode a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the mode for the feBlend."@en ;
     skos:prefLabel "the mode attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "mode" .
 
 svg:name a owl:DatatypeProperty,
@@ -2094,7 +1974,6 @@ svg:name a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the name of the animation."@en ;
     skos:prefLabel "the name attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "name" .
 
 svg:numOctaves a owl:DatatypeProperty,
@@ -2105,7 +1984,6 @@ svg:numOctaves a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the number of octaves for the feTurbulence."@en ;
     skos:prefLabel "the numOctaves attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "numOctaves" .
 
 svg:offset a owl:DatatypeProperty,
@@ -2116,7 +1994,6 @@ svg:offset a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the offset for the stop."@en ;
     skos:prefLabel "the offset attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "offset" .
 
 svg:onabort a owl:DatatypeProperty,
@@ -2127,7 +2004,6 @@ svg:onabort a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onabort event handler."@en ;
     skos:prefLabel "the onabort attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onabort" .
 
 svg:onactivate a owl:DatatypeProperty,
@@ -2138,7 +2014,6 @@ svg:onactivate a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onactivate event handler."@en ;
     skos:prefLabel "the onactivate attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onactivate" .
 
 svg:onbegin a owl:DatatypeProperty,
@@ -2149,7 +2024,6 @@ svg:onbegin a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onbegin event handler."@en ;
     skos:prefLabel "the onbegin attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onbegin" .
 
 svg:onclick a owl:DatatypeProperty,
@@ -2160,7 +2034,6 @@ svg:onclick a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onclick event handler."@en ;
     skos:prefLabel "the onclick attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onclick" .
 
 svg:onend a owl:DatatypeProperty,
@@ -2171,7 +2044,6 @@ svg:onend a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onend event handler."@en ;
     skos:prefLabel "the onend attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onend" .
 
 svg:onerror a owl:DatatypeProperty,
@@ -2182,7 +2054,6 @@ svg:onerror a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onerror event handler."@en ;
     skos:prefLabel "the onerror attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onerror" .
 
 svg:onfocusin a owl:DatatypeProperty,
@@ -2193,7 +2064,6 @@ svg:onfocusin a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onfocusin event handler."@en ;
     skos:prefLabel "the onfocusin attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onfocusin" .
 
 svg:onfocusout a owl:DatatypeProperty,
@@ -2204,7 +2074,6 @@ svg:onfocusout a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onfocusout event handler."@en ;
     skos:prefLabel "the onfocusout attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onfocusout" .
 
 svg:onload a owl:DatatypeProperty,
@@ -2215,7 +2084,6 @@ svg:onload a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onload event handler."@en ;
     skos:prefLabel "the onload attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onload" .
 
 svg:onmousedown a owl:DatatypeProperty,
@@ -2226,7 +2094,6 @@ svg:onmousedown a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onmousedown event handler."@en ;
     skos:prefLabel "the onmousedown attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onmousedown" .
 
 svg:onmousemove a owl:DatatypeProperty,
@@ -2237,7 +2104,6 @@ svg:onmousemove a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onmousemove event handler."@en ;
     skos:prefLabel "the onmousemove attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onmousemove" .
 
 svg:onmouseout a owl:DatatypeProperty,
@@ -2248,7 +2114,6 @@ svg:onmouseout a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onmouseout event handler."@en ;
     skos:prefLabel "the onmouseout attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onmouseout" .
 
 svg:onmouseover a owl:DatatypeProperty,
@@ -2259,7 +2124,6 @@ svg:onmouseover a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onmouseover event handler."@en ;
     skos:prefLabel "the onmouseover attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onmouseover" .
 
 svg:onmouseup a owl:DatatypeProperty,
@@ -2270,7 +2134,6 @@ svg:onmouseup a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onmouseup event handler."@en ;
     skos:prefLabel "the onmouseup attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onmouseup" .
 
 svg:onrepeat a owl:DatatypeProperty,
@@ -2281,7 +2144,6 @@ svg:onrepeat a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onrepeat event handler."@en ;
     skos:prefLabel "the onrepeat attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onrepeat" .
 
 svg:onresize a owl:DatatypeProperty,
@@ -2292,7 +2154,6 @@ svg:onresize a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onresize event handler."@en ;
     skos:prefLabel "the onresize attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onresize" .
 
 svg:onscroll a owl:DatatypeProperty,
@@ -2303,7 +2164,6 @@ svg:onscroll a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onscroll event handler."@en ;
     skos:prefLabel "the onscroll attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onscroll" .
 
 svg:onunload a owl:DatatypeProperty,
@@ -2314,7 +2174,6 @@ svg:onunload a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onunload event handler."@en ;
     skos:prefLabel "the onunload attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onunload" .
 
 svg:onzoom a owl:DatatypeProperty,
@@ -2325,7 +2184,6 @@ svg:onzoom a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the onzoom event handler."@en ;
     skos:prefLabel "the onzoom attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "onzoom" .
 
 svg:opacity a owl:DatatypeProperty,
@@ -2336,7 +2194,6 @@ svg:opacity a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the opacity of the element."@en ;
     skos:prefLabel "the opacity attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "opacity" .
 
 svg:operator a owl:DatatypeProperty,
@@ -2347,7 +2204,6 @@ svg:operator a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the kind of operation to perform."@en ;
     skos:prefLabel "the operator attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "operator" .
 
 svg:order a owl:DatatypeProperty,
@@ -2358,7 +2214,6 @@ svg:order a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the type of convolution matrix."@en ;
     skos:prefLabel "the order attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "order" .
 
 svg:orient a owl:DatatypeProperty,
@@ -2369,7 +2224,6 @@ svg:orient a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how the marker is oriented."@en ;
     skos:prefLabel "the orient attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "orient" .
 
 svg:orientation a owl:DatatypeProperty,
@@ -2380,7 +2234,6 @@ svg:orientation a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the orientation of the glyphs in the font."@en ;
     skos:prefLabel "the orientation attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "orientation" .
 
 svg:origin a owl:DatatypeProperty,
@@ -2391,7 +2244,6 @@ svg:origin a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the location of the light source."@en ;
     skos:prefLabel "the origin attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "origin" .
 
 svg:overflow a owl:DatatypeProperty,
@@ -2402,7 +2254,6 @@ svg:overflow a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how to handle overflow in the element."@en ;
     skos:prefLabel "the overflow attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "overflow" .
 
 svg:overline-position a owl:DatatypeProperty,
@@ -2413,7 +2264,6 @@ svg:overline-position a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the position of the overline."@en ;
     skos:prefLabel "the overline-position attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "overline-position" .
 
 svg:overline-thickness a owl:DatatypeProperty,
@@ -2424,7 +2274,6 @@ svg:overline-thickness a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the thickness of the overline."@en ;
     skos:prefLabel "the overline-thickness attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "overline-thickness" .
 
 svg:panose-1 a owl:DatatypeProperty,
@@ -2435,7 +2284,6 @@ svg:panose-1 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the PANOSE-1 number."@en ;
     skos:prefLabel "the panose-1 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "panose-1" .
 
 svg:pathLength a owl:DatatypeProperty,
@@ -2446,7 +2294,6 @@ svg:pathLength a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the total length of the path."@en ;
     skos:prefLabel "the pathLength attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "pathLength" .
 
 svg:patternContentUnits a owl:DatatypeProperty,
@@ -2457,7 +2304,6 @@ svg:patternContentUnits a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the coordinate system for the contents of the pattern."@en ;
     skos:prefLabel "the patternContentUnits attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "patternContentUnits" .
 
 svg:patternTransform a owl:DatatypeProperty,
@@ -2468,7 +2314,6 @@ svg:patternTransform a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies a transformation matrix for the pattern."@en ;
     skos:prefLabel "the patternTransform attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "patternTransform" .
 
 svg:patternUnits a owl:DatatypeProperty,
@@ -2479,7 +2324,6 @@ svg:patternUnits a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the coordinate system for the entire pattern."@en ;
     skos:prefLabel "the patternUnits attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "patternUnits" .
 
 svg:pointer-events a owl:DatatypeProperty,
@@ -2490,7 +2334,6 @@ svg:pointer-events a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how the element should react to pointer events."@en ;
     skos:prefLabel "the pointer-events attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "pointer-events" .
 
 svg:points a owl:DatatypeProperty,
@@ -2501,7 +2344,6 @@ svg:points a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the list of points defining the polyline."@en ;
     skos:prefLabel "the points attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "points" .
 
 svg:pointsAtX a owl:DatatypeProperty,
@@ -2512,7 +2354,6 @@ svg:pointsAtX a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the x-coordinate for the light position."@en ;
     skos:prefLabel "the pointsAtX attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "pointsAtX" .
 
 svg:pointsAtY a owl:DatatypeProperty,
@@ -2523,7 +2364,6 @@ svg:pointsAtY a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the y-coordinate for the light position."@en ;
     skos:prefLabel "the pointsAtY attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "pointsAtY" .
 
 svg:pointsAtZ a owl:DatatypeProperty,
@@ -2534,7 +2374,6 @@ svg:pointsAtZ a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the z-coordinate for the light position."@en ;
     skos:prefLabel "the pointsAtZ attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "pointsAtZ" .
 
 svg:preserveAlpha a owl:DatatypeProperty,
@@ -2545,7 +2384,6 @@ svg:preserveAlpha a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies whether to preserve the alpha channel."@en ;
     skos:prefLabel "the preserveAlpha attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "preserveAlpha" .
 
 svg:preserveAspectRatio a owl:DatatypeProperty,
@@ -2556,7 +2394,6 @@ svg:preserveAspectRatio a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how an element is fitted into a viewBox."@en ;
     skos:prefLabel "the preserveAspectRatio attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "preserveAspectRatio" .
 
 svg:primitiveUnits a owl:DatatypeProperty,
@@ -2567,7 +2404,6 @@ svg:primitiveUnits a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the coordinate system for the attributes of the filter."@en ;
     skos:prefLabel "the primitiveUnits attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "primitiveUnits" .
 
 svg:r a owl:DatatypeProperty,
@@ -2578,7 +2414,6 @@ svg:r a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the radius of a circle."@en ;
     skos:prefLabel "the r attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "r" .
 
 svg:radius a owl:DatatypeProperty,
@@ -2589,7 +2424,6 @@ svg:radius a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the radius of the gradient."@en ;
     skos:prefLabel "the radius attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "radius" .
 
 svg:refX a owl:DatatypeProperty,
@@ -2600,7 +2434,6 @@ svg:refX a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the x-coordinate for the reference point of the marker."@en ;
     skos:prefLabel "the refX attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "refX" .
 
 svg:refY a owl:DatatypeProperty,
@@ -2611,7 +2444,6 @@ svg:refY a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the y-coordinate for the reference point of the marker."@en ;
     skos:prefLabel "the refY attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "refY" .
 
 svg:rendering-intent a owl:DatatypeProperty,
@@ -2622,7 +2454,6 @@ svg:rendering-intent a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the rendering intent of the color profile."@en ;
     skos:prefLabel "the rendering-intent attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "rendering-intent" .
 
 svg:repeatCount a owl:DatatypeProperty,
@@ -2633,7 +2464,6 @@ svg:repeatCount a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the number of times an animation repeats."@en ;
     skos:prefLabel "the repeatCount attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "repeatCount" .
 
 svg:repeatDur a owl:DatatypeProperty,
@@ -2644,7 +2474,6 @@ svg:repeatDur a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the total duration of an animation repeat."@en ;
     skos:prefLabel "the repeatDur attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "repeatDur" .
 
 svg:requiredExtensions a owl:DatatypeProperty,
@@ -2655,7 +2484,6 @@ svg:requiredExtensions a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the list of required extensions for the script."@en ;
     skos:prefLabel "the requiredExtensions attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "requiredExtensions" .
 
 svg:requiredFeatures a owl:DatatypeProperty,
@@ -2666,7 +2494,6 @@ svg:requiredFeatures a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the list of required features for the script."@en ;
     skos:prefLabel "the requiredFeatures attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "requiredFeatures" .
 
 svg:restart a owl:DatatypeProperty,
@@ -2677,7 +2504,6 @@ svg:restart a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the restart behavior of an animation."@en ;
     skos:prefLabel "the restart attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "restart" .
 
 svg:result a owl:DatatypeProperty,
@@ -2688,7 +2514,6 @@ svg:result a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the result name for the filter."@en ;
     skos:prefLabel "the result attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "result" .
 
 svg:rotate a owl:DatatypeProperty,
@@ -2699,7 +2524,6 @@ svg:rotate a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the rotation value for an animation."@en ;
     skos:prefLabel "the rotate attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "rotate" .
 
 svg:rx a owl:DatatypeProperty,
@@ -2710,7 +2534,6 @@ svg:rx a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the radius along the x-axis of an ellipse."@en ;
     skos:prefLabel "the rx attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "rx" .
 
 svg:ry a owl:DatatypeProperty,
@@ -2721,7 +2544,6 @@ svg:ry a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the radius along the y-axis of an ellipse."@en ;
     skos:prefLabel "the ry attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "ry" .
 
 svg:scale a owl:DatatypeProperty,
@@ -2732,7 +2554,6 @@ svg:scale a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the scaling value for an animation."@en ;
     skos:prefLabel "the scale attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "scale" .
 
 svg:seed a owl:DatatypeProperty,
@@ -2743,7 +2564,6 @@ svg:seed a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the random number generator seed for turbulence."@en ;
     skos:prefLabel "the seed attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "seed" .
 
 svg:shape-rendering a owl:DatatypeProperty,
@@ -2754,7 +2574,6 @@ svg:shape-rendering a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the quality of rendering for shapes."@en ;
     skos:prefLabel "the shape-rendering attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "shape-rendering" .
 
 svg:slope a owl:DatatypeProperty,
@@ -2765,7 +2584,6 @@ svg:slope a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the slope of a linear function."@en ;
     skos:prefLabel "the slope attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "slope" .
 
 svg:spacing a owl:DatatypeProperty,
@@ -2776,7 +2594,6 @@ svg:spacing a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the spacing between characters in a font."@en ;
     skos:prefLabel "the spacing attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "spacing" .
 
 svg:specularConstant a owl:DatatypeProperty,
@@ -2787,7 +2604,6 @@ svg:specularConstant a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the specular constant for a light source."@en ;
     skos:prefLabel "the specularConstant attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "specularConstant" .
 
 svg:specularExponent a owl:DatatypeProperty,
@@ -2798,7 +2614,6 @@ svg:specularExponent a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the specular exponent for a light source."@en ;
     skos:prefLabel "the specularExponent attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "specularExponent" .
 
 svg:spreadMethod a owl:DatatypeProperty,
@@ -2809,7 +2624,6 @@ svg:spreadMethod a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how color interpolation should be performed for gradients."@en ;
     skos:prefLabel "the spreadMethod attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "spreadMethod" .
 
 svg:startOffset a owl:DatatypeProperty,
@@ -2820,7 +2634,6 @@ svg:startOffset a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the starting offset of a text along a path."@en ;
     skos:prefLabel "the startOffset attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "startOffset" .
 
 svg:stdDeviation a owl:DatatypeProperty,
@@ -2831,7 +2644,6 @@ svg:stdDeviation a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the standard deviation for the blur operation."@en ;
     skos:prefLabel "the stdDeviation attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stdDeviation" .
 
 svg:stemh a owl:DatatypeProperty,
@@ -2842,7 +2654,6 @@ svg:stemh a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the height of the dominant vertical stems of glyphs in the font."@en ;
     skos:prefLabel "the stemh attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stemh" .
 
 svg:stemv a owl:DatatypeProperty,
@@ -2853,7 +2664,6 @@ svg:stemv a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the width of the dominant horizontal stems of glyphs in the font."@en ;
     skos:prefLabel "the stemv attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stemv" .
 
 svg:stitchTiles a owl:DatatypeProperty,
@@ -2864,7 +2674,6 @@ svg:stitchTiles a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how turbulence values are treated at tile boundaries."@en ;
     skos:prefLabel "the stitchTiles attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stitchTiles" .
 
 svg:stop-color a owl:DatatypeProperty,
@@ -2875,7 +2684,6 @@ svg:stop-color a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the color of the stop."@en ;
     skos:prefLabel "the stop-color attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stop-color" .
 
 svg:stop-opacity a owl:DatatypeProperty,
@@ -2886,7 +2694,6 @@ svg:stop-opacity a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the opacity of the stop."@en ;
     skos:prefLabel "the stop-opacity attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stop-opacity" .
 
 svg:strikethrough-position a owl:DatatypeProperty,
@@ -2897,7 +2704,6 @@ svg:strikethrough-position a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the position of the strikethrough line relative to the baseline."@en ;
     skos:prefLabel "the strikethrough-position attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "strikethrough-position" .
 
 svg:strikethrough-thickness a owl:DatatypeProperty,
@@ -2908,7 +2714,6 @@ svg:strikethrough-thickness a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the thickness of the strikethrough line."@en ;
     skos:prefLabel "the strikethrough-thickness attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "strikethrough-thickness" .
 
 svg:string a owl:DatatypeProperty,
@@ -2919,7 +2724,6 @@ svg:string a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the string to be rendered by a 'tref' element."@en ;
     skos:prefLabel "the string attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "string" .
 
 svg:stroke a owl:DatatypeProperty,
@@ -2930,7 +2734,6 @@ svg:stroke a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the color of the stroke."@en ;
     skos:prefLabel "the stroke attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stroke" .
 
 svg:stroke-dasharray a owl:DatatypeProperty,
@@ -2941,7 +2744,6 @@ svg:stroke-dasharray a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the pattern of dashes and gaps used to stroke paths."@en ;
     skos:prefLabel "the stroke-dasharray attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stroke-dasharray" .
 
 svg:stroke-dashoffset a owl:DatatypeProperty,
@@ -2952,7 +2754,6 @@ svg:stroke-dashoffset a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the distance into the dash pattern to start the dash."@en ;
     skos:prefLabel "the stroke-dashoffset attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stroke-dashoffset" .
 
 svg:stroke-linecap a owl:DatatypeProperty,
@@ -2963,7 +2764,6 @@ svg:stroke-linecap a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the shape used to draw the endpoints of strokes."@en ;
     skos:prefLabel "the stroke-linecap attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stroke-linecap" .
 
 svg:stroke-linejoin a owl:DatatypeProperty,
@@ -2974,7 +2774,6 @@ svg:stroke-linejoin a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the shape used to join two line segments."@en ;
     skos:prefLabel "the stroke-linejoin attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stroke-linejoin" .
 
 svg:stroke-miterlimit a owl:DatatypeProperty,
@@ -2985,7 +2784,6 @@ svg:stroke-miterlimit a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the limit for the ratio of the length of the miter to the stroke width."@en ;
     skos:prefLabel "the stroke-miterlimit attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stroke-miterlimit" .
 
 svg:stroke-opacity a owl:DatatypeProperty,
@@ -2996,7 +2794,6 @@ svg:stroke-opacity a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the opacity of the stroke."@en ;
     skos:prefLabel "the stroke-opacity attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stroke-opacity" .
 
 svg:stroke-width a owl:DatatypeProperty,
@@ -3007,7 +2804,6 @@ svg:stroke-width a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the width of the stroke."@en ;
     skos:prefLabel "the stroke-width attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "stroke-width" .
 
 svg:surfaceScale a owl:DatatypeProperty,
@@ -3018,7 +2814,6 @@ svg:surfaceScale a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the amount of exaggeration of the light source."@en ;
     skos:prefLabel "the surfaceScale attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "surfaceScale" .
 
 svg:systemLanguage a owl:DatatypeProperty,
@@ -3029,7 +2824,6 @@ svg:systemLanguage a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the language codes that the SVG user agent supports."@en ;
     skos:prefLabel "the systemLanguage attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "systemLanguage" .
 
 svg:tableValues a owl:DatatypeProperty,
@@ -3040,7 +2834,6 @@ svg:tableValues a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the list of table values used by the function."@en ;
     skos:prefLabel "the tableValues attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "tableValues" .
 
 svg:target a owl:DatatypeProperty,
@@ -3051,7 +2844,6 @@ svg:target a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the target destination of a link."@en ;
     skos:prefLabel "the target attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "target" .
 
 svg:targetX a owl:DatatypeProperty,
@@ -3062,7 +2854,6 @@ svg:targetX a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the target x-axis displacement for the convolution filter."@en ;
     skos:prefLabel "the targetX attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "targetX" .
 
 svg:targetY a owl:DatatypeProperty,
@@ -3073,7 +2864,6 @@ svg:targetY a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the target y-axis displacement for the convolution filter."@en ;
     skos:prefLabel "the targetY attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "targetY" .
 
 svg:text-anchor a owl:DatatypeProperty,
@@ -3084,7 +2874,6 @@ svg:text-anchor a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how text is horizontally aligned."@en ;
     skos:prefLabel "the text-anchor attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "text-anchor" .
 
 svg:text-decoration a owl:DatatypeProperty,
@@ -3095,7 +2884,6 @@ svg:text-decoration a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies decorations added to text."@en ;
     skos:prefLabel "the text-decoration attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "text-decoration" .
 
 svg:text-rendering a owl:DatatypeProperty,
@@ -3106,7 +2894,6 @@ svg:text-rendering a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies how text is rendered."@en ;
     skos:prefLabel "the text-rendering attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "text-rendering" .
 
 svg:textLength a owl:DatatypeProperty,
@@ -3117,7 +2904,6 @@ svg:textLength a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the total length of the text within a text element."@en ;
     skos:prefLabel "the textLength attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "textLength" .
 
 svg:to a owl:DatatypeProperty,
@@ -3128,7 +2914,6 @@ svg:to a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the end position for the animation."@en ;
     skos:prefLabel "the to attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "to" .
 
 svg:transform a owl:DatatypeProperty,
@@ -3139,7 +2924,6 @@ svg:transform a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies a transformation for an element."@en ;
     skos:prefLabel "the transform attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "transform" .
 
 svg:type a owl:DatatypeProperty,
@@ -3150,7 +2934,6 @@ svg:type a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the type of data format."@en ;
     skos:prefLabel "the type attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "type" .
 
 svg:u1 a owl:DatatypeProperty,
@@ -3161,7 +2944,6 @@ svg:u1 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the first URI for the font."@en ;
     skos:prefLabel "the u1 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "u1" .
 
 svg:u2 a owl:DatatypeProperty,
@@ -3172,7 +2954,6 @@ svg:u2 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the second URI for the font."@en ;
     skos:prefLabel "the u2 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "u2" .
 
 svg:underline-position a owl:DatatypeProperty,
@@ -3183,7 +2964,6 @@ svg:underline-position a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the position of the underline relative to the baseline."@en ;
     skos:prefLabel "the underline-position attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "underline-position" .
 
 svg:underline-thickness a owl:DatatypeProperty,
@@ -3194,7 +2974,6 @@ svg:underline-thickness a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the thickness of the underline."@en ;
     skos:prefLabel "the underline-thickness attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "underline-thickness" .
 
 svg:unicode a owl:DatatypeProperty,
@@ -3205,7 +2984,6 @@ svg:unicode a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the Unicode value for the glyph."@en ;
     skos:prefLabel "the unicode attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "unicode" .
 
 svg:unicode-bidi a owl:DatatypeProperty,
@@ -3216,7 +2994,6 @@ svg:unicode-bidi a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the direction of text."@en ;
     skos:prefLabel "the unicode-bidi attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "unicode-bidi" .
 
 svg:unicode-range a owl:DatatypeProperty,
@@ -3227,7 +3004,6 @@ svg:unicode-range a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the range of Unicode characters supported by the font."@en ;
     skos:prefLabel "the unicode-range attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "unicode-range" .
 
 svg:units-per-em a owl:DatatypeProperty,
@@ -3238,7 +3014,6 @@ svg:units-per-em a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the number of units per em."@en ;
     skos:prefLabel "the units-per-em attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "units-per-em" .
 
 svg:v-alphabetic a owl:DatatypeProperty,
@@ -3249,7 +3024,6 @@ svg:v-alphabetic a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the alphabetic vertical position of the font."@en ;
     skos:prefLabel "the v-alphabetic attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "v-alphabetic" .
 
 svg:v-hanging a owl:DatatypeProperty,
@@ -3260,7 +3034,6 @@ svg:v-hanging a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the hanging vertical position of the font."@en ;
     skos:prefLabel "the v-hanging attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "v-hanging" .
 
 svg:v-ideographic a owl:DatatypeProperty,
@@ -3271,7 +3044,6 @@ svg:v-ideographic a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the ideographic vertical position of the font."@en ;
     skos:prefLabel "the v-ideographic attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "v-ideographic" .
 
 svg:v-mathematical a owl:DatatypeProperty,
@@ -3282,7 +3054,6 @@ svg:v-mathematical a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the mathematical vertical position of the font."@en ;
     skos:prefLabel "the v-mathematical attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "v-mathematical" .
 
 svg:values a owl:DatatypeProperty,
@@ -3293,7 +3064,6 @@ svg:values a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the values to be interpolated by the gradient."@en ;
     skos:prefLabel "the values attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "values" .
 
 svg:version a owl:DatatypeProperty,
@@ -3304,7 +3074,6 @@ svg:version a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the version of SVG."@en ;
     skos:prefLabel "the version attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "version" .
 
 svg:vert-adv-y a owl:DatatypeProperty,
@@ -3315,7 +3084,6 @@ svg:vert-adv-y a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the vertical advance of the font."@en ;
     skos:prefLabel "the vert-adv-y attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "vert-adv-y" .
 
 svg:vert-origin-x a owl:DatatypeProperty,
@@ -3326,7 +3094,6 @@ svg:vert-origin-x a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the horizontal origin of the font."@en ;
     skos:prefLabel "the vert-origin-x attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "vert-origin-x" .
 
 svg:vert-origin-y a owl:DatatypeProperty,
@@ -3337,7 +3104,6 @@ svg:vert-origin-y a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the vertical origin of the font."@en ;
     skos:prefLabel "the vert-origin-y attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "vert-origin-y" .
 
 svg:viewBox a owl:DatatypeProperty,
@@ -3348,7 +3114,6 @@ svg:viewBox a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the position and size of the viewBox."@en ;
     skos:prefLabel "the viewBox attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "viewBox" .
 
 svg:viewTarget a owl:DatatypeProperty,
@@ -3359,7 +3124,6 @@ svg:viewTarget a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the target of a view element."@en ;
     skos:prefLabel "the viewTarget attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "viewTarget" .
 
 svg:visibility a owl:DatatypeProperty,
@@ -3370,7 +3134,6 @@ svg:visibility a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the visibility of an element."@en ;
     skos:prefLabel "the visibility attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "visibility" .
 
 svg:width a owl:DatatypeProperty,
@@ -3382,7 +3145,6 @@ svg:width a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the width of the element."@en ;
     skos:prefLabel "the width attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "width" .
 
 svg:widths a owl:DatatypeProperty,
@@ -3393,7 +3155,6 @@ svg:widths a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the list of weights to use when applying the convolution matrix."@en ;
     skos:prefLabel "the widths attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "widths" .
 
 svg:word-spacing a owl:DatatypeProperty,
@@ -3404,7 +3165,6 @@ svg:word-spacing a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the spacing between words."@en ;
     skos:prefLabel "the word-spacing attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "word-spacing" .
 
 svg:writing-mode a owl:DatatypeProperty,
@@ -3415,7 +3175,6 @@ svg:writing-mode a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the direction of text."@en ;
     skos:prefLabel "the writing-mode attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "writing-mode" .
 
 svg:x a owl:DatatypeProperty,
@@ -3426,7 +3185,6 @@ svg:x a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the x-coordinate of the center of the element."@en ;
     skos:prefLabel "the x attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "x" .
 
 svg:x-height a owl:DatatypeProperty,
@@ -3437,7 +3195,6 @@ svg:x-height a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the x-height of the font."@en ;
     skos:prefLabel "the x-height attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "x-height" .
 
 svg:x1 a owl:DatatypeProperty,
@@ -3448,7 +3205,6 @@ svg:x1 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the x-coordinate of the start point of the line."@en ;
     skos:prefLabel "the x1 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "x1" .
 
 svg:x2 a owl:DatatypeProperty,
@@ -3459,7 +3215,6 @@ svg:x2 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the x-coordinate of the end point of the line."@en ;
     skos:prefLabel "the x2 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "x2" .
 
 svg:xChannelSelector a owl:DatatypeProperty,
@@ -3470,7 +3225,6 @@ svg:xChannelSelector a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the x channel for displacement."@en ;
     skos:prefLabel "the xChannelSelector attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "xChannelSelector" .
 
 svg:y a owl:DatatypeProperty,
@@ -3481,7 +3235,6 @@ svg:y a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the y-coordinate of the center of the element."@en ;
     skos:prefLabel "the y attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "y" .
 
 svg:y1 a owl:DatatypeProperty,
@@ -3492,7 +3245,6 @@ svg:y1 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the y-coordinate of the start point of the line."@en ;
     skos:prefLabel "the y1 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "y1" .
 
 svg:y2 a owl:DatatypeProperty,
@@ -3503,7 +3255,6 @@ svg:y2 a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the y-coordinate of the end point of the line."@en ;
     skos:prefLabel "the y2 attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "y2" .
 
 svg:yChannelSelector a owl:DatatypeProperty,
@@ -3514,7 +3265,6 @@ svg:yChannelSelector a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies which color channel to use."@en ;
     skos:prefLabel "the yChannelSelector attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "yChannelSelector" .
 
 svg:z a owl:DatatypeProperty,
@@ -3525,7 +3275,6 @@ svg:z a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the z-coordinate of the light source."@en ;
     skos:prefLabel "the z attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "z" .
 
 svg:zoomAndPan a owl:DatatypeProperty,
@@ -3536,7 +3285,6 @@ svg:zoomAndPan a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies whether zooming and panning are enabled."@en ;
     skos:prefLabel "the zoomAndPan attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "zoomAndPan" .
 
 <http://www.w3.org/XML/id/section/Attributes> a dcm:Text ;
@@ -3596,7 +3344,6 @@ xml1:base a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the base for XML."@en ;
     skos:prefLabel "the base attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "base" .
 
 xml1:documentTypeName a owl:DatatypeProperty ;
@@ -3622,7 +3369,6 @@ xml1:id a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies an identifier for an XML element."@en ;
     skos:prefLabel "the id attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "id" .
 
 xml1:key a owl:DatatypeProperty ;
@@ -3641,7 +3387,6 @@ xml1:keyPoints a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the key points for the motion."@en ;
     skos:prefLabel "the keyPoints attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "keyPoints" .
 
 xml1:keySplines a owl:DatatypeProperty,
@@ -3652,7 +3397,6 @@ xml1:keySplines a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the key splines for the motion."@en ;
     skos:prefLabel "the keySplines attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "keySplines" .
 
 xml1:keyTimes a owl:DatatypeProperty,
@@ -3663,7 +3407,6 @@ xml1:keyTimes a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the key times for the motion."@en ;
     skos:prefLabel "the keyTimes attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "keyTimes" .
 
 xml1:lang a owl:DatatypeProperty,
@@ -3674,7 +3417,6 @@ xml1:lang a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the language for XML."@en ;
     skos:prefLabel "the lang attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "lang" .
 
 xml1:name a owl:DatatypeProperty,
@@ -3685,7 +3427,6 @@ xml1:name a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies a name for an XML element."@en ;
     skos:prefLabel "the name attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "name" .
 
 xml1:space a owl:DatatypeProperty,
@@ -3696,7 +3437,6 @@ xml1:space a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the space for XML."@en ;
     skos:prefLabel "the space attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "space" .
 
 xml1:xmlns a owl:DatatypeProperty,
@@ -3707,7 +3447,6 @@ xml1:xmlns a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies a namespace."@en ;
     skos:prefLabel "the xmlns attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "xmlns" .
 
 function:getCDATASectionFragment a sh:SPARQLFunction ;
@@ -3966,7 +3705,6 @@ xlink:actuate a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the mechanism for processing XLink."@en ;
     skos:prefLabel "the actuate attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "actuate" .
 
 xlink:arcrole a owl:DatatypeProperty,
@@ -3978,7 +3716,6 @@ xlink:arcrole a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the arc role for XLink."@en ;
     skos:prefLabel "the arcrole attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "arcrole" .
 
 xlink:from a owl:DatatypeProperty,
@@ -3990,7 +3727,6 @@ xlink:from a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the from for XLink."@en ;
     skos:prefLabel "the from attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "from" .
 
 xlink:href a owl:DatatypeProperty,
@@ -4002,7 +3738,6 @@ xlink:href a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the reference for XLink."@en ;
     skos:prefLabel "the href attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "href" .
 
 xlink:label a owl:DatatypeProperty,
@@ -4014,7 +3749,6 @@ xlink:label a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the label for XLink."@en ;
     skos:prefLabel "the label attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "label" .
 
 xlink:role a owl:DatatypeProperty,
@@ -4026,7 +3760,6 @@ xlink:role a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the role for XLink."@en ;
     skos:prefLabel "the role attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "role" .
 
 xlink:show a owl:DatatypeProperty,
@@ -4038,7 +3771,6 @@ xlink:show a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the display behavior for XLink."@en ;
     skos:prefLabel "the show attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "show" .
 
 xlink:title a owl:DatatypeProperty,
@@ -4050,7 +3782,6 @@ xlink:title a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the title for XLink."@en ;
     skos:prefLabel "the title attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "title" .
 
 xlink:to a owl:DatatypeProperty,
@@ -4062,7 +3793,6 @@ xlink:to a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the to for XLink."@en ;
     skos:prefLabel "the to attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "to" .
 
 xlink:type a owl:DatatypeProperty,
@@ -4074,7 +3804,6 @@ xlink:type a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the type for XLink."@en ;
     skos:prefLabel "the type attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "type" .
 
 <http://www.w3.org/DOM/id/section/Attribute> a dcm:Text ;
@@ -4185,7 +3914,7 @@ dom:DocumentFragment a owl:Class ;
 dom:DocumentType a owl:Class ;
     dct:conformsTo <http://www.w3.org/DOM/id/section/DocumentType> ;
     rdfs:isDefinedBy dom: ;
-    rdfs:subClassOf dom:Node ;
+    rdfs:subClassOf dom:DocumentTreeNode ;
     skos:definition "Represents the document type declaration (<!DOCTYPE>) of a DOM-document. It specifies the document type to which the document conforms."@en ;
     skos:prefLabel "Doctype"@en .
 
@@ -4235,7 +3964,6 @@ svg:color-profile a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the color profile."@en ;
     skos:prefLabel "the color-profile attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "color-profile" .
 
 svg:path a owl:DatatypeProperty,
@@ -4246,7 +3974,6 @@ svg:path a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the path data for the element."@en ;
     skos:prefLabel "the path attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "path" .
 
 svg:title a owl:DatatypeProperty,
@@ -4257,7 +3984,6 @@ svg:title a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the title of an element."@en ;
     skos:prefLabel "the title attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "title" .
 
 decl:dom sh:namespace "http://www.w3.org/DOM/model/def/"^^xsd:anyURI ;
@@ -4332,10 +4058,7 @@ target:SerializableNode a sh:SPARQLTarget ;
 select $this {
 
   # Select all DOM nodes... 
-  $this a/rdfs:subClassOf* dom:Node.
-  
-  #...in a XML document...
-  $this a/rdfs:subClassOf*/rdfs:isDefinedBy xml:.
+  $this a/rdfs:subClassOf* dom:DocumentTreeNode.
   
   # ...that do not yet have an xml fragment.
   filter not exists { $this xml:fragment []. }
@@ -4345,7 +4068,7 @@ select $this {
     $this ?member ?child.
     filter(strstarts(str(?member),concat(str(rdf:),'_')))               
     filter not exists { ?child xml:fragment []. }
-    ?child a/rdfs:subClassOf* dom:Node.
+    ?child a/rdfs:subClassOf* dom:DocumentTreeNode.
   }
 }""" .
 
@@ -4464,7 +4187,7 @@ doc:10.9 a svg:Circle ;
 dom:Document a owl:Class ;
     dct:conformsTo <http://www.w3.org/DOM/id/section/Document> ;
     rdfs:isDefinedBy dom: ;
-    rdfs:subClassOf dom:Node ;
+    rdfs:subClassOf dom:DocumentTreeNode ;
     skos:definition "In the DOM specification, the term 'document' is used for any markup-based resource, ranging from short static documents to long essays or reports with rich multimedia, as well as to fully-fledged interactive applications. Each such document is represented as a node tree, whose root is a document. Some of the nodes in a tree can have children, while others are always leaves. "@en ;
     skos:prefLabel "Document"@en .
 
@@ -4483,7 +4206,6 @@ svg:mask a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the mask for the element."@en ;
     skos:prefLabel "the mask attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "mask" .
 
 svg:style a owl:DatatypeProperty,
@@ -4494,7 +4216,6 @@ svg:style a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the style rules for an element."@en ;
     skos:prefLabel "the style attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "style" .
 
 xml1:Document a owl:Class ;
@@ -4518,7 +4239,7 @@ xml1:Text a owl:Class ;
 dom:CharacterData a owl:Class ;
     dct:conformsTo <http://www.w3.org/DOM/id/section/CharacterData> ;
     rdfs:isDefinedBy dom: ;
-    rdfs:subClassOf dom:Node ;
+    rdfs:subClassOf dom:DocumentTreeNode ;
     skos:definition "Represents textual data nodes within a DOM document. It is a common superclass for specific types of nodes that contain text, including elements, comments, and CDATA sections."@en ;
     skos:prefLabel "Character Data"@en .
 
@@ -4541,6 +4262,12 @@ xml1:DocumentType a owl:Class ;
     rdfs:isDefinedBy xlink: ;
     skos:prefLabel "§ 5.7 Traversal Attributes (label, from, and to)"@en .
 
+dom:Node a owl:Class ;
+    dct:conformsTo <http://www.w3.org/DOM/id/section/Node> ;
+    rdfs:isDefinedBy dom: ;
+    skos:definition "A node is an object that implements Node. A node participates in a tree, which is known as the node tree."@en ;
+    skos:prefLabel "Node"@en .
+
 svg:filter a owl:DatatypeProperty,
         svg:Attribute ;
     rdfs:domain svg:element ;
@@ -4549,7 +4276,6 @@ svg:filter a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the ID of the filter."@en ;
     skos:prefLabel "the filter attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "filter" .
 
 xmlns:Attribute a owl:Class ;
@@ -4564,6 +4290,13 @@ dom:Attribute a owl:Class ;
     rdfs:subClassOf dom:Node ;
     skos:definition "An attribute is a name-value pair associated with a DOM element. An attributes has a namespace (null or a non-empty string), namespace prefix (null or a non-empty string), local name (a non-empty string), value (a string), and element (null or an element)."@en ;
     skos:prefLabel "Attribute"@en .
+
+dom:DocumentTreeNode a owl:Class ;
+    dct:conformsTo <http://www.w3.org/DOM/id/section/DocumentTree> ;
+    rdfs:isDefinedBy dom: ;
+    rdfs:subClassOf dom:Node ;
+    skos:definition "A document tree node is any node within a node tree whose root is a document node. These nodes form the hierarchical representation of the document, including document, documenttype, elements, comments, and text nodes, that contribute to the document's structure and content."@en ;
+    skos:prefLabel "Document tree node"@en .
 
 svg:Circle a owl:Class ;
     dct:conformsTo <https://www.w3.org/TR/SVG11/shapes.html#CircleElement> ;
@@ -4605,12 +4338,6 @@ xmlns: a void:Dataset,
     rdfs:isDefinedBy dom: ;
     skos:prefLabel "4.9. Interface Element"@en .
 
-dom:Node a owl:Class ;
-    dct:conformsTo <http://www.w3.org/DOM/id/section/Node> ;
-    rdfs:isDefinedBy dom: ;
-    skos:definition "A node is an object that implements Node. A node participates in a tree, which is known as the node tree."@en ;
-    skos:prefLabel "Node"@en .
-
 svg:font a owl:DatatypeProperty,
         svg:Attribute ;
     rdfs:domain svg:element ;
@@ -4619,7 +4346,6 @@ svg:font a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the font properties for text elements."@en ;
     skos:prefLabel "the font attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "font" .
 
 <http://www.w3.org/XML/id/standard/xml> a dct:Standard ;
@@ -4641,7 +4367,6 @@ svg:marker a owl:DatatypeProperty,
     rdfs:subPropertyOf xml1:attribute ;
     skos:definition "Specifies the marker for the element."@en ;
     skos:prefLabel "the marker attribute"@en ;
-    xml1:fragment "None"^^rdf:XML ;
     xml1:key "marker" .
 
 svg:Svg a owl:Class ;
@@ -4659,6 +4384,13 @@ xlink:Attribute a owl:Class ;
     skos:definition "An XLink attribute is used to create various types of links within an XML document. Such an attribute allows XML documents to declare how  elements in XML documents are linked to other resources."@en ;
     skos:prefLabel "attribute"@en .
 
+dom:Element a owl:Class ;
+    dct:conformsTo <http://www.w3.org/DOM/id/section/Element> ;
+    rdfs:isDefinedBy dom: ;
+    rdfs:subClassOf dom:DocumentTreeNode ;
+    skos:definition "Represents an element in the document. Each element may contain other elements, attributes, or text nodes."@en ;
+    skos:prefLabel "Element"@en .
+
 svg:Text a owl:Class ;
     rdfs:isDefinedBy svg: ;
     rdfs:subClassOf xml1:Text ;
@@ -4671,13 +4403,6 @@ xml1:Attribute a owl:Class ;
     rdfs:subClassOf dom:Attribute ;
     skos:definition "An XML attribute is a name-value pair associated with an XML element."@en ;
     skos:prefLabel "XML Attribute"@en .
-
-dom:Element a owl:Class ;
-    dct:conformsTo <http://www.w3.org/DOM/id/section/Element> ;
-    rdfs:isDefinedBy dom: ;
-    rdfs:subClassOf dom:Node ;
-    skos:definition "Represents an element in the document. Each element may contain other elements, attributes, or text nodes."@en ;
-    skos:prefLabel "Element"@en .
 
 xlink: a void:Dataset,
         owl:Ontology ;
@@ -4821,8 +4546,7 @@ xml1:attribute a owl:DatatypeProperty,
     rdfs:isDefinedBy xml1: ;
     rdfs:range rdfs:Literal ;
     skos:definition "Property that is the parent property of all existing XML attributes. An attribute is a name-value pair that is associated with an XML element. Attributes provide additional information about an element and are specified within the start tag of an element. Attributes can modify the behavior or appearance of an element, define relationships between elements, or provide other metadata. The name of the attribute is followed by an equal sign (=) and the attribute's value, which is enclosed in double or single quotes. Some attributes affect the element simply by their presence in the start tag of the element, with the value implicitly being an empty string."@en ;
-    skos:prefLabel "has attribute property"@en ;
-    xml1:fragment "None"^^rdf:XML .
+    skos:prefLabel "has attribute property"@en .
 
 svg: a void:Dataset,
         owl:Ontology,

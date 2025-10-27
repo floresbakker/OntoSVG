@@ -1,18 +1,18 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for
 import rdflib
-from rdflib import Graph, Namespace, Literal, RDF
+from rdflib import Graph, Namespace, Literal, RDF, Dataset
 import pyshacl
 from bs4 import BeautifulSoup
 from bs4.element import Tag, NavigableString
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='tools/playground/templates', static_folder='tools/playground/static')
 
 # Get the current working directory in which the Playground.py file is located.
 current_dir = os.getcwd()
 
 # Set the path to the desired standard directory. 
-directory_path = os.path.abspath(os.path.join(current_dir, '..', '..','..'))
+directory_path = os.path.abspath(os.path.join(current_dir))
 
 # namespace declaration
 rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
@@ -25,7 +25,7 @@ xmlns = Namespace("http://www.w3.org/2000/xmlns/model/def/")
 xlink = Namespace("https://www.w3.org/1999/xlink/model/def/")
 
 def writeGraph(graph, name):
-    graph.serialize(destination=directory_path + "/OntoSVG/Tools/Playground/" + name + ".ttl", format="turtle")
+    graph.serialize(destination=directory_path + "/tools/playground/" + name + ".trig", format="trig")
     
 # Function to read a graph (as a string) from a file 
 def readStringFromFile(file_path):
@@ -37,15 +37,15 @@ def readStringFromFile(file_path):
 
 
 # Get all the vocabularies and place them in a string
-dom_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/dom - core.ttl")
-xml_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xml - core.ttl")
-xmlns_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xmlns - core.ttl")
-xlink_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xlink - core.ttl")
-svg_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/svg - core.ttl")
+dom_vocabulary = readStringFromFile(directory_path   + "/specification/dom - core.trig")
+xml_vocabulary = readStringFromFile(directory_path   + "/specification/xml - core.trig")
+xmlns_vocabulary = readStringFromFile(directory_path + "/specification/xmlns - core.trig")
+xlink_vocabulary = readStringFromFile(directory_path + "/specification/xlink - core.trig")
+svg_vocabulary = readStringFromFile(directory_path   + "/specification/svg - core.trig")
 
-vocabulary = dom_vocabulary + '\n' + xml_vocabulary + '\n' + xmlns_vocabulary + '\n' + xlink_vocabulary + '\n' + svg_vocabulary + '\n'
-example_rdf_code = readStringFromFile(directory_path + "/OntoSVG/Examples/example_rdf_code.ttl")
-example_svg_code = readStringFromFile(directory_path + "/OntoSVG/Examples/example_svg_code.svg")
+vocabulary = dom_vocabulary + '\n' + xml_vocabulary  + '\n' + xmlns_vocabulary + '\n' + xlink_vocabulary + '\n' + svg_vocabulary + '\n'
+example_rdf_code = readStringFromFile(directory_path + "/examples/example_rdf_code.trig")
+example_svg_code = readStringFromFile(directory_path + "/examples/example_svg_code.svg")
 
 
 def generate_element_id(element):
@@ -76,8 +76,8 @@ def iteratePyShacl(shaclgraph, serializable_graph):
         pyshacl.validate(
         data_graph=serializable_graph,
         shacl_graph=shaclgraph,
-        data_graph_format="turtle",
-        shacl_graph_format="turtle",
+        data_graph_format="trig",
+        shacl_graph_format="trig",
         advanced=True,
         inplace=True,
         inference=None,
@@ -105,7 +105,6 @@ def iteratePyShacl(shaclgraph, serializable_graph):
         for result in resultquery:
             print ("ask result = ", result)
             if result == False:
-                writeGraph(serializable_graph, 'TEST')
                 return iteratePyShacl(shaclgraph, serializable_graph)
          
             else:
@@ -132,21 +131,31 @@ def iteratePyShacl(shaclgraph, serializable_graph):
 
 @app.route('/convert2SVG', methods=['POST'])
 def convert_to_svg():
-    text = request.form['rdf']   
-    g = rdflib.Graph().parse(data=text , format="turtle")
-    # Zet de RDF-triples om naar een string
-    triples = g.serialize(format='turtle')
-    serializable_graph_string = vocabulary + '\n' + triples
-    serializable_graph = rdflib.Graph().parse(data=serializable_graph_string , format="turtle")
-    svg_fragment = iteratePyShacl(xml_vocabulary, serializable_graph)
-    print("SVG fragment =", svg_fragment)
-    return render_template('index.html', svgOutput=svg_fragment, svgRawOutput=svg_fragment, rdfInput=text)
+    try:
+        print("Serializing RDF to SVG code...")  
+        text = request.form['rdf']   
+        serializable_graph_string = vocabulary + '\n' + text
+        serializable_graph = Dataset(default_union=True)
+        serializable_graph.parse(data=serializable_graph_string , format="trig")
+        svg_fragment = iteratePyShacl(xml_vocabulary, serializable_graph)
+        filepath = directory_path+"/tools/playground/static/output.xml"
+        src_filepath = url_for('static', filename='output.xml')
+        with open(filepath, 'w', encoding='utf-8') as file:
+           file.write(svg_fragment)
+        writeGraph(serializable_graph, "static/output")
+        print("SVG fragment =", svg_fragment)
+        return render_template('index.html', svgOutput=svg_fragment, svgRawOutput=svg_fragment, rdfInput=text, rdfOutputButton="true")
+
+    except Exception as e:
+        print("Error during processing:", e)
+        return render_template('index.html', rdfInput=f"Error: {e}")
 
 @app.route('/convert2RDF', methods=['POST'])
 def convert_to_rdf():
+    try:
         svgInput = request.form['svg']
         # initialize graph
-        g = Graph(bind_namespaces="rdflib")
+        g = Dataset(default_union=True)
               
         g.bind("rdf", rdf)
         g.bind("rdfs", rdfs)
@@ -157,7 +166,8 @@ def convert_to_rdf():
         g.bind("xlink", xlink)
 
         # fill graph with svg vocabulary
-        xml_graph = Graph().parse(directory_path+"/OntoSVG/Specification/svg - core.ttl" , format="ttl")
+        xml_graph = Dataset(default_union=True)
+        xml_graph.parse(directory_path+"/specification/svg - core.trig" , format="trig")
 
         # string for query to establish IRI of a 'tag' HTML element
         tagquerystring = '''
@@ -248,7 +258,7 @@ def convert_to_rdf():
                     # if the child is an text element, create a unique identifier based on sourceline and sourcepos of its parent and the sequence position of the child within the parent, as the html-parser does not have sourceline and sourcepos available as attributes for text elements.
                     elif isinstance(child, NavigableString):
                       if child.name == None  :
-                            childname = "TextElement"
+                            childname = "Text"
                       else:
                             childname = child.name
                       child_id = generate_element_id(child)
@@ -257,7 +267,7 @@ def convert_to_rdf():
                       g.add((doc[element_id], rdf["_" + str(member_count)], doc[child_id]))  
                       
                       # write to graph that the child element is of type TextElement
-                      g.add((doc[child_id], RDF.type, svg["TextElement"]))
+                      g.add((doc[child_id], RDF.type, svg["Text"]))
                       
                       # empty content (of type None) in html needs to be converted to empty string
                       if element.string == None: 
@@ -266,11 +276,15 @@ def convert_to_rdf():
                           text_fragment = element.string
                       
                       # write string content of the text element to the graph
-                      g.add((doc[child_id], svg["fragment"], Literal(text_fragment)))
+                      g.add((doc[child_id], xml["fragment"], Literal(text_fragment)))
 
         # return the resulting triples
-        triples = g.serialize(format="turtle").split('\n')
-        return render_template('index.html', rdfOutput=triples, svgInput = svgInput, svgRawInput = svgInput)
+        triples = g.serialize(format="trig").split('\n')
+        return render_template('index.html', rdfOutput=triples, svgInput = svgInput, svgRawInput = svgInput, rdfOutputButton="true")
+    
+    except Exception as e:
+        print("Error during processing:", e)
+        return render_template('index.html', rdfInput=f"Error: {e}")
 
 @app.route('/')
 def index():

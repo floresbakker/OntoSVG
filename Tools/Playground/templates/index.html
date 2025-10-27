@@ -1,127 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVG Rendering</title>
-    <style>
-        /* Style for the container holding form and output box */
-        .container {
-            display: flex;
-            align-items: stretch; /* Make container divs stretch to the height of the tallest content */
-            margin-bottom: 20px; /* Adjust as needed */
-        }
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>OntoSVG Playground</title>
+                <style>
+body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #fff;
+      color: #333;
+    }
 
-        /* Style for form */
-        .form {
-            flex: 1;
-            margin-right: 10px; /* Adjust as needed */
-        }
+h1 {
+  color: #007BFF;
+  border-bottom: 2px solid #007BFF;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
 
-        /* Style for output box */
-        .output-box {
-            flex: 1;
-            border: 1px solid #ccc;
-            padding: 10px;
-            overflow-y: auto; /* Add vertical scrollbar if content overflows */
-        }
+/* MAIN LAYOUT: three columns */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
 
-        /* Style for output container */
-        .output-container {
-            /* Optionally limit max-height to prevent excessive stretching */
-            max-height: 100%; /* Adjust as needed */
-        }
-    </style>
-</head>
-<body>
-    <h1>OntoSVG Playground</h1>
-    <!-- Container for the first form and its output box -->
-    <div class="container">
-        <!-- First form -->
-        <div class="form">
-            <form action="http://localhost:5000/convert2SVG" method="post">
-                <label for="textInput">RDF</label><br>
-                <textarea id="rdfInput" name="rdf" rows="15" cols="60">{{rdfInput}}</textarea><br>
-                <button type="submit">Convert to SVG</button>
-            </form>
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* INPUT SECTIONS (Left column) */
+.form-section {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.section-title {
+  font-weight: bold;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  resize: vertical;
+  font-family: monospace;  
+}
+
+button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Style for download buttons */
+.download-button {
+    width: 100%; /* Make buttons equally wide */
+    margin-bottom: 10px; /* Add margin between buttons */
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.download-button:hover {
+    background-color: #45a049; /* Darker green when hovering */
+}
+
+/* OUTPUT BOX (Middle column) */
+.output-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0px;
+  background-color: #fafafa;
+  min-height: 400px;  
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: monospace;
+  color: #333;
+}
+
+/* Centered instructions */
+.output-instruction {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: monospace;
+  color: #333;  
+  text-align: center;  
+}
+
+/* SVG BOX (Right column) */
+.svg-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0px;
+  background-color: #fafafa;
+  min-height: 400px;  
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: monospace;
+  color: #333;
+}
+
+/* Placeholder text inside SVG box */
+.svg-box .output-instruction {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: monospace;
+  color: #333;
+  text-align: center;
+}
+
+/* Make contained SVG scale responsively */
+.svg-box svg {
+  width: 100%;       /* fill the container width */
+  height: auto;      /* maintain aspect ratio */
+  max-height: 800px; /* optional: prevent huge SVGs from breaking layout */
+  display: block;    /* remove extra inline spacing */
+  margin: 0 auto;    /* center the SVG horizontally */
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+}
+
+  </style>
+            </head>
+            <body>
+                <h1>OntoSVG Playground</h1>
+                <div class="main-container">
+                    <!-- COLUMN 1: Inputs -->
+                    <div class="column">
+                        <div class="form-section">
+                            <div class="section-title">RDF → SVG</div>
+                            <form method="post">
+                                <textarea id="rdfInput" name="rdf" rows="10">{{ rdfInput }}</textarea>
+                                <br>
+                                    <button type="submit" formaction="http://localhost:5000/convert2SVG">
+        Convert to SVG-XML and SVG-RDF
+      </button>
+                                </form>
+                            </div>
+                            <div class="form-section">
+                                <div class="section-title">SVG-XML → RDF</div>
+                                <form action="http://localhost:5000/convert2RDF" method="post">
+                                    <textarea id="xmlInput" name="svg" rows="10">{{ svgRawInput }}</textarea>
+                                    <br>
+                                        <button type="submit">Convert to RDF</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- COLUMN 2: Output -->
+                            <div class="column">
+                                <div class="output-box">
+                                  {% if svgRawOutput %}
+                                    <div>{{ svgRawOutput }}</div>
+                                  {% elif rdfOutput %}
+                                    <div>
+                                      {% for triple in rdfOutput %}
+                                        <div class="triple">{{ triple }}</div>
+                                      {% endfor %}
+                                    </div>
+                                  {% else %}
+                                    <div class="output-instruction">Output code will appear here (RDF or XML).</div>
+                                  {% endif %}
+                                </div>
+                            </div>
+                            <!-- COLUMN 3: SVG Image -->
+                            <div class="column">
+                                <div class="svg-box">
+                                  {% if svgInput %}
+                                    {{ svgInput | safe }}
+                                  {% elif svgOutput %}
+                                     {{ svgOutput | safe }}
+                                  {% else %}
+                                    <div class="output-instruction">SVG image will appear here.</div>
+                                  {% endif %}
+                                </div>
+                                <!-- Download buttons -->
+                                <div>
+                                  {% if svgRawOutput %}
+                                    <a href="/static/output.xml" download="output.xml">
+                                      <button class="download-button">Download Output XML</button>
+                                    </a><br>
+                                  {% endif %}
+                                  {% if rdfOutputButton %}
+                                    <a href="/static/output.trig" download="output.trig">
+                                      <button class="download-button">Download Output RDF</button>
+                                    </a>
+                                  {% endif %}
+                                </div>
+                            </div>
         </div>
-
-        <!-- Visual output box for the first form (SVG content) -->
-        <div class="output-box">
-            <!-- SVG content -->
-            {% if svgOutput %}
-            <div class="output-container">
-                <!-- Use the safe filter to render SVG content without HTML escaping -->
-                {{ svgOutput | safe }}
-            </div>
-            {% else %}
-            <div class="output-container">
-                
-                SVG output image is rendered here
-            </div>
-            {% endif %}
-        </div>
-
-        <!-- Raw output box for the first form (raw SVG content) -->
-        <div class="output-box">
-            <!-- SVG content -->
-            {% if svgRawOutput %}
-            <div class="output-container">
-                <!-- show SVG content with HTML escaping -->
-                {{ svgRawOutput }}
-            </div>
-            {% else %}
-            <div class="output-container">
-                
-                Raw SVG output code is shown here
-            </div>
-            {% endif %}
-        </div>
-    </div>
-
-    <!-- Container for the second form and its output box -->
-    <div class="container">
-        <!-- Second form -->
-        <div class="form">
-            <form action="http://localhost:5000/convert2RDF" method="post">
-                <label for="rdf">SVG</label><br>
-                <textarea id="svgInput" name="svg" rows="15" cols="60">{{svgRawInput}}</textarea><br>
-                <button type="submit">Convert to RDF</button>
-            </form>
-        </div>
-
-        <!-- Visual output box for the second form (SVG content) -->
-        <div class="output-box">
-            <!-- SVG content -->
-            {% if svgInput %}
-            <div class="output-container">
-                <!-- Use the safe filter to render SVG content without HTML escaping -->
-                {{ svgInput | safe }}
-            </div>
-            {% else %}
-            <div class="output-container">
-                
-                SVG input image is rendered here
-            </div>
-            {% endif %}
-        </div>
-
-        <!-- Output box for the second form (text content) -->
-        <div class="output-box">
-            <!-- Text content -->
-          {% if rdfOutput %}
-          <div class="output-container">
-            {% for triple in rdfOutput %}
-            <div class="triple">{{ triple }}</div>
-            {% endfor %}
-          </div>
-          {% else %}
-          <div class="output-container">
-                
-                RDF output code is shown here
-          </div>
-          {% endif %}
-        </div>
-    </div>
-</body>
+    </body>
 </html>

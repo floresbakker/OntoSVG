@@ -16,7 +16,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix standard: <http://www.w3.org/2000/xmlns/id/standard/>
 prefix xmlns: <http://www.w3.org/2000/xmlns/model/def/>
 
-#xmlns: {
+xmlns: {
   xmlns:
     a
       owl:Ontology,
@@ -119,4 +119,4 @@ prefix xmlns: <http://www.w3.org/2000/xmlns/model/def/>
     skos:prefLabel 'the cc attribute'@en;
     rdfs:isDefinedBy xmlns:.
 
-#}
+}

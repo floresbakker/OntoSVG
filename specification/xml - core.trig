@@ -24,7 +24,7 @@ prefix standard: <http://www.w3.org/XML/id/standard/>
 prefix target: <http://www.w3.org/XML/model/target/>
 prefix xml: <http://www.w3.org/XML/model/def/> 
 
-#xml: {
+xml: {
   xml:
     a
       owl:Ontology,
@@ -356,10 +356,7 @@ shp:SerializableNode
 select $this {
 
   # Select all DOM nodes... 
-  $this a/rdfs:subClassOf* dom:Node.
-  
-  #...in a XML document...
-  $this a/rdfs:subClassOf*/rdfs:isDefinedBy xml:.
+  $this a/rdfs:subClassOf* dom:DocumentTreeNode.
   
   # ...that do not yet have an xml fragment.
   filter not exists { $this xml:fragment []. }
@@ -369,7 +366,7 @@ select $this {
     $this ?member ?child.
     filter(strstarts(str(?member),concat(str(rdf:),'_')))               
     filter not exists { ?child xml:fragment []. }
-    ?child a/rdfs:subClassOf* dom:Node.
+    ?child a/rdfs:subClassOf* dom:DocumentTreeNode.
   }
 }''';
     rdfs:isDefinedBy xml:.
@@ -666,4 +663,4 @@ function:getElementAttribute
     }
 """ .
 
-#}
+}
