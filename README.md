@@ -5,7 +5,7 @@ This is the repository for OntoSVG, a RDF-based vocabulary for Scalable Vector G
 
 OntoSVG offers a toolset comprising of a comprehensive description of the SVG vocabulary - the elements and attributes that constitute SVG documents - and the algorithms with which SVG documents can be generated, as well as tools that make use of this vocabulary to actually parse and generate SVG graphics.
 
-![An example of a SVG-document, modeled and generated using OntoSVG](/Examples/SVG_Gallardo.svg)
+![An example of a SVG-document, modeled and generated using OntoSVG](/examples/SVG_Gallardo.svg)
 *An example of a SVG-document, modeled and generated using OntoSVG*
 
 # Status
@@ -44,7 +44,7 @@ Let us go through the semantic SVG-vocabulary with an example of an ordinary SVG
 
 This graphic is rendered in a browser as follows:
 
-![An example of an SVG-document](/Examples/SVG_Smiley.svg)
+![An example of an SVG-document](/examples/SVG_Smiley.svg)
 
 ## Expressing the SVG-document in RDF
 
@@ -111,7 +111,7 @@ Make note on how each element in the SVG-document is identified by a unique iden
 
 This bar chart is rendered in a browser as follows:
 
-![An example of an HTML-document with forms](/Examples/SVG_BarChart.svg)
+![An example of an HTML-document with forms](/examples/SVG_BarChart.svg)
 
 ## Again expressing the SVG-document in RDF
 
@@ -328,7 +328,7 @@ A. Install all necessary libraries:
 	2. pip install bs4
 	3. pip install rdflib
 
-B. Place one or more SVG-files in the input folder in OntoSVG\Tools\SVG2RDF\Input. Only ordinary SVG-files can be processed. 
+B. Place one or more SVG-files in the input folder in OntoSVG\tools\SVG2RDF\input. Only ordinary SVG-files can be processed. 
 
 C. Run the script in the command prompt by typing: 
 
@@ -336,7 +336,7 @@ C. Run the script in the command prompt by typing:
 python SVG2RDF.py
 ```
 
-D. Go to the output folder in OntoSVG\Tools\SVG2RDF\Output and grab your Turtle-file(s) (*.ttl). 
+D. Go to the output folder in OntoSVG\tools\SVG2RDF\output and grab your Turtle-file(s) (*.ttl). 
 
 
 ## RDF2SVG
@@ -351,7 +351,7 @@ A. Install all necessary libraries (in this order):
 	2. pip install pyshacl
 	3. pip install rdflib
 
-B. Place one or more Turtle-files (*.ttl) in the input folder in OntoSVG\Tools\RDF2SVG\Input. A Turtle-file should represent a SVG-document using the SVG-vocabulary from this repository.
+B. Place one or more Turtle-files (*.ttl) in the input folder in OntoSVG\tools\RDF2SVG\input. A Turtle-file should represent a SVG-document using the SVG-vocabulary from this repository.
 
 C. Run the script in the command prompt by typing: 
 
@@ -365,7 +365,7 @@ D. Go to the output folder in OntoSVG\Tools\RDF2SVG\Output and grab your SVG-fil
 
 The tool Playground offers a visual user interface in which a RDF-based representation of an SVG-document can be converted to an actual SVG-image, and an actual SVG-image can be converted to a RDF-based representation of an SVG-document.
 
-![A screenshot of the playground environment](/Examples/Playground.png)
+![A screenshot of the playground environment](/examples/Playground.png)
 
 ### How to use Playground
 
