@@ -37,11 +37,11 @@ def readStringFromFile(file_path):
 
 
 # Get all the vocabularies and place them in a string
-dom_vocabulary = readStringFromFile(directory_path   + "/specification/dom - core.trig")
-xml_vocabulary = readStringFromFile(directory_path   + "/specification/xml - core.trig")
-xmlns_vocabulary = readStringFromFile(directory_path + "/specification/xmlns - core.trig")
-xlink_vocabulary = readStringFromFile(directory_path + "/specification/xlink - core.trig")
-svg_vocabulary = readStringFromFile(directory_path   + "/specification/svg - core.trig")
+dom_vocabulary   = readStringFromFile(directory_path   + "/specification/dom - core.trig")
+xml_vocabulary   = readStringFromFile(directory_path   + "/specification/xml - core.trig")
+xmlns_vocabulary = readStringFromFile(directory_path   + "/specification/xmlns - core.trig")
+xlink_vocabulary = readStringFromFile(directory_path   + "/specification/xlink - core.trig")
+svg_vocabulary   = readStringFromFile(directory_path   + "/specification/svg - core.trig")
 
 vocabulary = dom_vocabulary + '\n' + xml_vocabulary  + '\n' + xmlns_vocabulary + '\n' + xlink_vocabulary + '\n' + svg_vocabulary + '\n'
 example_rdf_code = readStringFromFile(directory_path + "/examples/example_rdf_code.trig")

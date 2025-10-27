@@ -10,7 +10,7 @@ The SVG2RDF script offers a simple way of transforming an SGV-document into a re
 
 from bs4 import BeautifulSoup
 from bs4.element import Tag, NavigableString
-from rdflib import Graph, Namespace, Literal, RDF
+from rdflib import Graph, Namespace, Literal, RDF, Dataset
 import os
 
 from rdflib.namespace import NamespaceManager
@@ -19,7 +19,7 @@ from rdflib.namespace import NamespaceManager
 current_dir = os.getcwd()
 
 # Set the path to the desired standard directory. 
-directory_path = os.path.abspath(os.path.join(current_dir, '..'))
+directory_path = os.path.abspath(os.path.join(current_dir))
 
 # namespace declaration
 rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
@@ -59,11 +59,10 @@ def generate_element_id(element):
         return str(sibling_index)  # This happens at the root level
 
 
-
 # loop through any xml files in the input directory
-for filename in os.listdir(directory_path+"/OntoSVG/Tools/SVG2RDF/Input"):
+for filename in os.listdir(directory_path+"/tools/SVG2RDF/input"):
     if filename.endswith(".svg"):
-        file_path = os.path.join(directory_path+"/OntoSVG/Tools/SVG2RDF/Input", filename)
+        file_path = os.path.join(directory_path+"/tools/SVG2RDF/input", filename)
         
         # Establish the stem of the file name for reuse in newly created files
         filename_stem = os.path.splitext(filename)[0]
@@ -72,7 +71,7 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/SVG2RDF/Input"):
         xml_doc = readGraphFromFile (file_path)
 
         # initialize graph
-        g = Graph(bind_namespaces="rdflib")
+        g = Dataset(default_union=True)
               
         g.bind("rdf", rdf)
         g.bind("rdfs", rdfs)
@@ -83,7 +82,8 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/SVG2RDF/Input"):
         g.bind("xlink", xlink)
 
         # fill graph with svg vocabulary
-        xml_graph = Graph().parse(directory_path+"/OntoSVG/Specification/svg - core.ttl" , format="ttl")
+        xml_graph = Dataset(default_union=True)
+        xml_graph.parse(directory_path+"/specification/svg - core.trig" , format="trig")
 
         # string for query to establish IRI of a 'tag' HTML element
         tagquerystring = '''
@@ -192,11 +192,11 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/SVG2RDF/Input"):
                           text_fragment = element.string
                       
                       # write string content of the text node to the graph
-                      g.add((doc[child_id], svg["fragment"], Literal(text_fragment)))
+                      g.add((doc[child_id], xml["fragment"], Literal(text_fragment)))
 
         # write the resulting graph to file
-        g.serialize(destination=directory_path+"/OntoSVG/Tools/SVG2RDF/Output/" + filename_stem + "-parsed.ttl", format="turtle")
+        g.serialize(destination=directory_path+"/tools/SVG2RDF/output/" + filename_stem + "-parsed.trig", format="trig")
         
-        print ("SVG file ", filename," is succesfullly transformed to file ", filename_stem + "-parsed.ttl in Turtle format.")
+        print ("SVG file ", filename," is succesfullly transformed to file ", filename_stem + "-parsed.trig in TRIG format.")
     else: 
         print ('Warning: file in directory "input" is no SVG file and cannot be parsed.')

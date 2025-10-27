@@ -6,6 +6,7 @@ Created on Wed Sep 14 19:42:53 2023
 
 """
 import pyshacl
+from rdflib import Graph, Namespace, Literal, RDF, Dataset
 import rdflib 
 import os
 
@@ -13,7 +14,7 @@ import os
 current_dir = os.getcwd()
 
 # Set the path to the desired standard directory. 
-directory_path = os.path.abspath(os.path.join(current_dir, '..'))
+directory_path = os.path.abspath(os.path.join(current_dir))
 
 # Function to read a graph (as a string) from a file 
 def readStringFromFile(file_path):
@@ -25,7 +26,7 @@ def readStringFromFile(file_path):
 
 # Function to write a graph to a file
 def writeGraph(graph):
-    graph.serialize(destination=directory_path+"/OntoSVG/Tools/RDF2SVG/Output/"+filename_stem+"-serialized.ttl", format="turtle")
+    graph.serialize(destination=directory_path+"/tools/RDF2SVG/output/"+filename_stem+"-serialized.trig", format="trig")
 
 # Function to call the PyShacl engine so that a RDF model of a SVG document can be serialized to SVG-code.
 def iteratePyShacl(vocabulary, serializable_graph):
@@ -34,8 +35,8 @@ def iteratePyShacl(vocabulary, serializable_graph):
         pyshacl.validate(
         data_graph=serializable_graph,
         shacl_graph=vocabulary,
-        data_graph_format="turtle",
-        shacl_graph_format="turtle",
+        data_graph_format="trig",
+        shacl_graph_format="trig",
         advanced=True,
         inplace=True,
         inference=None,
@@ -70,18 +71,18 @@ def iteratePyShacl(vocabulary, serializable_graph):
                 writeGraph(serializable_graph)
              
 # Get all the vocabularies and place them in a string
-dom_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/dom - core.ttl")
-xml_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xml - core.ttl")
-xmlns_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xmlns - core.ttl")
-xlink_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/xlink - core.ttl")
-svg_vocabulary = readStringFromFile(directory_path + "/OntoSVG/Specification/svg - core.ttl")
+dom_vocabulary   = readStringFromFile(directory_path   + "/specification/dom - core.trig")
+xml_vocabulary   = readStringFromFile(directory_path   + "/specification/xml - core.trig")
+xmlns_vocabulary = readStringFromFile(directory_path   + "/specification/xmlns - core.trig")
+xlink_vocabulary = readStringFromFile(directory_path   + "/specification/xlink - core.trig")
+svg_vocabulary   = readStringFromFile(directory_path   + "/specification/svg - core.trig")
 
 vocabulary = dom_vocabulary + '\n' + xml_vocabulary + '\n' + xmlns_vocabulary + '\n' + xlink_vocabulary + '\n' + svg_vocabulary + '\n'
 
 # loop through any turtle files in the input directory
-for filename in os.listdir(directory_path+"/OntoSVG/Tools/RDF2SVG/Input"):
-    if filename.endswith(".ttl"):
-        file_path = os.path.join(directory_path+"/OntoSVG/Tools/RDF2SVG/Input", filename)
+for filename in os.listdir(directory_path+"/tools/RDF2SVG/input"):
+    if filename.endswith(".ttl" or "*.trig"):
+        file_path = os.path.join(directory_path+"/tools/RDF2SVG/input", filename)
         
         # Establish the stem of the file name for reuse in newly created files
         filename_stem = os.path.splitext(filename)[0]
@@ -93,7 +94,8 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/RDF2SVG/Input"):
         serializable_graph_string = vocabulary + document_graph
 
         # Create a graph of the string containing the SVG vocabulary and the RDF-model of some SVG document
-        serializable_graph = rdflib.Graph().parse(data=serializable_graph_string , format="ttl")
+        serializable_graph = Dataset(default_union=True)
+        serializable_graph.parse(data=serializable_graph_string , format="trig")
 
         # Inform user
         print ("Serialising the SVG as contained in document '" + filename + "'...")
@@ -102,7 +104,8 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/RDF2SVG/Input"):
         iteratePyShacl(xml_vocabulary, serializable_graph)
 
         # Prepare a graph to query the serialized document
-        serialized_graph = rdflib.Graph().parse(directory_path+"/OntoSVG/Tools/RDF2SVG/Output/"+filename_stem+"-serialized.ttl" , format="ttl")
+        serialized_graph = Dataset(default_union=True)        
+        serialized_graph.parse(directory_path+"/tools/RDF2SVG/output/"+filename_stem+"-serialized.trig" , format="trig")
 
         # Query to get the resulting fragment of the document
         documentQuery = serialized_graph.query('''
@@ -122,7 +125,7 @@ for filename in os.listdir(directory_path+"/OntoSVG/Tools/RDF2SVG/Input"):
 
         # Write serialized html to actual html file
         for result in documentQuery:
-            with open(directory_path+"/OntoSVG/Tools/RDF2SVG/Output/"+filename_stem+"-serialized.svg", 'w', encoding='utf-8') as file:
+            with open(directory_path+"/tools/RDF2SVG/output/"+filename_stem+"-serialized.svg", 'w', encoding='utf-8') as file:
                file.write(result.fragment)
                print ("Document is saved to SVG-format as " + filename_stem+"-serialized.svg")
 

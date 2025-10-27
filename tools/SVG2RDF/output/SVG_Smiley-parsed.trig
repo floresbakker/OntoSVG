@@ -1,0 +1,89 @@
+@prefix doc: <https://example.org/doc/id/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix svg: <http://www.w3.org/SVG/model/def/> .
+@prefix xml1: <http://www.w3.org/XML/model/def/> .
+
+{
+    doc:1 a svg:Document ;
+        rdf:_1 doc:1.2 .
+
+    doc:1.2 a svg:Svg ;
+        rdf:_1 doc:1.2.1 ;
+        rdf:_10 doc:1.2.10 ;
+        rdf:_11 doc:1.2.11 ;
+        rdf:_12 doc:1.2.12 ;
+        rdf:_13 doc:1.2.13 ;
+        rdf:_14 doc:1.2.14 ;
+        rdf:_15 doc:1.2.15 ;
+        rdf:_2 doc:1.2.2 ;
+        rdf:_3 doc:1.2.3 ;
+        rdf:_4 doc:1.2.4 ;
+        rdf:_5 doc:1.2.5 ;
+        rdf:_6 doc:1.2.6 ;
+        rdf:_7 doc:1.2.7 ;
+        rdf:_8 doc:1.2.8 ;
+        rdf:_9 doc:1.2.9 ;
+        svg:height "200" ;
+        svg:width "200" ;
+        xml1:xmlns "http://www.w3.org/2000/svg" .
+
+    doc:1.2.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.2.10 a svg:Circle ;
+        svg:cx "130" ;
+        svg:cy "70" ;
+        svg:fill "black" ;
+        svg:r "10" .
+
+    doc:1.2.11 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.2.12 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.2.13 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.2.14 a svg:Path ;
+        svg:d "M 60 120 Q 100 150 140 120" ;
+        svg:fill "none" ;
+        svg:stroke "black" ;
+        svg:stroke-width "3" .
+
+    doc:1.2.15 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.2.2 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.2.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.2.4 a svg:Circle ;
+        svg:cx "100" ;
+        svg:cy "100" ;
+        svg:fill "yellow" ;
+        svg:r "90" ;
+        svg:stroke "black" ;
+        svg:stroke-width "2" .
+
+    doc:1.2.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.2.6 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.2.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.2.8 a svg:Circle ;
+        svg:cx "70" ;
+        svg:cy "70" ;
+        svg:fill "black" ;
+        svg:r "10" .
+
+    doc:1.2.9 a svg:Text ;
+        xml1:fragment "" .
+}
+

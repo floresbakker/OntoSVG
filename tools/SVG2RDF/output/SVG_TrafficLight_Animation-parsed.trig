@@ -1,0 +1,923 @@
+@prefix doc: <https://example.org/doc/id/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix svg: <http://www.w3.org/SVG/model/def/> .
+@prefix xlink: <https://www.w3.org/1999/xlink/model/def/> .
+@prefix xml1: <http://www.w3.org/XML/model/def/> .
+@prefix xmlns: <http://www.w3.org/2000/xmlns/model/def/> .
+
+{
+    doc:1 a svg:Document ;
+        rdf:_1 doc:1.1 .
+
+    doc:1.1 a svg:Svg ;
+        rdf:_1 doc:1.1.1 ;
+        rdf:_10 doc:1.1.10 ;
+        rdf:_11 doc:1.1.11 ;
+        rdf:_12 doc:1.1.12 ;
+        rdf:_13 doc:1.1.13 ;
+        rdf:_14 doc:1.1.14 ;
+        rdf:_15 doc:1.1.15 ;
+        rdf:_16 doc:1.1.16 ;
+        rdf:_17 doc:1.1.17 ;
+        rdf:_18 doc:1.1.18 ;
+        rdf:_19 doc:1.1.19 ;
+        rdf:_2 doc:1.1.2 ;
+        rdf:_3 doc:1.1.3 ;
+        rdf:_4 doc:1.1.4 ;
+        rdf:_5 doc:1.1.5 ;
+        rdf:_6 doc:1.1.6 ;
+        rdf:_7 doc:1.1.7 ;
+        rdf:_8 doc:1.1.8 ;
+        rdf:_9 doc:1.1.9 ;
+        xmlns:cc "http://web.resource.org/cc/" ;
+        xmlns:dc "http://purl.org/dc/elements/1.1/" ;
+        xmlns:rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns" ;
+        xmlns:xlink "http://www.w3.org/1999/xlink" ;
+        svg:baseprofile "full" ;
+        svg:height "330" ;
+        svg:onload "switch_lights();" ;
+        svg:style "cursor:pointer;" ;
+        svg:version "1.1" ;
+        svg:width "130" ;
+        xml1:xmlns "http://www.w3.org/2000/svg" .
+
+    doc:1.1.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.10 a svg:Circle ;
+        svg:cx "65" ;
+        svg:cy "165" ;
+        svg:fill "url(#y)" ;
+        svg:id "yellight" ;
+        svg:r "40" ;
+        svg:stroke "#000" ;
+        svg:stroke-width "8" .
+
+    doc:1.1.11 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.12 a svg:Circle ;
+        svg:cx "65" ;
+        svg:cy "265" ;
+        svg:fill "url(#g)" ;
+        svg:id "grelight" ;
+        svg:r "40" ;
+        svg:stroke "#000" ;
+        svg:stroke-width "8" .
+
+    doc:1.1.13 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.14 a svg:Use ;
+        xlink:href "#reflex" .
+
+    doc:1.1.15 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.16 a svg:Use ;
+        svg:transform "translate(0,100)" ;
+        xlink:href "#reflex" .
+
+    doc:1.1.17 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.18 a svg:Use ;
+        svg:transform "translate(0,200)" ;
+        xlink:href "#reflex" .
+
+    doc:1.1.19 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2 a svg:Metadata ;
+        rdf:_1 doc:1.1.2.1 ;
+        rdf:_2 doc:1.1.2.2 ;
+        rdf:_3 doc:1.1.2.3 .
+
+    doc:1.1.2.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2 a svg:Metadata ;
+        rdf:_1 doc:1.1.2.2.1 ;
+        rdf:_2 doc:1.1.2.2.2 ;
+        rdf:_3 doc:1.1.2.2.3 ;
+        rdf:_4 doc:1.1.2.2.4 ;
+        rdf:_5 doc:1.1.2.2.5 .
+
+    doc:1.1.2.2.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2 a svg:Metadata ;
+        rdf:_1 doc:1.1.2.2.2.1 ;
+        rdf:_10 doc:1.1.2.2.2.10 ;
+        rdf:_11 doc:1.1.2.2.2.11 ;
+        rdf:_12 doc:1.1.2.2.2.12 ;
+        rdf:_13 doc:1.1.2.2.2.13 ;
+        rdf:_14 doc:1.1.2.2.2.14 ;
+        rdf:_15 doc:1.1.2.2.2.15 ;
+        rdf:_16 doc:1.1.2.2.2.16 ;
+        rdf:_17 doc:1.1.2.2.2.17 ;
+        rdf:_18 doc:1.1.2.2.2.18 ;
+        rdf:_19 doc:1.1.2.2.2.19 ;
+        rdf:_2 doc:1.1.2.2.2.2 ;
+        rdf:_20 doc:1.1.2.2.2.20 ;
+        rdf:_21 doc:1.1.2.2.2.21 ;
+        rdf:_3 doc:1.1.2.2.2.3 ;
+        rdf:_4 doc:1.1.2.2.2.4 ;
+        rdf:_5 doc:1.1.2.2.2.5 ;
+        rdf:_6 doc:1.1.2.2.2.6 ;
+        rdf:_7 doc:1.1.2.2.2.7 ;
+        rdf:_8 doc:1.1.2.2.2.8 ;
+        rdf:_9 doc:1.1.2.2.2.9 .
+
+    doc:1.1.2.2.2.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.10 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.10.1 ;
+        rdf:_2 doc:1.1.2.2.2.10.2 ;
+        rdf:_3 doc:1.1.2.2.2.10.3 .
+
+    doc:1.1.2.2.2.10.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.10.2 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.10.2.1 ;
+        rdf:_2 doc:1.1.2.2.2.10.2.2 ;
+        rdf:_3 doc:1.1.2.2.2.10.2.3 .
+
+    doc:1.1.2.2.2.10.2.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.10.2.2 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.10.2.2.1 .
+
+    doc:1.1.2.2.2.10.2.2.1 a svg:Text ;
+        xml1:fragment "Manuel Strehl" .
+
+    doc:1.1.2.2.2.10.2.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.10.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.11 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.12 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.12.1 ;
+        rdf:_2 doc:1.1.2.2.2.12.2 ;
+        rdf:_3 doc:1.1.2.2.2.12.3 .
+
+    doc:1.1.2.2.2.12.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.12.2 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.12.2.1 ;
+        rdf:_2 doc:1.1.2.2.2.12.2.2 ;
+        rdf:_3 doc:1.1.2.2.2.12.2.3 .
+
+    doc:1.1.2.2.2.12.2.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.12.2.2 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.12.2.2.1 .
+
+    doc:1.1.2.2.2.12.2.2.1 a svg:Text ;
+        xml1:fragment "http://www.manuel-strehl.de" .
+
+    doc:1.1.2.2.2.12.2.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.12.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.13 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.14 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.14.1 .
+
+    doc:1.1.2.2.2.14.1 a svg:Text ;
+        xml1:fragment "de-DE" .
+
+    doc:1.1.2.2.2.15 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.1 ;
+        rdf:_2 doc:1.1.2.2.2.16.2 ;
+        rdf:_3 doc:1.1.2.2.2.16.3 .
+
+    doc:1.1.2.2.2.16.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.1 ;
+        rdf:_10 doc:1.1.2.2.2.16.2.10 ;
+        rdf:_11 doc:1.1.2.2.2.16.2.11 ;
+        rdf:_12 doc:1.1.2.2.2.16.2.12 ;
+        rdf:_13 doc:1.1.2.2.2.16.2.13 ;
+        rdf:_14 doc:1.1.2.2.2.16.2.14 ;
+        rdf:_15 doc:1.1.2.2.2.16.2.15 ;
+        rdf:_16 doc:1.1.2.2.2.16.2.16 ;
+        rdf:_17 doc:1.1.2.2.2.16.2.17 ;
+        rdf:_18 doc:1.1.2.2.2.16.2.18 ;
+        rdf:_19 doc:1.1.2.2.2.16.2.19 ;
+        rdf:_2 doc:1.1.2.2.2.16.2.2 ;
+        rdf:_20 doc:1.1.2.2.2.16.2.20 ;
+        rdf:_21 doc:1.1.2.2.2.16.2.21 ;
+        rdf:_22 doc:1.1.2.2.2.16.2.22 ;
+        rdf:_23 doc:1.1.2.2.2.16.2.23 ;
+        rdf:_24 doc:1.1.2.2.2.16.2.24 ;
+        rdf:_25 doc:1.1.2.2.2.16.2.25 ;
+        rdf:_26 doc:1.1.2.2.2.16.2.26 ;
+        rdf:_27 doc:1.1.2.2.2.16.2.27 ;
+        rdf:_28 doc:1.1.2.2.2.16.2.28 ;
+        rdf:_29 doc:1.1.2.2.2.16.2.29 ;
+        rdf:_3 doc:1.1.2.2.2.16.2.3 ;
+        rdf:_30 doc:1.1.2.2.2.16.2.30 ;
+        rdf:_31 doc:1.1.2.2.2.16.2.31 ;
+        rdf:_32 doc:1.1.2.2.2.16.2.32 ;
+        rdf:_33 doc:1.1.2.2.2.16.2.33 ;
+        rdf:_34 doc:1.1.2.2.2.16.2.34 ;
+        rdf:_35 doc:1.1.2.2.2.16.2.35 ;
+        rdf:_36 doc:1.1.2.2.2.16.2.36 ;
+        rdf:_37 doc:1.1.2.2.2.16.2.37 ;
+        rdf:_38 doc:1.1.2.2.2.16.2.38 ;
+        rdf:_39 doc:1.1.2.2.2.16.2.39 ;
+        rdf:_4 doc:1.1.2.2.2.16.2.4 ;
+        rdf:_40 doc:1.1.2.2.2.16.2.40 ;
+        rdf:_41 doc:1.1.2.2.2.16.2.41 ;
+        rdf:_5 doc:1.1.2.2.2.16.2.5 ;
+        rdf:_6 doc:1.1.2.2.2.16.2.6 ;
+        rdf:_7 doc:1.1.2.2.2.16.2.7 ;
+        rdf:_8 doc:1.1.2.2.2.16.2.8 ;
+        rdf:_9 doc:1.1.2.2.2.16.2.9 .
+
+    doc:1.1.2.2.2.16.2.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.10 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.10.1 .
+
+    doc:1.1.2.2.2.16.2.10.1 a svg:Text ;
+        xml1:fragment "Fußgänger" .
+
+    doc:1.1.2.2.2.16.2.11 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.12 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.12.1 .
+
+    doc:1.1.2.2.2.16.2.12.1 a svg:Text ;
+        xml1:fragment "Stadt" .
+
+    doc:1.1.2.2.2.16.2.13 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.14 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.14.1 .
+
+    doc:1.1.2.2.2.16.2.14.1 a svg:Text ;
+        xml1:fragment "Straße" .
+
+    doc:1.1.2.2.2.16.2.15 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.16 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.16.1 .
+
+    doc:1.1.2.2.2.16.2.16.1 a svg:Text ;
+        xml1:fragment "Kreuzung" .
+
+    doc:1.1.2.2.2.16.2.17 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.18 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.18.1 .
+
+    doc:1.1.2.2.2.16.2.18.1 a svg:Text ;
+        xml1:fragment "traffic light" .
+
+    doc:1.1.2.2.2.16.2.19 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.2 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.2.1 .
+
+    doc:1.1.2.2.2.16.2.2.1 a svg:Text ;
+        xml1:fragment "Ampel" .
+
+    doc:1.1.2.2.2.16.2.20 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.20.1 .
+
+    doc:1.1.2.2.2.16.2.20.1 a svg:Text ;
+        xml1:fragment "animated" .
+
+    doc:1.1.2.2.2.16.2.21 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.22 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.22.1 .
+
+    doc:1.1.2.2.2.16.2.22.1 a svg:Text ;
+        xml1:fragment "roadtravel" .
+
+    doc:1.1.2.2.2.16.2.23 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.24 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.24.1 .
+
+    doc:1.1.2.2.2.16.2.24.1 a svg:Text ;
+        xml1:fragment "traffic signal" .
+
+    doc:1.1.2.2.2.16.2.25 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.26 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.26.1 .
+
+    doc:1.1.2.2.2.16.2.26.1 a svg:Text ;
+        xml1:fragment "transport" .
+
+    doc:1.1.2.2.2.16.2.27 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.28 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.28.1 .
+
+    doc:1.1.2.2.2.16.2.28.1 a svg:Text ;
+        xml1:fragment "stop" .
+
+    doc:1.1.2.2.2.16.2.29 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.30 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.30.1 .
+
+    doc:1.1.2.2.2.16.2.30.1 a svg:Text ;
+        xml1:fragment "roadsign" .
+
+    doc:1.1.2.2.2.16.2.31 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.32 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.32.1 .
+
+    doc:1.1.2.2.2.16.2.32.1 a svg:Text ;
+        xml1:fragment "go" .
+
+    doc:1.1.2.2.2.16.2.33 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.34 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.34.1 .
+
+    doc:1.1.2.2.2.16.2.34.1 a svg:Text ;
+        xml1:fragment "pedestrian" .
+
+    doc:1.1.2.2.2.16.2.35 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.36 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.36.1 .
+
+    doc:1.1.2.2.2.16.2.36.1 a svg:Text ;
+        xml1:fragment "city" .
+
+    doc:1.1.2.2.2.16.2.37 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.38 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.38.1 .
+
+    doc:1.1.2.2.2.16.2.38.1 a svg:Text ;
+        xml1:fragment "street" .
+
+    doc:1.1.2.2.2.16.2.39 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.4 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.4.1 .
+
+    doc:1.1.2.2.2.16.2.4.1 a svg:Text ;
+        xml1:fragment "animiert" .
+
+    doc:1.1.2.2.2.16.2.40 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.40.1 .
+
+    doc:1.1.2.2.2.16.2.40.1 a svg:Text ;
+        xml1:fragment "crossroads" .
+
+    doc:1.1.2.2.2.16.2.41 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.6 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.6.1 .
+
+    doc:1.1.2.2.2.16.2.6.1 a svg:Text ;
+        xml1:fragment "Verkehr" .
+
+    doc:1.1.2.2.2.16.2.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.2.8 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.16.2.8.1 .
+
+    doc:1.1.2.2.2.16.2.8.1 a svg:Text ;
+        xml1:fragment "Stop" .
+
+    doc:1.1.2.2.2.16.2.9 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.16.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.17 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.18 a svg:Title .
+
+    doc:1.1.2.2.2.19 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.2 a svg:Metadata ;
+        rdf:_1 doc:1.1.2.2.2.2.1 .
+
+    doc:1.1.2.2.2.2.1 a svg:Text ;
+        xml1:fragment "image/svg+xml" .
+
+    doc:1.1.2.2.2.20 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.20.1 .
+
+    doc:1.1.2.2.2.20.1 a svg:Text ;
+        xml1:fragment """
+          Das Bild zeigt das Schema einer Ampelschaltung. Die Animation startet, sobald das Bild geladen ist
+          und wird durch einen Mausklick unterbrochen.
+        """ .
+
+    doc:1.1.2.2.2.21 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.4 a svg:Metadata .
+
+    doc:1.1.2.2.2.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.6 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.6.1 .
+
+    doc:1.1.2.2.2.6.1 a svg:Text ;
+        xml1:fragment "Animierte Ampel" .
+
+    doc:1.1.2.2.2.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.2.8 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.2.8.1 .
+
+    doc:1.1.2.2.2.8.1 a svg:Text ;
+        xml1:fragment "2005-31-12" .
+
+    doc:1.1.2.2.2.9 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.4 a svg:Title ;
+        rdf:_1 doc:1.1.2.2.4.1 ;
+        rdf:_10 doc:1.1.2.2.4.10 ;
+        rdf:_11 doc:1.1.2.2.4.11 ;
+        rdf:_12 doc:1.1.2.2.4.12 ;
+        rdf:_13 doc:1.1.2.2.4.13 ;
+        rdf:_2 doc:1.1.2.2.4.2 ;
+        rdf:_3 doc:1.1.2.2.4.3 ;
+        rdf:_4 doc:1.1.2.2.4.4 ;
+        rdf:_5 doc:1.1.2.2.4.5 ;
+        rdf:_6 doc:1.1.2.2.4.6 ;
+        rdf:_7 doc:1.1.2.2.4.7 ;
+        rdf:_8 doc:1.1.2.2.4.8 ;
+        rdf:_9 doc:1.1.2.2.4.9 .
+
+    doc:1.1.2.2.4.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.4.10 a svg:Title .
+
+    doc:1.1.2.2.4.11 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.4.12 a svg:Title .
+
+    doc:1.1.2.2.4.13 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.4.2 a svg:Title .
+
+    doc:1.1.2.2.4.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.4.4 a svg:Title .
+
+    doc:1.1.2.2.4.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.4.6 a svg:Title .
+
+    doc:1.1.2.2.4.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.4.8 a svg:Title .
+
+    doc:1.1.2.2.4.9 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.2.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.2.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4 a svg:Defs ;
+        rdf:_1 doc:1.1.4.1 ;
+        rdf:_10 doc:1.1.4.10 ;
+        rdf:_11 doc:1.1.4.11 ;
+        rdf:_12 doc:1.1.4.12 ;
+        rdf:_13 doc:1.1.4.13 ;
+        rdf:_14 doc:1.1.4.14 ;
+        rdf:_15 doc:1.1.4.15 ;
+        rdf:_16 doc:1.1.4.16 ;
+        rdf:_17 doc:1.1.4.17 ;
+        rdf:_2 doc:1.1.4.2 ;
+        rdf:_3 doc:1.1.4.3 ;
+        rdf:_4 doc:1.1.4.4 ;
+        rdf:_5 doc:1.1.4.5 ;
+        rdf:_6 doc:1.1.4.6 ;
+        rdf:_7 doc:1.1.4.7 ;
+        rdf:_8 doc:1.1.4.8 ;
+        rdf:_9 doc:1.1.4.9 .
+
+    doc:1.1.4.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.10 a svg:RadialGradient ;
+        rdf:_1 doc:1.1.4.10.1 ;
+        rdf:_2 doc:1.1.4.10.2 ;
+        rdf:_3 doc:1.1.4.10.3 ;
+        rdf:_4 doc:1.1.4.10.4 ;
+        rdf:_5 doc:1.1.4.10.5 ;
+        rdf:_6 doc:1.1.4.10.6 ;
+        rdf:_7 doc:1.1.4.10.7 ;
+        svg:cx "0.5" ;
+        svg:cy "0.5" ;
+        svg:fx "0.5" ;
+        svg:fy "0.5" ;
+        svg:id "g" ;
+        svg:r "0.5" .
+
+    doc:1.1.4.10.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.10.2 a svg:Stop ;
+        svg:offset "0" ;
+        svg:stop-color "#74fc94" .
+
+    doc:1.1.4.10.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.10.4 a svg:Stop ;
+        svg:offset "0.7" ;
+        svg:stop-color "#3ad55e" .
+
+    doc:1.1.4.10.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.10.6 a svg:Stop ;
+        svg:offset "1" ;
+        svg:stop-color "#00af29" .
+
+    doc:1.1.4.10.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.11 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.12 a svg:RadialGradient ;
+        rdf:_1 doc:1.1.4.12.1 ;
+        rdf:_2 doc:1.1.4.12.2 ;
+        rdf:_3 doc:1.1.4.12.3 ;
+        rdf:_4 doc:1.1.4.12.4 ;
+        rdf:_5 doc:1.1.4.12.5 ;
+        rdf:_6 doc:1.1.4.12.6 ;
+        rdf:_7 doc:1.1.4.12.7 ;
+        svg:cx "0.5" ;
+        svg:cy "0.5" ;
+        svg:fx "0.5" ;
+        svg:fy "0.5" ;
+        svg:id "b" ;
+        svg:r "0.5" .
+
+    doc:1.1.4.12.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.12.2 a svg:Stop ;
+        svg:offset "0" ;
+        svg:stop-color "#4d4d4d" .
+
+    doc:1.1.4.12.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.12.4 a svg:Stop ;
+        svg:offset "0.7" ;
+        svg:stop-color "#1a1a1a" .
+
+    doc:1.1.4.12.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.12.6 a svg:Stop ;
+        svg:offset "1" ;
+        svg:stop-color "#000000" .
+
+    doc:1.1.4.12.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.13 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.14 a svg:LinearGradient ;
+        rdf:_1 doc:1.1.4.14.1 ;
+        rdf:_2 doc:1.1.4.14.2 ;
+        rdf:_3 doc:1.1.4.14.3 ;
+        rdf:_4 doc:1.1.4.14.4 ;
+        rdf:_5 doc:1.1.4.14.5 ;
+        rdf:_6 doc:1.1.4.14.6 ;
+        rdf:_7 doc:1.1.4.14.7 ;
+        svg:id "rg" ;
+        svg:x1 "0" ;
+        svg:x2 "0" ;
+        svg:y1 "0" ;
+        svg:y2 "1.05" .
+
+    doc:1.1.4.14.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.14.2 a svg:Stop ;
+        svg:offset "0" ;
+        svg:stop-color "#fff" ;
+        svg:stop-opacity "0.9" .
+
+    doc:1.1.4.14.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.14.4 a svg:Stop ;
+        svg:offset "0.7" ;
+        svg:stop-color "#fff" ;
+        svg:stop-opacity "0.2" .
+
+    doc:1.1.4.14.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.14.6 a svg:Stop ;
+        svg:offset "1" ;
+        svg:stop-color "#fff" ;
+        svg:stop-opacity "0.3" .
+
+    doc:1.1.4.14.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.15 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.16 a svg:Path ;
+        svg:d "M 35,50 A 34,34 0 0,1 95,50 Q 98,55 95,60 Q 65,78 35,60 Q 32,55 35,50 z" ;
+        svg:fill "url(#rg)" ;
+        svg:id "reflex" .
+
+    doc:1.1.4.17 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.2 a svg:Script ;
+        rdf:_1 doc:1.1.4.2.1 ;
+        svg:type "text/javascript" .
+
+    doc:1.1.4.2.1 a svg:Text ;
+        xml1:fragment """
+    /**/
+var run = 2; //start with green light
+var test = 0;
+document.onclick = on_off;
+      
+function on_off() {
+  if( test == 0 ) {
+    test = 1;
+    window.clearTimeout( tout );
+  }
+  else {
+    test = 0;
+    switch_lights();
+  }
+}
+      
+function switch_lights() {
+  switch (run) {
+    case 0:
+      set_col( 1,0,0 );
+      run = 1;
+      break;
+    case 1:
+      set_col( 1,1,0 );
+      run = 2;
+      break;
+    case 2:
+      set_col( 0,0,1 );
+      run = 3;
+      break;
+    case 3:
+      set_col( 0,1,0 );
+      run = 0;
+      break;
+    default:
+      set_col( 1,0,0 );
+      run = 2;
+  }
+  tout = window.setTimeout( "switch_lights()", 1000 );
+}
+      
+function set_col( c1, c2, c3 ) {
+  if( c1 == 1 )
+    document.getElementById("redlight").setAttribute( "fill", "url(#r)" );
+  else
+    document.getElementById("redlight").setAttribute( "fill", "url(#b)" );
+  if( c2 == 1 )
+    document.getElementById("yellight").setAttribute( "fill", "url(#y)" );
+  else
+    document.getElementById("yellight").setAttribute( "fill", "url(#b)" );
+  if( c3 == 1 )
+    document.getElementById("grelight").setAttribute( "fill", "url(#g)" );
+  else
+    document.getElementById("grelight").setAttribute( "fill", "url(#b)" );
+}
+    /**/
+    """ .
+
+    doc:1.1.4.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.4 a svg:LinearGradient ;
+        rdf:_1 doc:1.1.4.4.1 ;
+        rdf:_2 doc:1.1.4.4.2 ;
+        rdf:_3 doc:1.1.4.4.3 ;
+        rdf:_4 doc:1.1.4.4.4 ;
+        rdf:_5 doc:1.1.4.4.5 ;
+        svg:id "back" ;
+        svg:x1 "0" ;
+        svg:x2 "0.4" ;
+        svg:y1 "0" ;
+        svg:y2 "0.9" .
+
+    doc:1.1.4.4.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.4.2 a svg:Stop ;
+        svg:offset "0" ;
+        svg:stop-color "#5c656c" .
+
+    doc:1.1.4.4.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.4.4 a svg:Stop ;
+        svg:offset "1" ;
+        svg:stop-color "#aab2b7" .
+
+    doc:1.1.4.4.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.6 a svg:RadialGradient ;
+        rdf:_1 doc:1.1.4.6.1 ;
+        rdf:_2 doc:1.1.4.6.2 ;
+        rdf:_3 doc:1.1.4.6.3 ;
+        rdf:_4 doc:1.1.4.6.4 ;
+        rdf:_5 doc:1.1.4.6.5 ;
+        rdf:_6 doc:1.1.4.6.6 ;
+        rdf:_7 doc:1.1.4.6.7 ;
+        svg:cx "0.5" ;
+        svg:cy "0.5" ;
+        svg:fx "0.5" ;
+        svg:fy "0.5" ;
+        svg:id "r" ;
+        svg:r "0.5" .
+
+    doc:1.1.4.6.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.6.2 a svg:Stop ;
+        svg:offset "0" ;
+        svg:stop-color "#fc7474" .
+
+    doc:1.1.4.6.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.6.4 a svg:Stop ;
+        svg:offset "0.7" ;
+        svg:stop-color "#d53a3a" .
+
+    doc:1.1.4.6.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.6.6 a svg:Stop ;
+        svg:offset "1" ;
+        svg:stop-color "#af0000" .
+
+    doc:1.1.4.6.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.8 a svg:RadialGradient ;
+        rdf:_1 doc:1.1.4.8.1 ;
+        rdf:_2 doc:1.1.4.8.2 ;
+        rdf:_3 doc:1.1.4.8.3 ;
+        rdf:_4 doc:1.1.4.8.4 ;
+        rdf:_5 doc:1.1.4.8.5 ;
+        rdf:_6 doc:1.1.4.8.6 ;
+        rdf:_7 doc:1.1.4.8.7 ;
+        svg:cx "0.5" ;
+        svg:cy "0.5" ;
+        svg:fx "0.5" ;
+        svg:fy "0.5" ;
+        svg:id "y" ;
+        svg:r "0.5" .
+
+    doc:1.1.4.8.1 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.8.2 a svg:Stop ;
+        svg:offset "0" ;
+        svg:stop-color "#fcfc74" .
+
+    doc:1.1.4.8.3 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.8.4 a svg:Stop ;
+        svg:offset "0.7" ;
+        svg:stop-color "#d4d53a" .
+
+    doc:1.1.4.8.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.8.6 a svg:Stop ;
+        svg:offset "1" ;
+        svg:stop-color "#afa500" .
+
+    doc:1.1.4.8.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.4.9 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.5 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.6 a svg:Rect ;
+        svg:fill "url(#back)" ;
+        svg:height "320" ;
+        svg:stroke "#000" ;
+        svg:stroke-width "10" ;
+        svg:width "120" ;
+        svg:x "5" ;
+        svg:y "5" .
+
+    doc:1.1.7 a svg:Text ;
+        xml1:fragment "" .
+
+    doc:1.1.8 a svg:Circle ;
+        svg:cx "65" ;
+        svg:cy "65" ;
+        svg:fill "url(#r)" ;
+        svg:id "redlight" ;
+        svg:r "40" ;
+        svg:stroke "#000" ;
+        svg:stroke-width "8" .
+
+    doc:1.1.9 a svg:Text ;
+        xml1:fragment "" .
+}
+
