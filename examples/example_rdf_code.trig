@@ -7,7 +7,7 @@
 @prefix svg: <http://www.w3.org/SVG/model/def/> . 
 @prefix xlink: <https://www.w3.org/1999/xlink/model/def/> . 
 @prefix xml: <http://www.w3.org/XML/model/def/> . 
-@prefix xmlns: <http://www.w3.org/2000/xmlns/> . 
+@prefix xmlns: <http://www.w3.org/2000/xmlns/model/def/> . 
 
 doc:1 a svg:Document ; 
 rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1/1> ;

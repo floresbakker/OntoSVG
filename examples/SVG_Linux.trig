@@ -1,9 +1,9 @@
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
-@prefix xlink: <http://www.w3.org/1999/xlink#> .
-@prefix xml1: <http://www.w3.org/XML/1998/namespace#> .
-@prefix xmlns: <http://www.w3.org/2000/xmlns/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix svg: <http://www.w3.org/SVG/model/def/> . 
+@prefix xlink: <https://www.w3.org/1999/xlink/model/def/> . 
+@prefix xml: <http://www.w3.org/XML/model/def/> . 
+@prefix xmlns: <http://www.w3.org/2000/xmlns/model/def/> . 
 
 doc:1 a svg:Document ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/0/2> .
@@ -18,12 +18,12 @@ doc:1 a svg:Document ;
     xmlns:dc "http://purl.org/dc/elements/1.1/" ;
     xmlns:rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
     xmlns:xlink "http://www.w3.org/1999/xlink" ;
-    xml1:xmlns "http://www.w3.org/2000/svg" ;
+    xml:xmlns "http://www.w3.org/2000/svg" ;
     svg:height "600pt" ;
     svg:width "500pt" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/1120/0> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/1120/1> a svg:Stop ;
     svg:id "stop173" ;
@@ -31,7 +31,7 @@ doc:1 a svg:Document ;
     svg:style "stop-color:#3f2600;stop-opacity:0.6;" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/1120/2> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/1120/3> a svg:Stop ;
     svg:id "stop174" ;
@@ -39,10 +39,10 @@ doc:1 a svg:Document ;
     svg:style "stop-color:#3f2600;stop-opacity:0;" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/1120/4> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/0> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/1> a svg:LinearGradient ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/1120/0> ;
@@ -53,7 +53,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient172" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/10> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/11> a svg:LinearGradient ;
     xlink:href "#linearGradient138" ;
@@ -65,7 +65,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.90125799" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/12> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/13> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -77,7 +77,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.94531101" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/14> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/15> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -89,7 +89,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.93366498" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/16> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/17> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -101,7 +101,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.94063401" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/18> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/19> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -113,10 +113,10 @@ doc:1 a svg:Document ;
     svg:y2 "0.75857902" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/2> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/20> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/21> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -128,7 +128,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.71875" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/22> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/23> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -140,7 +140,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.8125" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/24> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/25> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -152,7 +152,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.92820501" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/26> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/27> a svg:LinearGradient ;
     xlink:href "#linearGradient138" ;
@@ -164,7 +164,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.94634098" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/28> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/29> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -185,7 +185,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient167" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/30> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/31> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -197,7 +197,7 @@ doc:1 a svg:Document ;
     svg:y2 "1.02569" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/32> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/33> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -210,7 +210,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.40625" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/34> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/35> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -222,7 +222,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.23093501" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/36> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/37> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -234,7 +234,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.41252401" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/38> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/39> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -246,10 +246,10 @@ doc:1 a svg:Document ;
     svg:y2 "0.136172" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/4> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/40> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/41> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -261,7 +261,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.096282303" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/42> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/43> a svg:LinearGradient ;
     xlink:href "#linearGradient162" ;
@@ -273,7 +273,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.98558098" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/44> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/45> a svg:LinearGradient ;
     xlink:href "#linearGradient162" ;
@@ -285,7 +285,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.98367399" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/46> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/47> a svg:LinearGradient ;
     xlink:href "#linearGradient162" ;
@@ -297,7 +297,7 @@ doc:1 a svg:Document ;
     svg:y2 "0.97005898" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/48> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/49> a svg:RadialGradient ;
     xlink:href "#linearGradient172" ;
@@ -318,14 +318,14 @@ doc:1 a svg:Document ;
     svg:id "linearGradient162" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/50> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/51> a svg:RadialGradient ;
     xlink:href "#linearGradient172" ;
     svg:id "radialGradient176" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/52> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/53> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -337,7 +337,7 @@ doc:1 a svg:Document ;
     svg:y2 "-0.675295" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/54> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/55> a svg:RadialGradient ;
     xlink:href "#linearGradient172" ;
@@ -351,7 +351,7 @@ doc:1 a svg:Document ;
     svg:r "195.07191" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/56> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/57> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -364,7 +364,7 @@ doc:1 a svg:Document ;
     svg:y2 "304.07886" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/58> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/59> a svg:LinearGradient ;
     xlink:href "#linearGradient138" ;
@@ -377,10 +377,10 @@ doc:1 a svg:Document ;
     svg:y2 "330.09561" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/6> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/60> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/61> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -393,7 +393,7 @@ doc:1 a svg:Document ;
     svg:y2 "243.91606" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/62> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/63> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -406,7 +406,7 @@ doc:1 a svg:Document ;
     svg:y2 "245.68338" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/64> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/65> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -419,7 +419,7 @@ doc:1 a svg:Document ;
     svg:y2 "281.01636" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/66> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/67> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -432,7 +432,7 @@ doc:1 a svg:Document ;
     svg:y2 "281.32513" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/68> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/69> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -453,7 +453,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient153" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/70> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/71> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -466,7 +466,7 @@ doc:1 a svg:Document ;
     svg:y2 "324.03815" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/72> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/73> a svg:LinearGradient ;
     xlink:href "#linearGradient138" ;
@@ -479,7 +479,7 @@ doc:1 a svg:Document ;
     svg:y2 "614.50439" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/74> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/75> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -492,7 +492,7 @@ doc:1 a svg:Document ;
     svg:y2 "488.48251" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/76> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/77> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -505,7 +505,7 @@ doc:1 a svg:Document ;
     svg:y2 "331.44858" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/78> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/79> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -518,10 +518,10 @@ doc:1 a svg:Document ;
     svg:y2 "314.83911" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/8> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/80> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/81> a svg:LinearGradient ;
     xlink:href "#linearGradient162" ;
@@ -534,7 +534,7 @@ doc:1 a svg:Document ;
     svg:y2 "737.41229" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/82> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/83> a svg:LinearGradient ;
     xlink:href "#linearGradient153" ;
@@ -547,7 +547,7 @@ doc:1 a svg:Document ;
     svg:y2 "386.66583" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/84> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/85> a svg:LinearGradient ;
     xlink:href "#linearGradient162" ;
@@ -560,7 +560,7 @@ doc:1 a svg:Document ;
     svg:y2 "737.8537" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/86> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/87> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -573,7 +573,7 @@ doc:1 a svg:Document ;
     svg:y2 "704.73077" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/88> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/89> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -594,7 +594,7 @@ doc:1 a svg:Document ;
     svg:id "linearGradient138" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/90> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/91> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -607,7 +607,7 @@ doc:1 a svg:Document ;
     svg:y2 "582.63507" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/92> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/93> a svg:LinearGradient ;
     xlink:href "#linearGradient162" ;
@@ -620,7 +620,7 @@ doc:1 a svg:Document ;
     svg:y2 "485.69934" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/94> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/95> a svg:LinearGradient ;
     xlink:href "#linearGradient167" ;
@@ -633,10 +633,10 @@ doc:1 a svg:Document ;
     svg:y2 "482.55939" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/120/96> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/20/0> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/20/1> a svg:Defs ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/120/0> ;
@@ -738,7 +738,7 @@ doc:1 a svg:Document ;
     rdf:_97 <https://data.rijksfinancien.nl/svg/doc/id/120/96> .
 
 <https://data.rijksfinancien.nl/svg/doc/id/20/2> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/20/3> a svg:G ;
     rdf:_1 <https://data.rijksfinancien.nl/svg/doc/id/320/0> ;
@@ -802,10 +802,10 @@ doc:1 a svg:Document ;
     svg:transform "translate(-310.7524,-64.25268)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/20/4> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/3120/0> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/3120/1> a svg:Stop ;
     svg:id "stop168" ;
@@ -813,7 +813,7 @@ doc:1 a svg:Document ;
     svg:style "stop-color:#ffffff;stop-opacity:0.65;" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/3120/2> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/3120/3> a svg:Stop ;
     svg:id "stop169" ;
@@ -821,10 +821,10 @@ doc:1 a svg:Document ;
     svg:style "stop-color:#ffffff;stop-opacity:0;" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/3120/4> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/0> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/1> a svg:Path ;
     svg:d "M 670.88202 1166.6423 A 203.89551 186.63016 0 1 1 263.091,1166.6423 A 203.89551 186.63016 0 1 1 670.88202 1166.6423 z" ;
@@ -833,7 +833,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.4177,0,0,0.414745,-38.7944,222.194)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/10> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/11> a svg:Path ;
     svg:d "M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" ;
@@ -842,7 +842,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.30445,-7.55326e-2,7.71251e-2,1.34257,144.757,-177.617)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/12> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/13> a svg:Path ;
     svg:d "M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" ;
@@ -851,7 +851,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(-1.81082,4.95107e-2,3.17324e-2,1.55333,1207.46,-284.777)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/14> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/15> a svg:Path ;
     svg:d "M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" ;
@@ -860,7 +860,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(-0.823196,-1.76123e-3,-1.82321e-2,0.852662,913.674,-37.9902)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/16> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/17> a svg:Path ;
     svg:d "M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" ;
@@ -869,7 +869,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(0.59438,-7.22959e-2,6.88176e-2,0.705838,367.448,32.4186)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/18> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/19> a svg:Path ;
     svg:d "M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" ;
@@ -878,10 +878,10 @@ doc:1 a svg:Document ;
     svg:transform "matrix(-0.480323,-3.6454e-2,-4.67935e-2,0.475606,813.496,87.0124)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/2> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/20> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/21> a svg:Path ;
     svg:d "M 328.86324 320.64151 A 18.087479 27.131195 0 1 1 292.68828,320.64151 A 18.087479 27.131195 0 1 1 328.86324 320.64151 z" ;
@@ -890,7 +890,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(0.35691,-4.08211e-2,4.13232e-2,0.398544,449.334,114.991)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/22> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/23> a svg:Path ;
     svg:d "M 258.702,495.425 C 271.538,466.322 298.816,415.199 299.397,375.667 C 299.397,344.225 393.576,336.716 401.134,368.109 C 408.692,399.502 427.875,446.592 440.084,469.265 C 452.292,491.937 487.893,563.96 449.968,626.811 C 415.811,682.455 312.243,726.477 256.958,619.254 C 238.355,582.047 241.673,535.939 258.702,495.425 z " ;
@@ -899,7 +899,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.25,0,0,1.25,185.454,-168.23)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/24> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/25> a svg:Path ;
     svg:d "M 242.905,473.815 C 231.642,492.782 207.405,543.124 255.042,575.862 C 306.353,610.682 301.515,672.924 239.435,637.817 C 182.658,606.028 216.59,500.039 234.925,475.551 C 247.032,458.337 264.822,437.52 242.905,473.815 z " ;
@@ -908,7 +908,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.38936,-0.111074,0.102211,1.30214,108.413,-165.938)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/26> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/27> a svg:Path ;
     svg:d "M 256.513,449.72 C 239.048,478.228 197.136,545.533 253.225,580.443 C 328.794,626.798 307.398,673.154 238.426,631.417 C 141.317,573.153 226.601,455.801 265.557,411.079 C 310.001,360.879 274.111,420.166 256.513,449.72 z " ;
@@ -917,7 +917,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.25,0,0,1.25,185.454,-167.505)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/28> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/29> a svg:Path ;
     svg:d "M 421.481,504.727 C 421.481,537.139 392.209,579.243 341.953,578.865 C 290.125,579.32 268.004,537.139 268.004,504.727 C 268.004,472.315 302.383,446.01 344.743,446.01 C 387.102,446.01 421.481,472.315 421.481,504.727 z " ;
@@ -932,7 +932,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.25,0,0,1.25,185.454,-167.505)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/30> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/31> a svg:Path ;
     svg:d "M 398.227,412.292 C 397.615,450.864 375.047,459.963 346.487,459.963 C 317.926,459.963 297.195,454.269 294.746,412.292 C 294.746,385.978 317.926,370.75 346.487,370.75 C 375.047,370.75 398.227,385.978 398.227,412.292 z " ;
@@ -941,7 +941,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.1868,0,0,1.06708,210.623,-100.078)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/32> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/33> a svg:Path ;
     svg:d "M 234.285,456.475 C 252.001,429.479 289.3,388.111 241.262,462.288 C 202.311,523.331 226.859,562.561 239.518,573.327 C 276.045,605.889 274.484,627.676 245.913,610.533 C 184.288,573.907 197.078,512.285 234.285,456.475 z " ;
@@ -950,7 +950,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.25,0,0,1.25,185.454,-167.505)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/34> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/35> a svg:Path ;
     svg:d "M 490.662,467.52 C 475.343,435.819 426.528,355.618 492.988,448.917 C 553.449,533.214 511.01,591.93 503.452,597.744 C 495.895,603.557 470.315,615.184 477.873,594.837 C 485.43,574.49 523.107,535.864 490.662,467.52 z " ;
@@ -959,7 +959,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.25,0,0,1.25,185.454,-167.505)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/36> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/37> a svg:Path ;
     svg:d "M 220.915,716.921 C 180.473,695.505 121.663,721.045 143.013,662.855 C 147.289,649.617 136.638,629.847 143.594,616.929 C 151.733,601.231 169.174,604.72 179.639,594.255 C 189.957,583.364 196.498,564.606 215.683,567.513 C 234.867,570.42 247.628,593.974 261.027,622.742 C 270.91,643.38 305.968,672.406 303.677,695.5 C 300.981,731 260.65,737.69 220.915,716.921 z " ;
@@ -968,7 +968,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.25,0,0,1.25,185.454,-167.505)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/38> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/39> a svg:Path ;
     svg:d "M 415.072,495.764 C 412.065,520.67 379.259,572.391 345.554,577.298 C 311.294,582.634 279.122,543.238 271.407,506.184 C 261.518,464.978 293.994,448.584 343.345,449.557 C 396.646,451.211 417.466,463.448 415.072,495.764 z " ;
@@ -977,10 +977,10 @@ doc:1 a svg:Document ;
     svg:transform "matrix(0.598206,0.268584,-0.239623,0.617213,700.568,140.464)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/4> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/40> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/41> a svg:Path ;
     svg:d "M 220.274,718.402 C 178.947,694.812 120.38,724.007 143.013,662.855 C 147.749,649.787 136.417,629.303 143.373,616.385 C 151.512,600.687 169.174,604.72 179.639,594.255 C 189.957,583.364 198.466,566.387 217.651,569.294 C 236.835,572.201 247.628,593.974 261.027,622.742 C 270.91,643.38 304.442,671.713 302.151,694.807 C 299.455,730.307 259.427,740.278 220.274,718.402 z " ;
@@ -989,7 +989,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(-1.1685,0.423145,0.475283,1.16478,728.343,-213.821)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/42> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/43> a svg:Path ;
     svg:d "M 216.482,675.68 C 129.951,618.177 169.174,604.72 179.639,594.255 C 189.957,583.364 198.466,566.387 217.651,569.294 C 236.835,572.201 247.628,593.974 261.027,622.742 C 270.91,643.38 304.087,671.66 302.151,694.807 C 299.535,721.917 253.961,700.294 216.482,675.68 z " ;
@@ -998,7 +998,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(-0.945096,0.343745,0.424076,0.956058,714.328,-64.342)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/44> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/45> a svg:Path ;
     svg:d "M 216.506,677.071 C 129.975,619.568 169.709,603.501 182.56,595.791 C 197.959,585.849 197.718,564.96 216.903,567.867 C 236.087,570.774 247.628,593.974 261.027,622.742 C 270.91,643.38 304.087,671.66 302.151,694.807 C 299.535,721.917 253.985,701.685 216.506,677.071 z " ;
@@ -1007,7 +1007,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.00431,-5.2286e-2,-1.74e-2,1.04575,244.191,-28.4653)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/46> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/47> a svg:Path ;
     svg:d "M 415.072,495.764 C 412.065,520.67 379.259,572.391 345.554,577.298 C 311.294,582.634 279.122,543.238 271.407,506.184 C 261.518,464.978 293.994,448.584 343.345,449.557 C 396.646,451.211 417.466,463.448 415.072,495.764 z " ;
@@ -1016,7 +1016,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(0.515584,0.215259,-0.206526,0.49467,713.3,222.559)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/48> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/49> a svg:Path ;
     svg:d "M 415.072,495.764 C 412.065,520.67 379.259,572.391 345.554,577.298 C 311.294,582.634 279.122,543.238 271.407,506.184 C 261.518,464.978 293.994,448.584 343.345,449.557 C 396.646,451.211 417.466,463.448 415.072,495.764 z " ;
@@ -1031,7 +1031,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(-1.67739,-2.24516e-2,-2.11236e-2,1.4709,1173.58,-293.017)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/50> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/51> a svg:Path ;
     svg:d "M 309.954,338.729 C 317.101,331.959 334.765,311.663 367.915,332.974 C 374.077,336.984 379.077,337.351 390.936,342.429 C 414.662,352.178 403.318,375.688 378.192,383.537 C 367.434,387.026 357.656,400.093 338.063,398.976 C 321.329,397.999 316.944,387.102 306.665,381.07 C 288.396,370.759 285.7,356.816 295.565,349.417 C 305.431,342.018 309.29,339.358 309.954,338.729 z " ;
@@ -1040,7 +1040,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.25,0,0,1.25,185.454,-167.505)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/52> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/53> a svg:Path ;
     svg:d "M 391.251,357.645 C 381.368,358.226 359.858,379.736 337.185,379.736 C 314.512,379.736 301.141,358.807 297.653,358.807" ;
@@ -1049,7 +1049,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.25,0,0,1.25,185.454,-167.505)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/54> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/55> a svg:Path ;
     svg:d "M 309.954,338.729 C 317.101,331.959 339.645,313.381 369.542,332.401 C 375.841,336.167 382.346,340.266 392.02,345.865 C 411.182,357.613 401.691,374.543 378.734,385.255 C 368.316,389.75 351.141,399.67 338.063,398.976 C 323.53,397.568 314.128,387.577 304.496,381.07 C 286.826,368.767 287.899,358.833 296.107,350.562 C 302.312,344.883 309.29,339.358 309.954,338.729 z " ;
@@ -1058,10 +1058,10 @@ doc:1 a svg:Document ;
     svg:transform "matrix(0.627885,0,0,0.595666,392.366,51.8173)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/56> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/6> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/7> a svg:Path ;
     svg:d "M 256.513,459.837 C 236.598,477.554 200.337,539.928 253.225,580.443 C 270.595,593.075 237.832,632.906 219.435,612.532 C 155.472,541.712 221.104,460.278 243.697,432.282 C 263.889,407.935 281.775,438.034 256.513,459.837 z " ;
@@ -1070,7 +1070,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(-1.67755,0,0,1.52374,1174.62,-318.082)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/8> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/320/9> a svg:Path ;
     svg:d "M 399.56879 258.15753 A 58.37323 46.863022 0 1 1 282.82233,258.15753 A 58.37323 46.863022 0 1 1 399.56879 258.15753 z" ;
@@ -1079,7 +1079,7 @@ doc:1 a svg:Document ;
     svg:transform "matrix(1.26626,-7.13667e-2,-4.59795e-2,1.19574,202.143,-125.761)" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/5120/0> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/5120/1> a svg:Stop ;
     svg:id "stop163" ;
@@ -1087,7 +1087,7 @@ doc:1 a svg:Document ;
     svg:style "stop-color:#ffa63f;stop-opacity:1;" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/5120/2> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/5120/3> a svg:Stop ;
     svg:id "stop164" ;
@@ -1095,10 +1095,10 @@ doc:1 a svg:Document ;
     svg:style "stop-color:#ffff00;stop-opacity:1;" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/5120/4> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/7120/0> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/7120/1> a svg:Stop ;
     svg:id "stop154" ;
@@ -1106,7 +1106,7 @@ doc:1 a svg:Document ;
     svg:style "stop-color:#ffeed7;stop-opacity:1;" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/7120/2> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/7120/3> a svg:Stop ;
     svg:id "stop155" ;
@@ -1114,7 +1114,7 @@ doc:1 a svg:Document ;
     svg:style "stop-color:#bdbfc2;stop-opacity:1;" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/9120/0> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/9120/1> a svg:Stop ;
     svg:id "stop139" ;
@@ -1122,7 +1122,7 @@ doc:1 a svg:Document ;
     svg:style "stop-color:#ffffff;stop-opacity:0.8;" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/9120/2> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/9120/3> a svg:Stop ;
     svg:id "stop140" ;
@@ -1130,5 +1130,5 @@ doc:1 a svg:Document ;
     svg:style "stop-color:#ffffff;stop-opacity:0;" .
 
 <https://data.rijksfinancien.nl/svg/doc/id/9120/4> a svg:TextElement ;
-    svg:fragment "" .
+    xml:fragment "" .
 

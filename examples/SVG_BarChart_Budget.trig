@@ -1,9 +1,9 @@
 @prefix doc: <https://data.rijksfinancien.nl/svg/doc/id/> .
-@prefix dom: <https://data.rijksfinancien.nl/dom/model/def/> .
-@prefix documentType: <https://data.rijksfinancien.nl/dom/model/id/documentType/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix svg: <https://data.rijksfinancien.nl/svg/model/def/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix svg: <http://www.w3.org/SVG/model/def/> . 
+@prefix xlink: <https://www.w3.org/1999/xlink/model/def/> . 
+@prefix xml: <http://www.w3.org/XML/model/def/> . 
+@prefix xmlns: <http://www.w3.org/2000/xmlns/model/def/> . 
 
 doc:BarChartDocument a svg:Document ;
     rdf:_1 doc:BarChart .
@@ -128,23 +128,23 @@ doc:BudgetedReceiptsAmount a svg:Text ;
     svg:y "275" .
 
 doc:AmountText a svg:TextElement ;
-    svg:fragment "Amount (Euro)" .
+    xml:fragment "Amount (Euro)" .
 
 doc:BudgetedExpendituresTextString a svg:TextElement ;
-    svg:fragment "Budgeted Expenditures" .
+    xml:fragment "Budgeted Expenditures" .
 
 doc:BudgetedExpendituresAmountValue a svg:TextElement ;
-    svg:fragment "100" .
+    xml:fragment "100" .
 
 doc:RealizedExpendituresTextString a svg:TextElement ;
-    svg:fragment "Realized Expenditures" .
+    xml:fragment "Realized Expenditures" .
 
 doc:RealizedExpendituresAmountValue a svg:TextElement ;
-    svg:fragment "150" .
+    xml:fragment "150" .
 
 doc:BudgetedReceiptsTextString a svg:TextElement ;
-    svg:fragment "Budgeted Receipts" .
+    xml:fragment "Budgeted Receipts" .
 
 doc:BudgetedReceiptsAmountValue a svg:TextElement ;
-    svg:fragment "200" .
+    xml:fragment "200" .
 

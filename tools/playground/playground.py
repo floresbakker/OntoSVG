@@ -103,7 +103,7 @@ def iteratePyShacl(shaclgraph, serializable_graph):
 
         # Check whether another iteration is needed. If the svg root of the document contains a svg:fragment statement then the serialisation is considered done.
         for result in resultquery:
-            print ("ask result = ", result)
+            print ("check if fragment is complete: ", result)
             if result == False:
                 return iteratePyShacl(shaclgraph, serializable_graph)
          
@@ -125,7 +125,6 @@ def iteratePyShacl(shaclgraph, serializable_graph):
 
          
                 for svg in svgQuery:
-                    print ("svg.fragment = ", svg.fragment)
                     return svg.fragment
 
 
@@ -143,7 +142,6 @@ def convert_to_svg():
         with open(filepath, 'w', encoding='utf-8') as file:
            file.write(svg_fragment)
         writeGraph(serializable_graph, "static/output")
-        print("SVG fragment =", svg_fragment)
         return render_template('index.html', svgOutput=svg_fragment, svgRawOutput=svg_fragment, rdfInput=text, rdfOutputButton="true")
 
     except Exception as e:
