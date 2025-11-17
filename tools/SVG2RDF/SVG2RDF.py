@@ -15,11 +15,16 @@ import os
 
 from rdflib.namespace import NamespaceManager
 
-# Get the current working directory in which the Playground.py file is located.
-current_dir = os.getcwd()
+try:
+    # Command prompt execution: current directory is based on location of playground.py file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    directory_path = os.path.abspath(os.path.join(current_dir, '..', '..'))
 
-# Set the path to the desired standard directory. 
-directory_path = os.path.abspath(os.path.join(current_dir))
+except NameError:
+    # Python IDE exectution: current directory is based on the IDE working directory in Spyder, Jupyter or iPython.
+    # PLEASE NOTE: Set working directory in IDE to OntoMermaid root dir.
+    current_dir = os.getcwd()
+    directory_path  = os.path.abspath(os.path.join(current_dir))
 
 # namespace declaration
 rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")

@@ -6,13 +6,22 @@ from bs4 import BeautifulSoup
 from bs4.element import Tag, NavigableString
 import os
 
-app = Flask(__name__, template_folder='tools/playground/templates', static_folder='tools/playground/static')
+try:
+    # Command prompt execution: current directory is based on location of playground.py file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    directory_path = os.path.abspath(os.path.join(current_dir, '..', '..'))
+    template_folder = 'templates' 
+    static_folder   = 'static' 
 
-# Get the current working directory in which the Playground.py file is located.
-current_dir = os.getcwd()
+except NameError:
+    # Python IDE exectution: current directory is based on the IDE working directory in Spyder, Jupyter or iPython.
+    # PLEASE NOTE: Set working directory in IDE to OntoMermaid root dir.
+    current_dir = os.getcwd()
+    directory_path  = os.path.abspath(os.path.join(current_dir))
+    template_folder = 'tools/playground/templates' 
+    static_folder   = 'tools/playground/static' 
 
-# Set the path to the desired standard directory. 
-directory_path = os.path.abspath(os.path.join(current_dir))
+app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 
 # namespace declaration
 rdf   = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
